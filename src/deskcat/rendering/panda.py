@@ -6,14 +6,14 @@ import sys
 from pathlib import Path
 
 from PySide6.QtGui import QImage
-from panda3d.core import (AmbientLight, DirectionalLight, Texture,
+from panda3d.core import (AmbientLight, DirectionalLight, Texture, TextureStage,
                           GraphicsOutput, GraphicsPipe, WindowProperties, FrameBufferProperties, loadPrcFileData)
 from direct.actor.Actor import Actor
 from direct.showbase.ShowBase import ShowBase
 
 from deskcat.states import State
 from .playback import ClipClock
-from .gltf_scene import load_skinned_scene
+from .gltf_scene import load_scene
 
 DEFAULT_MODEL = Path(__file__).resolve().parents[3] / 'assets/3d/test_cat.glb'
 
@@ -91,18 +91,28 @@ class PandaRenderer:
             raise ModelError(f'Model not found: {model_path}')
         candidate = None
         try:
-            model = load_skinned_scene(Path(model_path).resolve())
+            model = load_scene(Path(model_path).resolve())
             characters = list(model.findAllMatches('**/+Character'))
-            if len(characters) != 1:
+            if len(characters) > 1:
                 raise ValueError('Prototype supports exactly one animated skeleton')
-            character = characters[0]
+            character = characters[0] if characters else None
             # glTF mesh and skeleton can be sibling roots. Actor extracts only
             # Character; retain the skinned geometry and its joint bindings.
             for geom in model.findAllMatches('**/+GeomNode'):
-                if not character.isAncestorOf(geom):
+                if character is not None and not character.isAncestorOf(geom):
                     geom.wrtReparentTo(character)
-            candidate = Actor(model, copy=False)
-            clips = sorted(candidate.getAnimNames())
+            candidate = Actor(model, copy=False) if character is not None else model
+            if character is None:
+                # Fixed-function preview cannot evaluate glTF metallic PBR.
+                # Keep base color; imported metallic material produced alpha=0
+                # with this backend. Do not alter the GLB or claim full PBR.
+                candidate.setMaterialOff(10)
+                for stage in candidate.findAllTextureStages():
+                    if stage.getMode() != TextureStage.MModulate:
+                        candidate.setTextureOff(stage, 10)
+                print('DeskCat static preview: base-color lighting; PBR maps retained in GLB',
+                      file=sys.stderr)
+            clips = sorted(candidate.getAnimNames()) if character is not None else []
             unknown = set(self.clip_overrides) - {s.value for s in State}
             if unknown:
                 raise ValueError('Unknown state mappings: ' + ', '.join(sorted(unknown)))
@@ -116,8 +126,9 @@ class PandaRenderer:
                 control = candidate.getAnimControl(clip)
                 durations[clip] = control.getNumFrames() / control.getFrameRate()
             clock = ClipClock(durations)
-            candidate.enableBlend()
-            candidate.setBlend(frameBlend=True)
+            if character is not None:
+                candidate.enableBlend()
+                candidate.setBlend(frameBlend=True)
             bounds = candidate.getTightBounds()
             if not bounds:
                 raise ValueError('Model has no renderable geometry')
@@ -133,9 +144,14 @@ class PandaRenderer:
             candidate.setPos(-(low.x+high.x)/2 * 2/extent,
                              -(low.y+high.y)/2 * 2/extent, -low.z * 2/extent)
             if self.actor is not None:
-                self.actor.cleanup()
+                if isinstance(self.actor, Actor):
+                    self.actor.cleanup()
                 self.pivot.removeNode()
             self.actor, self.pivot = candidate, pivot
+            self.has_skeleton = character is not None
+            if not self.has_skeleton:
+                print('DeskCat static model: no skeleton; animations unavailable (NOT played)',
+                      file=sys.stderr)
             self.clips = clips
             self.clip_map = mapping
             self.clock = clock
@@ -148,7 +164,8 @@ class PandaRenderer:
                       file=sys.stderr)
         except Exception as exc:
             if candidate is not None:
-                candidate.cleanup()
+                if isinstance(candidate, Actor):
+                    candidate.cleanup()
                 candidate.removeNode()
             raise ModelError(f'Cannot load {model_path}: {exc}') from exc
 
@@ -197,7 +214,8 @@ class PandaRenderer:
             index = times[clip] * control.getFrameRate()
             self.actor.pose(clip, index)
             self.actor.setControlEffect(clip, clip_weights[clip])
-        self.actor.update()
+        if self.has_skeleton:
+            self.actor.update()
         self.base.graphicsEngine.renderFrame()
         data = bytes(self.texture.getRamImageAs('RGBA'))
         if len(data) != width * height * 4:
@@ -214,7 +232,9 @@ class PandaRenderer:
 
     def close(self):
         if self.actor is not None:
-            self.actor.cleanup()
+            if isinstance(self.actor, Actor):
+                self.actor.cleanup()
+            self.actor.removeNode()
             self.actor = None
         if self.base is not None:
             self.base.destroy()

@@ -8,9 +8,10 @@ from gltf._converter import Converter
 from gltf.parseutils import parse_gltf_file
 
 
-def load_skinned_scene(path):
+def load_scene(path, require_skin=False):
     document = parse_gltf_file(str(path))
-    if len(document.get('skins', [])) != 1:
+    skins = len(document.get('skins', []))
+    if skins > 1 or (require_skin and skins != 1):
         raise ValueError('Prototype requires exactly one skin/skeleton')
     scene = document['scenes'][document.get('scene', 0)]
     roots = list(scene['nodes'])
@@ -24,3 +25,7 @@ def load_skinned_scene(path):
     converter = Converter(str(path))
     converter.update(document)
     return converter.active_scene
+
+
+def load_skinned_scene(path):
+    return load_scene(path, require_skin=True)

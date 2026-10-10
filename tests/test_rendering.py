@@ -279,3 +279,20 @@ def test_direction_turn(renderer):
     finally:
         renderer.direction = 1
         renderer.heading = 0
+
+
+def test_tripo_static_model(renderer, capsys):
+    asset = DEFAULT_MODEL.parent / 'tripo/deskcat_calico_h25_v1.glb'
+    try:
+        renderer.load(asset)
+        assert not renderer.has_skeleton
+        assert renderer.clips == []
+        assert set(renderer.missing_states) == {s.value for s in State}
+        image = renderer.frame(.1, {State.WALK: 1.0}, 240, 220)
+        assert image.pixelColor(0, 0).alpha() == 0
+        assert sum(a > 0 for a in pixels(image)[3::4]) > 500
+        assert renderer.unavailable_active == ['walk']
+        assert renderer.clock.times == {}
+        assert 'static model' in capsys.readouterr().err
+    finally:
+        renderer.load(DEFAULT_MODEL)
