@@ -1,0 +1,9 @@
+{
+  "environment": "Linux, Python 3.12, Blender 4.3.2",
+  "command": "QT_QPA_PLATFORM=offscreen .venv/bin/python -m pytest -q",
+  "passed": 69,
+  "failed": 0,
+  "skipped": 0,
+  "windows_ci": "not claimed",
+  "windows11_visual": "not performed"
+}

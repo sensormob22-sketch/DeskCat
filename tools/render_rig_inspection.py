@@ -7,15 +7,33 @@ import argparse
 import json
 import hashlib
 from pathlib import Path
-from panda3d.core import OrthographicLens, Point3, Vec3, Point2, TextNode, LineSegs
+from panda3d.core import OrthographicLens, Point3, Vec3, Point2, TextNode, LineSegs, TextureStage
 from deskcat.rendering.panda import PandaRenderer
 from deskcat.states import State
 
 
-def render(path, output, landmarks=None, geometry_review=None, geometry_only=False):
+def render(path, output, landmarks=None, geometry_review=None, geometry_only=False, reference_model=None, wireframe=False, base_color_preview=False, bone_guides=None, pose=None):
     output.mkdir(parents=True, exist_ok=True)
     renderer = PandaRenderer(path, width=1400, height=1100)
     try:
+        if reference_model:
+            from rig_readiness_audit import read_glb, accessor
+            doc, binary, _ = read_glb(reference_model)
+            primitive = doc['meshes'][0]['primitives'][0]
+            positions = accessor(doc, binary, primitive['attributes']['POSITION'])
+            low = [min(p[i] for p in positions) for i in range(3)]
+            high = [max(p[i] for p in positions) for i in range(3)]
+            factor = 2 / max(high[i]-low[i] for i in range(3))
+            renderer.actor.setScale(factor)
+            renderer.actor.setPos(-(low[0]+high[0])/2*factor,
+                                  (low[2]+high[2])/2*factor, -low[1]*factor)
+        if base_color_preview:
+            renderer.actor.setMaterialOff(20)
+            for stage in renderer.actor.findAllTextureStages():
+                if stage.getMode() != TextureStage.MModulate:
+                    renderer.actor.setTextureOff(stage, 20)
+        if wireframe:
+            renderer.actor.setRenderModeWireframe()
         renderer.base.setBackgroundColor(.72, .72, .72, 1)
         if geometry_only:
             renderer.actor.setTextureOff(20)
@@ -55,6 +73,22 @@ def render(path, output, landmarks=None, geometry_review=None, geometry_only=Fal
             node = root.attachNewNode(text)
             node.setScale(.03)
             node.setPos(x+.015, 0, z+.016)
+        if bool(bone_guides) != bool(pose):
+            raise ValueError('Bone guides require a matching pose')
+        if bone_guides:
+            guides = json.loads(bone_guides.read_text())
+            if hashlib.sha256(path.read_bytes()).hexdigest() != guides['model_sha256_by_pose'][pose]:
+                raise ValueError('Bone guides do not match snapshot SHA')
+            lines = LineSegs(); lines.setThickness(2)
+            lines.setColor(1,.85,.05,1)
+            for name, bone in guides['poses'][pose].items():
+                if name == 'root': continue
+                def point(key):
+                    p = bone[key]
+                    return Point3(p[0]*factor, -p[2]*factor, p[1]*factor) + renderer.actor.getPos()
+                lines.moveTo(point('head_gltf')); lines.drawTo(point('tail_gltf'))
+            node = renderer.base.render.attachNewNode(lines.create())
+            node.setDepthTest(False); node.setDepthWrite(False); node.setLightOff()
         # Positions/targets are in normalized Panda scene coordinates (Z-up).
         views = {
             'front': ((-4, 0, .64), (0, 0, .64), (0, 0, 1), (2.5, 1.96)),
@@ -99,6 +133,12 @@ def render(path, output, landmarks=None, geometry_review=None, geometry_only=Fal
         metadata['annotations'] = {'landmarks':str(landmarks), 'geometry_review':str(geometry_review),
                                    'status':'provisional joint centers; foot labels measured from actual surface'} if labels else None
         metadata['geometry_only'] = geometry_only
+        metadata['wireframe'] = wireframe
+        metadata['forced_base_color_preview'] = base_color_preview
+        metadata['bone_guides'] = {'path':str(bone_guides),'pose':pose,'status':'unverified diagnostic overlay'} if bone_guides else None
+        metadata['reference_model'] = str(reference_model) if reference_model else None
+        metadata['fixed_model_scale'] = factor
+        metadata['fixed_model_offset'] = list(renderer.actor.getPos())
         (output / 'cameras.json').write_text(json.dumps(metadata, indent=2) + '\n')
     finally:
         renderer.close()
@@ -111,5 +151,10 @@ if __name__ == '__main__':
     parser.add_argument('--landmarks', type=Path)
     parser.add_argument('--geometry-review', type=Path)
     parser.add_argument('--geometry-only', action='store_true')
+    parser.add_argument('--reference-model', type=Path, help='Lock normalization to rest model for comparable poses')
+    parser.add_argument('--wireframe', action='store_true')
+    parser.add_argument('--base-color-preview', action='store_true')
+    parser.add_argument('--bone-guides', type=Path)
+    parser.add_argument('--pose')
     args = parser.parse_args()
-    render(args.model, args.output, args.landmarks, args.geometry_review, args.geometry_only)
+    render(args.model, args.output, args.landmarks, args.geometry_review, args.geometry_only, args.reference_model, args.wireframe, args.base_color_preview, args.bone_guides, args.pose)

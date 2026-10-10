@@ -1,0 +1,215 @@
+{
+  "model": "artifacts/stage7_v5/rest.glb",
+  "driver": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "backend": "p3headlessgl",
+  "projection": "orthographic",
+  "resolution": [
+    1400,
+    1100
+  ],
+  "preview": "base color + simple lighting; not full PBR",
+  "anatomical_mapping": "head toward Panda -X, up +Z; sides labelled by camera Y, not inferred anatomical left/right",
+  "views": {
+    "front": [
+      [
+        -4,
+        0,
+        0.64
+      ],
+      [
+        0,
+        0,
+        0.64
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        2.5,
+        1.96
+      ]
+    ],
+    "back": [
+      [
+        4,
+        0,
+        0.64
+      ],
+      [
+        0,
+        0,
+        0.64
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        2.5,
+        1.96
+      ]
+    ],
+    "side_y_minus": [
+      [
+        0,
+        -4,
+        0.64
+      ],
+      [
+        0,
+        0,
+        0.64
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        2.5,
+        1.96
+      ]
+    ],
+    "side_y_plus": [
+      [
+        0,
+        4,
+        0.64
+      ],
+      [
+        0,
+        0,
+        0.64
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        2.5,
+        1.96
+      ]
+    ],
+    "underside": [
+      [
+        0,
+        0,
+        -4
+      ],
+      [
+        0,
+        0,
+        0.4
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        3.0,
+        2.36
+      ]
+    ],
+    "paws_front": [
+      [
+        -3,
+        -1,
+        0.18
+      ],
+      [
+        -0.4,
+        0,
+        0.16
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1.15,
+        0.9
+      ]
+    ],
+    "paws_hind": [
+      [
+        3,
+        1,
+        0.18
+      ],
+      [
+        0.28,
+        0,
+        0.18
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1.15,
+        0.9
+      ]
+    ],
+    "paws_underside": [
+      [
+        0,
+        0,
+        -4
+      ],
+      [
+        -0.08,
+        0,
+        0.1
+      ],
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        1.75,
+        1.37
+      ]
+    ],
+    "tail_base": [
+      [
+        2,
+        -3,
+        0.75
+      ],
+      [
+        0.43,
+        0,
+        0.65
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1.05,
+        0.82
+      ]
+    ]
+  },
+  "annotations": null,
+  "geometry_only": false,
+  "wireframe": false,
+  "forced_base_color_preview": false,
+  "bone_guides": null,
+  "reference_model": "assets/3d/tripo/deskcat_calico_h25_v1_localprep.glb",
+  "fixed_model_scale": 1.9996339082717896,
+  "fixed_model_offset": [
+    -0.0,
+    0.0,
+    -0.0
+  ]
+}

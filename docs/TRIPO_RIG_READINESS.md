@@ -51,3 +51,7 @@ Licensing: previous model report records Free-plan public/noncommercial use; com
 ## Stage 6 result
 
 The headless Blender geometry review, individually labelled paw support measurements, provisional joint map and a microscopic separate `localprep` candidate are complete. See [stage 6 report](model-reports/stage6/README.md). **REPAIR THEN RETEST remains in force:** the local boundary repair does not certify a neutral pose or deformation. The original and previous rigprep GLBs remain unchanged.
+
+## Stage 7 experimental deformation gate
+
+The user authorized a separate zero-cost Blender deformation experiment. See [stage 7 report](model-reports/stage7/README.md). The `skinprobe_v5` contains a real preliminary quadruped armature and weights, with no animation clips. Its current weights are rejected: small joint probes introduce new intersections and surface compression. Bone/weight refinement may continue before deciding whether local geometry surgery is necessary. Original, rigprep and localprep remain unchanged; no production rigging acceptance or Tripo credit use is implied.
