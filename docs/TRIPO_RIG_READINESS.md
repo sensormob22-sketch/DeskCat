@@ -47,3 +47,7 @@ This diagram is **not** an anatomically surveyed set of joint coordinates; cat l
 6. Later, validate deformations, four paw contacts, calibrated in-place walk clip and real Windows 11 performance/PBR+alpha.
 
 Licensing: previous model report records Free-plan public/noncommercial use; commercial distribution rights remain unverified.
+
+## Stage 6 result
+
+The headless Blender geometry review, individually labelled paw support measurements, provisional joint map and a microscopic separate `localprep` candidate are complete. See [stage 6 report](model-reports/stage6/README.md). **REPAIR THEN RETEST remains in force:** the local boundary repair does not certify a neutral pose or deformation. The original and previous rigprep GLBs remain unchanged.

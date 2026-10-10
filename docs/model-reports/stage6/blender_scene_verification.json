@@ -1,0 +1,20 @@
+{
+  "source_sha256": "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6",
+  "blender": "4.3.2",
+  "source_vertex_order_max_error": 0.0,
+  "mask_groups": {
+    "REVIEW_hind_left_low_surface": 816,
+    "REVIEW_hind_left_support_band": 19,
+    "REVIEW_hind_right_low_surface": 836,
+    "REVIEW_hind_right_support_band": 48,
+    "REVIEW_front_right_low_surface": 687,
+    "REVIEW_front_right_support_band": 16,
+    "REVIEW_front_left_low_surface": 668,
+    "REVIEW_front_left_support_band": 18
+  },
+  "provisional_empty_markers": 19,
+  "armatures": 0,
+  "geometry_changes": 0,
+  "glb_exports": 0,
+  "scene_output": "artifacts/stage6/deskcat_review.blend"
+}

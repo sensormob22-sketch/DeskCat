@@ -5,20 +5,56 @@ Camera directions refer to the visually verified X-negative head of this asset.
 """
 import argparse
 import json
+import hashlib
 from pathlib import Path
-from panda3d.core import OrthographicLens, Point3, Vec3
+from panda3d.core import OrthographicLens, Point3, Vec3, Point2, TextNode, LineSegs
 from deskcat.rendering.panda import PandaRenderer
 from deskcat.states import State
 
 
-def render(path, output):
+def render(path, output, landmarks=None, geometry_review=None, geometry_only=False):
     output.mkdir(parents=True, exist_ok=True)
     renderer = PandaRenderer(path, width=1400, height=1100)
     try:
         renderer.base.setBackgroundColor(.72, .72, .72, 1)
+        if geometry_only:
+            renderer.actor.setTextureOff(20)
+            renderer.actor.setMaterialOff(20)
+            renderer.actor.setColor(.8,.8,.8,1,20)
         lens = OrthographicLens()
         lens.setNearFar(.01, 100)
         renderer.base.cam.node().setLens(lens)
+        if bool(landmarks) != bool(geometry_review):
+            raise ValueError('Annotations require both landmarks and geometry review')
+        labels = json.loads(landmarks.read_text()) if landmarks else None
+        review = json.loads(geometry_review.read_text()) if labels else None
+        if labels:
+            sha = hashlib.sha256(path.read_bytes()).hexdigest()
+            if sha not in labels['accepted_geometry_sha256'] or sha != review['sha256']:
+                raise ValueError('Annotation/review source SHA does not match model')
+        feet = review['paw_surface_segmentation']['feet'] if labels else {}
+        overlay = None
+        if labels:
+            renderer.base.makeCamera2d(renderer.base.win)
+        factor = renderer.actor.getScale().x
+        def marker(root, name, p, color):
+            world = Point3(p[0]*factor, -p[2]*factor, p[1]*factor) + renderer.actor.getPos()
+            projected = Point2()
+            if not lens.project(renderer.base.cam.getRelativePoint(renderer.base.render, world), projected):
+                return
+            x, z = projected
+            lines = LineSegs()
+            lines.setColor(*color)
+            lines.setThickness(2)
+            lines.moveTo(x-.01, 0, z); lines.drawTo(x+.01, 0, z)
+            lines.moveTo(x, 0, z-.012); lines.drawTo(x, 0, z+.012)
+            root.attachNewNode(lines.create())
+            text = TextNode(name)
+            text.setText(name)
+            text.setTextColor(*color)
+            node = root.attachNewNode(text)
+            node.setScale(.03)
+            node.setPos(x+.015, 0, z+.016)
         # Positions/targets are in normalized Panda scene coordinates (Z-up).
         views = {
             'front': ((-4, 0, .64), (0, 0, .64), (0, 0, 1), (2.5, 1.96)),
@@ -35,6 +71,22 @@ def render(path, output):
             lens.setFilmSize(*film)
             renderer.base.camera.setPos(*camera)
             renderer.base.camera.lookAt(Point3(*target), Vec3(*up))
+            if overlay:
+                overlay.removeNode()
+            if labels:
+                overlay = renderer.base.render2d.attachNewNode('landmark-overlays')
+                colors = {'front_left':(1,.2,.7,1), 'front_right':(.1,.4,1,1),
+                          'hind_left':(1,.6,.1,1), 'hind_right':(.1,.85,.7,1)}
+                for key, foot in feet.items():
+                    marker(overlay, labels['foot_labels'][key], foot['downward_bottom_band_area_centroid'], colors[key])
+                for key, region in labels['regions'].items():
+                    if name == 'side_y_minus' and key.endswith(('FR','HR')):
+                        continue
+                    if name == 'side_y_plus' and key.endswith(('FL','HL')):
+                        continue
+                    if name in ('front', 'back', 'underside', 'paws_underside'):
+                        continue  # Foot labels stay readable in these views.
+                    marker(overlay, key, region['center'], (1,.85,.2,1))
             for _ in range(2):
                 frame = renderer.frame(0, {State.IDLE: 1}, 1400, 1100)
             if not frame.save(str(output / (name + '.png'))):
@@ -44,6 +96,9 @@ def render(path, output):
                     'resolution': [1400, 1100], 'preview': 'base color + simple lighting; not full PBR',
                     'anatomical_mapping': 'head toward Panda -X, up +Z; sides labelled by camera Y, not inferred anatomical left/right',
                     'views': views}
+        metadata['annotations'] = {'landmarks':str(landmarks), 'geometry_review':str(geometry_review),
+                                   'status':'provisional joint centers; foot labels measured from actual surface'} if labels else None
+        metadata['geometry_only'] = geometry_only
         (output / 'cameras.json').write_text(json.dumps(metadata, indent=2) + '\n')
     finally:
         renderer.close()
@@ -53,5 +108,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('model', type=Path)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--landmarks', type=Path)
+    parser.add_argument('--geometry-review', type=Path)
+    parser.add_argument('--geometry-only', action='store_true')
     args = parser.parse_args()
-    render(args.model, args.output)
+    render(args.model, args.output, args.landmarks, args.geometry_review, args.geometry_only)

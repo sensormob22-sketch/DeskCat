@@ -1,0 +1,150 @@
+{
+  "candidate_sha256": "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6",
+  "clustering_distance": 0.015,
+  "regions": [
+    {
+      "centroid": [
+        -0.024410394951701164,
+        0.37459754943847656,
+        0.09979375451803207
+      ],
+      "strict_crossing_pair_count": 2,
+      "source_face_ids": [
+        63508,
+        63520,
+        63522
+      ],
+      "source_vertex_ids": [
+        37242,
+        37244,
+        37247,
+        37248,
+        37253,
+        37254,
+        37255
+      ],
+      "decision": "review mask only; not a smoothing/deletion mask"
+    },
+    {
+      "centroid": [
+        0.005777478683739901,
+        0.23391215999921164,
+        0.07545047501722972
+      ],
+      "strict_crossing_pair_count": 3,
+      "source_face_ids": [
+        51572,
+        51575,
+        51577,
+        51619
+      ],
+      "source_vertex_ids": [
+        30185,
+        30186,
+        30187,
+        30190,
+        30191,
+        30193,
+        30218,
+        30219
+      ],
+      "decision": "review mask only; not a smoothing/deletion mask"
+    },
+    {
+      "centroid": [
+        -0.013719325768761337,
+        0.2269692476838827,
+        -0.060381329618394375
+      ],
+      "strict_crossing_pair_count": 8,
+      "source_face_ids": [
+        44308,
+        44309,
+        45076,
+        45077,
+        45079,
+        45127,
+        45128,
+        45129
+      ],
+      "source_vertex_ids": [
+        25562,
+        25565,
+        25582,
+        25639,
+        26099,
+        26100,
+        26101,
+        26102,
+        26104,
+        26133,
+        26134
+      ],
+      "decision": "review mask only; not a smoothing/deletion mask"
+    },
+    {
+      "centroid": [
+        -0.03992270305752754,
+        0.2193654477596283,
+        0.06421662867069244
+      ],
+      "strict_crossing_pair_count": 1,
+      "source_face_ids": [
+        67507,
+        67518
+      ],
+      "source_vertex_ids": [
+        39648,
+        39650,
+        39651,
+        39658,
+        39659,
+        39660
+      ],
+      "decision": "review mask only; not a smoothing/deletion mask"
+    },
+    {
+      "centroid": [
+        0.11059444397687912,
+        0.4273211359977722,
+        0.07136660814285278
+      ],
+      "strict_crossing_pair_count": 1,
+      "source_face_ids": [
+        64503,
+        64648
+      ],
+      "source_vertex_ids": [
+        37796,
+        37813,
+        37817,
+        37904,
+        37905,
+        37906
+      ],
+      "decision": "review mask only; not a smoothing/deletion mask"
+    },
+    {
+      "centroid": [
+        0.062212616205215454,
+        0.2980535924434662,
+        -0.09585191309452057
+      ],
+      "strict_crossing_pair_count": 1,
+      "source_face_ids": [
+        26973,
+        52749
+      ],
+      "source_vertex_ids": [
+        15334,
+        15338,
+        15339,
+        30987,
+        30988,
+        30991
+      ],
+      "decision": "review mask only; not a smoothing/deletion mask"
+    }
+  ],
+  "no_geometry_changes": true
+}
