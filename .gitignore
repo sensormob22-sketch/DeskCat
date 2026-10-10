@@ -9,3 +9,5 @@ dist/
 .tripo/
 assets/tripo-out/
 *.log
+artifacts/
+diagnostics/

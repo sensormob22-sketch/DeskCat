@@ -30,13 +30,16 @@ class CatWindow(QWidget):
         self.timer.timeout.connect(self.tick)
         self.timer.start(16)
 
+    def can_move(self):
+        return True
+
     def tick(self):
         now = time.monotonic()
         dt = min(now - self._last, 0.1)
         self._last = now
         self.machine.update(dt)
         self._phase += dt
-        if self.machine.state == State.WALK:
+        if self.machine.state == State.WALK and self.can_move():
             area = self.screen().availableGeometry()
             self._x += self._direction * 75 * dt
             left, right = area.left(), area.right() + 1 - self.width()

@@ -1,0 +1,52 @@
+name: Windows compatibility
+on:
+  push:
+    branches: [work, main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    env:
+      # Hosted runners have no guaranteed GPU/interactive desktop. Exercise
+      # real geometry/skin/readback with Panda's software renderer explicitly.
+      DESKCAT_PANDA_DISPLAY: p3tinydisplay
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install
+        run: python -m pip install -e ".[dev,three-d]"
+      - name: Import dependencies and GLB
+        run: python -c "import panda3d.core, gltf; from deskcat.rendering.panda import DEFAULT_MODEL; from deskcat.rendering.gltf_scene import load_skinned_scene; from direct.actor.Actor import Actor; a=Actor(load_skinned_scene(DEFAULT_MODEL)); assert a.getAnimNames(); print(a.getAnimNames()); a.cleanup()"
+      - name: Tests (Qt offscreen; not Windows desktop validation)
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: python -m pytest -q --junitxml=artifacts/tests.xml
+      - name: Qt and Panda smoke (not DWM validation)
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          python -m deskcat --smoke-test
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m deskcat --renderer panda --diagnostics artifacts/diagnostics --smoke-test
+          exit $LASTEXITCODE
+      - name: Record scope
+        if: always()
+        run: |
+          "windows-latest is not an interactive Windows 11 desktop. DWM transparency, real DPI, topmost and mouse hit testing: NOT VERIFIED." | Out-File -Append $env:GITHUB_STEP_SUMMARY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-compatibility
+          path: artifacts/
+          if-no-files-found: warn
