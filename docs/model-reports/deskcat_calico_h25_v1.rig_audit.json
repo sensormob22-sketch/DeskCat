@@ -1,0 +1,160 @@
+{
+  "source": "assets/3d/tripo/deskcat_calico_h25_v1.glb",
+  "sha256": "ff2a9e1d7280e4784913413fb45b10a2bdeadc125c80791a50f918a3ae646150",
+  "bytes": 9898016,
+  "coordinate_system": "glTF Y-up (scene-space)",
+  "scene_primitives": 1,
+  "vertices_with_instances": 58450,
+  "triangles": 100796,
+  "degenerate_triangles_exact": 5,
+  "degenerate_triangle_examples": [
+    {
+      "scene_primitive": 0,
+      "triangle": 7055,
+      "scene_positions": [
+        [
+          0.294708251953125,
+          0.1673584133386612,
+          0.03380963206291199
+        ],
+        [
+          0.292938232421875,
+          0.1647796779870987,
+          0.03374096751213074
+        ],
+        [
+          0.294708251953125,
+          0.1673584133386612,
+          0.03380963206291199
+        ]
+      ]
+    },
+    {
+      "scene_primitive": 0,
+      "triangle": 7056,
+      "scene_positions": [
+        [
+          0.294708251953125,
+          0.1673584133386612,
+          0.03380963206291199
+        ],
+        [
+          0.294708251953125,
+          0.1673584133386612,
+          0.03380963206291199
+        ],
+        [
+          0.294921875,
+          0.1669464260339737,
+          0.03369519114494324
+        ]
+      ]
+    },
+    {
+      "scene_primitive": 0,
+      "triangle": 9654,
+      "scene_positions": [
+        [
+          0.269500732421875,
+          0.20059968531131744,
+          -0.012359649874269962
+        ],
+        [
+          0.269500732421875,
+          0.20059968531131744,
+          -0.012328178621828556
+        ],
+        [
+          0.269500732421875,
+          0.20059968531131744,
+          -0.012358696199953556
+        ]
+      ]
+    },
+    {
+      "scene_primitive": 0,
+      "triangle": 99840,
+      "scene_positions": [
+        [
+          -0.3712158203125,
+          0.5699462890625,
+          0.09896091371774673
+        ],
+        [
+          -0.3704833984375,
+          0.571990966796875,
+          0.10095981508493423
+        ],
+        [
+          -0.3704833984375,
+          0.571990966796875,
+          0.10095981508493423
+        ]
+      ]
+    },
+    {
+      "scene_primitive": 0,
+      "triangle": 99843,
+      "scene_positions": [
+        [
+          -0.3704833984375,
+          0.571990966796875,
+          0.10095981508493423
+        ],
+        [
+          -0.3704833984375,
+          0.571990966796875,
+          0.10095981508493423
+        ],
+        [
+          -0.3704833984375,
+          0.571990966796875,
+          0.10097507387399673
+        ]
+      ]
+    }
+  ],
+  "skins": 0,
+  "animations": 0,
+  "materials": 1,
+  "normal_mapped_primitives_without_tangents": 1,
+  "bounding_box": {
+    "min": [
+      -0.500092,
+      0.0,
+      -0.159973
+    ],
+    "max": [
+      0.500092,
+      0.62619,
+      0.159973
+    ]
+  },
+  "ground_candidate_y": 0.015655,
+  "ground_quadrants": {
+    "X- Z-": {
+      "points_below_lower_2_5pct": 340,
+      "min_y": 0.001007
+    },
+    "X- Z+": {
+      "points_below_lower_2_5pct": 337,
+      "min_y": 0.000122
+    },
+    "X+ Z-": {
+      "points_below_lower_2_5pct": 415,
+      "min_y": 0.000641
+    },
+    "X+ Z+": {
+      "points_below_lower_2_5pct": 392,
+      "min_y": 0.0
+    }
+  },
+  "decision": "MANUAL_REVIEW_REQUIRED",
+  "notes": [
+    "LOWER 2.5% vertex counts are only rough contact candidates, not identified paws.",
+    "Coordinate sectors X±/Z± do not establish anatomical front/back or left/right.",
+    "This tool cannot establish joint placement, manifold topology, weight painting, or animation quality.",
+    "No skeleton: rigging must be planned and validated separately.",
+    "Normal-mapped primitives without TANGENT: shader tangent-space appearance may differ."
+  ]
+}

@@ -6,7 +6,7 @@ Source: `assets/3d/tripo/deskcat_calico_h25_v1.glb` (Tripo Studio H2.5), origina
 
 ## Zero-cost audit package
 
-The accompanying `DeskCat_Rig_Preparation_v1.zip` prepared in ChatGPT (not yet present in GitHub) contains a read-only Python standard-library script `tools/rig_readiness_audit.py` and three synthetic tests. Attach that ZIP in Codex and inspect the files before running them. From repository root:
+The ZIP has now been inspected and imported. The read-only audit and expanded tests ran on the original GLB; measured results, nine real geometry views and a separate zero-area cleanup candidate are documented in [the completed report](model-reports/deskcat_calico_h25_v1.rig_readiness.md). The verdict remains **REPAIR THEN RETEST**. From repository root:
 
 ```powershell
 .\.venv\Scripts\python.exe tools/rig_readiness_audit.py assets/3d/tripo/deskcat_calico_h25_v1.glb --output diagnostics/rig-readiness.json
