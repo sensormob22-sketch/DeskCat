@@ -1,0 +1,1 @@
+"""DeskCat desktop companion."""

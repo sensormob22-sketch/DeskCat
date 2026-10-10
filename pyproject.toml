@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deskcat"
+version = "0.1.0"
+description = "Windows desktop cat: Qt prototype and animated 3D architecture"
+requires-python = ">=3.11"
+dependencies = ["PySide6==6.8.3"]
+
+[project.optional-dependencies]
+three-d = ["panda3d==1.10.15", "panda3d-gltf==1.3.0"]
+dev = ["pytest==8.3.5"]
+
+[project.scripts]
+deskcat = "deskcat.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
