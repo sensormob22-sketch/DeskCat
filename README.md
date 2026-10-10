@@ -1,4 +1,4 @@
-# DeskCat — этап 2
+# DeskCat — этап 3
 
 Интерактивный 3D-кот поверх рабочего стола Windows 11: Python 3.11+, PySide6,
 Panda3D и panda3d-gltf. Технический прототип содержит настоящий skinned GLB
@@ -27,7 +27,7 @@ py -3.11 -m venv .venv
 - ЛКМ: перетащить кота; walk при этом приостанавливается.
 - ПКМ: выбрать idle / walk / sit / stand_up / groom / sleep, либо Exit.
 - Колесо: масштаб 3D-модели, стрелки: положение модели внутри окна, R: сброс.
-- Escape: выход. `--scale 1.5` увеличивает окно в логических пикселях Qt.
+- Space: пауза локальных часов анимации и движения; Escape: выход. `--scale 1.5` увеличивает окно в логических пикселях Qt.
 
 ```powershell
 .\.venv\Scripts\python.exe -m deskcat --renderer panda --scale 1.5 --model-scale 0.8 --model-x 0.2 --model-z 0.1 --position 500 400
@@ -36,8 +36,10 @@ py -3.11 -m venv .venv
 ```
 
 Qt применяет DPI, renderer получает физический размер = размер окна × DPR.
-Модель со скелетом должна иметь семь именованных клипов; неподдерживаемая модель
-даёт понятную ошибку, без автоматического перехода на 2D. Тестовые sit/groom и
+Модели достаточно одного корректного skin/скелета, полный набор клипов не нужен.
+Отсутствующие клипы явно помечаются `NOT played` и `no clip` в меню; без анимаций
+показывается bind pose. `--clips mapping.json` задаёт карту state → clip name.
+Неподдерживаемая модель даёт понятную ошибку, без автоматического перехода на 2D. Тестовые sit/groom и
 остальные клипы пока диагностические; они не изображают реалистичное поведение.
 Прозрачные области окна могут перехватывать мышь; pixel-perfect click-through
 ещё не реализован. Нет автозапуска, трея, записи в реестр или сетевых запросов.
@@ -67,3 +69,26 @@ MESA_SHADER_CACHE_DIR=/tmp/deskcat-mesa .venv/bin/python -m deskcat --benchmark 
 
 Без DISPLAY выбран EGL p3headlessgl. На Windows используется обычный Panda3D
 OpenGL backend. Qt offscreen не проверяет Windows DWM или физический DPI.
+
+## Windows CI и ручная диагностика
+
+`.github/workflows/windows.yml`: windows-latest, Python 3.11, реальные тесты
+загрузки GLB/анимаций и smoke. Используется явный программный p3tinydisplay:
+runner не обязан иметь GPU и не является графической сессией Windows 11.
+CI не подтверждает DWM, физический DPI, topmost или hit testing.
+
+```powershell
+.\.venv\Scripts\python.exe -m deskcat --renderer panda --diagnostics diagnostics/manual
+```
+
+Диагностика показывает границу кадра, alpha bounds, DPI и render time, пишет
+JSONL с клипами, позицией окна и ошибками. F7 выключает рамки/текст, F8 сохраняет
+исходный RGBA-кадр; для проверки рабочего стола нужен отдельный Win+Shift+S.
+Короткая инструкция: [docs/DIAGNOSTICS.md](docs/DIAGNOSTICS.md).
+
+Каждый клип имеет локальные часы: `--playback-speed 0.5`, Space, API ClipClock.seek.
+Idle → walk синхронизирует нормализованную фазу перед входом в crossfade, не сбрасывая
+уже видимые клипы. При смене направления кошка поворачивается, движение окна ждёт
+окончания поворота. `--forward-heading` калибрует модель, экспортированную с другой
+осью forward; по умолчанию тестовая модель смотрит вправо. Физический contact matching
+для будущих клипов Tripo ещё требуется проверить.

@@ -1,10 +1,10 @@
-# 3D-архитектура — этап 2
+# 3D-архитектура — этап 3
 
 ## Реализовано
 
 `PandaRenderer` загружает настоящий GLB через panda3d-gltf 1.3.0, создаёт Actor,
 нормализует bounds модели, освещает её и каждый кадр применяет веса StateMachine.
-Семь клипов получают циклические fractional frame poses; frameBlend включён.
+Доступные клипы получают циклические fractional frame poses; frameBlend включён.
 Кадры и деформация вершин проверяются тестами. Это воспроизведение скелетной
 анимации с ручным шагом времени Qt, без второго блокирующего Panda event loop.
 
@@ -54,8 +54,9 @@ https://github.com/panda3d/panda3d/blob/v1.10.15/panda/src/display/graphicsOutpu
   архитектуру нельзя считать подтверждённой для целевой платформы.
 - CPU/GPU readback и копии QImage синхронны в Qt-потоке; большой ассет может тормозить
   UI. Benchmark исключает Qt paint/DWM. Измерить конечный workflow на Windows.
-- Прототип поддерживает ровно один скелет и семь клипов с именами состояний.
-  Для Tripo нужен import acceptance test, карта имён/внешние клипы при необходимости.
+- Поддерживается один skin/скелет активной scene. Анимации необязательны, карта
+  state → actual clip задаётся через --clips. External clip import пока не реализован.
+  Для окончательного Tripo ассета всё ещё нужен import acceptance test.
 - Только стандартные непрозрачные материалы и базовый свет; PBR/IBL/fur/tone mapping
   ещё не подготовлены. Полупрозрачные материалы могут требовать отдельной проверки
   straight/premultiplied alpha и краёв.
@@ -73,3 +74,41 @@ https://github.com/panda3d/panda3d/blob/v1.10.15/panda/src/display/graphicsOutpu
 и premultiplied BGRA из того же live Panda renderer. Это усложнит DPI/hit testing.
 Если readback станет узким местом, кандидат — Qt Quick 3D с Qt-native composition
 или D3D/DirectComposition sharing. Ни одна альтернатива не считается проверенной.
+
+## Изменения этапа 3
+
+Windows CI использует Python 3.11, Qt offscreen и явно p3tinydisplay. OpenGL/pandagl
+остаётся обычным Windows backend, Linux без DISPLAY — EGL p3headlessgl.
+DESKCAT_PANDA_DISPLAY позволяет явно выбрать один из этих backend, что отражается
+в диагностике. Буфер создаётся с BFRefuseWindow | BFResizeable и RGBA8/depth24:
+это устранило обнаруженную несовместимость resize между разными renderer.
+
+gltf_scene.py оборачивает sibling scene roots в identity root в памяти перед
+импортом. У panda3d-gltf 1.3.0 пустой Character может быть удалён, если rig не
+имеет анимаций и mesh стоит отдельно. Общий root сохраняет joint bindings и
+bind pose без synthetic clips. Используется внутренний Converter API pinned
+версии; обновление импортёра требует повторной проверки этих тестов.
+
+clip_map по умолчанию сопоставляет точные имена, missing_states показывает пробелы.
+Пользовательские переименования задаются JSON. Ошибочная ссылка на clip отклоняется;
+failed reload не уничтожает рабочую модель. Missing state не подменяется idle/walk:
+веса отсутствующего clip не применяются, меню помечает его `no clip` и отключает.
+При программном/drag запросе missing state журнал явно сообщает NOT played.
+Если все запрошенные clips отсутствуют, модель остаётся без анимационного влияния
+(bind pose); плавность перехода к несуществующему clip не обещается.
+
+ClipClock хранит времена отдельных clips, замораживает неактивные, поддерживает
+speed/pause/seek. При первом ненулевом весе входящий clip получает normalized phase
+доминирующего предыдущего. Пока clip виден, phase не сбрасывается, в том числе при
+прерванном переходе. Это не гарантирует совпадение контактов лап у произвольно
+авторских clips; потребуются phase markers/offsets и проверка Tripo animation assets.
+
+Heading привязан к _direction. Поворот ограничен 540 град/с, путь выбирается по
+кратчайшему углу. Пока heading не согласован с новым direction, движение окна
+приостановлено; Walk clock продолжает идти, чтобы не сбрасывать gait. Heading offset
+калибрует исходную модель. Space замораживает clocks и desktop locomotion.
+
+Diagnostics opt-in: border/bounds/DPI/render_ms overlay, JSONL раз в секунду,
+local frame capture и сообщения startup/render errors. Sampling/Qt paint/DWM
+не входят в render_ms; frame_interval_ms отражает задержки event loop. Diagnostics
+сама увеличивает нагрузку. Запись JSONL/PNG не считается desktop screenshot.

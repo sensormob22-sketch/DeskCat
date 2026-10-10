@@ -193,3 +193,89 @@ assert w.renderer.base is None
                             env={**os.environ, 'QT_QPA_PLATFORM': 'offscreen',
                                  'MESA_SHADER_CACHE_DIR': '/tmp/deskcat-mesa'}, timeout=30)
     assert result.returncode == 0, result.stderr
+
+
+def variant_glb(path, names):
+    raw = DEFAULT_MODEL.read_bytes()
+    length = struct.unpack_from('<I', raw, 12)[0]
+    doc = json.loads(raw[20:20+length])
+    animations = doc['animations']
+    doc['animations'] = []
+    for original, new in names.items():
+        animation = next(a for a in animations if a['name'] == original)
+        animation['name'] = new
+        doc['animations'].append(animation)
+    if not doc['animations']:
+        del doc['animations']
+    encoded = json.dumps(doc).encode()
+    encoded += b' ' * (-len(encoded)%4)
+    binary_chunk = raw[20+length:]
+    body = struct.pack('<II', len(encoded), 0x4E4F534A) + encoded + binary_chunk
+    path.write_bytes(struct.pack('<III', 0x46546C67, 2, 12+len(body)) + body)
+
+
+def test_rig_without_animations(renderer, tmp_path, capsys):
+    asset = tmp_path/'rig-only.glb'
+    variant_glb(asset, {})
+    try:
+        renderer.load(asset)
+        assert renderer.clips == []
+        assert all(c is None for c in renderer.clip_map.values())
+        assert set(renderer.missing_states) == {s.value for s in State}
+        machine = StateMachine()
+        machine.transition(State.WALK)
+        machine.update(.3)
+        image = renderer.frame(.2, machine.weights, 240,220)
+        assert any(pixels(image)[3::4])
+        assert renderer.unavailable_active == ['walk']
+        assert renderer.clock.times == {}
+        assert 'NOT played' in capsys.readouterr().err
+    finally:
+        renderer.load(DEFAULT_MODEL)
+
+
+def test_partial_and_explicit_mapping(renderer, tmp_path):
+    asset = tmp_path/'partial.glb'
+    variant_glb(asset, {'idle': 'Rest', 'walk': 'WalkCycle'})
+    try:
+        renderer.clip_overrides = {'idle': 'Rest', 'walk': 'WalkCycle'}
+        renderer.load(asset)
+        assert renderer.clip_map[State.WALK] == 'WalkCycle'
+        assert renderer.clip_map[State.GROOM] is None
+        machine = StateMachine()
+        renderer.frame(.25, machine.weights,240,220)
+        machine.transition(State.WALK)
+        machine.update(.15)
+        renderer.frame(0,machine.weights,240,220)
+        assert renderer.clock.times['Rest'] == pytest.approx(.25)
+        assert renderer.clock.times['WalkCycle'] == pytest.approx(.25)
+        assert effect(renderer,'Rest') == pytest.approx(.5)
+        assert effect(renderer,'WalkCycle') == pytest.approx(.5)
+        machine.transition(State.GROOM)
+        machine.update(.3)
+        renderer.frame(0,machine.weights,240,220)
+        assert effect(renderer,'WalkCycle') == 0
+        assert renderer.unavailable_active == ['groom']
+        renderer.clip_overrides = {'walk': 'absent'}
+        with pytest.raises(ModelError,match='Mapped clip not found'):
+            renderer.load(asset)
+        assert renderer.clip_map[State.WALK] == 'WalkCycle'  # failed load is atomic
+    finally:
+        renderer.clip_overrides = {}
+        renderer.load(DEFAULT_MODEL)
+
+
+def test_direction_turn(renderer):
+    try:
+        renderer.heading = 0
+        renderer.direction = -1
+        renderer.frame(.1,StateMachine().weights,240,220)
+        assert renderer.heading == pytest.approx(-54)
+        renderer.frame(.3,StateMachine().weights,240,220)
+        assert abs((renderer.pivot.getH()-180+180)%360-180) < .01
+        renderer.direction = 1
+        renderer.frame(.4,StateMachine().weights,240,220)
+        assert abs(renderer.pivot.getH()) < .01
+    finally:
+        renderer.direction = 1
+        renderer.heading = 0

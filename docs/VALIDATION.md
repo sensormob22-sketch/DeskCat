@@ -73,3 +73,47 @@ GPU. Полный процесс описан в WINDOWS11_CHECKLIST.md. Пол�
 Повторно выполнен сохраняемый install script: установка, 27 тестов и оба smoke-test
 успешны. XDG_CACHE_HOME=/tmp/deskcat-cache устранил предупреждение fontconfig;
 EGL и Qt raise() сообщения остаются ожидаемыми ограничениями offscreen окружения.
+
+## Этап 3 — 2026-10-10
+
+### Linux (выполнено)
+
+Python 3.12.14, PySide6 6.8.3, Panda3D 1.10.15, panda3d-gltf 1.3.0.
+34 теста прошли с EGL/llvmpipe; те же 34 теста прошли с явно выбранным
+p3tinydisplay. Проверены также installation refresh и диагностический smoke-test.
+
+Новые проверки: rig-only GLB без единого clip, partial/renamed clips и явный map,
+отказ неверного mapping без потери рабочей модели, NOT played для отсутствующего
+состояния, локальные clocks/speed/pause/seek, phase alignment idle→walk, отсутствие
+reset при прерванном crossfade, heading/пауза движения при развороте, JSONL/PNG
+capture, startup error и инъекция render failure в реальный Qt event loop.
+
+Первый rig-only тест обнаружил удаление пустого Character импортёром. Исправлено
+identity wrapper в памяти, без изменения файла или добавления fake animation.
+Первый TinyDisplay прогон обнаружил отсутствие BFResizeable у буфера. Исправлено
+явным созданием RGBA8/depth24 offscreen GraphicsBuffer с BFResizeable. Конечные
+прогоны соответствующих suites прошли; проверки не отключались и не заменялись skip.
+
+Qt offscreen по-прежнему не поддерживает raise(); TinyDisplay на Linux сообщает
+о недоступном X display, но успешно использует offscreen buffer. Это не проверка
+рабочего стола. Производительность этапа 2 нельзя переносить на новые компоненты
+или будущий Tripo ассет; новые значения frame timing собирает diagnostics.
+
+### Windows CI (отдельно)
+
+Добавлен .github/workflows/windows.yml: windows-latest / Python 3.11, установка,
+импорты Panda/glTF/fixture, полная suite, Qt/Panda smoke, JUnit и diagnostic artifact.
+Renderer явно p3tinydisplay, Qt offscreen. Run/conclusion нужно проверять в GitHub
+Actions для соответствующего SHA; наличие файла workflow или Linux PASS не является
+Windows CI PASS. Итог доступного CI run сообщается отдельно в отчёте PR/задачи.
+
+### Реальная Windows 11 visual session (не выполнено)
+
+NOT VERIFIED. Не запускались Windows DWM, actual DPI 100/150%, topmost,
+реальное hit testing, desktop screenshots, GPU/pandagl или mixed-DPI мониторы.
+Для gate нужны DIAGNOSTICS.md + WINDOWS11_CHECKLIST.md и наблюдения пользователя.
+CI runner не заменяет эту графическую сессию, даже если все его checks зелёные.
+
+Tripo генерация/rig/retarget не запускались, кредиты не расходовались. Исходных
+референсов CatDesk пока нет; в workflow указана calico кошка с необходимостью
+проверить сходство по оригиналу до платной генерации.

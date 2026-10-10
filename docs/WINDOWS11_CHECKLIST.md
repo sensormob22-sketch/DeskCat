@@ -67,3 +67,11 @@ Benchmark включает анимацию/render/readback/QImage, исключ
 pass/fail и screenshots рабочего стола (не только offscreen QImage).
 Если прозрачность не проходит, gate = FAIL; предложенные альтернативы изложены
 в ARCHITECTURE.md. До такой проверки Windows integration = NOT VERIFIED.
+
+## Диагностика этапа 3
+
+Короткая инструкция сборки `session.jsonl`, console.txt и реальных desktop
+screenshots находится в DIAGNOSTICS.md. Проверяйте actual backend=pandagl на
+Windows; Windows CI использует p3tinydisplay и Qt offscreen, поэтому его PASS
+не закрывает этот gate. Проверяйте поворот перед движением в обратную сторону,
+паузы Space и явное `no clip` для отсутствующих анимаций.

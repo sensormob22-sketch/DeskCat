@@ -1,16 +1,19 @@
 """Live offscreen Panda3D → RGBA → Qt. No native child rendering window."""
+import math
 import os
+import time
 import sys
 from pathlib import Path
 
 from PySide6.QtGui import QImage
 from panda3d.core import (AmbientLight, DirectionalLight, Texture,
-                          GraphicsOutput, NodePath, loadPrcFileData)
+                          GraphicsOutput, GraphicsPipe, WindowProperties, FrameBufferProperties, loadPrcFileData)
 from direct.actor.Actor import Actor
 from direct.showbase.ShowBase import ShowBase
-import gltf
 
 from deskcat.states import State
+from .playback import ClipClock
+from .gltf_scene import load_skinned_scene
 
 DEFAULT_MODEL = Path(__file__).resolve().parents[3] / 'assets/3d/test_cat.glb'
 
@@ -20,12 +23,18 @@ class ModelError(RuntimeError):
 
 
 class PandaRenderer:
-    def __init__(self, model_path=DEFAULT_MODEL, width=240, height=220):
+    def __init__(self, model_path=DEFAULT_MODEL, width=240, height=220, clip_map=None):
         self.base = None
         self.actor = None
         self.texture = None
         self._size = None
         self.elapsed = 0.0
+        self.clip_overrides = dict(clip_map or {})
+        self.direction = 1
+        self.heading = 0.0
+        self.forward_heading = 0.0
+        self.last_frame_ms = 0.0
+        self.unavailable_active = []
         self.model_scale = 1.0
         self.offset = (0.0, 0.0)
         if not Path(model_path).is_file():
@@ -33,13 +42,30 @@ class PandaRenderer:
         config = ('window-type offscreen\nframebuffer-alpha true\n'
                   'alpha-bits 8\naudio-library-name null\nsync-video false\n'
                   'notify-level warning\n')
-        if sys.platform.startswith('linux') and not os.environ.get('DISPLAY'):
-            config += 'load-display p3headlessgl\n'
+        default_backend = ('p3headlessgl' if sys.platform.startswith('linux') and
+                           not os.environ.get('DISPLAY') else 'pandagl')
+        self.backend = os.environ.get('DESKCAT_PANDA_DISPLAY', default_backend)
+        if self.backend not in ('pandagl', 'p3headlessgl', 'p3tinydisplay'):
+            raise ModelError('Unsupported DESKCAT_PANDA_DISPLAY backend')
+        config += f'load-display {self.backend}\n'
         loadPrcFileData('deskcat', config)
         try:
-            self.base = ShowBase(windowType='offscreen')
+            self.base = ShowBase(windowType='none')
+            self.base.makeDefaultPipe()
+            props = WindowProperties()
+            props.setSize(width, height)
+            fb = FrameBufferProperties()
+            fb.setRgbColor(True)
+            fb.setRgbaBits(8,8,8,8)
+            fb.setDepthBits(24)
+            buffer = self.base.graphicsEngine.makeOutput(
+                self.base.pipe, 'deskcat-rgba', 0, fb, props,
+                GraphicsPipe.BFRefuseWindow | GraphicsPipe.BFResizeable)
+            self.base.win = buffer
             if self.base.win is None:
                 raise RuntimeError('No offscreen graphics context')
+            self.base.winList.append(buffer)
+            self.base.makeCamera(buffer)
             self.base.disableMouse()
             self.base.setBackgroundColor(0, 0, 0, 0)
             self.base.camLens.setFov(35)
@@ -65,7 +91,7 @@ class PandaRenderer:
             raise ModelError(f'Model not found: {model_path}')
         candidate = None
         try:
-            model = NodePath(gltf.load_model(str(Path(model_path).resolve())))
+            model = load_skinned_scene(Path(model_path).resolve())
             characters = list(model.findAllMatches('**/+Character'))
             if len(characters) != 1:
                 raise ValueError('Prototype supports exactly one animated skeleton')
@@ -76,10 +102,20 @@ class PandaRenderer:
                 if not character.isAncestorOf(geom):
                     geom.wrtReparentTo(character)
             candidate = Actor(model, copy=False)
-            clips = set(candidate.getAnimNames())
-            missing = {state.value for state in State} - clips
-            if missing:
-                raise ValueError('Missing animation clips: ' + ', '.join(sorted(missing)))
+            clips = sorted(candidate.getAnimNames())
+            unknown = set(self.clip_overrides) - {s.value for s in State}
+            if unknown:
+                raise ValueError('Unknown state mappings: ' + ', '.join(sorted(unknown)))
+            mapping = {state: (state.value if state.value in clips else None) for state in State}
+            for name, clip in self.clip_overrides.items():
+                if clip is not None and clip not in clips:
+                    raise ValueError(f'Mapped clip not found: {name} -> {clip}')
+                mapping[State(name)] = clip
+            durations = {}
+            for clip in clips:
+                control = candidate.getAnimControl(clip)
+                durations[clip] = control.getNumFrames() / control.getFrameRate()
+            clock = ClipClock(durations)
             candidate.enableBlend()
             candidate.setBlend(frameBlend=True)
             bounds = candidate.getTightBounds()
@@ -100,7 +136,16 @@ class PandaRenderer:
                 self.actor.cleanup()
                 self.pivot.removeNode()
             self.actor, self.pivot = candidate, pivot
+            self.clips = clips
+            self.clip_map = mapping
+            self.clock = clock
+            self.missing_states = [s.value for s, clip in mapping.items() if clip is None]
             self.elapsed = 0.0
+            self.model_path = str(Path(model_path).resolve())
+            self.unavailable_active = []
+            if self.missing_states:
+                print('DeskCat missing clips (NOT played): ' + ', '.join(self.missing_states),
+                      file=sys.stderr)
         except Exception as exc:
             if candidate is not None:
                 candidate.cleanup()
@@ -121,30 +166,51 @@ class PandaRenderer:
         self._size = (width, height)
 
     def frame(self, dt, weights, width, height):
-        if dt < 0:
-            raise ValueError('dt must be nonnegative')
+        start = time.perf_counter()
+        if not math.isfinite(dt) or dt < 0:
+            raise ValueError('dt must be finite and nonnegative')
         self._resize(width, height)
         self.elapsed += dt
         self.pivot.setScale(self.model_scale)
         self.pivot.setX(self.offset[0])
         self.pivot.setZ(self.offset[1])
+        target = self.forward_heading + (180 if self.direction < 0 else 0)
+        delta = (target - self.heading + 180) % 360 - 180
+        self.heading = (self.heading + max(-540*dt, min(540*dt, delta)) + 180) % 360 - 180
+        self.pivot.setH(self.heading)
+        clip_weights = dict.fromkeys(self.clips, 0.0)
+        unavailable = []
         for state in State:
-            clip = state.value
+            weight = weights.get(state, 0.0)
+            clip = self.clip_map[state]
+            if clip is not None:
+                clip_weights[clip] += weight
+            elif weight > 0:
+                unavailable.append(state.value)
+        if unavailable != self.unavailable_active and unavailable:
+            print('DeskCat requested missing clips (NOT played): ' + ', '.join(unavailable),
+                  file=sys.stderr)
+        self.unavailable_active = unavailable
+        times = self.clock.update(dt, clip_weights)
+        for clip in self.clips:
             control = self.actor.getAnimControl(clip)
-            index = (self.elapsed * control.getFrameRate()) % control.getNumFrames()
+            index = times[clip] * control.getFrameRate()
             self.actor.pose(clip, index)
-            self.actor.setControlEffect(clip, weights.get(state, 0.0))
+            self.actor.setControlEffect(clip, clip_weights[clip])
         self.actor.update()
         self.base.graphicsEngine.renderFrame()
         data = bytes(self.texture.getRamImageAs('RGBA'))
         if len(data) != width * height * 4:
             raise RuntimeError('Unexpected RGBA readback dimensions')
         # Panda readback is bottom-up, straight alpha. Copy before the buffer dies.
-        return QImage(data, width, height, width*4, QImage.Format.Format_RGBA8888).mirrored().copy()
+        image = QImage(data, width, height, width*4, QImage.Format.Format_RGBA8888).mirrored().copy()
+        self.last_frame_ms = (time.perf_counter() - start)*1000
+        return image
 
     @property
     def driver(self):
-        return self.base.win.getGsg().getDriverRenderer()
+        gsg = self.base.win.getGsg()
+        return gsg.getDriverRenderer() or gsg.getType().getName()
 
     def close(self):
         if self.actor is not None:
