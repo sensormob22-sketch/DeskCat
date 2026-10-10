@@ -1,0 +1,17 @@
+{
+  "command": ".venv/bin/python -m pytest -q",
+  "environment": "Linux",
+  "python": "3.12.14",
+  "passed": 77,
+  "failed": 0,
+  "skipped": 0,
+  "duration_seconds": 22.07,
+  "result": "........................................................................ [ 93%]\n.....                                                                    [100%]\n77 passed in 22.07s\nFontconfig error: No writable cache directories",
+  "windows_ci_run": false,
+  "windows11_visual_run": false,
+  "additional_focused_verification": {
+    "command": ".venv/bin/python -m pytest -q tests/test_skin_probe_v6.py",
+    "result": "........                                                                 [100%]\n8 passed in 3.36s"
+  },
+  "inspection_png_count": 80
+}

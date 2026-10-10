@@ -12,7 +12,7 @@ from deskcat.rendering.panda import PandaRenderer
 from deskcat.states import State
 
 
-def render(path, output, landmarks=None, geometry_review=None, geometry_only=False, reference_model=None, wireframe=False, base_color_preview=False, bone_guides=None, pose=None):
+def render(path, output, landmarks=None, geometry_review=None, geometry_only=False, reference_model=None, wireframe=False, base_color_preview=False, bone_guides=None, pose=None, only_views=None):
     output.mkdir(parents=True, exist_ok=True)
     renderer = PandaRenderer(path, width=1400, height=1100)
     try:
@@ -101,6 +101,12 @@ def render(path, output, landmarks=None, geometry_review=None, geometry_only=Fal
             'paws_underside': ((0, 0, -4), (-.08, 0, .1), (-1, 0, 0), (1.75, 1.37)),
             'tail_base': ((2, -3, .75), (.43, 0, .65), (0, 0, 1), (1.05, .82)),
         }
+        if only_views:
+            extra={'shoulder_left':((-2,-3,.85),(-.43,-.12,.66),(0,0,1),(.80,.63)),
+                   'shoulder_right':((-2, 3, .85),(-.43, .12, .66),(0,0,1),(.80,.63)),
+                   'pelvis':((2,-3,.85),(.36,0,.64),(0,0,1),(1.1,.86)),
+                   'tail_transition':((2,-3,.60),(.62,-.02,.34),(0,0,1),(.90,.71))}
+            views={name:(views[name] if name in views else extra[name]) for name in only_views}
         for name, (camera, target, up, film) in views.items():
             lens.setFilmSize(*film)
             renderer.base.camera.setPos(*camera)
@@ -156,5 +162,6 @@ if __name__ == '__main__':
     parser.add_argument('--base-color-preview', action='store_true')
     parser.add_argument('--bone-guides', type=Path)
     parser.add_argument('--pose')
+    parser.add_argument('--only-views',nargs='+')
     args = parser.parse_args()
-    render(args.model, args.output, args.landmarks, args.geometry_review, args.geometry_only, args.reference_model, args.wireframe, args.base_color_preview, args.bone_guides, args.pose)
+    render(args.model, args.output, args.landmarks, args.geometry_review, args.geometry_only, args.reference_model, args.wireframe, args.base_color_preview, args.bone_guides, args.pose, args.only_views)

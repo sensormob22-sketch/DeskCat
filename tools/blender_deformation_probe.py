@@ -62,7 +62,7 @@ def write_snapshot(source, out, positions, normals):
     out.write_bytes(struct.pack('<4sII',b'glTF',2,len(body)+12)+body)
 
 
-def main(source, landmarks, output, export, legacy_root_competition=False):
+def main(source, landmarks, output, export, legacy_root_competition=False, weight_version="v5", holdouts=False):
     if hashlib.sha256(source.read_bytes()).hexdigest()!=SOURCE_SHA: raise ValueError('Unreviewed input')
     if export.exists() or output.exists(): raise ValueError('Use new output paths')
     output.mkdir(parents=True);export.parent.mkdir(parents=True,exist_ok=True)
@@ -98,13 +98,17 @@ def main(source, landmarks, output, export, legacy_root_competition=False):
         add(f'{joint_names[1]}_{label}',centers[1],centers[2],f'{joint_names[0]}_{label}')
         add(f'{joint_names[2]}_{label}',centers[2],end,f'{joint_names[1]}_{label}')
     add('tail_base',regions['tail_base']['center'],cfg.get('probe_tail_end_gltf',(.44,.24,0)),'pelvis')
+    if weight_version=='v6':
+        specs['lumbar']['parent']='thoracic';specs['pelvis']['parent']='lumbar'
+        specs['shoulder_FL']['parent']='thoracic';specs['shoulder_FR']['parent']='thoracic'
     rigdata=bpy.data.armatures.new('EXPERIMENTAL_UNVERIFIED');rig=bpy.data.objects.new('EXPERIMENTAL_UNVERIFIED',rigdata)
     bpy.context.collection.objects.link(rig);bpy.context.view_layer.objects.active=rig;rig.select_set(True);mesh.select_set(False)
     bpy.ops.object.mode_set(mode='EDIT')
     for name,spec in specs.items():
         bone=rigdata.edit_bones.new(name);bone.head=convert(spec['head_gltf']);bone.tail=convert(spec['tail_gltf'])
         bone.align_roll(Vector((0,1,0)))
-        if spec['parent']: bone.parent=rigdata.edit_bones[spec['parent']]
+    for name,spec in specs.items():
+        if spec['parent']: rigdata.edit_bones[name].parent=rigdata.edit_bones[spec['parent']]
     bpy.ops.object.mode_set(mode='OBJECT')
     names=list(specs);weights=np.zeros((len(canonical),len(names)))
     pts=np.array(canonical)
@@ -128,6 +132,10 @@ def main(source, landmarks, output, export, legacy_root_competition=False):
     for name,center,width in [('pelvis',.23,.15),('lumbar',.095,.12),('thoracic',-.06,.14)]:
         weights[:,names.index(name)]=body*np.exp(-((pts[:,0]-center)/width)**2)*.7
     weights[:,names.index('tail_base')]=np.clip((pts[:,0]-.32)/.07,0,1)*2
+    tail_mask=None
+    if weight_version=='v6':
+        from skin_weights_v6 import build_weights
+        weights,tail_mask,tail_distance=build_weights(pts,faces,names,specs,segment_distances)
     # Paws are rigid distal blocks below measured cutoff; no toe rig in this probe.
     review=json.loads(Path('docs/model-reports/stage6/localprep_geometry_review.json').read_text())
     for foot,info in review['paw_surface_segmentation']['feet'].items():
@@ -139,7 +147,7 @@ def main(source, landmarks, output, export, legacy_root_competition=False):
     weights[head,:]=0;weights[head,0]=1
     # Root receives the residual, not a competing constant 50% contribution.
     # The first probe showed that constant root influence sheared wrist envelopes.
-    if not legacy_root_competition:
+    if not legacy_root_competition and weight_version=='v5':
         weights[:,0]=np.maximum(0,1-weights[:,1:].sum(axis=1))
     # At most four influences, preserving identical seam coordinates.
     order=np.argsort(weights,axis=1)
@@ -157,13 +165,19 @@ def main(source, landmarks, output, export, legacy_root_competition=False):
     poses={'rest':{},'front_bend':{'elbow_FL':15,'elbow_FR':15,'wrist_FL':-10,'wrist_FR':-10},
            'hind_bend':{'stifle_HL':-15,'stifle_HR':-15,'hock_HL':15,'hock_HR':15},
            'pelvis_spine':{'pelvis':5,'lumbar':-5,'thoracic':5},'tail_bend':{'tail_base':15}}
+    cases={**poses,**joint_cases}
+    if holdouts:
+        cases.update({name+'_opposite':{bone:-angle for bone,angle in rotations.items()} for name,rotations in list(cases.items()) if rotations})
+        cases['combined_holdout']={'pelvis':5,'lumbar':-5,'tail_base':-15,'elbow_FR':-15,'stifle_HL':15}
+        cases['combined_holdout_opposite']={n:-v for n,v in cases['combined_holdout'].items()}
+    np.savez_compressed(output/'weights.npz',weights=expanded,bone_names=np.array(names),tail_mask=np.array([]) if tail_mask is None else tail_mask,source_positions=original)
     baseline=pair_set(canonical,faces)
     arrays=np.array(faces);resttris=pts[arrays];restareas=np.linalg.norm(np.cross(resttris[:,1]-resttris[:,0],resttris[:,2]-resttris[:,0]),axis=1)/2
     edgeids=np.unique(np.sort(np.concatenate([arrays[:,[0,1]],arrays[:,[1,2]],arrays[:,[2,0]]]),axis=1),axis=0)
     oldlength=np.linalg.norm(pts[edgeids[:,0]]-pts[edgeids[:,1]],axis=1)
     outcomes={}
     normals_bl=np.array([convert(n) for n in original_norm])
-    for pose,rotations in {**poses,**joint_cases}.items():
+    for pose,rotations in cases.items():
         for pb in rig.pose.bones: pb.rotation_mode='QUATERNION';pb.rotation_quaternion=Quaternion()
         for name,degrees in rotations.items():
             pb=rig.pose.bones[name]
@@ -192,8 +206,11 @@ def main(source, landmarks, output, export, legacy_root_competition=False):
             'retained_source_face_pairs':[list(p) for p in sorted(pairs&baseline)],
             'zero_area_faces':int((areas==0).sum()),'area_below_half_faces':int((aratio<.5).sum()),
             'edge_ratio_min':float(ratio.min()),'edge_ratio_max':float(ratio.max()),
+            'edge_ratio_percentiles':np.percentile(ratio,[1,5,50,95,99]).tolist(),
+            'area_ratio_percentiles':np.percentile(aratio,[1,5,50,95,99]).tolist(),
+            'seam_gap_max':max(float(np.linalg.norm(evaluated_positions[entries]-evaluated_positions[entries[0]],axis=1).max()) for entries in sources.values()),
             'protected_head_max_displacement':float(delta[head].max(initial=0)),'regions':regional}
-        if pose in poses:
+        if pose in poses or (holdouts and pose in ('isolated_pelvis','isolated_shoulder_FR','tail_bend_opposite','front_bend_opposite','hind_bend_opposite','pelvis_spine_opposite','isolated_pelvis_opposite','isolated_shoulder_FR_opposite','combined_holdout','combined_holdout_opposite')):
             # Transformed original split normals, not destructive recalculation.
             blended=np.zeros_like(normals_bl)
             for j,name in enumerate(names):
@@ -216,8 +233,9 @@ def main(source, landmarks, output, export, legacy_root_competition=False):
         'export':str(export),'export_sha256':hashlib.sha256(export.read_bytes()).hexdigest(),'blender':bpy.app.version_string,
         'coordinate_conversion':'glTF (x,y,z) -> Blender (x,-z,y); sagittal bend about Blender +Y = glTF -Z; local quaternion axis computed from rest bone matrix',
         'anatomical_limits':'Small ±10/15 degree relative probes, pelvis ±5; not certified feline ROM or neutral anatomy. No 30/45 degree stress until small probes accepted.',
-        'bones':boneinfo,'weights':{'method':'manual envelope, segment-distance falloff, height/side gates; rigid measured paw patches; head locked to root; top four normalized; same weights on exact-position seam copies',
-            'root_rule':'competing constant root (rejected v1)' if legacy_root_competition else 'residual normalized root (v2)',
+        'weight_version':weight_version,'controlled_adjustment_cycles':1 if weight_version=='v6' else 0,
+        'bones':boneinfo,'weights':{'method':('v6 connected 3D tail branch and geodesic boundary smoothstep, torso partition of unity, broader asymmetric limb falloff' if weight_version=='v6' else 'v5 segment-distance envelopes and coordinate gates')+'; rigid measured paw patches; head locked to root; top four normalized; identical seam-copy weights',
+            'root_rule':('partition of unity neck-to-torso' if weight_version=='v6' else ('competing constant root (rejected v1)' if legacy_root_competition else 'residual normalized root (v2)')),
             'max_influences':int((weights>0).sum(axis=1).max()),'sum_error_max':float(np.abs(weights.sum(axis=1)-1).max()),
             'unweighted_vertices':int((weights.sum(axis=1)==0).sum()),'vertex_count':len(original),'bone_count':len(names),'protected_head_rule':'glTF x < -0.35 and y > 0.30; lower muzzle included','protected_head_canonical_vertices':int(head.sum())},
         'baseline_pairs':[list(p) for p in sorted(baseline)],'baseline_count':len(baseline),'poses':outcomes,
@@ -231,4 +249,6 @@ if __name__=='__main__':
     p.add_argument('--landmarks',type=Path,default=Path('docs/model-reports/stage7/provisional_landmarks.json'))
     p.add_argument('--output',type=Path,required=True);p.add_argument('--export',type=Path,required=True)
     p.add_argument('--legacy-root-competition',action='store_true',help='Compare rejected constant root weighting; historical probes also used older centers/head mask')
-    a=p.parse_args(sys.argv[sys.argv.index('--')+1:]);main(a.source,a.landmarks,a.output,a.export,a.legacy_root_competition)
+    p.add_argument('--weight-version',choices=['v5','v6'],default='v5')
+    p.add_argument('--holdouts',action='store_true')
+    a=p.parse_args(sys.argv[sys.argv.index('--')+1:]);main(a.source,a.landmarks,a.output,a.export,a.legacy_root_competition,a.weight_version,a.holdouts)

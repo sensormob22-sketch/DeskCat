@@ -1,0 +1,2481 @@
+{
+  "status": "REJECTED_FOR_PRODUCTION_STOP_AFTER_ONE_CYCLE",
+  "baseline_unchanged": true,
+  "baseline_count": 16,
+  "cases": {
+    "rest": {
+      "rotations": {},
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.9999832785106926,
+        "edge_ratio_max": 1.0000227564308626,
+        "edge_ratio_percentiles": [
+          0.9999986735615224,
+          0.9999999717433058,
+          1.0,
+          1.0000000784100473,
+          1.000001695494922
+        ],
+        "area_ratio_percentiles": [
+          0.9999977138559547,
+          0.9999997326688163,
+          1.0,
+          1.0000003936694388,
+          1.000003126244702
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.9999724041211908,
+        "edge_ratio_max": 1.0000179775509435,
+        "edge_ratio_percentiles": [
+          0.9999986828002236,
+          0.9999999437155918,
+          1.0,
+          1.0000001590318994,
+          1.0000015524871018
+        ],
+        "area_ratio_percentiles": [
+          0.999997801386862,
+          0.9999996846288678,
+          1.0,
+          1.000000452069304,
+          1.0000026649966653
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "LIMITED_PASS"
+    },
+    "front_bend": {
+      "rotations": {
+        "elbow_FL": 15,
+        "elbow_FR": 15,
+        "wrist_FL": -10,
+        "wrist_FR": -10
+      },
+      "v5": {
+        "new_pairs": 10,
+        "strict_crossing_pairs": 26,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 3,
+        "edge_ratio_min": 0.6176516215097447,
+        "edge_ratio_max": 8.152768752647052,
+        "edge_ratio_percentiles": [
+          0.9601370011008976,
+          0.9999972313854482,
+          1.0,
+          1.0000015684366381,
+          1.035121802088783
+        ],
+        "area_ratio_percentiles": [
+          0.9165839675865277,
+          0.9999959269530115,
+          1.0,
+          1.0000033783900075,
+          1.0488971142683734
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 9,
+        "strict_crossing_pairs": 25,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 7,
+        "edge_ratio_min": 0.4976596510028055,
+        "edge_ratio_max": 7.422647854167829,
+        "edge_ratio_percentiles": [
+          0.9555467965705262,
+          0.9989992196514293,
+          1.0,
+          1.0000496215569454,
+          1.0414993347380535
+        ],
+        "area_ratio_percentiles": [
+          0.9446834918948976,
+          0.9973441082034122,
+          1.0,
+          1.000020473333312,
+          1.0366466123749734
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": -1,
+      "assessment": "FAIL"
+    },
+    "hind_bend": {
+      "rotations": {
+        "stifle_HL": -15,
+        "stifle_HR": -15,
+        "hock_HL": 15,
+        "hock_HR": 15
+      },
+      "v5": {
+        "new_pairs": 27,
+        "strict_crossing_pairs": 43,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 104,
+        "edge_ratio_min": 0.23437783702325396,
+        "edge_ratio_max": 3.085113099250886,
+        "edge_ratio_percentiles": [
+          0.9229939423533491,
+          0.994147747832742,
+          1.0,
+          1.0034508589047748,
+          1.0744617166587995
+        ],
+        "area_ratio_percentiles": [
+          0.833358173681454,
+          0.9833473941199193,
+          1.0,
+          1.003384020398175,
+          1.0976185960482658
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 25,
+        "strict_crossing_pairs": 41,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 46,
+        "edge_ratio_min": 0.11842234473441744,
+        "edge_ratio_max": 3.5152700808998314,
+        "edge_ratio_percentiles": [
+          0.9358702887556315,
+          0.983989190568078,
+          1.0,
+          1.0133103722678631,
+          1.0712888772987887
+        ],
+        "area_ratio_percentiles": [
+          0.9007234842336019,
+          0.9717284247195678,
+          1.0,
+          1.0087430851979957,
+          1.0702932722421108
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": -2,
+      "assessment": "FAIL"
+    },
+    "pelvis_spine": {
+      "rotations": {
+        "pelvis": 5,
+        "lumbar": -5,
+        "thoracic": 5
+      },
+      "v5": {
+        "new_pairs": 6,
+        "strict_crossing_pairs": 22,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 122,
+        "edge_ratio_min": 0.2273144660831796,
+        "edge_ratio_max": 3.470101092452756,
+        "edge_ratio_percentiles": [
+          0.8547466117750503,
+          0.9628528288336008,
+          1.0,
+          1.0263900499567595,
+          1.071319171996075
+        ],
+        "area_ratio_percentiles": [
+          0.716644258521192,
+          0.940244169232037,
+          1.0,
+          1.0279663196700186,
+          1.0748030445498498
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 10,
+        "strict_crossing_pairs": 25,
+        "retained_baseline_pairs": 15,
+        "resolved_baseline_pairs": 1,
+        "area_below_half_faces": 14,
+        "edge_ratio_min": 0.5506423433666372,
+        "edge_ratio_max": 4.425575657726216,
+        "edge_ratio_percentiles": [
+          0.8604110023893632,
+          0.9595450278549597,
+          1.0,
+          1.047693876183141,
+          1.102934243024939
+        ],
+        "area_ratio_percentiles": [
+          0.7810669559281055,
+          0.9348098512427874,
+          1.0,
+          1.0686917407531333,
+          1.123179788307123
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 4,
+      "assessment": "FAIL"
+    },
+    "tail_bend": {
+      "rotations": {
+        "tail_base": 15
+      },
+      "v5": {
+        "new_pairs": 395,
+        "strict_crossing_pairs": 411,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 738,
+        "edge_ratio_min": 0.1028035289391538,
+        "edge_ratio_max": 1.164165319061374,
+        "edge_ratio_percentiles": [
+          0.9198853419030482,
+          0.9999992020632388,
+          1.0,
+          1.0000005153063987,
+          1.000005115325652
+        ],
+        "area_ratio_percentiles": [
+          0.626239190244284,
+          0.9999980568037028,
+          1.0,
+          1.0000009885520749,
+          1.0000069032975736
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 44,
+        "strict_crossing_pairs": 60,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 152,
+        "edge_ratio_min": 0.3837904500807563,
+        "edge_ratio_max": 1.3105096179736686,
+        "edge_ratio_percentiles": [
+          0.8938839919009859,
+          0.9999982482825169,
+          1.0,
+          1.0000008110077816,
+          1.0034223594047282
+        ],
+        "area_ratio_percentiles": [
+          0.7360199789107575,
+          0.9999956482726432,
+          1.0,
+          1.0000013538129355,
+          1.000010520988545
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": -351,
+      "assessment": "FAIL"
+    },
+    "isolated_pelvis": {
+      "rotations": {
+        "pelvis": 15
+      },
+      "v5": {
+        "new_pairs": 493,
+        "strict_crossing_pairs": 508,
+        "retained_baseline_pairs": 15,
+        "resolved_baseline_pairs": 1,
+        "area_below_half_faces": 961,
+        "edge_ratio_min": 0.023665515468448788,
+        "edge_ratio_max": 9.649186799053387,
+        "edge_ratio_percentiles": [
+          0.7085269717653035,
+          0.9426755160811154,
+          1.0,
+          1.0581966327572057,
+          1.3137048477431523
+        ],
+        "area_ratio_percentiles": [
+          0.5092665691399851,
+          0.882481989237803,
+          1.0,
+          1.0703798313894721,
+          1.303149355129799
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 1,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 15,
+        "resolved_baseline_pairs": 1,
+        "area_below_half_faces": 677,
+        "edge_ratio_min": 0.06767204757558583,
+        "edge_ratio_max": 10.486669057864173,
+        "edge_ratio_percentiles": [
+          0.794384323874047,
+          0.9821916567896904,
+          1.0,
+          1.0052251045251912,
+          1.1307433824933335
+        ],
+        "area_ratio_percentiles": [
+          0.6065548359311044,
+          0.9597502354797728,
+          1.0,
+          1.0129367579808468,
+          1.182369606725966
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": -492,
+      "assessment": "FAIL"
+    },
+    "isolated_lumbar": {
+      "rotations": {
+        "lumbar": 15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 5,
+        "edge_ratio_min": 0.27602932317098366,
+        "edge_ratio_max": 1.8704060936751925,
+        "edge_ratio_percentiles": [
+          0.9349918265458316,
+          0.9639606166778172,
+          1.0,
+          1.0537425082111544,
+          1.0872085260728495
+        ],
+        "area_ratio_percentiles": [
+          0.9234893087559449,
+          0.9538978835826104,
+          1.0,
+          1.062577671438667,
+          1.0966296762714483
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 3,
+        "edge_ratio_min": 0.5410966934574235,
+        "edge_ratio_max": 1.3554358506015827,
+        "edge_ratio_percentiles": [
+          0.7655315488615603,
+          0.9368459056399632,
+          1.0,
+          1.0248856289438502,
+          1.1717689348412839
+        ],
+        "area_ratio_percentiles": [
+          0.6637347554857033,
+          0.8377921972016547,
+          1.0,
+          1.0335311608001796,
+          1.2276739255618188
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "REVIEW"
+    },
+    "isolated_thoracic": {
+      "rotations": {
+        "thoracic": 15
+      },
+      "v5": {
+        "new_pairs": 12,
+        "strict_crossing_pairs": 28,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 34,
+        "edge_ratio_min": 0.24359209044637792,
+        "edge_ratio_max": 4.546779979538216,
+        "edge_ratio_percentiles": [
+          0.9229473011209575,
+          0.9568151808270479,
+          1.0,
+          1.0456439117499527,
+          1.0900224461727044
+        ],
+        "area_ratio_percentiles": [
+          0.9149914020362954,
+          0.9553100827147316,
+          1.0,
+          1.0408611991476984,
+          1.0813934116875155
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 130,
+        "strict_crossing_pairs": 146,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 645,
+        "edge_ratio_min": 0.07783453318522711,
+        "edge_ratio_max": 12.298924200015454,
+        "edge_ratio_percentiles": [
+          0.8300514113326264,
+          0.9999914217777468,
+          1.0,
+          1.0000078742901601,
+          1.2179802225452931
+        ],
+        "area_ratio_percentiles": [
+          0.6312460584891609,
+          0.9999826338224944,
+          1.0,
+          1.000014308088212,
+          1.194773678156855
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 118,
+      "assessment": "FAIL"
+    },
+    "isolated_shoulder_FL": {
+      "rotations": {
+        "shoulder_FL": 15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 6,
+        "edge_ratio_min": 0.3456127776661273,
+        "edge_ratio_max": 2.408816256946778,
+        "edge_ratio_percentiles": [
+          0.9550607775808316,
+          0.9999995532729476,
+          1.0,
+          1.00000072262817,
+          1.049533127176134
+        ],
+        "area_ratio_percentiles": [
+          0.8821146773558955,
+          0.9999990914960107,
+          1.0,
+          1.0000015757643812,
+          1.0677021257079635
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 40,
+        "edge_ratio_min": 0.3858856228384805,
+        "edge_ratio_max": 2.231925395386968,
+        "edge_ratio_percentiles": [
+          0.9683040221243056,
+          0.9999994015843148,
+          1.0,
+          1.0000007721643152,
+          1.0384809191358062
+        ],
+        "area_ratio_percentiles": [
+          0.9354714614154982,
+          0.9999988722132013,
+          1.0,
+          1.0000016562041527,
+          1.046212918011566
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_elbow_FL": {
+      "rotations": {
+        "elbow_FL": 15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 1,
+        "edge_ratio_min": 0.7199997995581799,
+        "edge_ratio_max": 1.1214321344121485,
+        "edge_ratio_percentiles": [
+          0.9904993595976559,
+          0.9999996067643512,
+          1.0,
+          1.0000003671851432,
+          1.0018162843137928
+        ],
+        "area_ratio_percentiles": [
+          0.9816462213685411,
+          0.9999991764419596,
+          1.0,
+          1.0000009473523155,
+          1.0058184227008982
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.7609890446864815,
+        "edge_ratio_max": 1.0968865759939777,
+        "edge_ratio_percentiles": [
+          0.9775639799542265,
+          0.9999991483342918,
+          1.0,
+          1.0000007313989216,
+          1.011616878887014
+        ],
+        "area_ratio_percentiles": [
+          0.9672219225678748,
+          0.9999984548529727,
+          1.0,
+          1.0000015393194173,
+          1.0101720094788875
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "REVIEW"
+    },
+    "isolated_wrist_FL": {
+      "rotations": {
+        "wrist_FL": 10
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 1,
+        "edge_ratio_min": 0.6267968548723065,
+        "edge_ratio_max": 1.3682114700043764,
+        "edge_ratio_percentiles": [
+          0.9999927211531632,
+          0.9999998641943116,
+          1.0,
+          1.0000002111379926,
+          1.0000053310533619
+        ],
+        "area_ratio_percentiles": [
+          0.9998354160142505,
+          0.9999994489161701,
+          1.0,
+          1.0000005713449793,
+          1.0000070662098093
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 3,
+        "edge_ratio_min": 0.4265544757477617,
+        "edge_ratio_max": 1.8093795115875364,
+        "edge_ratio_percentiles": [
+          0.9977300232908958,
+          0.9999996697879847,
+          1.0,
+          1.0000003571037621,
+          1.0002243160932918
+        ],
+        "area_ratio_percentiles": [
+          0.993355518408649,
+          0.999999099286137,
+          1.0,
+          1.0000007723894935,
+          1.0000324931918587
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_shoulder_FR": {
+      "rotations": {
+        "shoulder_FR": 15
+      },
+      "v5": {
+        "new_pairs": 16,
+        "strict_crossing_pairs": 32,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 61,
+        "edge_ratio_min": 0.36814959227424937,
+        "edge_ratio_max": 17.661581315423774,
+        "edge_ratio_percentiles": [
+          0.9703813704777907,
+          0.9999996146549023,
+          1.0,
+          1.0000006789561129,
+          1.0610936953625212
+        ],
+        "area_ratio_percentiles": [
+          0.9016921302706588,
+          0.9999991904957475,
+          1.0,
+          1.0000015187939237,
+          1.0944419315062597
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 20,
+        "strict_crossing_pairs": 36,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 120,
+        "edge_ratio_min": 0.3217752419577525,
+        "edge_ratio_max": 16.296740501069156,
+        "edge_ratio_percentiles": [
+          0.970192903604153,
+          0.9999994049691906,
+          1.0,
+          1.0000007687229,
+          1.0459569784236329
+        ],
+        "area_ratio_percentiles": [
+          0.9351738233949811,
+          0.9999988748995945,
+          1.0,
+          1.000001657112482,
+          1.0653769289371475
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 4,
+      "assessment": "FAIL"
+    },
+    "isolated_elbow_FR": {
+      "rotations": {
+        "elbow_FR": 15
+      },
+      "v5": {
+        "new_pairs": 9,
+        "strict_crossing_pairs": 25,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 2,
+        "edge_ratio_min": 0.5997276982117831,
+        "edge_ratio_max": 9.46636173984309,
+        "edge_ratio_percentiles": [
+          0.9913001559481506,
+          0.9999997082059366,
+          1.0,
+          1.0000003986675994,
+          1.0070488860664126
+        ],
+        "area_ratio_percentiles": [
+          0.9770529196875475,
+          0.9999992471843672,
+          1.0,
+          1.0000009164658792,
+          1.0126696565505582
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 9,
+        "strict_crossing_pairs": 25,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 6,
+        "edge_ratio_min": 0.47567837727003054,
+        "edge_ratio_max": 8.764855418505293,
+        "edge_ratio_percentiles": [
+          0.983669458034647,
+          0.9999993572552107,
+          1.0,
+          1.000000894980948,
+          1.0200031945157253
+        ],
+        "area_ratio_percentiles": [
+          0.9726388069498086,
+          0.9999988530426732,
+          1.0,
+          1.0000019275171783,
+          1.022455846011161
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_wrist_FR": {
+      "rotations": {
+        "wrist_FR": 10
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 4,
+        "edge_ratio_min": 0.3428432640828041,
+        "edge_ratio_max": 2.0805825190164895,
+        "edge_ratio_percentiles": [
+          0.9999945094576048,
+          0.9999998810793377,
+          1.0,
+          1.0000002496984361,
+          1.0000060137854812
+        ],
+        "area_ratio_percentiles": [
+          0.9999835997384171,
+          0.9999995016405853,
+          1.0,
+          1.000000672081355,
+          1.000009281512608
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 10,
+        "edge_ratio_min": 0.3275016491688033,
+        "edge_ratio_max": 2.440454559111727,
+        "edge_ratio_percentiles": [
+          0.9985562453917164,
+          0.9999996923990704,
+          1.0,
+          1.0000003571227396,
+          1.0005039930267672
+        ],
+        "area_ratio_percentiles": [
+          0.997087328987048,
+          0.999999203475336,
+          1.0,
+          1.0000008759920134,
+          1.0008207549575323
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_hip_HL": {
+      "rotations": {
+        "hip_HL": 15
+      },
+      "v5": {
+        "new_pairs": 9,
+        "strict_crossing_pairs": 25,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 262,
+        "edge_ratio_min": 0.1408410310022248,
+        "edge_ratio_max": 2.9381497304585227,
+        "edge_ratio_percentiles": [
+          0.8742192805471971,
+          0.9914115847602158,
+          1.0,
+          1.0000081793179518,
+          1.0844580964671242
+        ],
+        "area_ratio_percentiles": [
+          0.722223946483715,
+          0.9759567509679941,
+          1.0,
+          1.0027206152463939,
+          1.131649141691723
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 51,
+        "strict_crossing_pairs": 67,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 445,
+        "edge_ratio_min": 0.12092070090113145,
+        "edge_ratio_max": 10.3963741588507,
+        "edge_ratio_percentiles": [
+          0.9066197245959019,
+          0.9961284781855319,
+          1.0,
+          1.0000054686906958,
+          1.0458822946266015
+        ],
+        "area_ratio_percentiles": [
+          0.7522170741300904,
+          0.9867120539548819,
+          1.0,
+          1.0000084854409708,
+          1.067044254450998
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 42,
+      "assessment": "FAIL"
+    },
+    "isolated_stifle_HL": {
+      "rotations": {
+        "stifle_HL": 15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 6,
+        "edge_ratio_min": 0.27803182042973285,
+        "edge_ratio_max": 1.8319251132006784,
+        "edge_ratio_percentiles": [
+          0.9585528718734907,
+          0.9999991544710489,
+          1.0,
+          1.0000011399062387,
+          1.0401244994675154
+        ],
+        "area_ratio_percentiles": [
+          0.9380747430518014,
+          0.9999988745498097,
+          1.0,
+          1.0000034253731314,
+          1.0881508616443623
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 4,
+        "edge_ratio_min": 0.22784525755755958,
+        "edge_ratio_max": 3.876099155182593,
+        "edge_ratio_percentiles": [
+          0.9579773144189366,
+          0.9991291568513709,
+          1.0,
+          1.00231839975177,
+          1.037792229209854
+        ],
+        "area_ratio_percentiles": [
+          0.9493077337108712,
+          0.9999955573773776,
+          1.0,
+          1.0050279267499587,
+          1.048002086358142
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_hock_HL": {
+      "rotations": {
+        "hock_HL": 10
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.743254225232321,
+        "edge_ratio_max": 1.4550958526474655,
+        "edge_ratio_percentiles": [
+          0.9978760263599772,
+          0.9999997026665713,
+          1.0,
+          1.000000558513666,
+          1.0026773152917459
+        ],
+        "area_ratio_percentiles": [
+          0.9966823108318761,
+          0.9999992626199794,
+          1.0,
+          1.0000012480714906,
+          1.0037739888006778
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 11,
+        "edge_ratio_min": 0.3151067384064203,
+        "edge_ratio_max": 1.782685737093232,
+        "edge_ratio_percentiles": [
+          0.9938834783290962,
+          0.9999992552467745,
+          1.0,
+          1.000001429632061,
+          1.0085213552194485
+        ],
+        "area_ratio_percentiles": [
+          0.9899595405047753,
+          0.9999986049458901,
+          1.0,
+          1.0000028674370516,
+          1.008951667538871
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_hip_HR": {
+      "rotations": {
+        "hip_HR": 15
+      },
+      "v5": {
+        "new_pairs": 32,
+        "strict_crossing_pairs": 47,
+        "retained_baseline_pairs": 15,
+        "resolved_baseline_pairs": 1,
+        "area_below_half_faces": 205,
+        "edge_ratio_min": 0.12331082320847227,
+        "edge_ratio_max": 9.079748801793974,
+        "edge_ratio_percentiles": [
+          0.8676759287849686,
+          0.9907761399272258,
+          1.0,
+          1.0000066223666364,
+          1.104653818397079
+        ],
+        "area_ratio_percentiles": [
+          0.7925083403434963,
+          0.9714930865460863,
+          1.0,
+          1.0000086316297492,
+          1.111146683464972
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 16,
+        "strict_crossing_pairs": 31,
+        "retained_baseline_pairs": 15,
+        "resolved_baseline_pairs": 1,
+        "area_below_half_faces": 224,
+        "edge_ratio_min": 0.16001632766541338,
+        "edge_ratio_max": 10.09283307106485,
+        "edge_ratio_percentiles": [
+          0.8806448513552182,
+          0.9930981803890406,
+          1.0,
+          1.0018726968131424,
+          1.0953120645959238
+        ],
+        "area_ratio_percentiles": [
+          0.7785641613076427,
+          0.9803916155277956,
+          1.0,
+          1.0020070848922291,
+          1.1105968348867623
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": -16,
+      "assessment": "FAIL"
+    },
+    "isolated_stifle_HR": {
+      "rotations": {
+        "stifle_HR": 15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 65,
+        "edge_ratio_min": 0.41055822879421666,
+        "edge_ratio_max": 5.008262582854513,
+        "edge_ratio_percentiles": [
+          0.9946289290068396,
+          0.9999996900728312,
+          1.0,
+          1.00000062770366,
+          1.0265571995676697
+        ],
+        "area_ratio_percentiles": [
+          0.9967018587548832,
+          0.9999994166351307,
+          1.0,
+          1.000001794372109,
+          1.1036156126542591
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 53,
+        "edge_ratio_min": 0.301898849709587,
+        "edge_ratio_max": 5.5246492533195894,
+        "edge_ratio_percentiles": [
+          0.9769695582179094,
+          0.9998474886155136,
+          1.0,
+          1.0010673520863083,
+          1.049659500009758
+        ],
+        "area_ratio_percentiles": [
+          0.9786563783470482,
+          0.9999984449414022,
+          1.0,
+          1.0055564514314357,
+          1.0999042886987749
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_hock_HR": {
+      "rotations": {
+        "hock_HR": 10
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 1,
+        "edge_ratio_min": 0.6664423330343661,
+        "edge_ratio_max": 1.8103482468501577,
+        "edge_ratio_percentiles": [
+          0.9987581976476138,
+          0.9999997928195874,
+          1.0,
+          1.0000004130773181,
+          1.0039802346165114
+        ],
+        "area_ratio_percentiles": [
+          0.9997385943933619,
+          0.9999994837100917,
+          1.0,
+          1.0000010821449186,
+          1.0114269890422947
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 20,
+        "edge_ratio_min": 0.30467043553541656,
+        "edge_ratio_max": 2.4228339764683517,
+        "edge_ratio_percentiles": [
+          0.9959118983090552,
+          0.9999993998869954,
+          1.0,
+          1.0000011622559761,
+          1.0099406966905338
+        ],
+        "area_ratio_percentiles": [
+          0.9948586923165313,
+          0.9999990792715964,
+          1.0,
+          1.0000036296571808,
+          1.0163894706162397
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_tail_base": {
+      "rotations": {
+        "tail_base": 15
+      },
+      "v5": {
+        "new_pairs": 395,
+        "strict_crossing_pairs": 411,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 738,
+        "edge_ratio_min": 0.1028035289391538,
+        "edge_ratio_max": 1.164165319061374,
+        "edge_ratio_percentiles": [
+          0.9198853419030482,
+          0.9999992020632388,
+          1.0,
+          1.0000005153063987,
+          1.000005115325652
+        ],
+        "area_ratio_percentiles": [
+          0.626239190244284,
+          0.9999980568037028,
+          1.0,
+          1.0000009885520749,
+          1.0000069032975736
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 44,
+        "strict_crossing_pairs": 60,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 152,
+        "edge_ratio_min": 0.3837904500807563,
+        "edge_ratio_max": 1.3105096179736686,
+        "edge_ratio_percentiles": [
+          0.8938839919009859,
+          0.9999982482825169,
+          1.0,
+          1.0000008110077816,
+          1.0034223594047282
+        ],
+        "area_ratio_percentiles": [
+          0.7360199789107575,
+          0.9999956482726432,
+          1.0,
+          1.0000013538129355,
+          1.000010520988545
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": -351,
+      "assessment": "FAIL"
+    },
+    "front_bend_opposite": {
+      "rotations": {
+        "elbow_FL": -15,
+        "elbow_FR": -15,
+        "wrist_FL": 10,
+        "wrist_FR": 10
+      },
+      "v5": {
+        "new_pairs": 5,
+        "strict_crossing_pairs": 21,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 2,
+        "edge_ratio_min": 0.610852292760474,
+        "edge_ratio_max": 7.707617340806102,
+        "edge_ratio_percentiles": [
+          0.9697915764936706,
+          0.9999983495229466,
+          1.0,
+          1.000002743677725,
+          1.0485658696920113
+        ],
+        "area_ratio_percentiles": [
+          0.955271485157891,
+          0.9999972208370086,
+          1.0,
+          1.0000055471956069,
+          1.0913452729692266
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 5,
+        "strict_crossing_pairs": 21,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 13,
+        "edge_ratio_min": 0.42713092767950034,
+        "edge_ratio_max": 7.005874571149473,
+        "edge_ratio_percentiles": [
+          0.9663121266639003,
+          0.9992157264506644,
+          1.0,
+          1.000045628492783,
+          1.0582795063925092
+        ],
+        "area_ratio_percentiles": [
+          0.9615621610975512,
+          0.9995694005895328,
+          1.0,
+          1.0002281376573172,
+          1.0700721992871007
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "hind_bend_opposite": {
+      "rotations": {
+        "stifle_HL": 15,
+        "stifle_HR": 15,
+        "hock_HL": -15,
+        "hock_HR": -15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 7,
+        "edge_ratio_min": 0.27803182042973285,
+        "edge_ratio_max": 4.288526002150454,
+        "edge_ratio_percentiles": [
+          0.9369818871865575,
+          0.9944593833623472,
+          1.0,
+          1.00490341679234,
+          1.0905382085899509
+        ],
+        "area_ratio_percentiles": [
+          0.9094799023003551,
+          0.994851572903484,
+          1.0,
+          1.019470806820691,
+          1.1732297788532982
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 52,
+        "edge_ratio_min": 0.2683644574419937,
+        "edge_ratio_max": 4.815392522541547,
+        "edge_ratio_percentiles": [
+          0.9360222993828521,
+          0.9859747442980977,
+          1.0,
+          1.0153853551796086,
+          1.072908823125159
+        ],
+        "area_ratio_percentiles": [
+          0.9395983360681747,
+          0.9854566366631632,
+          1.0,
+          1.0247662034456901,
+          1.1033594159147702
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "pelvis_spine_opposite": {
+      "rotations": {
+        "pelvis": -5,
+        "lumbar": 5,
+        "thoracic": -5
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 4,
+        "edge_ratio_min": 0.6586609349564468,
+        "edge_ratio_max": 3.2056246710643093,
+        "edge_ratio_percentiles": [
+          0.947527312600319,
+          0.975077584800044,
+          1.0,
+          1.043926577097028,
+          1.1983442389674734
+        ],
+        "area_ratio_percentiles": [
+          0.9407027621043021,
+          0.9716677783458697,
+          1.0,
+          1.0748403831048183,
+          1.362625785870432
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 5,
+        "strict_crossing_pairs": 21,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 6,
+        "edge_ratio_min": 0.6718933903400028,
+        "edge_ratio_max": 4.890875579480721,
+        "edge_ratio_percentiles": [
+          0.9063768356777643,
+          0.9573430778482358,
+          1.0,
+          1.046718595056509,
+          1.1599619840939859
+        ],
+        "area_ratio_percentiles": [
+          0.8813670133776089,
+          0.9332966302772963,
+          1.0,
+          1.0696263351118582,
+          1.2353754239472852
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 5,
+      "assessment": "FAIL"
+    },
+    "tail_bend_opposite": {
+      "rotations": {
+        "tail_base": -15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.964601849552719,
+        "edge_ratio_max": 2.3642922278662812,
+        "edge_ratio_percentiles": [
+          0.9999950178708388,
+          0.9999995946959339,
+          1.0,
+          1.0000012492512376,
+          1.295446921512476
+        ],
+        "area_ratio_percentiles": [
+          0.9999925558921046,
+          0.9999991888019583,
+          1.0,
+          1.000003083973337,
+          1.725268689500452
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 1,
+        "edge_ratio_min": 0.7397164647427537,
+        "edge_ratio_max": 1.6187668481749062,
+        "edge_ratio_percentiles": [
+          0.9999567310030752,
+          0.9999992485635931,
+          1.0,
+          1.0000024282289177,
+          1.1620784290232353
+        ],
+        "area_ratio_percentiles": [
+          0.9999888383984483,
+          0.9999987588025551,
+          1.0,
+          1.0000058064787871,
+          1.3241204050446664
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "REVIEW"
+    },
+    "isolated_pelvis_opposite": {
+      "rotations": {
+        "pelvis": -15
+      },
+      "v5": {
+        "new_pairs": 5,
+        "strict_crossing_pairs": 20,
+        "retained_baseline_pairs": 15,
+        "resolved_baseline_pairs": 1,
+        "area_below_half_faces": 44,
+        "edge_ratio_min": 0.26282287172164254,
+        "edge_ratio_max": 9.29484502515243,
+        "edge_ratio_percentiles": [
+          0.8849857780268378,
+          0.9592932302531214,
+          1.0,
+          1.1377723005652183,
+          1.662762081841171
+        ],
+        "area_ratio_percentiles": [
+          0.8600070503958328,
+          0.9377763854433349,
+          1.0,
+          1.2382869451132663,
+          2.1306010444719568
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 15,
+        "retained_baseline_pairs": 15,
+        "resolved_baseline_pairs": 1,
+        "area_below_half_faces": 4,
+        "edge_ratio_min": 0.5119893668296999,
+        "edge_ratio_max": 10.131766217134235,
+        "edge_ratio_percentiles": [
+          0.8899907399842399,
+          0.9966849608759886,
+          1.0,
+          1.0196888352520532,
+          1.2948416060268757
+        ],
+        "area_ratio_percentiles": [
+          0.830791684436924,
+          0.9927476973415813,
+          1.0,
+          1.0398884278760683,
+          1.4766044345158749
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": -5,
+      "assessment": "FAIL"
+    },
+    "isolated_lumbar_opposite": {
+      "rotations": {
+        "lumbar": -15
+      },
+      "v5": {
+        "new_pairs": 1,
+        "strict_crossing_pairs": 17,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 6,
+        "edge_ratio_min": 0.32131235760214893,
+        "edge_ratio_max": 2.1097690876475874,
+        "edge_ratio_percentiles": [
+          0.9219337445760775,
+          0.9521750159483251,
+          1.0,
+          1.0375909471058198,
+          1.0669733646731046
+        ],
+        "area_ratio_percentiles": [
+          0.914692267978916,
+          0.9436185193136092,
+          1.0,
+          1.0451579432236542,
+          1.076970854050127
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 2,
+        "edge_ratio_min": 0.6900583320914748,
+        "edge_ratio_max": 1.4929819859478854,
+        "edge_ratio_percentiles": [
+          0.8704495312833872,
+          0.9819366229745404,
+          1.0,
+          1.0845868536764651,
+          1.274549803526122
+        ],
+        "area_ratio_percentiles": [
+          0.8210232468034495,
+          0.9707259008629561,
+          1.0,
+          1.1623771924704853,
+          1.3454594281003787
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": -1,
+      "assessment": "REVIEW"
+    },
+    "isolated_thoracic_opposite": {
+      "rotations": {
+        "thoracic": -15
+      },
+      "v5": {
+        "new_pairs": 1,
+        "strict_crossing_pairs": 17,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 7,
+        "edge_ratio_min": 0.31122607891329407,
+        "edge_ratio_max": 4.271128618921399,
+        "edge_ratio_percentiles": [
+          0.9221364013900495,
+          0.9599325992174247,
+          1.0,
+          1.0538539293966938,
+          1.0927132079394017
+        ],
+        "area_ratio_percentiles": [
+          0.9231295030980176,
+          0.9579721219443194,
+          1.0,
+          1.0534382287552961,
+          1.0986195222342467
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 5,
+        "strict_crossing_pairs": 21,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 21,
+        "edge_ratio_min": 0.4183153212285837,
+        "edge_ratio_max": 12.67149169629528,
+        "edge_ratio_percentiles": [
+          0.9191985355409421,
+          0.9999931891567264,
+          1.0,
+          1.0003911858522208,
+          1.291643105001644
+        ],
+        "area_ratio_percentiles": [
+          0.8940698049676432,
+          0.999987510314312,
+          1.0,
+          1.001012138750642,
+          1.4406332247027234
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 4,
+      "assessment": "FAIL"
+    },
+    "isolated_shoulder_FL_opposite": {
+      "rotations": {
+        "shoulder_FL": -15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 115,
+        "edge_ratio_min": 0.2852476507456813,
+        "edge_ratio_max": 2.0996738781499458,
+        "edge_ratio_percentiles": [
+          0.9616313280118005,
+          0.9999995226905104,
+          1.0,
+          1.000000579765839,
+          1.0649420112796297
+        ],
+        "area_ratio_percentiles": [
+          0.9315823565550092,
+          0.9999989071678899,
+          1.0,
+          1.0000012169058021,
+          1.1322922696962832
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 110,
+        "edge_ratio_min": 0.3047014041640003,
+        "edge_ratio_max": 2.1392466810280673,
+        "edge_ratio_percentiles": [
+          0.9720799154686177,
+          0.9999994341033566,
+          1.0,
+          1.0000006621705024,
+          1.0443330032792628
+        ],
+        "area_ratio_percentiles": [
+          0.9530643524881179,
+          0.9999987403270829,
+          1.0,
+          1.0000012706976549,
+          1.065613218259801
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_elbow_FL_opposite": {
+      "rotations": {
+        "elbow_FL": -15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.8727742999114728,
+        "edge_ratio_max": 1.2674044057466314,
+        "edge_ratio_percentiles": [
+          0.9970597164902627,
+          0.9999997591264426,
+          1.0,
+          1.0000005228185782,
+          1.0131694979353576
+        ],
+        "area_ratio_percentiles": [
+          0.9951272019505525,
+          0.9999993758214089,
+          1.0,
+          1.0000013047617295,
+          1.025228602474744
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.9029453351803798,
+        "edge_ratio_max": 1.222238979840764,
+        "edge_ratio_percentiles": [
+          0.9889952665774157,
+          0.9999992854687597,
+          1.0,
+          1.0000009029664987,
+          1.028561142057286
+        ],
+        "area_ratio_percentiles": [
+          0.987640503453075,
+          0.9999989509445051,
+          1.0,
+          1.0000025794996166,
+          1.037644253383472
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "LIMITED_PASS"
+    },
+    "isolated_wrist_FL_opposite": {
+      "rotations": {
+        "wrist_FL": -10
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.7327306847034638,
+        "edge_ratio_max": 1.5594820747985574,
+        "edge_ratio_percentiles": [
+          0.9999953248345955,
+          0.9999998706253657,
+          1.0,
+          1.0000002172819074,
+          1.0000067761635625
+        ],
+        "area_ratio_percentiles": [
+          0.9999943606711875,
+          0.9999995465550462,
+          1.0,
+          1.0000007115669194,
+          1.0000476994401701
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.7007133736993146,
+        "edge_ratio_max": 2.3871066117085737,
+        "edge_ratio_percentiles": [
+          0.9981931765260249,
+          0.9999996843182529,
+          1.0,
+          1.0000003615462503,
+          1.0005243456167836
+        ],
+        "area_ratio_percentiles": [
+          0.9990990111825953,
+          0.9999993227761581,
+          1.0,
+          1.0000009692361016,
+          1.0027000767438383
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_shoulder_FR_opposite": {
+      "rotations": {
+        "shoulder_FR": -15
+      },
+      "v5": {
+        "new_pairs": 5,
+        "strict_crossing_pairs": 21,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 100,
+        "edge_ratio_min": 0.29230948745650553,
+        "edge_ratio_max": 16.592809262395694,
+        "edge_ratio_percentiles": [
+          0.9588728041692677,
+          0.999999596620185,
+          1.0,
+          1.0000005910767744,
+          1.0633316012450862
+        ],
+        "area_ratio_percentiles": [
+          0.9173794973250748,
+          0.9999990126547652,
+          1.0,
+          1.0000011234849846,
+          1.1234407528721433
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 5,
+        "strict_crossing_pairs": 21,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 122,
+        "edge_ratio_min": 0.31573710821731926,
+        "edge_ratio_max": 15.35310172758209,
+        "edge_ratio_percentiles": [
+          0.9689263188005889,
+          0.9999993821291493,
+          1.0,
+          1.0000006696172954,
+          1.0530264793694202
+        ],
+        "area_ratio_percentiles": [
+          0.9396940293494765,
+          0.9999986576453699,
+          1.0,
+          1.000001316097477,
+          1.0744342585946767
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_elbow_FR_opposite": {
+      "rotations": {
+        "elbow_FR": -15
+      },
+      "v5": {
+        "new_pairs": 5,
+        "strict_crossing_pairs": 21,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.6296416457499985,
+        "edge_ratio_max": 9.055372624961178,
+        "edge_ratio_percentiles": [
+          0.9931605866092865,
+          0.9999997615957258,
+          1.0,
+          1.0000004515987635,
+          1.0109510638656733
+        ],
+        "area_ratio_percentiles": [
+          0.9889394597132053,
+          0.9999993566415968,
+          1.0,
+          1.0000010761261329,
+          1.0242107240561502
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 5,
+        "strict_crossing_pairs": 21,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 3,
+        "edge_ratio_min": 0.5183834358099325,
+        "edge_ratio_max": 8.414676196707143,
+        "edge_ratio_percentiles": [
+          0.9814862017685078,
+          0.9999991752523416,
+          1.0,
+          1.0000006855994887,
+          1.0207536825367354
+        ],
+        "area_ratio_percentiles": [
+          0.9740136463810605,
+          0.9999986755617427,
+          1.0,
+          1.0000017194957915,
+          1.0321718424242852
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_wrist_FR_opposite": {
+      "rotations": {
+        "wrist_FR": -10
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 1,
+        "edge_ratio_min": 0.7579523730899116,
+        "edge_ratio_max": 2.4937810786139325,
+        "edge_ratio_percentiles": [
+          0.9999946465776591,
+          0.9999998911423384,
+          1.0,
+          1.0000002441501579,
+          1.0000060681537695
+        ],
+        "area_ratio_percentiles": [
+          0.9999929813867598,
+          0.9999995536375437,
+          1.0,
+          1.0000007013558108,
+          1.0000127110084551
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 1,
+        "edge_ratio_min": 0.726164424970075,
+        "edge_ratio_max": 2.8843270917681125,
+        "edge_ratio_percentiles": [
+          0.9979667952985619,
+          0.999999668259235,
+          1.0,
+          1.0000003280998926,
+          1.0004517617430095
+        ],
+        "area_ratio_percentiles": [
+          0.9969948512482483,
+          0.9999991895346415,
+          1.0,
+          1.000000837814782,
+          1.0007741395197984
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_hip_HL_opposite": {
+      "rotations": {
+        "hip_HL": -15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 26,
+        "edge_ratio_min": 0.3878453607706171,
+        "edge_ratio_max": 3.588906582620642,
+        "edge_ratio_percentiles": [
+          0.9394938090913105,
+          0.9988418028961242,
+          1.0,
+          1.009798127903704,
+          1.182478708791779
+        ],
+        "area_ratio_percentiles": [
+          0.900160438627575,
+          0.9981958401731538,
+          1.0,
+          1.026222860635846,
+          1.3039219509240223
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 162,
+        "strict_crossing_pairs": 178,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 7,
+        "edge_ratio_min": 0.46471032311121335,
+        "edge_ratio_max": 8.518908725135871,
+        "edge_ratio_percentiles": [
+          0.9648384320159675,
+          0.9994958311300132,
+          1.0,
+          1.0027718841077107,
+          1.1672820200309977
+        ],
+        "area_ratio_percentiles": [
+          0.94334991373391,
+          0.9999943307008694,
+          1.0,
+          1.0151597586421994,
+          1.3251359907474847
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 162,
+      "assessment": "FAIL"
+    },
+    "isolated_stifle_HL_opposite": {
+      "rotations": {
+        "stifle_HL": -15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 2,
+        "edge_ratio_min": 0.5973401963444211,
+        "edge_ratio_max": 2.080178750768054,
+        "edge_ratio_percentiles": [
+          0.9647620785737072,
+          0.9999991780181676,
+          1.0,
+          1.0000011957384174,
+          1.0460710634180506
+        ],
+        "area_ratio_percentiles": [
+          0.9189134611861904,
+          0.9999981186209852,
+          1.0,
+          1.0000019601768029,
+          1.0650085916657914
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 2,
+        "edge_ratio_min": 0.5267436260599214,
+        "edge_ratio_max": 2.988921381525821,
+        "edge_ratio_percentiles": [
+          0.963692010719253,
+          0.9972346287723803,
+          1.0,
+          1.0003837428888014,
+          1.0445721437531774
+        ],
+        "area_ratio_percentiles": [
+          0.9463829465453755,
+          0.996172087860289,
+          1.0,
+          1.000102138512833,
+          1.0459316437752286
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_hock_HL_opposite": {
+      "rotations": {
+        "hock_HL": -10
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.7252112343115731,
+        "edge_ratio_max": 1.2557878903912985,
+        "edge_ratio_percentiles": [
+          0.9970397799898085,
+          0.9999995595722313,
+          1.0,
+          1.0000004067063037,
+          1.0018150996020996
+        ],
+        "area_ratio_percentiles": [
+          0.9954966270082326,
+          0.999999094920251,
+          1.0,
+          1.0000009853907623,
+          1.0029083554630187
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 2,
+        "edge_ratio_min": 0.7322953721132118,
+        "edge_ratio_max": 2.173690799286509,
+        "edge_ratio_percentiles": [
+          0.9921484528370799,
+          0.9999988385808357,
+          1.0,
+          1.0000008338721404,
+          1.0066396924828278
+        ],
+        "area_ratio_percentiles": [
+          0.9907228714345743,
+          0.9999979335830989,
+          1.0,
+          1.0000017993114405,
+          1.0106739878880655
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_hip_HR_opposite": {
+      "rotations": {
+        "hip_HR": -15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 15,
+        "retained_baseline_pairs": 15,
+        "resolved_baseline_pairs": 1,
+        "area_below_half_faces": 1,
+        "edge_ratio_min": 0.5718366063341528,
+        "edge_ratio_max": 8.851783910735863,
+        "edge_ratio_percentiles": [
+          0.9317019316838367,
+          0.9978558135040995,
+          1.0,
+          1.0100550561045079,
+          1.1988761587104315
+        ],
+        "area_ratio_percentiles": [
+          0.9210005890686411,
+          0.9998672826105592,
+          1.0,
+          1.0347808586783978,
+          1.262913255874732
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 1,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 15,
+        "resolved_baseline_pairs": 1,
+        "area_below_half_faces": 24,
+        "edge_ratio_min": 0.3122904605312307,
+        "edge_ratio_max": 9.86437066410075,
+        "edge_ratio_percentiles": [
+          0.9412747241196596,
+          0.9968109022123376,
+          1.0,
+          1.0079482722716007,
+          1.210823838294176
+        ],
+        "area_ratio_percentiles": [
+          0.924482699163153,
+          0.9975249451921282,
+          1.0,
+          1.0244795209359367,
+          1.321284088036573
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 1,
+      "assessment": "FAIL"
+    },
+    "isolated_stifle_HR_opposite": {
+      "rotations": {
+        "stifle_HR": -15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 94,
+        "edge_ratio_min": 0.2742282701570009,
+        "edge_ratio_max": 4.438760258179553,
+        "edge_ratio_percentiles": [
+          0.9785553111878378,
+          0.9999994620397125,
+          1.0,
+          1.0000004184502842,
+          1.0060490027019227
+        ],
+        "area_ratio_percentiles": [
+          0.9137937590758993,
+          0.9999986959170984,
+          1.0,
+          1.000000849889084,
+          1.0074999467493506
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 5,
+        "edge_ratio_min": 0.3631437691768014,
+        "edge_ratio_max": 4.95183031081919,
+        "edge_ratio_percentiles": [
+          0.9560003463323479,
+          0.9991507350878301,
+          1.0,
+          1.0002438990066085,
+          1.0261568748946406
+        ],
+        "area_ratio_percentiles": [
+          0.9032053145741913,
+          0.996971046491591,
+          1.0,
+          1.0000070681325846,
+          1.0225166372984993
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_hock_HR_opposite": {
+      "rotations": {
+        "hock_HR": -10
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.7489007657763833,
+        "edge_ratio_max": 2.37091264816809,
+        "edge_ratio_percentiles": [
+          0.9956124250682499,
+          0.9999996567120424,
+          1.0,
+          1.0000002802014367,
+          1.000252995085499
+        ],
+        "area_ratio_percentiles": [
+          0.9887687391229532,
+          0.9999991700968923,
+          1.0,
+          1.000000670019095,
+          1.000048882991518
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 1,
+        "edge_ratio_min": 0.6807571799897206,
+        "edge_ratio_max": 3.018365786878749,
+        "edge_ratio_percentiles": [
+          0.9907347680386693,
+          0.9999987972239959,
+          1.0,
+          1.0000005944890604,
+          1.0040967696055518
+        ],
+        "area_ratio_percentiles": [
+          0.9836055350259302,
+          0.9999970608672349,
+          1.0,
+          1.0000010992387613,
+          1.0045021953482163
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "FAIL"
+    },
+    "isolated_tail_base_opposite": {
+      "rotations": {
+        "tail_base": -15
+      },
+      "v5": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 0,
+        "edge_ratio_min": 0.964601849552719,
+        "edge_ratio_max": 2.3642922278662812,
+        "edge_ratio_percentiles": [
+          0.9999950178708388,
+          0.9999995946959339,
+          1.0,
+          1.0000012492512376,
+          1.295446921512476
+        ],
+        "area_ratio_percentiles": [
+          0.9999925558921046,
+          0.9999991888019583,
+          1.0,
+          1.000003083973337,
+          1.725268689500452
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 0,
+        "strict_crossing_pairs": 16,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 1,
+        "edge_ratio_min": 0.7397164647427537,
+        "edge_ratio_max": 1.6187668481749062,
+        "edge_ratio_percentiles": [
+          0.9999567310030752,
+          0.9999992485635931,
+          1.0,
+          1.0000024282289177,
+          1.1620784290232353
+        ],
+        "area_ratio_percentiles": [
+          0.9999888383984483,
+          0.9999987588025551,
+          1.0,
+          1.0000058064787871,
+          1.3241204050446664
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 0,
+      "assessment": "REVIEW"
+    },
+    "combined_holdout": {
+      "rotations": {
+        "pelvis": 5,
+        "lumbar": -5,
+        "tail_base": -15,
+        "elbow_FR": -15,
+        "stifle_HL": 15
+      },
+      "v5": {
+        "new_pairs": 7,
+        "strict_crossing_pairs": 22,
+        "retained_baseline_pairs": 15,
+        "resolved_baseline_pairs": 1,
+        "area_below_half_faces": 30,
+        "edge_ratio_min": 0.3205963913298852,
+        "edge_ratio_max": 9.055372624961178,
+        "edge_ratio_percentiles": [
+          0.8816516346056603,
+          0.9700778723359315,
+          1.0,
+          1.0384936902170077,
+          1.199303438871416
+        ],
+        "area_ratio_percentiles": [
+          0.7995908121052111,
+          0.9562165086355542,
+          1.0,
+          1.061968345467644,
+          1.4151408567767756
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 6,
+        "strict_crossing_pairs": 21,
+        "retained_baseline_pairs": 15,
+        "resolved_baseline_pairs": 1,
+        "area_below_half_faces": 10,
+        "edge_ratio_min": 0.22784525755755958,
+        "edge_ratio_max": 8.414676196707143,
+        "edge_ratio_percentiles": [
+          0.8968384367625817,
+          0.9628481255591863,
+          1.0,
+          1.0610635664349317,
+          1.1822686686661965
+        ],
+        "area_ratio_percentiles": [
+          0.8157333362722364,
+          0.9428850737227101,
+          1.0,
+          1.094036211743564,
+          1.3466953264031825
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": -1,
+      "assessment": "FAIL"
+    },
+    "combined_holdout_opposite": {
+      "rotations": {
+        "pelvis": -5,
+        "lumbar": 5,
+        "tail_base": 15,
+        "elbow_FR": 15,
+        "stifle_HL": -15
+      },
+      "v5": {
+        "new_pairs": 9,
+        "strict_crossing_pairs": 25,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 493,
+        "edge_ratio_min": 0.23551854020551857,
+        "edge_ratio_max": 9.46636173984309,
+        "edge_ratio_percentiles": [
+          0.8402734737778542,
+          0.9654072770754358,
+          1.0,
+          1.0362467265260087,
+          1.141821782017203
+        ],
+        "area_ratio_percentiles": [
+          0.6396019771004251,
+          0.9458154034336942,
+          1.0,
+          1.0492284341871199,
+          1.221562484028781
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "v6": {
+        "new_pairs": 53,
+        "strict_crossing_pairs": 69,
+        "retained_baseline_pairs": 16,
+        "resolved_baseline_pairs": 0,
+        "area_below_half_faces": 161,
+        "edge_ratio_min": 0.38380187601873694,
+        "edge_ratio_max": 8.764855418505293,
+        "edge_ratio_percentiles": [
+          0.8668456761555549,
+          0.9458802365648487,
+          1.0,
+          1.0416000295037573,
+          1.1268430539697423
+        ],
+        "area_ratio_percentiles": [
+          0.7268031733797592,
+          0.9118634437671651,
+          1.0,
+          1.0599461039966886,
+          1.2053230056585895
+        ],
+        "seam_gap_max": 0.0,
+        "protected_head_max_displacement": 0.0
+      },
+      "new_pairs_change": 44,
+      "assessment": "FAIL"
+    }
+  },
+  "criteria": "Same conservative stage7: FAIL any new strict crossing or edge ratio outside [0.5,2]; REVIEW area below half or ratio outside [0.8,1.25]; LIMITED_PASS only tested pose, never production approval; percentile metrics additionally reported."
+}
