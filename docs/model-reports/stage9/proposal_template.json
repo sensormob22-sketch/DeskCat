@@ -1,0 +1,14 @@
+{
+  "format": "deskcat.local-weight-proposal.v1",
+  "status": "DRAFT_NOT_AUTHORIZED",
+  "baseline_source_sha256": "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6",
+  "baseline_skin_sha256": "e6ea0f3cdbf0230233cddf259d720fac61aab481cb134eb06ac3a6d2108cd51d",
+  "baseline_scene_sha256": "35a93aa6ae3b7127487f6d9840907ae0a6908c23cd72bcb922d1b01719ec4c8e",
+  "baseline_bone_weights_sha256_float32": "d3d6405976c05532c9ab27fa54e7f34a0a1c10cdb15edeccb677893343d68949",
+  "region": "tail_to_pelvis",
+  "human_annotation": null,
+  "changes": [],
+  "approval_reference": null,
+  "geometry_uv_texture_changes_allowed": false,
+  "limits": "Empty proposal for review; zero corrections applied. Fill exact source vertex IDs and complete normalized weights after human annotation; all seam copies required. No apply/export tool supplied at stage9."
+}

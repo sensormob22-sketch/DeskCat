@@ -1,0 +1,14 @@
+{
+  "blender": "/usr/bin/blender",
+  "display_set": false,
+  "wayland_display_set": false,
+  "Xvfb": null,
+  "x11vnc": null,
+  "websockify": null,
+  "novnc_static_files_present": false,
+  "browser_session_tool_available": false,
+  "authenticated_user_access_url_available": false,
+  "decision": "CURRENT_WORKER_HAS_NO_USER_ACCESSIBLE_INTERACTIVE_BLENDER_SESSION",
+  "paid_services_started": false,
+  "remote_services_started": false
+}
