@@ -1,51 +1,69 @@
-# DeskCat
+# DeskCat — этап 2
 
-Проект интерактивного фотореалистичного 3D-кота поверх рабочего стола Windows 11.
-Python 3.11+ и PySide6. **Версия 0.1 — запускаемый 2D-прототип**, а не готовый
-фотореалистичный кот: пока нет GLB, GPU-рендерера, скелетных клипов и диалога.
+Интерактивный 3D-кот поверх рабочего стола Windows 11: Python 3.11+, PySide6,
+Panda3D и panda3d-gltf. Технический прототип содержит настоящий skinned GLB
+с тестовыми клипами и живым 3D-рендерингом. Это простая геометрическая модель,
+не окончательный фотореалистичный ассет. Tripo и Ollama при запуске не вызываются.
 
-## Запуск в Windows 11 (PowerShell)
+**Интеграция на Windows 11 ещё не подтверждена.** Проверки выполнены только
+в Linux Qt offscreen; реальная прозрачность DWM — обязательный следующий gate.
+
+## Windows 11, PowerShell
 
 ```powershell
 py -3.11 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -e '.[dev]'
-.\.venv\Scripts\python.exe -m deskcat
-.\.venv\Scripts\python.exe -m pytest
-.\.venv\Scripts\python.exe -m deskcat --smoke-test
+.\.venv\Scripts\python.exe -m pip install -e '.[dev,three-d]'
+.\.venv\Scripts\python.exe -m deskcat --renderer panda
+.\.venv\Scripts\python.exe -m pytest -q
+.\.venv\Scripts\python.exe -m deskcat --renderer panda --smoke-test
 ```
 
-Также подходит установленный Python 3.12+. Для будущего 3D-бэкенда:
-`python -m pip install -e '.[three-d,dev]'`.
+Запускать из checkout DeskCat: установка пока рассчитана на editable/source workflow.
+Первый этап сохранён: `python -m deskcat --renderer qt` (также режим по умолчанию).
+Подробная обязательная проверка Windows — [docs/WINDOWS11_CHECKLIST.md](docs/WINDOWS11_CHECKLIST.md).
 
-Левая кнопка — перетаскивание; правая — меню состояний и Exit; Escape — выход.
-Выберите walk для движения, sit / stand_up / groom / sleep для проверки состояний.
-`python -m deskcat --scale 1.5` меняет размер в логических пикселях Qt; масштаб DPI
-применяет Qt. Кот ограничен доступной областью монитора, при перетаскивании можно
-сменить монитор. Прозрачные участки окна пока могут перехватывать мышь;
-click-through и системный трей запланированы. Нет автозапуска и записи в реестр.
+## Управление
 
-## Структура и этапы
+- ЛКМ: перетащить кота; walk при этом приостанавливается.
+- ПКМ: выбрать idle / walk / sit / stand_up / groom / sleep, либо Exit.
+- Колесо: масштаб 3D-модели, стрелки: положение модели внутри окна, R: сброс.
+- Escape: выход. `--scale 1.5` увеличивает окно в логических пикселях Qt.
 
-- `src/deskcat/`: окно, машина состояний, интерфейс рендерера, контракт Ollama.
-- `assets/3d/`: будущий `cat.glb`; `assets/animations/`: клипы и метаданные.
-- `tests/`: переходы, запуск процесса и свойства окна / перетаскивание.
-- `docs/ARCHITECTURE.md`: выбор рендерера и интеграция.
-- `docs/TRIPO_WORKFLOW.md`: подготовка 3D-ассета без расхода кредитов.
+```powershell
+.\.venv\Scripts\python.exe -m deskcat --renderer panda --scale 1.5 --model-scale 0.8 --model-x 0.2 --model-z 0.1 --position 500 400
+.\.venv\Scripts\python.exe -m deskcat --renderer panda --model assets/3d/test_cat.glb
+.\.venv\Scripts\python.exe -m deskcat --benchmark 120
+```
 
-Сначала проверить окно на реальном Windows 11. Затем реализовать Panda3D-бэкенд,
-загрузить проверенный rigged GLB, подключить клипы и освещение. После этого —
-локальный диалог Ollama в отдельном рабочем потоке.
+Qt применяет DPI, renderer получает физический размер = размер окна × DPR.
+Модель со скелетом должна иметь семь именованных клипов; неподдерживаемая модель
+даёт понятную ошибку, без автоматического перехода на 2D. Тестовые sit/groom и
+остальные клипы пока диагностические; они не изображают реалистичное поведение.
+Прозрачные области окна могут перехватывать мышь; pixel-perfect click-through
+ещё не реализован. Нет автозапуска, трея, записи в реестр или сетевых запросов.
 
-## Проверки в Linux/cloud
+## Архитектура и структура
+
+GLB → gltf importer → Panda3D Actor → смешивание скелетных клипов → offscreen RGBA
+→ QImage → QPainter прозрачного QWidget. Отдельного видимого окна Panda3D нет.
+Это live 3D; предварительно отрисованные PNG не используются.
+
+- `src/deskcat/`: Qt-окна, состояния, offscreen renderer, benchmark, контракт Ollama.
+- `assets/3d/`: оригинальный CC0 `test_cat.glb`; будущая модель Tripo подключается через `--model`.
+- `assets/animations/`: место для будущих клипов/метаданных.
+- `tools/generate_test_cat.py`: воспроизводимый генератор GLB без внешних сервисов.
+- `tests/`: запуск, состояния, реальные загрузка/skinning/blending/render/readback.
+- [Архитектура](docs/ARCHITECTURE.md), [отчёт](docs/VALIDATION.md), [Tripo](docs/TRIPO_WORKFLOW.md).
+
+## Linux cloud
 
 ```sh
-python -m venv .venv
-.venv/bin/python -m pip install -e '.[dev]'
-QT_QPA_PLATFORM=offscreen .venv/bin/python -m deskcat --smoke-test
-QT_QPA_PLATFORM=offscreen .venv/bin/python -m pytest
+UV_CACHE_DIR=/tmp/deskcat-uv-cache uv venv .venv
+UV_CACHE_DIR=/tmp/deskcat-uv-cache uv pip install --python .venv/bin/python -e '.[dev,three-d]'
+QT_QPA_PLATFORM=offscreen MESA_SHADER_CACHE_DIR=/tmp/deskcat-mesa .venv/bin/python -m pytest -q
+QT_QPA_PLATFORM=offscreen MESA_SHADER_CACHE_DIR=/tmp/deskcat-mesa .venv/bin/python -m deskcat --renderer panda --smoke-test
+MESA_SHADER_CACHE_DIR=/tmp/deskcat-mesa .venv/bin/python -m deskcat --benchmark 120
 ```
 
-Offscreen проверяет создание окна и работу event loop. Он не доказывает корректную
-композицию прозрачности Windows DWM, поведение поверх других приложений, GPU,
-фотореализм или скелетную анимацию. Итоги фактически выполненных проверок —
-в `docs/VALIDATION.md`.
+Без DISPLAY выбран EGL p3headlessgl. На Windows используется обычный Panda3D
+OpenGL backend. Qt offscreen не проверяет Windows DWM или физический DPI.

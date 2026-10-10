@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "deskcat"
-version = "0.1.0"
-description = "Windows desktop cat: Qt prototype and animated 3D architecture"
+version = "0.2.0"
+description = "Windows desktop cat with Qt and live animated offscreen 3D"
 requires-python = ">=3.11"
 dependencies = ["PySide6==6.8.3"]
 
