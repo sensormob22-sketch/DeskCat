@@ -1,0 +1,2640 @@
+{
+  "components": [
+    {
+      "component": 0,
+      "vertices": 8190,
+      "faces": 16364,
+      "bounds": [
+        [
+          -0.499114990234375,
+          0.0,
+          -0.159210205078125
+        ],
+        [
+          0.499114990234375,
+          0.6270753741264343,
+          0.159210205078125
+        ]
+      ],
+      "classification": "Connected main cat surface, including all four paws, trunk, tail and head",
+      "confidence": "Matched front and side visual review, provisional surface interpretation",
+      "boundary_edges": 87,
+      "nonmanifold_edges": 42,
+      "action": "Do not bridge; main-surface defects need targeted review"
+    },
+    {
+      "component": 1,
+      "vertices": 20,
+      "faces": 33,
+      "bounds": [
+        [
+          -0.473724365234375,
+          0.45516976714134216,
+          -0.06739801913499832
+        ],
+        [
+          -0.465911865234375,
+          0.46688851714134216,
+          0.0029302211478352547
+        ]
+      ],
+      "classification": "Detached geometric whisker strip at muzzle, visually identified in closeups; not a paw/leg/tail island",
+      "confidence": "Matched front and side visual review, provisional surface interpretation",
+      "boundary_edges": 5,
+      "nonmanifold_edges": 0,
+      "action": "Keep isolated; future weights could follow protected head/whisker attachment with explicit mapping, not automatic geometric connection"
+    },
+    {
+      "component": 2,
+      "vertices": 17,
+      "faces": 26,
+      "bounds": [
+        [
+          -0.473724365234375,
+          0.46884164214134216,
+          -0.04004663974046707
+        ],
+        [
+          -0.460052490234375,
+          0.47470101714134216,
+          -0.0009767444571480155
+        ]
+      ],
+      "classification": "Detached geometric whisker strip at muzzle, visually identified in closeups; not a paw/leg/tail island",
+      "confidence": "Matched front and side visual review, provisional surface interpretation",
+      "boundary_edges": 6,
+      "nonmanifold_edges": 0,
+      "action": "Keep isolated; future weights could follow protected head/whisker attachment with explicit mapping, not automatic geometric connection"
+    },
+    {
+      "component": 3,
+      "vertices": 15,
+      "faces": 22,
+      "bounds": [
+        [
+          -0.489349365234375,
+          0.46493539214134216,
+          -0.038093507289886475
+        ],
+        [
+          -0.485443115234375,
+          0.46884164214134216,
+          0.026372967287898064
+        ]
+      ],
+      "classification": "Detached geometric whisker strip at muzzle, visually identified in closeups; not a paw/leg/tail island",
+      "confidence": "Matched front and side visual review, provisional surface interpretation",
+      "boundary_edges": 6,
+      "nonmanifold_edges": 0,
+      "action": "Keep isolated; future weights could follow protected head/whisker attachment with explicit mapping, not automatic geometric connection"
+    },
+    {
+      "component": 4,
+      "vertices": 11,
+      "faces": 15,
+      "bounds": [
+        [
+          -0.462005615234375,
+          0.43954476714134216,
+          0.07130437344312668
+        ],
+        [
+          -0.448333740234375,
+          0.45712289214134216,
+          0.09669499844312668
+        ]
+      ],
+      "classification": "Detached geometric whisker strip at muzzle, visually identified in closeups; not a paw/leg/tail island",
+      "confidence": "Matched front and side visual review, provisional surface interpretation",
+      "boundary_edges": 5,
+      "nonmanifold_edges": 0,
+      "action": "Keep isolated; future weights could follow protected head/whisker attachment with explicit mapping, not automatic geometric connection"
+    }
+  ],
+  "problem_region_counts": {
+    "boundary_records": {
+      "tail_surface": 23,
+      "hind_leg_or_ventral_pelvis": 5,
+      "upper_body_or_head_coat": 21,
+      "ventral_trunk_fur": 27,
+      "muzzle_and_whiskers": 33
+    },
+    "nonmanifold_records": {
+      "tail_surface": 20,
+      "hind_leg_or_ventral_pelvis": 1,
+      "ventral_trunk_fur": 10,
+      "upper_body_or_head_coat": 9,
+      "muzzle_and_whiskers": 2
+    }
+  },
+  "problem_records": {
+    "boundary_records": [
+      {
+        "record_index": 0,
+        "region": "tail_surface",
+        "midpoint": [
+          0.425872802734375,
+          0.12403884157538414,
+          -0.003907011589035392
+        ],
+        "proxy_edge": [
+          457,
+          459
+        ],
+        "source_faces": [
+          794
+        ]
+      },
+      {
+        "record_index": 1,
+        "region": "tail_surface",
+        "midpoint": [
+          0.424896240234375,
+          0.11524977535009384,
+          -0.0039070111233741045
+        ],
+        "proxy_edge": [
+          457,
+          503
+        ],
+        "source_faces": [
+          859
+        ]
+      },
+      {
+        "record_index": 2,
+        "region": "tail_surface",
+        "midpoint": [
+          0.423919677734375,
+          0.10645308345556259,
+          -0.0009767269948497415
+        ],
+        "proxy_edge": [
+          503,
+          506
+        ],
+        "source_faces": [
+          864
+        ]
+      },
+      {
+        "record_index": 3,
+        "region": "tail_surface",
+        "midpoint": [
+          0.422943115234375,
+          0.09863295406103134,
+          0.004883840563707054
+        ],
+        "proxy_edge": [
+          506,
+          507
+        ],
+        "source_faces": [
+          865
+        ]
+      },
+      {
+        "record_index": 4,
+        "region": "tail_surface",
+        "midpoint": [
+          0.427825927734375,
+          0.09375014528632164,
+          0.008790924679487944
+        ],
+        "proxy_edge": [
+          507,
+          508
+        ],
+        "source_faces": [
+          866
+        ]
+      },
+      {
+        "record_index": 5,
+        "region": "tail_surface",
+        "midpoint": [
+          0.420013427734375,
+          0.12599196657538414,
+          -0.004883811809122562
+        ],
+        "proxy_edge": [
+          462,
+          521
+        ],
+        "source_faces": [
+          892
+        ]
+      },
+      {
+        "record_index": 6,
+        "region": "tail_surface",
+        "midpoint": [
+          0.418060302734375,
+          0.11622633785009384,
+          -0.004883810877799988
+        ],
+        "proxy_edge": [
+          521,
+          522
+        ],
+        "source_faces": [
+          893
+        ]
+      },
+      {
+        "record_index": 7,
+        "region": "tail_surface",
+        "midpoint": [
+          0.4160919189453125,
+          0.10742964595556259,
+          -0.0029303277260623872
+        ],
+        "proxy_edge": [
+          522,
+          525
+        ],
+        "source_faces": [
+          899
+        ]
+      },
+      {
+        "record_index": 8,
+        "region": "tail_surface",
+        "midpoint": [
+          0.40924072265625,
+          0.10058607906103134,
+          0.0019534393795765936
+        ],
+        "proxy_edge": [
+          519,
+          525
+        ],
+        "source_faces": [
+          900
+        ]
+      },
+      {
+        "record_index": 9,
+        "region": "tail_surface",
+        "midpoint": [
+          0.434661865234375,
+          0.11915603280067444,
+          -0.0029302117181941867
+        ],
+        "proxy_edge": [
+          454,
+          501
+        ],
+        "source_faces": [
+          909
+        ]
+      },
+      {
+        "record_index": 10,
+        "region": "hind_leg_or_ventral_pelvis",
+        "midpoint": [
+          0.27642822265625,
+          0.29495251178741455,
+          -0.027348552830517292
+        ],
+        "proxy_edge": [
+          1072,
+          1073
+        ],
+        "source_faces": [
+          1881
+        ]
+      },
+      {
+        "record_index": 11,
+        "region": "hind_leg_or_ventral_pelvis",
+        "midpoint": [
+          0.27642822265625,
+          0.30178844928741455,
+          -0.027348552830517292
+        ],
+        "proxy_edge": [
+          1072,
+          1074
+        ],
+        "source_faces": [
+          1881
+        ]
+      },
+      {
+        "record_index": 12,
+        "region": "hind_leg_or_ventral_pelvis",
+        "midpoint": [
+          0.199249267578125,
+          0.24612441658973694,
+          -0.06739808991551399
+        ],
+        "proxy_edge": [
+          1474,
+          1476
+        ],
+        "source_faces": [
+          2573
+        ]
+      },
+      {
+        "record_index": 13,
+        "region": "hind_leg_or_ventral_pelvis",
+        "midpoint": [
+          0.193389892578125,
+          0.24612441658973694,
+          -0.0752105861902237
+        ],
+        "proxy_edge": [
+          1196,
+          1474
+        ],
+        "source_faces": [
+          2596
+        ]
+      },
+      {
+        "record_index": 14,
+        "region": "hind_leg_or_ventral_pelvis",
+        "midpoint": [
+          0.196319580078125,
+          0.24612441658973694,
+          -0.07130433991551399
+        ],
+        "proxy_edge": [
+          1196,
+          1476
+        ],
+        "source_faces": [
+          2601
+        ]
+      },
+      {
+        "record_index": 15,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.1513976901769638,
+          0.34576427936553955,
+          -0.09474184364080429
+        ],
+        "proxy_edge": [
+          1712,
+          1714
+        ],
+        "source_faces": [
+          3003
+        ]
+      },
+      {
+        "record_index": 16,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.005860448116436601,
+          0.21389783918857574,
+          -0.045907968655228615
+        ],
+        "proxy_edge": [
+          2109,
+          2261
+        ],
+        "source_faces": [
+          3968
+        ]
+      },
+      {
+        "record_index": 17,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          0.002930280053988099,
+          0.22659315168857574,
+          -0.06544303335249424
+        ],
+        "proxy_edge": [
+          2262,
+          2264
+        ],
+        "source_faces": [
+          3973
+        ]
+      },
+      {
+        "record_index": 18,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -3.725290298461914e-09,
+          0.23635877668857574,
+          -0.06348990835249424
+        ],
+        "proxy_edge": [
+          2264,
+          2277
+        ],
+        "source_faces": [
+          4011
+        ]
+      },
+      {
+        "record_index": 19,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.002930286806076765,
+          0.22854627668857574,
+          -0.06153487786650658
+        ],
+        "proxy_edge": [
+          2262,
+          2281
+        ],
+        "source_faces": [
+          4019
+        ]
+      },
+      {
+        "record_index": 20,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.002930286224000156,
+          0.23440565168857574,
+          -0.05567550286650658
+        ],
+        "proxy_edge": [
+          2277,
+          2296
+        ],
+        "source_faces": [
+          4042
+        ]
+      },
+      {
+        "record_index": 21,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -9.313225746154785e-10,
+          0.22171033918857574,
+          -0.046884533017873764
+        ],
+        "proxy_edge": [
+          2108,
+          2296
+        ],
+        "source_faces": [
+          4279
+        ]
+      },
+      {
+        "record_index": 22,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.006837011547759175,
+          0.21585096418857574,
+          -0.049814218655228615
+        ],
+        "proxy_edge": [
+          2261,
+          2423
+        ],
+        "source_faces": [
+          4280
+        ]
+      },
+      {
+        "record_index": 23,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.29595947265625,
+          0.33013927936553955,
+          0.0029302453040145338
+        ],
+        "proxy_edge": [
+          942,
+          3464
+        ],
+        "source_faces": [
+          6315
+        ]
+      },
+      {
+        "record_index": 24,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.29595947265625,
+          0.33013927936553955,
+          0.01172133395448327
+        ],
+        "proxy_edge": [
+          942,
+          3476
+        ],
+        "source_faces": [
+          6326
+        ]
+      },
+      {
+        "record_index": 25,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.29595947265625,
+          0.33013927936553955,
+          0.007814249431248754
+        ],
+        "proxy_edge": [
+          3464,
+          3476
+        ],
+        "source_faces": [
+          6329
+        ]
+      },
+      {
+        "record_index": 26,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.1513976901769638,
+          0.34478771686553955,
+          -0.09571840614080429
+        ],
+        "proxy_edge": [
+          1712,
+          3589
+        ],
+        "source_faces": [
+          6531
+        ]
+      },
+      {
+        "record_index": 27,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.1513976901769638,
+          0.34674084186553955,
+          -0.09376528114080429
+        ],
+        "proxy_edge": [
+          1714,
+          3589
+        ],
+        "source_faces": [
+          6532
+        ]
+      },
+      {
+        "record_index": 28,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.2002258151769638,
+          0.35260021686553955,
+          -0.06837465986609459
+        ],
+        "proxy_edge": [
+          2234,
+          3585
+        ],
+        "source_faces": [
+          6548
+        ]
+      },
+      {
+        "record_index": 29,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.20706939697265625,
+          0.45126354694366455,
+          -0.006837345659732819
+        ],
+        "proxy_edge": [
+          4082,
+          4090
+        ],
+        "source_faces": [
+          7631
+        ]
+      },
+      {
+        "record_index": 30,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.194366455078125,
+          0.45126354694366455,
+          -0.006837347289547324
+        ],
+        "proxy_edge": [
+          4090,
+          4097
+        ],
+        "source_faces": [
+          7639
+        ]
+      },
+      {
+        "record_index": 31,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.195343017578125,
+          0.45126354694366455,
+          -0.0068373470567166805
+        ],
+        "proxy_edge": [
+          4097,
+          4130
+        ],
+        "source_faces": [
+          7691
+        ]
+      },
+      {
+        "record_index": 32,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.20804595947265625,
+          0.45126354694366455,
+          -0.006837345426902175
+        ],
+        "proxy_edge": [
+          4082,
+          4130
+        ],
+        "source_faces": [
+          7694
+        ]
+      },
+      {
+        "record_index": 33,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.472747802734375,
+          0.46591195464134216,
+          0.0019535392057150602
+        ],
+        "proxy_edge": [
+          4660,
+          4661
+        ],
+        "source_faces": [
+          8636
+        ]
+      },
+      {
+        "record_index": 34,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.473724365234375,
+          0.46395882964134216,
+          0.0029302211478352547
+        ],
+        "proxy_edge": [
+          4661,
+          4662
+        ],
+        "source_faces": [
+          8639
+        ]
+      },
+      {
+        "record_index": 35,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.470794677734375,
+          0.46591195464134216,
+          0.000976857147179544
+        ],
+        "proxy_edge": [
+          4653,
+          4664
+        ],
+        "source_faces": [
+          8644
+        ]
+      },
+      {
+        "record_index": 36,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.470794677734375,
+          0.46688851714134216,
+          0.000976857147179544
+        ],
+        "proxy_edge": [
+          4660,
+          4664
+        ],
+        "source_faces": [
+          8738
+        ]
+      },
+      {
+        "record_index": 37,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.465911865234375,
+          0.46786507964134216,
+          -0.0009767453302629292
+        ],
+        "proxy_edge": [
+          4728,
+          4729
+        ],
+        "source_faces": [
+          8745
+        ]
+      },
+      {
+        "record_index": 38,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.466888427734375,
+          0.46884164214134216,
+          -0.0009767452720552683
+        ],
+        "proxy_edge": [
+          4692,
+          4728
+        ],
+        "source_faces": [
+          8750
+        ]
+      },
+      {
+        "record_index": 39,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.487396240234375,
+          0.46591195464134216,
+          0.01855855993926525
+        ],
+        "proxy_edge": [
+          4743,
+          4744
+        ],
+        "source_faces": [
+          8769
+        ]
+      },
+      {
+        "record_index": 40,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.489349365234375,
+          0.46786507964134216,
+          0.01855855993926525
+        ],
+        "proxy_edge": [
+          4740,
+          4747
+        ],
+        "source_faces": [
+          8774
+        ]
+      },
+      {
+        "record_index": 41,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.488372802734375,
+          0.46786507964134216,
+          0.01855855993926525
+        ],
+        "proxy_edge": [
+          4743,
+          4747
+        ],
+        "source_faces": [
+          8779
+        ]
+      },
+      {
+        "record_index": 42,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.472747802734375,
+          0.47177132964134216,
+          -0.0009767446899786592
+        ],
+        "proxy_edge": [
+          4755,
+          4756
+        ],
+        "source_faces": [
+          8786
+        ]
+      },
+      {
+        "record_index": 43,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.470794677734375,
+          0.47079476714134216,
+          -0.0009767449228093028
+        ],
+        "proxy_edge": [
+          4759,
+          4760
+        ],
+        "source_faces": [
+          8791
+        ]
+      },
+      {
+        "record_index": 44,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.472747802734375,
+          0.47079476714134216,
+          -0.0009767446317709982
+        ],
+        "proxy_edge": [
+          4756,
+          4760
+        ],
+        "source_faces": [
+          8792
+        ]
+      },
+      {
+        "record_index": 45,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.468841552734375,
+          0.47177132964134216,
+          -0.0009767452138476074
+        ],
+        "proxy_edge": [
+          4759,
+          4764
+        ],
+        "source_faces": [
+          8801
+        ]
+      },
+      {
+        "record_index": 46,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.466888427734375,
+          0.46591195464134216,
+          -0.0009767451556399465
+        ],
+        "proxy_edge": [
+          4696,
+          4729
+        ],
+        "source_faces": [
+          8806
+        ]
+      },
+      {
+        "record_index": 47,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.472747802734375,
+          0.46395882964134216,
+          0.0019535392057150602
+        ],
+        "proxy_edge": [
+          4653,
+          4662
+        ],
+        "source_faces": [
+          8817
+        ]
+      },
+      {
+        "record_index": 48,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.487396240234375,
+          0.46591195464134216,
+          0.022465763613581657
+        ],
+        "proxy_edge": [
+          4744,
+          4765
+        ],
+        "source_faces": [
+          8819
+        ]
+      },
+      {
+        "record_index": 49,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.488372802734375,
+          0.46786507964134216,
+          0.026372967287898064
+        ],
+        "proxy_edge": [
+          4765,
+          4766
+        ],
+        "source_faces": [
+          8820
+        ]
+      },
+      {
+        "record_index": 50,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.489349365234375,
+          0.46786507964134216,
+          0.022465763613581657
+        ],
+        "proxy_edge": [
+          4740,
+          4766
+        ],
+        "source_faces": [
+          8820
+        ]
+      },
+      {
+        "record_index": 51,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.470794677734375,
+          0.47274789214134216,
+          -0.0009767450392246246
+        ],
+        "proxy_edge": [
+          4753,
+          4755
+        ],
+        "source_faces": [
+          8821
+        ]
+      },
+      {
+        "record_index": 52,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.468841552734375,
+          0.47274789214134216,
+          -0.0009767452720552683
+        ],
+        "proxy_edge": [
+          4753,
+          4764
+        ],
+        "source_faces": [
+          8822
+        ]
+      },
+      {
+        "record_index": 53,
+        "region": "tail_surface",
+        "midpoint": [
+          0.421966552734375,
+          0.09472670778632164,
+          0.04883570969104767
+        ],
+        "proxy_edge": [
+          5388,
+          5390
+        ],
+        "source_faces": [
+          10035
+        ]
+      },
+      {
+        "record_index": 54,
+        "region": "tail_surface",
+        "midpoint": [
+          0.4160919189453125,
+          0.09960951656103134,
+          0.05079074203968048
+        ],
+        "proxy_edge": [
+          5390,
+          5391
+        ],
+        "source_faces": [
+          10036
+        ]
+      },
+      {
+        "record_index": 55,
+        "region": "tail_surface",
+        "midpoint": [
+          0.41510009765625,
+          0.10742964595556259,
+          0.05567546188831329
+        ],
+        "proxy_edge": [
+          5391,
+          5392
+        ],
+        "source_faces": [
+          10037
+        ]
+      },
+      {
+        "record_index": 56,
+        "region": "tail_surface",
+        "midpoint": [
+          0.4160919189453125,
+          0.11622633785009384,
+          0.05860514938831329
+        ],
+        "proxy_edge": [
+          5392,
+          5393
+        ],
+        "source_faces": [
+          10038
+        ]
+      },
+      {
+        "record_index": 57,
+        "region": "tail_surface",
+        "midpoint": [
+          0.4160919189453125,
+          0.13087478280067444,
+          0.055675458163022995
+        ],
+        "proxy_edge": [
+          5469,
+          5470
+        ],
+        "source_faces": [
+          10218
+        ]
+      },
+      {
+        "record_index": 58,
+        "region": "tail_surface",
+        "midpoint": [
+          0.41412353515625,
+          0.13087478280067444,
+          0.055675458163022995
+        ],
+        "proxy_edge": [
+          5470,
+          5471
+        ],
+        "source_faces": [
+          10220
+        ]
+      },
+      {
+        "record_index": 59,
+        "region": "tail_surface",
+        "midpoint": [
+          0.4151153564453125,
+          0.13087478280067444,
+          0.055675458163022995
+        ],
+        "proxy_edge": [
+          5469,
+          5471
+        ],
+        "source_faces": [
+          10221
+        ]
+      },
+      {
+        "record_index": 60,
+        "region": "tail_surface",
+        "midpoint": [
+          0.41217041015625,
+          0.12696852907538414,
+          0.05665202438831329
+        ],
+        "proxy_edge": [
+          5471,
+          5475
+        ],
+        "source_faces": [
+          10230
+        ]
+      },
+      {
+        "record_index": 61,
+        "region": "tail_surface",
+        "midpoint": [
+          0.41021728515625,
+          0.11817946285009384,
+          0.05762859061360359
+        ],
+        "proxy_edge": [
+          5475,
+          5476
+        ],
+        "source_faces": [
+          10232
+        ]
+      },
+      {
+        "record_index": 62,
+        "region": "tail_surface",
+        "midpoint": [
+          0.40240478515625,
+          0.09570326656103134,
+          0.04199977591633797
+        ],
+        "proxy_edge": [
+          566,
+          5500
+        ],
+        "source_faces": [
+          10277
+        ]
+      },
+      {
+        "record_index": 63,
+        "region": "tail_surface",
+        "midpoint": [
+          0.40728759765625,
+          0.10157027095556259,
+          0.05079074576497078
+        ],
+        "proxy_edge": [
+          5500,
+          5503
+        ],
+        "source_faces": [
+          10294
+        ]
+      },
+      {
+        "record_index": 64,
+        "region": "tail_surface",
+        "midpoint": [
+          0.40826416015625,
+          0.10939040035009384,
+          0.05567546561360359
+        ],
+        "proxy_edge": [
+          5476,
+          5503
+        ],
+        "source_faces": [
+          10301
+        ]
+      },
+      {
+        "record_index": 65,
+        "region": "tail_surface",
+        "midpoint": [
+          0.33892822265625,
+          0.13868728280067444,
+          0.044929467141628265
+        ],
+        "proxy_edge": [
+          5526,
+          5540
+        ],
+        "source_faces": [
+          10421
+        ]
+      },
+      {
+        "record_index": 66,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.011720645241439342,
+          0.21682752668857574,
+          0.04786110483109951
+        ],
+        "proxy_edge": [
+          2046,
+          6232
+        ],
+        "source_faces": [
+          11975
+        ]
+      },
+      {
+        "record_index": 67,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.00683699845103547,
+          0.21585096418857574,
+          0.04786110483109951
+        ],
+        "proxy_edge": [
+          2046,
+          6238
+        ],
+        "source_faces": [
+          11983
+        ]
+      },
+      {
+        "record_index": 68,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          0.004883661225903779,
+          0.22756971418857574,
+          0.07130241952836514
+        ],
+        "proxy_edge": [
+          6238,
+          6304
+        ],
+        "source_faces": [
+          12100
+        ]
+      },
+      {
+        "record_index": 69,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          0.0009766961447894573,
+          0.23049940168857574,
+          0.0732574537396431
+        ],
+        "proxy_edge": [
+          6280,
+          6311
+        ],
+        "source_faces": [
+          12122
+        ]
+      },
+      {
+        "record_index": 70,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.007813916774466634,
+          0.22561658918857574,
+          0.06446648202836514
+        ],
+        "proxy_edge": [
+          6232,
+          6331
+        ],
+        "source_faces": [
+          12152
+        ]
+      },
+      {
+        "record_index": 71,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.005860553123056889,
+          0.22366346418857574,
+          0.0673980787396431
+        ],
+        "proxy_edge": [
+          6331,
+          6335
+        ],
+        "source_faces": [
+          12160
+        ]
+      },
+      {
+        "record_index": 72,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.01660512643866241,
+          0.21682752668857574,
+          0.05469895340502262
+        ],
+        "proxy_edge": [
+          6236,
+          6335
+        ],
+        "source_faces": [
+          12162
+        ]
+      },
+      {
+        "record_index": 73,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.00976727926172316,
+          0.24417127668857574,
+          0.0800933912396431
+        ],
+        "proxy_edge": [
+          6336,
+          6337
+        ],
+        "source_faces": [
+          12169
+        ]
+      },
+      {
+        "record_index": 74,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.004883513203822076,
+          0.24417127668857574,
+          0.0800933912396431
+        ],
+        "proxy_edge": [
+          6322,
+          6337
+        ],
+        "source_faces": [
+          12169
+        ]
+      },
+      {
+        "record_index": 75,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.005860551726073027,
+          0.24124158918857574,
+          0.0830230787396431
+        ],
+        "proxy_edge": [
+          6336,
+          6348
+        ],
+        "source_faces": [
+          12201
+        ]
+      },
+      {
+        "record_index": 76,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.1347961276769638,
+          0.32818615436553955,
+          0.10842134058475494
+        ],
+        "proxy_edge": [
+          6496,
+          6497
+        ],
+        "source_faces": [
+          12448
+        ]
+      },
+      {
+        "record_index": 77,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.1367492526769638,
+          0.32818615436553955,
+          0.10842134058475494
+        ],
+        "proxy_edge": [
+          6497,
+          6498
+        ],
+        "source_faces": [
+          12449
+        ]
+      },
+      {
+        "record_index": 78,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.02246569376438856,
+          0.21780408918857574,
+          0.05372048355638981
+        ],
+        "proxy_edge": [
+          6236,
+          7217
+        ],
+        "source_faces": [
+          13820
+        ]
+      },
+      {
+        "record_index": 79,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.01660488685593009,
+          0.22659315168857574,
+          0.06544304639101028
+        ],
+        "proxy_edge": [
+          6345,
+          7217
+        ],
+        "source_faces": [
+          13823
+        ]
+      },
+      {
+        "record_index": 80,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.009767517680302262,
+          0.23245252668857574,
+          0.0752105787396431
+        ],
+        "proxy_edge": [
+          6345,
+          6348
+        ],
+        "source_faces": [
+          13825
+        ]
+      },
+      {
+        "record_index": 81,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.042976368218660355,
+          0.21780408918857574,
+          0.05079079791903496
+        ],
+        "proxy_edge": [
+          2067,
+          7233
+        ],
+        "source_faces": [
+          13859
+        ]
+      },
+      {
+        "record_index": 82,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.046882616356015205,
+          0.21487440168857574,
+          0.05372048541903496
+        ],
+        "proxy_edge": [
+          7199,
+          7243
+        ],
+        "source_faces": [
+          13878
+        ]
+      },
+      {
+        "record_index": 83,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.035163864493370056,
+          0.23342908918857574,
+          0.0761871486902237
+        ],
+        "proxy_edge": [
+          7250,
+          7251
+        ],
+        "source_faces": [
+          13889
+        ]
+      },
+      {
+        "record_index": 84,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.035163864493370056,
+          0.23245252668857574,
+          0.0742340236902237
+        ],
+        "proxy_edge": [
+          7241,
+          7250
+        ],
+        "source_faces": [
+          13893
+        ]
+      },
+      {
+        "record_index": 85,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.041999803856015205,
+          0.22073377668857574,
+          0.06055833213031292
+        ],
+        "proxy_edge": [
+          7199,
+          7241
+        ],
+        "source_faces": [
+          13899
+        ]
+      },
+      {
+        "record_index": 86,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.045906053856015205,
+          0.21878065168857574,
+          0.05860520526766777
+        ],
+        "proxy_edge": [
+          7200,
+          7243
+        ],
+        "source_faces": [
+          13905
+        ]
+      },
+      {
+        "record_index": 87,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.041023241356015205,
+          0.22561658918857574,
+          0.06739617697894573
+        ],
+        "proxy_edge": [
+          7200,
+          7251
+        ],
+        "source_faces": [
+          13906
+        ]
+      },
+      {
+        "record_index": 88,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.0918121263384819,
+          0.39849865436553955,
+          0.0947418361902237
+        ],
+        "proxy_edge": [
+          7322,
+          7323
+        ],
+        "source_faces": [
+          14073
+        ]
+      },
+      {
+        "record_index": 89,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.0957183763384819,
+          0.39849865436553955,
+          0.0947418361902237
+        ],
+        "proxy_edge": [
+          7323,
+          7325
+        ],
+        "source_faces": [
+          14077
+        ]
+      },
+      {
+        "record_index": 90,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.0947418138384819,
+          0.39849865436553955,
+          0.0947418361902237
+        ],
+        "proxy_edge": [
+          7322,
+          7325
+        ],
+        "source_faces": [
+          14078
+        ]
+      },
+      {
+        "record_index": 91,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.1357726901769638,
+          0.32818615436553955,
+          0.10842134058475494
+        ],
+        "proxy_edge": [
+          6496,
+          6498
+        ],
+        "source_faces": [
+          14146
+        ]
+      },
+      {
+        "record_index": 92,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.2158661037683487,
+          0.32037365436553955,
+          0.09571835398674011
+        ],
+        "proxy_edge": [
+          5743,
+          6177
+        ],
+        "source_faces": [
+          14553
+        ]
+      },
+      {
+        "record_index": 93,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.21195222437381744,
+          0.32623302936553955,
+          0.09474179148674011
+        ],
+        "proxy_edge": [
+          5741,
+          6177
+        ],
+        "source_faces": [
+          14554
+        ]
+      },
+      {
+        "record_index": 94,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.27545166015625,
+          0.5029909014701843,
+          0.059583693742752075
+        ],
+        "proxy_edge": [
+          7679,
+          7766
+        ],
+        "source_faces": [
+          15386
+        ]
+      },
+      {
+        "record_index": 95,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.27447509765625,
+          0.5039674639701843,
+          0.060560256242752075
+        ],
+        "proxy_edge": [
+          4169,
+          7766
+        ],
+        "source_faces": [
+          15386
+        ]
+      },
+      {
+        "record_index": 96,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.448333740234375,
+          0.46395882964134216,
+          0.07521062344312668
+        ],
+        "proxy_edge": [
+          8092,
+          8158
+        ],
+        "source_faces": [
+          16221
+        ]
+      },
+      {
+        "record_index": 97,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.449310302734375,
+          0.46493539214134216,
+          0.07521062344312668
+        ],
+        "proxy_edge": [
+          8092,
+          8162
+        ],
+        "source_faces": [
+          16224
+        ]
+      },
+      {
+        "record_index": 98,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.449310302734375,
+          0.46200570464134216,
+          0.07521062344312668
+        ],
+        "proxy_edge": [
+          8158,
+          8172
+        ],
+        "source_faces": [
+          16241
+        ]
+      },
+      {
+        "record_index": 99,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.451263427734375,
+          0.46395882964134216,
+          0.07521062344312668
+        ],
+        "proxy_edge": [
+          8162,
+          8176
+        ],
+        "source_faces": [
+          16250
+        ]
+      },
+      {
+        "record_index": 100,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.451263427734375,
+          0.46200570464134216,
+          0.07521062344312668
+        ],
+        "proxy_edge": [
+          8172,
+          8176
+        ],
+        "source_faces": [
+          16255
+        ]
+      },
+      {
+        "record_index": 101,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.459075927734375,
+          0.45321664214134216,
+          0.07130437344312668
+        ],
+        "proxy_edge": [
+          8178,
+          8179
+        ],
+        "source_faces": [
+          16257
+        ]
+      },
+      {
+        "record_index": 102,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.457122802734375,
+          0.45419320464134216,
+          0.07130437344312668
+        ],
+        "proxy_edge": [
+          8179,
+          8180
+        ],
+        "source_faces": [
+          16258
+        ]
+      },
+      {
+        "record_index": 103,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.461029052734375,
+          0.45419320464134216,
+          0.07130437344312668
+        ],
+        "proxy_edge": [
+          8178,
+          8184
+        ],
+        "source_faces": [
+          16261
+        ]
+      },
+      {
+        "record_index": 104,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.458099365234375,
+          0.45614632964134216,
+          0.07228093594312668
+        ],
+        "proxy_edge": [
+          8180,
+          8186
+        ],
+        "source_faces": [
+          16264
+        ]
+      },
+      {
+        "record_index": 105,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.461029052734375,
+          0.45614632964134216,
+          0.07228093594312668
+        ],
+        "proxy_edge": [
+          8184,
+          8186
+        ],
+        "source_faces": [
+          16269
+        ]
+      },
+      {
+        "record_index": 106,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.474700927734375,
+          0.47079476714134216,
+          0.07032781094312668
+        ],
+        "proxy_edge": [
+          8114,
+          8210
+        ],
+        "source_faces": [
+          16317
+        ]
+      },
+      {
+        "record_index": 107,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.474700927734375,
+          0.47274789214134216,
+          0.07130437344312668
+        ],
+        "proxy_edge": [
+          8101,
+          8214
+        ],
+        "source_faces": [
+          16323
+        ]
+      },
+      {
+        "record_index": 108,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.473724365234375,
+          0.47177132964134216,
+          0.07130437344312668
+        ],
+        "proxy_edge": [
+          8210,
+          8214
+        ],
+        "source_faces": [
+          16333
+        ]
+      }
+    ],
+    "nonmanifold_records": [
+      {
+        "record_index": 0,
+        "region": "tail_surface",
+        "midpoint": [
+          0.434661865234375,
+          0.12403884530067444,
+          -0.003907012636773288
+        ],
+        "proxy_edge": [
+          454,
+          456
+        ],
+        "source_faces": [
+          791,
+          792,
+          793,
+          909
+        ]
+      },
+      {
+        "record_index": 1,
+        "region": "tail_surface",
+        "midpoint": [
+          0.430755615234375,
+          0.12892165780067444,
+          -0.002930211485363543
+        ],
+        "proxy_edge": [
+          454,
+          459
+        ],
+        "source_faces": [
+          794,
+          795,
+          796
+        ]
+      },
+      {
+        "record_index": 2,
+        "region": "tail_surface",
+        "midpoint": [
+          0.4160919189453125,
+          0.12696852907538414,
+          -0.00586061249487102
+        ],
+        "proxy_edge": [
+          462,
+          465
+        ],
+        "source_faces": [
+          803,
+          804,
+          892
+        ]
+      },
+      {
+        "record_index": 3,
+        "region": "tail_surface",
+        "midpoint": [
+          0.434661865234375,
+          0.11427322030067444,
+          -0.003907012287527323
+        ],
+        "proxy_edge": [
+          456,
+          501
+        ],
+        "source_faces": [
+          855,
+          857,
+          858,
+          909
+        ]
+      },
+      {
+        "record_index": 4,
+        "region": "tail_surface",
+        "midpoint": [
+          0.434661865234375,
+          0.10449996590614319,
+          -0.0009767284500412643
+        ],
+        "proxy_edge": [
+          501,
+          505
+        ],
+        "source_faces": [
+          862,
+          863,
+          870
+        ]
+      },
+      {
+        "record_index": 5,
+        "region": "tail_surface",
+        "midpoint": [
+          0.438568115234375,
+          0.09570327401161194,
+          0.004883838875684887
+        ],
+        "proxy_edge": [
+          505,
+          509
+        ],
+        "source_faces": [
+          867,
+          868,
+          872
+        ]
+      },
+      {
+        "record_index": 6,
+        "region": "tail_surface",
+        "midpoint": [
+          0.437591552734375,
+          0.09179702401161194,
+          0.008790923748165369
+        ],
+        "proxy_edge": [
+          508,
+          509
+        ],
+        "source_faces": [
+          868,
+          869,
+          945
+        ]
+      },
+      {
+        "record_index": 7,
+        "region": "tail_surface",
+        "midpoint": [
+          0.40924072265625,
+          0.11817946285009384,
+          -0.006837412249296904
+        ],
+        "proxy_edge": [
+          465,
+          520
+        ],
+        "source_faces": [
+          891,
+          894,
+          895
+        ]
+      },
+      {
+        "record_index": 8,
+        "region": "tail_surface",
+        "midpoint": [
+          0.40631103515625,
+          0.10939040035009384,
+          -0.004883809480816126
+        ],
+        "proxy_edge": [
+          520,
+          524
+        ],
+        "source_faces": [
+          897,
+          898,
+          969
+        ]
+      },
+      {
+        "record_index": 9,
+        "region": "tail_surface",
+        "midpoint": [
+          0.40435791015625,
+          0.10157027095556259,
+          0.000976758310571313
+        ],
+        "proxy_edge": [
+          519,
+          524
+        ],
+        "source_faces": [
+          900,
+          902,
+          969
+        ]
+      },
+      {
+        "record_index": 10,
+        "region": "hind_leg_or_ventral_pelvis",
+        "midpoint": [
+          0.28033447265625,
+          0.29592907428741455,
+          -0.02441791258752346
+        ],
+        "proxy_edge": [
+          1073,
+          1074
+        ],
+        "source_faces": [
+          1862,
+          1880,
+          1881
+        ]
+      },
+      {
+        "record_index": 11,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.004883646382950246,
+          0.21487440168857574,
+          -0.03907012566924095
+        ],
+        "proxy_edge": [
+          2108,
+          2109
+        ],
+        "source_faces": [
+          3685,
+          3686,
+          3981
+        ]
+      },
+      {
+        "record_index": 12,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.008790734224021435,
+          0.23147596418857574,
+          -0.05860519036650658
+        ],
+        "proxy_edge": [
+          2280,
+          2281
+        ],
+        "source_faces": [
+          4019,
+          4020,
+          4026
+        ]
+      },
+      {
+        "record_index": 13,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.011720658745616674,
+          0.22268690168857574,
+          -0.050790783017873764
+        ],
+        "proxy_edge": [
+          2280,
+          2423
+        ],
+        "source_faces": [
+          4280,
+          4281,
+          4286
+        ]
+      },
+      {
+        "record_index": 14,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.1992492526769638,
+          0.34869396686553955,
+          -0.06935122236609459
+        ],
+        "proxy_edge": [
+          3585,
+          3586
+        ],
+        "source_faces": [
+          6522,
+          6523,
+          6548
+        ]
+      },
+      {
+        "record_index": 15,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.2012023776769638,
+          0.35748302936553955,
+          -0.06642153859138489
+        ],
+        "proxy_edge": [
+          2234,
+          3586
+        ],
+        "source_faces": [
+          6525,
+          6526,
+          6548
+        ]
+      },
+      {
+        "record_index": 16,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.2422332763671875,
+          0.46493542194366455,
+          -0.005860540550202131
+        ],
+        "proxy_edge": [
+          4085,
+          4138
+        ],
+        "source_faces": [
+          7744,
+          7903,
+          7904
+        ]
+      },
+      {
+        "record_index": 17,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.2461395263671875,
+          0.46981823444366455,
+          0.001953628845512867
+        ],
+        "proxy_edge": [
+          4138,
+          4141
+        ],
+        "source_faces": [
+          7747,
+          7905,
+          7988
+        ]
+      },
+      {
+        "record_index": 18,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.2402801513671875,
+          0.46395885944366455,
+          0.008790995925664902
+        ],
+        "proxy_edge": [
+          4141,
+          4152
+        ],
+        "source_faces": [
+          7760,
+          7990,
+          7991
+        ]
+      },
+      {
+        "record_index": 19,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.2363739013671875,
+          0.45907604694366455,
+          0.0009768265299499035
+        ],
+        "proxy_edge": [
+          4085,
+          4152
+        ],
+        "source_faces": [
+          7899,
+          7900,
+          7906
+        ]
+      },
+      {
+        "record_index": 20,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.467864990234375,
+          0.46688851714134216,
+          -0.0009767450974322855
+        ],
+        "proxy_edge": [
+          4692,
+          4696
+        ],
+        "source_faces": [
+          8690,
+          8691,
+          8807
+        ]
+      },
+      {
+        "record_index": 21,
+        "region": "tail_surface",
+        "midpoint": [
+          0.425872802734375,
+          0.09765639528632164,
+          0.05274386703968048
+        ],
+        "proxy_edge": [
+          5388,
+          5389
+        ],
+        "source_faces": [
+          10034,
+          10035,
+          10048
+        ]
+      },
+      {
+        "record_index": 22,
+        "region": "tail_surface",
+        "midpoint": [
+          0.420989990234375,
+          0.11622633785009384,
+          0.05958171188831329
+        ],
+        "proxy_edge": [
+          5393,
+          5394
+        ],
+        "source_faces": [
+          10038,
+          10210,
+          10212
+        ]
+      },
+      {
+        "record_index": 23,
+        "region": "tail_surface",
+        "midpoint": [
+          0.424896240234375,
+          0.10645308345556259,
+          0.05762858688831329
+        ],
+        "proxy_edge": [
+          5389,
+          5394
+        ],
+        "source_faces": [
+          10039,
+          10040,
+          10042
+        ]
+      },
+      {
+        "record_index": 24,
+        "region": "tail_surface",
+        "midpoint": [
+          0.40826416015625,
+          0.12794509530067444,
+          0.05665202438831329
+        ],
+        "proxy_edge": [
+          5471,
+          5473
+        ],
+        "source_faces": [
+          10226,
+          10229,
+          10230
+        ]
+      },
+      {
+        "record_index": 25,
+        "region": "tail_surface",
+        "midpoint": [
+          0.40240478515625,
+          0.12013259157538414,
+          0.05762859061360359
+        ],
+        "proxy_edge": [
+          5405,
+          5473
+        ],
+        "source_faces": [
+          10227,
+          10231,
+          10233
+        ]
+      },
+      {
+        "record_index": 26,
+        "region": "tail_surface",
+        "midpoint": [
+          0.39752197265625,
+          0.09570326656103134,
+          0.04199977591633797
+        ],
+        "proxy_edge": [
+          566,
+          5406
+        ],
+        "source_faces": [
+          10276,
+          10277,
+          10278
+        ]
+      },
+      {
+        "record_index": 27,
+        "region": "tail_surface",
+        "midpoint": [
+          0.39849853515625,
+          0.10157027095556259,
+          0.05079074576497078
+        ],
+        "proxy_edge": [
+          5406,
+          5504
+        ],
+        "source_faces": [
+          10295,
+          10296,
+          10303
+        ]
+      },
+      {
+        "record_index": 28,
+        "region": "tail_surface",
+        "midpoint": [
+          0.40045166015625,
+          0.11036696285009384,
+          0.05567546561360359
+        ],
+        "proxy_edge": [
+          5405,
+          5504
+        ],
+        "source_faces": [
+          10299,
+          10300,
+          10303
+        ]
+      },
+      {
+        "record_index": 29,
+        "region": "tail_surface",
+        "midpoint": [
+          0.33697509765625,
+          0.13380447030067444,
+          0.042976342141628265
+        ],
+        "proxy_edge": [
+          5540,
+          5546
+        ],
+        "source_faces": [
+          10411,
+          10418,
+          10421
+        ]
+      },
+      {
+        "record_index": 30,
+        "region": "tail_surface",
+        "midpoint": [
+          0.34088134765625,
+          0.14161697030067444,
+          0.047859154641628265
+        ],
+        "proxy_edge": [
+          5526,
+          5546
+        ],
+        "source_faces": [
+          10414,
+          10419,
+          10421
+        ]
+      },
+      {
+        "record_index": 31,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          0.20999909937381744,
+          0.32818615436553955,
+          0.09181210398674011
+        ],
+        "proxy_edge": [
+          5741,
+          5743
+        ],
+        "source_faces": [
+          10887,
+          14539,
+          14552
+        ]
+      },
+      {
+        "record_index": 32,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          0.005860403121914715,
+          0.23538221418857574,
+          0.0781402662396431
+        ],
+        "proxy_edge": [
+          6280,
+          6304
+        ],
+        "source_faces": [
+          12094,
+          12095,
+          12123
+        ]
+      },
+      {
+        "record_index": 33,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          0.0009766965522430837,
+          0.24221814423799515,
+          0.0800933912396431
+        ],
+        "proxy_edge": [
+          6312,
+          6313
+        ],
+        "source_faces": [
+          12133,
+          12134,
+          12135
+        ]
+      },
+      {
+        "record_index": 34,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          1.501757651567459e-08,
+          0.23538221418857574,
+          0.0791168287396431
+        ],
+        "proxy_edge": [
+          6312,
+          6321
+        ],
+        "source_faces": [
+          12134,
+          12146,
+          12147
+        ]
+      },
+      {
+        "record_index": 35,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          0.0009766964358277619,
+          0.24905408173799515,
+          0.0820465162396431
+        ],
+        "proxy_edge": [
+          6313,
+          6322
+        ],
+        "source_faces": [
+          12135,
+          12136,
+          12148
+        ]
+      },
+      {
+        "record_index": 36,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.0009767264709807932,
+          0.22952283918857574,
+          0.0761871412396431
+        ],
+        "proxy_edge": [
+          6311,
+          6321
+        ],
+        "source_faces": [
+          12146,
+          12149,
+          12154
+        ]
+      },
+      {
+        "record_index": 37,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.042976368218660355,
+          0.21194471418857574,
+          0.04786111228168011
+        ],
+        "proxy_edge": [
+          2067,
+          7223
+        ],
+        "source_faces": [
+          13835,
+          13836,
+          13859
+        ]
+      },
+      {
+        "record_index": 38,
+        "region": "ventral_trunk_fur",
+        "midpoint": [
+          -0.034187305718660355,
+          0.21878065168857574,
+          0.05665207840502262
+        ],
+        "proxy_edge": [
+          7223,
+          7233
+        ],
+        "source_faces": [
+          13859,
+          13860,
+          13864
+        ]
+      },
+      {
+        "record_index": 39,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.27740478515625,
+          0.5010377764701843,
+          0.06642153859138489
+        ],
+        "proxy_edge": [
+          4169,
+          7679
+        ],
+        "source_faces": [
+          15384,
+          15385,
+          15386
+        ]
+      },
+      {
+        "record_index": 40,
+        "region": "upper_body_or_head_coat",
+        "midpoint": [
+          -0.35064697265625,
+          0.5450441241264343,
+          0.10646823793649673
+        ],
+        "proxy_edge": [
+          7827,
+          7853
+        ],
+        "source_faces": [
+          15534,
+          15677,
+          15689,
+          15708
+        ]
+      },
+      {
+        "record_index": 41,
+        "region": "muzzle_and_whiskers",
+        "midpoint": [
+          -0.475677490234375,
+          0.47177132964134216,
+          0.07032781094312668
+        ],
+        "proxy_edge": [
+          8101,
+          8114
+        ],
+        "source_faces": [
+          16151,
+          16294,
+          16318
+        ]
+      }
+    ]
+  },
+  "classification_limit": "Broad coordinate bins + front/side visual review are anatomical location hints, not proof of a specific repair. Detailed source IDs/endpoints remain in preflight.json. All 42 >2-face edges belong to main component C0."
+}
