@@ -1,0 +1,21 @@
+{
+  "README.md": "7ed5f12b5f5810a08783116e0fa4edb01417e70c100e9c4bbe46edecfc824b7f",
+  "blender_comparison.json": "f7cb490e30c2e587cd7b1918f5fc53fe80ea9982a690e595b6f1c9ae52d6ffd4",
+  "decision.json": "6a590e2b2df0e9aaeb79e163a2e35688cbdf0301c4f90a5e630057e818044fbd",
+  "dry_run.json": "37309a5c74aac5a69954ee98db43ad06b24909a7f4d51920ad8247256d523002",
+  "export_baseline_rounding.json": "9829e3d266c91801774ce35c6aba7039114ace2497cf6bbe22d8e54c3285fb28",
+  "export_color_audit.json": "54abaef7d9ee21771bf6158a939f2e857c99856e38116fec78456110ab752038",
+  "export_preservation.json": "9a0a71954c0de70d951bb8f001212df634639aa138f5af7580e0aa5791fb0e5d",
+  "glb_validator.json": "67d7d50d5fa8661999af617790a0978f4946e6c6af776386a7d4770a9e24f96e",
+  "images/actual_export_before_after.png": "7555002451e2d6dc6db35c7f570a3a5cf9c919a703882dc4ac204845b9e56fe6",
+  "images/c2_closeup_before_after.png": "13d56398d96f9df62ad4104845b1c3b92ee9e7a90f8cf02984b451484f489658",
+  "images/image_metadata.json": "7a54427aceb0e38b63da3c642a81246c428cb68bdb6e89354dba2caf93dd8b12",
+  "images/pelvis_hip_before_after.png": "c3336d4488b594a0bb87e6b7fff361841b265430546c3b720c087150c067aef0",
+  "images/tail_blender_before_after.png": "28dd6f11892f9e8f8ab8f00718b775087a416d1f6d2d2e664eebe25ed3544437",
+  "panda_capture.json": "6e2ab221ff6112a47a3715aa771b2523c5a2b3d743a52d6accfe6f256eb63064",
+  "panda_deformation.json": "e9ca902bb228f13eb508d293cc51dfb1cd78d53be1bacdee6775df09f970224c",
+  "test_results.json": "379ebc45fa05cb3ef7d5adab5d8cef9447ad8ecffc2cd88fdd71a00ccb698c12",
+  "weight_diff.json": "9ccbf9ea9262664bbebf15dfffb58395e8b2d3705e4d60d351324965e8334188",
+  "assets/rigging/deskcat_c2_trial_01.blend": "cd1f22168c533331def6b763a9358fa4ffa434488236961e3a52a7632de69129",
+  "assets/3d/tripo/deskcat_calico_c2_trial_01.glb": "d36a7f88fb118ca93878ce70cdd8bd0d34c5f4ffb0db5720891bb6427fb501ed"
+}

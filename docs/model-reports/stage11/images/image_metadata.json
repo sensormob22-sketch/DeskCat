@@ -1,0 +1,361 @@
+{
+  "status": "ONE_REJECTED_C2_TRIAL_MATCHED_VIEWS",
+  "scale": 1.9996338561054494,
+  "offset": [
+    -0.0,
+    0.0,
+    -0.0
+  ],
+  "driver": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "sheets": {
+    "tail_blender_before_after": [
+      {
+        "label": "v6",
+        "case": "tail_plus10",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.62,
+          -0.02,
+          0.34
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/v6_tail_plus10.glb"
+      },
+      {
+        "label": "C2 trial",
+        "case": "tail_plus10",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.62,
+          -0.02,
+          0.34
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/c2_trial_tail_plus10.glb"
+      },
+      {
+        "label": "v6",
+        "case": "tail_plus15",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.62,
+          -0.02,
+          0.34
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/v6_tail_plus15.glb"
+      },
+      {
+        "label": "C2 trial",
+        "case": "tail_plus15",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.62,
+          -0.02,
+          0.34
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/c2_trial_tail_plus15.glb"
+      },
+      {
+        "label": "v6",
+        "case": "tail_minus15",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.62,
+          -0.02,
+          0.34
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/v6_tail_minus15.glb"
+      },
+      {
+        "label": "C2 trial",
+        "case": "tail_minus15",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.62,
+          -0.02,
+          0.34
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/c2_trial_tail_minus15.glb"
+      },
+      {
+        "label": "v6",
+        "case": "hold_negative",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.62,
+          -0.02,
+          0.34
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/v6_hold_negative.glb"
+      },
+      {
+        "label": "C2 trial",
+        "case": "hold_negative",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.62,
+          -0.02,
+          0.34
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/c2_trial_hold_negative.glb"
+      }
+    ],
+    "pelvis_hip_before_after": [
+      {
+        "label": "v6",
+        "case": "pelvis_plus5",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.47,
+          -0.09,
+          0.5
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/v6_pelvis_plus5.glb"
+      },
+      {
+        "label": "C2 trial",
+        "case": "pelvis_plus5",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.47,
+          -0.09,
+          0.5
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/c2_trial_pelvis_plus5.glb"
+      },
+      {
+        "label": "v6",
+        "case": "hip_plus15",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.47,
+          -0.09,
+          0.5
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/v6_hip_plus15.glb"
+      },
+      {
+        "label": "C2 trial",
+        "case": "hip_plus15",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.47,
+          -0.09,
+          0.5
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/c2_trial_hip_plus15.glb"
+      },
+      {
+        "label": "v6",
+        "case": "hip_minus15",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.47,
+          -0.09,
+          0.5
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/v6_hip_minus15.glb"
+      },
+      {
+        "label": "C2 trial",
+        "case": "hip_minus15",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.47,
+          -0.09,
+          0.5
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/c2_trial_hip_minus15.glb"
+      },
+      {
+        "label": "v6",
+        "case": "hold_positive",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.47,
+          -0.09,
+          0.5
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/v6_hold_positive.glb"
+      },
+      {
+        "label": "C2 trial",
+        "case": "hold_positive",
+        "camera": [
+          2,
+          -3,
+          0.6
+        ],
+        "target": [
+          0.47,
+          -0.09,
+          0.5
+        ],
+        "film": [
+          0.9,
+          0.72
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/c2_trial_hold_positive.glb"
+      }
+    ],
+    "c2_closeup_before_after": [
+      {
+        "label": "v6",
+        "case": "tail_plus15",
+        "camera": [
+          2.551801323890686,
+          -2.999697271588957,
+          0.9509066998958587
+        ],
+        "target": [
+          0.551801323890686,
+          0.0003027284110430628,
+          0.35090669989585876
+        ],
+        "film": [
+          0.055,
+          0.044
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/v6_tail_plus15.glb"
+      },
+      {
+        "label": "C2 trial",
+        "case": "tail_plus15",
+        "camera": [
+          2.551801323890686,
+          -2.999697271588957,
+          0.9509066998958587
+        ],
+        "target": [
+          0.551801323890686,
+          0.0003027284110430628,
+          0.35090669989585876
+        ],
+        "film": [
+          0.055,
+          0.044
+        ],
+        "snapshot": "artifacts/stage11_c2_trial/c2_trial_tail_plus15.glb"
+      }
+    ]
+  },
+  "limits": "Base-color preview, not full PBR; red source triangles drawn through geometry to show exact C2 face IDs."
+}

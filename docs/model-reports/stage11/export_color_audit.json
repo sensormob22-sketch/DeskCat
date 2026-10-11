@@ -1,0 +1,8 @@
+{
+  "discarded_first_export_sha256": "b24b67803eb2c5c63c84d040c58922b3af05d0243abbb2940c2bbeb56dc806c2",
+  "final_export_sha256": "d36a7f88fb118ca93878ce70cdd8bd0d34c5f4ffb0db5720891bb6427fb501ed",
+  "vertex_colors_exported": false,
+  "scene_weights_changed": false,
+  "scene_saved": false,
+  "reason": "Inherited HEAT_ point attributes were emitted as COLOR_0 by default; disabled export only, preserving scene diagnostic layers and original base-color texture."
+}

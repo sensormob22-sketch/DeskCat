@@ -1,0 +1,164 @@
+{
+  "status": "ACTUAL_GLBS_EVALUATED_BY_PANDA3D_CHARACTER_JOINTS",
+  "driver": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "backend": "p3headlessgl",
+  "models": {
+    "v6_export": {
+      "sha256": "e6ea0f3cdbf0230233cddf259d720fac61aab481cb134eb06ac3a6d2108cd51d",
+      "panda_original_vertex_order_error": 0,
+      "rest_bind_error": 9.245927368097646e-08,
+      "controlled_joints": [
+        "elbow_FL",
+        "elbow_FR",
+        "hip_HL",
+        "hip_HR",
+        "hock_HL",
+        "hock_HR",
+        "lumbar",
+        "pelvis",
+        "root",
+        "shoulder_FL",
+        "shoulder_FR",
+        "stifle_HL",
+        "stifle_HR",
+        "tail_base",
+        "thoracic",
+        "wrist_FL",
+        "wrist_FR"
+      ],
+      "poses": {
+        "rest": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_rest.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_plus5": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_tail_plus5.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_minus5": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_tail_minus5.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_plus10": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_tail_plus10.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_minus10": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_tail_minus10.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_plus15": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_tail_plus15.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_minus15": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_tail_minus15.f32",
+          "source_vertex_count": 58450
+        },
+        "hold_positive": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_hold_positive.f32",
+          "source_vertex_count": 58450
+        },
+        "hold_negative": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_hold_negative.f32",
+          "source_vertex_count": 58450
+        },
+        "pelvis_plus5": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_pelvis_plus5.f32",
+          "source_vertex_count": 58450
+        },
+        "pelvis_minus5": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_pelvis_minus5.f32",
+          "source_vertex_count": 58450
+        },
+        "hip_plus15": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_hip_plus15.f32",
+          "source_vertex_count": 58450
+        },
+        "hip_minus15": {
+          "positions_f32": "artifacts/stage11_panda_c2/v6_export_hip_minus15.f32",
+          "source_vertex_count": 58450
+        }
+      }
+    },
+    "c2_export": {
+      "sha256": "d36a7f88fb118ca93878ce70cdd8bd0d34c5f4ffb0db5720891bb6427fb501ed",
+      "panda_original_vertex_order_error": 0,
+      "rest_bind_error": 9.245927368097646e-08,
+      "controlled_joints": [
+        "elbow_FL",
+        "elbow_FR",
+        "hip_HL",
+        "hip_HR",
+        "hock_HL",
+        "hock_HR",
+        "lumbar",
+        "pelvis",
+        "root",
+        "shoulder_FL",
+        "shoulder_FR",
+        "stifle_HL",
+        "stifle_HR",
+        "tail_base",
+        "thoracic",
+        "wrist_FL",
+        "wrist_FR"
+      ],
+      "poses": {
+        "rest": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_rest.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_plus5": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_tail_plus5.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_minus5": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_tail_minus5.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_plus10": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_tail_plus10.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_minus10": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_tail_minus10.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_plus15": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_tail_plus15.f32",
+          "source_vertex_count": 58450
+        },
+        "tail_minus15": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_tail_minus15.f32",
+          "source_vertex_count": 58450
+        },
+        "hold_positive": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_hold_positive.f32",
+          "source_vertex_count": 58450
+        },
+        "hold_negative": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_hold_negative.f32",
+          "source_vertex_count": 58450
+        },
+        "pelvis_plus5": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_pelvis_plus5.f32",
+          "source_vertex_count": 58450
+        },
+        "pelvis_minus5": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_pelvis_minus5.f32",
+          "source_vertex_count": 58450
+        },
+        "hip_plus15": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_hip_plus15.f32",
+          "source_vertex_count": 58450
+        },
+        "hip_minus15": {
+          "positions_f32": "artifacts/stage11_panda_c2/c2_export_hip_minus15.f32",
+          "source_vertex_count": 58450
+        }
+      }
+    }
+  },
+  "limits": "Actual exported joints and transform blends; no generated animation clips. Base-color preview, not full PBR. Geometry errors/crossings audited separately from binary captures."
+}

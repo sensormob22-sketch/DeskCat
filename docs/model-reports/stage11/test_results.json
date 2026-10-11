@@ -1,0 +1,26 @@
+{
+  "environment": "Linux cloud worker; Python 3.12; Blender 4.3.2 headless; Panda3D 1.10.15/panda3d-gltf 1.3.0; PySide6 offscreen; software llvmpipe",
+  "pytest": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 96,
+    "new_stage11_tests": 5,
+    "seconds": 24.5,
+    "exit_code": 0,
+    "stderr_note": "Fontconfig no writable cache directories after passing tests"
+  },
+  "dry_run_passed": true,
+  "exact_proposal_sha256": "5de3474984a5b5466e5d1f1fe182d28b0baebe6585c2f814fe8e720175dd744e",
+  "blender_matched_poses": 13,
+  "actual_panda_poses_per_glb": 13,
+  "actual_panda_glbs": 2,
+  "final_diagnostic_glb_sha256": "d36a7f88fb118ca93878ce70cdd8bd0d34c5f4ffb0db5720891bb6427fb501ed",
+  "validator_errors": 0,
+  "validator_warnings": 1,
+  "export_color_leak_corrected_without_weight_changes": true,
+  "windows_gui_tested": false,
+  "full_pbr_tested": false,
+  "weight_application_cycles": 1,
+  "original_hashes_verified_after_experiment": true,
+  "paid_operations": 0,
+  "decision": "REJECT_EXACT_STAGE10_PROPOSAL_AFTER_ONE_TRIAL"
+}

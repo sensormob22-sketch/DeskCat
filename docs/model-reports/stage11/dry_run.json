@@ -1,0 +1,89 @@
+{
+  "status": "DRY_RUN_PASS_NO_WEIGHTS_APPLIED",
+  "proposal_sha256": "5de3474984a5b5466e5d1f1fe182d28b0baebe6585c2f814fe8e720175dd744e",
+  "scene_sha256": "35a93aa6ae3b7127487f6d9840907ae0a6908c23cd72bcb922d1b01719ec4c8e",
+  "bone_weights_sha256_float32": "d3d6405976c05532c9ab27fa54e7f34a0a1c10cdb15edeccb677893343d68949",
+  "frozen_hashes": {
+    "assets/3d/tripo/deskcat_calico_h25_v1.glb": "ff2a9e1d7280e4784913413fb45b10a2bdeadc125c80791a50f918a3ae646150",
+    "assets/3d/tripo/deskcat_calico_h25_v1_localprep.glb": "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6",
+    "assets/3d/tripo/deskcat_calico_h25_v1_rigprep.glb": "cab5d4a2205c644bdbb24a340777cf172e80969515290ae441bb78a29ce4df2c",
+    "assets/3d/tripo/deskcat_calico_h25_v1_skinprobe_v5.glb": "24569064ddab8c80b32e1a51a4bd1f68dba95031347d5fa7e296d6b33d5ebb90",
+    "assets/3d/tripo/deskcat_calico_h25_v1_skinprobe_v6.glb": "e6ea0f3cdbf0230233cddf259d720fac61aab481cb134eb06ac3a6d2108cd51d",
+    "assets/rigging/deskcat_v6_weight_handoff.blend": "35a93aa6ae3b7127487f6d9840907ae0a6908c23cd72bcb922d1b01719ec4c8e",
+    "docs/model-reports/stage10/tail_to_pelvis_proposal.json": "5de3474984a5b5466e5d1f1fe182d28b0baebe6585c2f814fe8e720175dd744e"
+  },
+  "read_only_validation": {
+    "valid_for_review": true,
+    "changed_source_vertices_proposed": 21,
+    "weights_applied": false,
+    "new_skinprobe_exported": false,
+    "status": "DRAFT_ONLY_REQUIRES_HUMAN_REVIEW",
+    "limits": "Validation checks scope, bone names, normalized values and seam identity. It does not certify visual deformation or authorize applying weights."
+  },
+  "source_vertex_ids": [
+    4000,
+    4002,
+    4003,
+    4004,
+    4006,
+    4007,
+    4008,
+    4010,
+    4141,
+    4142,
+    4143,
+    4144,
+    4145,
+    4146,
+    4147,
+    4149,
+    4150,
+    4151,
+    4153,
+    4154,
+    4156
+  ],
+  "changed_bones_allowed": [
+    "pelvis",
+    "tail_base"
+  ],
+  "frozen_other_masks_overlap": [],
+  "frozen_fingerprint": {
+    "geometry": "2bf46b103e18bc2776bfcfa41bc0ec7a29f97631287f08957f81dd79c3b4844f",
+    "uv": "bd5aad15b1843c289e5a61fc58af7ae8f7a23c4121dbd57a61e1ce07b5d40bb2",
+    "faces": "acb4279f7130e11a4dda68e6c4292f26ba12a96176e55bd0836a5b97503a1fac",
+    "bones": "99dd452a774e7d36e3d9fbb34f1ad3c0639574e71628713a71687fb6cb3ba9cf",
+    "packed_images": [
+      "4c6618eaea5f8e3816a9a7c19f83021f3eba8111dfc543633344da249364a949",
+      "4c6618eaea5f8e3816a9a7c19f83021f3eba8111dfc543633344da249364a949",
+      "7ad6a39000f15d63f99e03f57d757789b136ce1885a231431e905564cf12b7ff",
+      "7ad6a39000f15d63f99e03f57d757789b136ce1885a231431e905564cf12b7ff",
+      "e0bb6f6597b47a0934c854c3a0c0ec292db2d26460a91d914b9e639c3263753f",
+      "e0bb6f6597b47a0934c854c3a0c0ec292db2d26460a91d914b9e639c3263753f"
+    ],
+    "materials": [
+      "tripo_material_9c2f352c-c3b7-4428-8368-29a06beccb2a"
+    ],
+    "nondeforming_groups": {
+      "EDIT_tail_to_pelvis": "754964d94c3ec858d93e6638a459bdf8b7603ef43f63896579709d955f213449",
+      "REVIEW_tail_to_pelvis": "3cacbe22582de4aee3158b8f4fa5af002ae80826f61e8ad15881027f3b9d3c3c",
+      "EDIT_thoracic_abdomen": "787cfadd7f95a9746c54a9bfb01a03895f7b6dc6cbf30a694d1f5aabe7653566",
+      "REVIEW_thoracic_abdomen": "ec6ed28e66a2304d415bb1c995330b49c9a1257cd5f8c461c91f7d893b67f32f",
+      "EDIT_left_hip": "075c077fb30c17c2257955c3f756b77ba9226ac885fdeb2016121a55e8194dd2",
+      "REVIEW_left_hip": "5a72389d98dd3dc5160592a518eb213dae75e3b7689090c8e82c0eb7f9fd22c4",
+      "EDIT_right_shoulder_paw": "bc3e13406886f444a72f307a91df8909dcd50f2f640dfe55abd49344bb1a99bc",
+      "REVIEW_right_shoulder_paw": "942be9642ddaf3d740436bc7a74a56fdeb39fcb03ddbb8226bfedba6e4e7d8cf",
+      "EDIT_wrist_to_sole": "1d85a1c55e2504a33417e8ea08f1349d412781c4faf56c125c8432b2a1f6f651",
+      "REVIEW_wrist_to_sole": "201bce12598575ab258766f020526580da6a74982a9cd02bcc83d0d5b04a31dd",
+      "EDIT_hock_to_sole": "cad41fd00256cdf148bb975bdfc73f9c0e34ad2949fe97170e8f0344a9c28691",
+      "REVIEW_hock_to_sole": "a6e04289e3144c9846a24a1c77f1ad482c3bf8001facb39e88e8490bd2260ce1",
+      "PROTECT_HEAD_EYES_EARS": "5fc85dd141662c841f73a5106b1a73b685547ca39d953095f98af0d8340becbf",
+      "PROTECT_SOLES": "8ffc5361b399207cbebd0132a9d06b59fb1bcadd098b13eeda480ef938930a0f",
+      "EDIT_wrist_FL": "4833c333da711ff92585a2c2dc226becda217fd9e4d7ad3a842d08d79b92e735",
+      "EDIT_wrist_FR": "935fb9ac6e23c5b5e4eef79b35f5bd8677344a33086a23cb32e7465547edf72a",
+      "EDIT_hock_HL": "eeaaa1177dac7be615ba1068a6bae4db595e4bbbeb090e508aa1e5a20ac1147c",
+      "EDIT_hock_HR": "4ea6d64884db457533fe1c976d248dd4a56c47e670ec9d417f8add8d21583b07"
+    }
+  },
+  "blender": "4.3.2"
+}

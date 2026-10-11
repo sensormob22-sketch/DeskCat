@@ -1,0 +1,121 @@
+{
+  "source_sha256": "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6",
+  "export_sha256": "d36a7f88fb118ca93878ce70cdd8bd0d34c5f4ffb0db5720891bb6427fb501ed",
+  "source_vertices": 58450,
+  "export_vertices": 58454,
+  "source_triangles": 100790,
+  "export_triangles": 100790,
+  "position_uv_multiset_equal_rounded_1e6": false,
+  "position_uv_missing_signatures": 0,
+  "position_uv_extra_signatures": 4,
+  "triangle_position_uv_oriented_multiset_equal_rounded_1e6": true,
+  "triangle_position_uv_oriented_multiset_equal_exact": true,
+  "texture_slot_semantic_materials_equal": true,
+  "matched_signature_max_position_component_error": 0.0,
+  "matched_signature_max_uv_component_error": 0.0,
+  "source_images": [
+    {
+      "name": "deskcat_calico_h25_v1_basecolor.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "4c6618eaea5f8e3816a9a7c19f83021f3eba8111dfc543633344da249364a949",
+      "bytes": 2749281
+    },
+    {
+      "name": "deskcat_calico_h25_v1_rm.jpg",
+      "mimeType": "image/jpeg",
+      "sha256": "e0bb6f6597b47a0934c854c3a0c0ec292db2d26460a91d914b9e639c3263753f",
+      "bytes": 1628170
+    },
+    {
+      "name": "deskcat_calico_h25_v1_normal.png",
+      "mimeType": "image/png",
+      "sha256": "7ad6a39000f15d63f99e03f57d757789b136ce1885a231431e905564cf12b7ff",
+      "bytes": 2438616
+    }
+  ],
+  "export_images": [
+    {
+      "name": "deskcat_calico_h25_v1_normal",
+      "mimeType": "image/png",
+      "sha256": "7ad6a39000f15d63f99e03f57d757789b136ce1885a231431e905564cf12b7ff",
+      "bytes": 2438616
+    },
+    {
+      "name": "deskcat_calico_h25_v1_basecolor",
+      "mimeType": "image/jpeg",
+      "sha256": "4c6618eaea5f8e3816a9a7c19f83021f3eba8111dfc543633344da249364a949",
+      "bytes": 2749281
+    },
+    {
+      "name": "deskcat_calico_h25_v1_rm",
+      "mimeType": "image/jpeg",
+      "sha256": "e0bb6f6597b47a0934c854c3a0c0ec292db2d26460a91d914b9e639c3263753f",
+      "bytes": 1628170
+    }
+  ],
+  "embedded_texture_hash_multiset_equal": true,
+  "source_materials": [
+    {
+      "name": "tripo_material_9c2f352c-c3b7-4428-8368-29a06beccb2a",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      },
+      "normalTexture": {
+        "index": 2
+      }
+    }
+  ],
+  "export_materials": [
+    {
+      "name": "tripo_material_9c2f352c-c3b7-4428-8368-29a06beccb2a",
+      "normalTexture": {
+        "index": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 1
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        }
+      }
+    }
+  ],
+  "materials_json_equal": false,
+  "normal_comparison": {
+    "max_angle_degrees": 0.7674652197520048,
+    "p50_angle_degrees": 0.0024947309773619675,
+    "p99_angle_degrees": 0.006562006051753083,
+    "over_one_degree": 0,
+    "method": "Closest source normal within rounded 1e-6 position+UV signature; permits exporter splits/order changes."
+  },
+  "source_extensions_used": [
+    "KHR_materials_volume",
+    "FB_ngon_encoding"
+  ],
+  "export_extensions_used": [],
+  "source_extensions_required": [],
+  "export_extensions_required": [],
+  "source_samplers": [
+    {},
+    {},
+    {}
+  ],
+  "export_samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987
+    }
+  ],
+  "skin_count": 1,
+  "joint_count": 17,
+  "animation_count": 0,
+  "max_weight_sum_error": 1.4156103134155273e-07,
+  "invalid_joint_indices": 0,
+  "limits": "Rounded vertex+UV multiset allows exporter reorder; node transforms, shading and tangents need separate validation and real rendering. Not a full PBR equivalence certification."
+}
