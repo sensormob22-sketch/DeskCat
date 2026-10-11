@@ -33,10 +33,11 @@ jobs:
       - name: Generate latest animated curved-belly model locally
         run: |
           python tools/build_stage18_rigged_belly.py --output assets/3d/deskcat_belly_skinned_trial.glb --report artifacts/rig_rescue/windows_model_build.json
+            artifacts/windows/cat_visible_rgba.png
       - name: Windows smoke test real model and automatic walking
         shell: pwsh
         run: |
-          python -m deskcat --renderer panda --model assets/3d/deskcat_belly_skinned_trial.glb --start-walking --initial-direction left --forward-heading 180 --walk-speed 28 --smoke-test
+          python -m deskcat --renderer panda --model assets/3d/deskcat_belly_skinned_trial.glb --start-walking --initial-direction left --forward-heading 180 --walk-speed 28 --smoke-test --smoke-frame artifacts/windows/cat_visible_rgba.png
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Build portable Windows first-run package
         run: |
