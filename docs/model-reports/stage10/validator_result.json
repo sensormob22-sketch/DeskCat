@@ -1,0 +1,1 @@
+{"valid_for_review": true, "changed_source_vertices_proposed": 21, "weights_applied": false, "new_skinprobe_exported": false, "status": "DRAFT_ONLY_REQUIRES_HUMAN_REVIEW", "limits": "Validation checks scope, bone names, normalized values and seam identity. It does not certify visual deformation or authorize applying weights."}

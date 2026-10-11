@@ -1,0 +1,85 @@
+{
+  "status": "ORIGINAL_SCENE_INSPECTED_NO_PROPOSAL_APPLIED",
+  "blender": "4.3.2",
+  "scene_sha256": "35a93aa6ae3b7127487f6d9840907ae0a6908c23cd72bcb922d1b01719ec4c8e",
+  "bone_weight_sha256_float32": "d3d6405976c05532c9ab27fa54e7f34a0a1c10cdb15edeccb677893343d68949",
+  "all_5330_baseline_rows_match_actual_blender": true,
+  "all_weights_unchanged_in_memory": true,
+  "scene_file_unchanged": true,
+  "current_plus15_new_pairs": 44,
+  "C1_present": true,
+  "C2_present": true,
+  "problem_faces": {
+    "6971": {
+      "source_vertex_ids": [
+        3789,
+        3791,
+        3793
+      ],
+      "rest_area": 5.425958276118006e-06,
+      "current_plus15_area": 5.360947211597649e-06,
+      "current_area_ratio": 0.988018510056279
+    },
+    "7816": {
+      "source_vertex_ids": [
+        4258,
+        4260,
+        4261
+      ],
+      "rest_area": 4.1936841843946364e-06,
+      "current_plus15_area": 3.7530463528552842e-06,
+      "current_area_ratio": 0.8949282272663651
+    },
+    "7323": {
+      "source_vertex_ids": [
+        4003,
+        4007,
+        4006
+      ],
+      "rest_area": 1.6926781178733845e-05,
+      "current_plus15_area": 1.4679861505851649e-05,
+      "current_area_ratio": 0.8672565298058476
+    },
+    "7586": {
+      "source_vertex_ids": [
+        4150,
+        4151,
+        4154
+      ],
+      "rest_area": 2.4614889128109443e-06,
+      "current_plus15_area": 2.4937884537984773e-06,
+      "current_area_ratio": 1.0131219526602084
+    }
+  },
+  "bone_pivots_gltf": {
+    "pelvis": {
+      "head": [
+        0.1899999976158142,
+        0.3499999940395355,
+        -0.0
+      ],
+      "tail": [
+        0.0949999988079071,
+        0.36500000953674316,
+        -0.0
+      ],
+      "parent": "lumbar"
+    },
+    "tail_base": {
+      "head": [
+        0.2919999957084656,
+        0.30000001192092896,
+        -0.0
+      ],
+      "tail": [
+        0.33000001311302185,
+        0.17499999701976776,
+        0.014999999664723873
+      ],
+      "parent": "pelvis"
+    }
+  },
+  "animation_actions": 0,
+  "new_glb_exported": false,
+  "limits": "Only existing v6 +15 deformation was evaluated; proposed weights never installed or evaluated."
+}
