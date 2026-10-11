@@ -112,6 +112,21 @@ class PandaRenderer:
             for stage in candidate.findAllTextureStages():
                 if stage.getMode() != TextureStage.MModulate:
                     candidate.setTextureOff(stage, 10)
+            # TinyDisplay's software rasterizer cannot upload sRGB textures.
+            # Re-label ONLY the in-memory preview textures as 8-bit RGB(A).
+            # Preserve pixel payload, UVs and GLB bytes. Real Windows OpenGL
+            # retains sRGB so it can perform native gamma-correct sampling.
+            if self.backend == 'p3tinydisplay':
+                converted = 0
+                for tex in candidate.findAllTextures():
+                    if tex.getFormat() == Texture.F_srgb:
+                        tex.setFormat(Texture.F_rgb8)
+                        converted += 1
+                    elif tex.getFormat() == Texture.F_srgb_alpha:
+                        tex.setFormat(Texture.F_rgba8)
+                        converted += 1
+                print(f'DeskCat TinyDisplay: {converted} sRGB preview textures converted '
+                      'to software-compatible RGB(A)', file=sys.stderr)
             print('DeskCat 3D base-color preview: PBR lighting disabled in offscreen renderer; '
                   'GLB PBR textures unchanged', file=sys.stderr)
             clips = sorted(candidate.getAnimNames()) if character is not None else []
