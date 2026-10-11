@@ -15,7 +15,7 @@ def main(model,out):
  r=PandaRenderer(model,width=480,height=440)
  try:
   assert r.has_skeleton, "No Panda3D Character skeleton"
-  assert "walk" in r.clips, "Panda3D did not import walk animation"
+  assert "walk" in r.clips and "idle" in r.clips, "Panda3D requires both walk and idle clips"
   # Software backend and Tripo PBR are not a full shading fidelity test.
   r.actor.setMaterialOff(10)
   from panda3d.core import TextureStage
