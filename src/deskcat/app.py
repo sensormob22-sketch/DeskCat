@@ -104,9 +104,13 @@ def main(argv=None):
                               render_width=window._image.width(),
                               render_height=window._image.height(),
                               corner_alpha=window._image.pixelColor(0,0).alpha(),
+                              opaque_pixels=sum(a > 12 for a in window._image.constBits().tobytes()[3::4]),
                               clip_map={s.value:c for s,c in window.renderer.clip_map.items()},
                               missing_states=window.renderer.missing_states)
             print(json.dumps(report))
+            if args.renderer == 'panda' and report.get('opaque_pixels', 0) < 200:
+                window.render_error = 'GLB animation loaded, but RGBA renderer drew no visible cat; check PBR/alpha'
+                print('DeskCat invisible cat: ' + window.render_error, file=sys.stderr)
             window.close()
             app.quit()
         QTimer.singleShot(250, finish)
