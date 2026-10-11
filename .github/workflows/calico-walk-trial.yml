@@ -24,6 +24,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install Mesa/EGL runtime
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libegl1 libgl1 libopengl0 libgles2 libxrender1 libxext6
       - name: Install 3D runtime
         run: |
           python -m pip install --upgrade pip
