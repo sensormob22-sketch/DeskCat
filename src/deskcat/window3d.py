@@ -10,10 +10,11 @@ from .window import CatWindow
 class ThreeDWindow(CatWindow):
     """Keep stage-1 interactions, replace only the drawing with live 3D."""
     def __init__(self, scale=1.0, model=DEFAULT_MODEL, model_scale=1.0, offset=(0.0, 0.0), clip_map=None, diagnostics=None,
-                 playback_speed=1.0, forward_heading=0.0):
+                 playback_speed=1.0, forward_heading=0.0, walk_speed=28.0):
         super().__init__(scale)
         self.setWindowTitle('DeskCat live 3D prototype')
         self.renderer = None
+        self.walk_speed_px = walk_speed
         self.diagnostics = diagnostics
         self.show_diagnostic_overlay = bool(diagnostics)
         self.render_error = None
@@ -120,7 +121,9 @@ class ThreeDWindow(CatWindow):
                   Qt.Key.Key_Up: (0,.1), Qt.Key.Key_Down: (0,-.1)}
         if self.diagnostics:
             self.diagnostics.write('key', key=event.key())
-        if event.key() == Qt.Key.Key_F7 and self.diagnostics:
+        if event.key() == Qt.Key.Key_W:
+            self.machine.transition(State.IDLE if self.machine.state == State.WALK else State.WALK)
+        elif event.key() == Qt.Key.Key_F7 and self.diagnostics:
             self.show_diagnostic_overlay = not self.show_diagnostic_overlay
         elif event.key() == Qt.Key.Key_F8 and self.diagnostics:
             try:
