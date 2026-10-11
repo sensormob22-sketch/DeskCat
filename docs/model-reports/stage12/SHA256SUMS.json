@@ -1,0 +1,16 @@
+{
+  "assets/rigging/deskcat_cage_trial_01.blend": "e1bbb008d92e5a8dc431dc2c87bb872a17752c700f834ca220255ac5ad6ae1e9",
+  "assets/3d/tripo/deskcat_cage_trial_01_baked_poses.glb": "d04d0b4445b39d58b27a6a840531cebbc655bc51c4bec347a9f2bfda404c9910",
+  "docs/model-reports/stage12/README.md": "4d7026923f0cb8fab4765a8182664cbe9d4c1262ca48f11e7cbe7e910e65efee",
+  "docs/model-reports/stage12/cage_definitions.json": "265dad056ac9223b48f2f082f6ffbc65c8ab35e8eb4f912f10325c71453c5236",
+  "docs/model-reports/stage12/comparison.json": "d49b88bbc523de9fbd4c1b43c3d8b8a47c4a3eb57f24f331b8031b6bab2bceb0",
+  "docs/model-reports/stage12/decision.json": "655134d7ca003fe02b4e70c3ebfcdd68cdca42edd0157457872f402d1883dd16",
+  "docs/model-reports/stage12/glb_validator.json": "206be35c79a23b1a5bdada7c27d95f92eb9c2630bede00368a68a6721939f595",
+  "docs/model-reports/stage12/images/combined_matched.png": "5eab21e0ed8a552a196350aa3035982caba3783c2ed07b0daa7a5a78ed69bf7d",
+  "docs/model-reports/stage12/images/hip_matched.png": "28fe5283a6baae12fdd0bc8efb1517bf6f5d0611440ad093091a3d24b5175db8",
+  "docs/model-reports/stage12/images/tail_matched.png": "fc9ec709e27500a2bc234e7e560c83eec1eeeff5a6a08cd4808da69e4a062d3f",
+  "docs/model-reports/stage12/panda_morph.json": "474ef28c965791b63fd57b85250d7bc57b85dabb7d372464e4998a2fd1c2f995",
+  "docs/model-reports/stage12/preserved_manifest.json": "8e974db978c43035aadf134a154ae0dcfacc08a6b43359a26a9e6449accd58f8",
+  "docs/model-reports/stage12/seam_and_runtime_audit.json": "55d1246130cea5cdd14557d37cec297b6ce9c608693c779b41980a7aaebd3420",
+  "docs/model-reports/stage12/test_results.json": "a2b74a1c864b99c568f5541e7c2e91b83309142bf55143bf9ab9ee38b9734d6b"
+}

@@ -1,0 +1,16 @@
+{
+  "choice": "B",
+  "production_ready": false,
+  "scope": "One fixed two-cage arrangement failed; not a proof that all possible cage methods fail.",
+  "next_step": "Specialist manual weight painting with seam-consistent masks and anatomical review. No further automatic fitting in this task.",
+  "reasons": [
+    "More tail/combined intersections and worse local triangle strain",
+    "21 canonical UV-alias sets have unequal boundary feather masks; observed seam gaps invalidate continuity",
+    "Cage volumes change substantially; no certified high-resolution tissue-volume result",
+    "glTF can carry the 10 discrete baked morph poses tested in Panda3D, but not live Blender Mesh Deform; no demonstrated equivalent joint-only skin or arbitrary motion"
+  ],
+  "retopology_required": "Not established by this experiment; persistent rest intersections warrant specialist geometry review before cutting or remeshing.",
+  "paid_operations": 0,
+  "fitting_cycles": 1,
+  "new_high_resolution_bone_weight_rows": 0
+}
