@@ -1,0 +1,11 @@
+region_or_view,decision_or_result,source_face_ids,new_face_ids,reason,reviewer
+D14 confirmed representative slit,,,,,
+Other lateral row (identify actual source IDs),,,,,
+Both sides camera sweep,,,,,
+Underside,,,,,
+Positive oblique,,,,,
+Opposite oblique,,,,,
+Original geometry UV texture preservation,,,,,
+New intersections vs baseline 81,,,,,
+Silhouette and feathered edge,,,,,
+Texture UV normals depth acceptance,,,,,

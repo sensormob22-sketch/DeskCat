@@ -1,0 +1,104 @@
+[
+  {
+    "path": "docs/model-reports/stage14/DeskCat_Topology_Review.zip",
+    "sha256": "46bde0c60f873d1d5d6532829cf6ceebc5bfb398c04d4f5663e67a8258df971b",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage14/DeskCat_Topology_Review.zip",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage14/DeskCat_Topology_Review.zip"
+  },
+  {
+    "path": "assets/rigging/deskcat_retopo_exact_weld_proxy_01.blend",
+    "sha256": "844c4316dd841d4f943f80da7810d32abde64290c5f29b84e7ce4bfb3242667a",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/assets/rigging/deskcat_retopo_exact_weld_proxy_01.blend",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/assets/rigging/deskcat_retopo_exact_weld_proxy_01.blend"
+  },
+  {
+    "path": "assets/3d/retopo/deskcat_calico_retopo_16460.glb",
+    "sha256": "834cf794f24fff93e549ab80dbd21218565862ed9209852e3d2a72869c4b303b",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/assets/3d/retopo/deskcat_calico_retopo_16460.glb",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/assets/3d/retopo/deskcat_calico_retopo_16460.glb"
+  },
+  {
+    "path": "docs/model-reports/exact-weld-proxy/vertex_map.json",
+    "sha256": "c662fb14ec41e554d0c2658dacf902095b72a16166a9461a4be1d53d05a8acc3",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/exact-weld-proxy/vertex_map.json",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/exact-weld-proxy/vertex_map.json"
+  },
+  {
+    "path": "docs/model-reports/stage15/README.md",
+    "sha256": "6f0eb4e7122b2e4aa75b2140055ba77ed400a470c1290533dc4d01184fa463fd",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/README.md",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/README.md"
+  },
+  {
+    "path": "docs/model-reports/stage15/patch_trial.json",
+    "sha256": "77882cbd04a790bbc4a44cf1704bdf9cd3b0bac722d342392d2d8e26499d9103",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/patch_trial.json",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/patch_trial.json"
+  },
+  {
+    "path": "docs/model-reports/stage15/ray_diagnosis.json",
+    "sha256": "3646b9d3d5ae184daf12ad6dd64d18b1cb1e626952a19ca40784b3d03bdc63b4",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/ray_diagnosis.json",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/ray_diagnosis.json"
+  },
+  {
+    "path": "docs/model-reports/stage15/rim_source_triangles.json",
+    "sha256": "4a61d8cea4315c83675991d8210297184d2ba2e7631a1bf2ce0009fdcf8c0ba6",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/rim_source_triangles.json",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/rim_source_triangles.json"
+  },
+  {
+    "path": "docs/model-reports/stage15/camera_initial.json",
+    "sha256": "850196814c0fa515abe7beba4055406a122f2bbe0a03c42cfe1879e9048bbaec",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/camera_initial.json",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/camera_initial.json"
+  },
+  {
+    "path": "docs/model-reports/stage15/additional-video/provenance.json",
+    "sha256": "d279e78c726d9cbf9862e757b9bb41cb94ba7b0ea922350ee3dc9cedebc53f2a",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/additional-video/provenance.json",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/additional-video/provenance.json"
+  },
+  {
+    "path": "docs/model-reports/stage15/additional-video/view_06.png",
+    "sha256": "4c10e46552fdb9889bd9cc7a42c1911c3511bb4d5d2ed88979e4b8b176a15805",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/additional-video/view_06.png",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/additional-video/view_06.png"
+  },
+  {
+    "path": "docs/model-reports/stage15/additional-video/view_12.png",
+    "sha256": "5d3bf76501a49354b5d2610ac8a7de182d50136fdf88faff16dcab01a3b37bd8",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/additional-video/view_12.png",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/additional-video/view_12.png"
+  },
+  {
+    "path": "docs/model-reports/stage15/additional-video/view_20.png",
+    "sha256": "436dbeef766c349016878dcde781347364ac7f5f9c637cf7d840ff119cbce9fb",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/additional-video/view_20.png",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/additional-video/view_20.png"
+  },
+  {
+    "path": "docs/model-reports/stage15/additional-video/view_31.png",
+    "sha256": "c5077ca6dfdba81881d1f116f28e762b83c91c2ffdd2ab7dfeaa35cbe0d416f5",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/additional-video/view_31.png",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/additional-video/view_31.png"
+  },
+  {
+    "path": "docs/model-reports/stage15/images/comparison_side.png",
+    "sha256": "baa6aeb24544aee3b249367af2dfcdf0fc3177c048234c64a3c65fb1fb755466",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/images/comparison_side.png",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/images/comparison_side.png"
+  },
+  {
+    "path": "docs/model-reports/stage15/images/comparison_below.png",
+    "sha256": "0e4ba06e3760f64f678024ac3d829461b56892151f00d827deca7c8ef0884953",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/images/comparison_below.png",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/images/comparison_below.png"
+  },
+  {
+    "path": "docs/model-reports/stage15/images/comparison_oblique.png",
+    "sha256": "84ce4651b941dd9c1b555f7e7a871eac97dcf0298ef65461106fd65782758278",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/8e0c36e/docs/model-reports/stage15/images/comparison_oblique.png",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/8e0c36e/docs/model-reports/stage15/images/comparison_oblique.png"
+  }
+]
