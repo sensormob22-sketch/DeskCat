@@ -30,8 +30,10 @@ jobs:
       - name: Python 3D runtime
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -e ".[three-d]"
+          python -m pip install -e ".[dev,three-d]"
           python -m pip install numpy pillow
+      - name: Verify all four toe contact paths and independent swing phases
+        run: python -m pytest -q tests/test_gait_contact.py
       - name: Build skinned Stage 17 mesh without modifying static source
         run: |
           python tools/build_stage18_rigged_belly.py \

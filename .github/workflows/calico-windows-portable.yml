@@ -29,7 +29,9 @@ jobs:
           python-version: '3.11'
       - name: Install app and model-build requirements
         run: |
-          python -m pip install --disable-pip-version-check -e ".[three-d]" numpy pillow
+          python -m pip install --disable-pip-version-check -e ".[dev,three-d]" numpy pillow
+      - name: Verify planted-toe locomotion equations
+        run: python -m pytest -q tests/test_gait_contact.py
       - name: Generate latest animated curved-belly model locally
         run: |
           python tools/build_stage18_rigged_belly.py --output assets/3d/deskcat_belly_skinned_trial.glb --report artifacts/rig_rescue/windows_model_build.json

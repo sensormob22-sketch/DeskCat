@@ -102,7 +102,12 @@ def toe_trajectory(phase):
  if phase < STANCE_FRACTION:
   return STRIDE * phase / STANCE_FRACTION, 0.0
  u = (phase-STANCE_FRACTION)/(1-STANCE_FRACTION)
- return STRIDE*(1-u), SWING_HEIGHT*math.sin(math.pi*u)
+ # Hermite horizontal return preserves the stance velocity at both
+ # boundaries, avoiding an artificial toe jerk at lift-off and touchdown.
+ slope=STRIDE*(1-STANCE_FRACTION)/STANCE_FRACTION
+ x=STRIDE*(2*u**3-3*u*u+1)+slope*((u**3-2*u*u+u)+(u**3-u*u))
+ # Zero lift velocity at both ends.
+ return x, SWING_HEIGHT*math.sin(math.pi*u)**2
 
 def leg_contact_angles(points, travel, height):
  """Planar two-link IK to the ankle with an unchanged toe-to-ankle vector.
@@ -155,7 +160,9 @@ def animate(doc,buf):
   "limb_motion":"four_independent_legs_one_swing_at_a_time"
  }
  pos=PIVOTS[INDEX["pelvis"]]
- channel("pelvis","translation",np.column_stack([np.full(len(time),pos[0]),pos[1]+.004*(1-np.cos(4*math.pi*time/1.6)),np.full(len(time),pos[2])]))
+ # Keep the pelvic pivot height constant: moving the entire skeleton up during
+ # stance would lift all planted paws despite contact-constrained leg IK.
+ channel("pelvis","translation",np.tile(pos,(len(time),1)))
  channel("tail_base","rotation",[rot(.06*math.sin(2*math.pi*float(t)/1.6)) for t in time])
  idle={"name":"idle","samplers":[],"channels":[]}
  idle_rot=np.array([[0,0,math.sin(.015*math.sin(2*math.pi*float(x)/1.6)),math.cos(.015*math.sin(2*math.pi*float(x)/1.6))] for x in time],dtype=np.float32)
