@@ -88,30 +88,72 @@ def weights(points):
  if not np.isfinite(values).all() or not np.allclose(values.sum(1),1):raise ValueError("Bad weights")
  return ids.astype(np.uint16),values.astype(np.float32)
 
+# Each foot is planted for three quarters of the 1.6 s cycle. During that
+# interval the toe advances exactly STRIDE in body-local +X: when the body
+# travels toward -X by the matching amount, its world contact point is fixed.
+# Only the remaining quarter cycle is airborne (one swinging paw at a time).
+STRIDE = .09
+STANCE_FRACTION = .75
+CYCLE_SECONDS = 1.6
+SWING_HEIGHT = .045
+
+def toe_trajectory(phase):
+ phase = phase % 1.0
+ if phase < STANCE_FRACTION:
+  return STRIDE * phase / STANCE_FRACTION, 0.0
+ u = (phase-STANCE_FRACTION)/(1-STANCE_FRACTION)
+ return STRIDE*(1-u), SWING_HEIGHT*math.sin(math.pi*u)
+
+def leg_contact_angles(points, travel, height):
+ """Planar two-link IK to the ankle with an unchanged toe-to-ankle vector.
+
+ Returns the three LOCAL joint angles for upper, lower and paw segments.
+ This preserves original bone lengths and the paw's global orientation.
+ """
+ p0,p1,p2,p3 = np.asarray(points,dtype=np.float64)[:,:2]
+ target=p2+np.array([travel,height])
+ l1=np.linalg.norm(p1-p0);l2=np.linalg.norm(p2-p1)
+ delta=target-p0;d=np.linalg.norm(delta)
+ if not abs(l1-l2)+1e-8 < d <= l1+l2+1e-7:
+  raise ValueError("Unreachable walking ankle target")
+ unit=delta/d
+ along=(l1*l1-l2*l2+d*d)/(2*d)
+ lateral=math.sqrt(max(0.0,l1*l1-along*along))
+ rest_cross=(p2[0]-p0[0])*(p1[1]-p0[1])-(p2[1]-p0[1])*(p1[0]-p0[0])
+ knee=p0+along*unit+math.copysign(lateral,rest_cross)*np.array([-unit[1],unit[0]])
+ angle=lambda v: math.atan2(v[1],v[0])
+ hip=angle(knee-p0)-angle(p1-p0)
+ knee_local=angle(target-knee)-angle(p2-p1)-hip
+ paw_local=-hip-knee_local
+ return (hip,knee_local,paw_local)
+
 def animate(doc,buf):
- time=np.linspace(0,1.6,33,dtype=np.float32);t=add(doc,buf,time,"SCALAR",bounds=True)
+ time=np.linspace(0,CYCLE_SECONDS,33,dtype=np.float32);t=add(doc,buf,time,"SCALAR",bounds=True)
  anim={"name":"walk","samplers":[],"channels":[]}
  def channel(bone,path,data):
   idx=add(doc,buf,data,"VEC3" if path=="translation" else "VEC4")
   j=len(anim["samplers"]);anim["samplers"].append({"input":t,"output":idx,"interpolation":"LINEAR"})
   anim["channels"].append({"sampler":j,"target":{"node":INDEX[bone],"path":path}})
  def rot(a):return [0,0,math.sin(float(a)/2),math.cos(float(a)/2)]
- # Walking, rather than diagonally synchronous trotting: successive foot lifts
- # are distributed over four quarter-cycle beats.  No claim of analytical IK.
- # Swing is deliberately small; contact/foot sliding must be reviewed on Windows.
- offsets={("hind","L"):0,("front","L"):math.pi/2,
-          ("hind","R"):math.pi,("front","R"):3*math.pi/2}
+ # All four planted toes follow the same constant-velocity local backstroke.
+ # The stable contact interval lasts 75%; exactly one leg swings at a time.
+ # Rotation is solved from the unchanged source bone lengths by 2D IK.
+ offsets={("hind","L"):0.0,("front","L"):.25,
+          ("hind","R"):.5,("front","R"):.75}
  for (prefix,side),offset in offsets.items():
-   phase=time*(2*math.pi/1.6)+offset
-   lift=np.maximum(0,np.sin(phase))
-   swing=.16*np.sin(phase)
-   if prefix=="front":
-    angles=(swing,-.19*lift,.12*lift-.035*np.sin(phase),-.075*lift)
-   else:
-    # The feline stifle/hock chain has a different bend from the forearm.
-    angles=(swing,.16*lift,-.14*lift+.025*np.sin(phase),.055*lift)
-   for i,a in enumerate(angles):
-    channel(f"{prefix}_{side}_{i}","rotation",[rot(v) for v in a])
+  keys=[f"{prefix}_{side}_{i}" for i in range(4)]
+  points=np.array([PIVOTS[INDEX[name]] for name in keys])
+  poses=[leg_contact_angles(points,*toe_trajectory(float(t)/CYCLE_SECONDS+offset)) for t in time]
+  for i in range(3):
+   channel(keys[i],"rotation",[rot(a[i]) for a in poses])
+ # This is a contact-constrained toe-joint gait, not a certified final skin.
+ # The attached 3D fur/mesh still needs physical Windows inspection.
+ doc.setdefault("extras",{})["deskcat_gait"]={
+  "clip":"walk","period_seconds":CYCLE_SECONDS,
+  "stance_fraction":STANCE_FRACTION,"toe_stance_travel_source_units":STRIDE,
+  "forward_source_axis":"-X","toe_contact_method":"planar_2link_IK",
+  "limb_motion":"four_independent_legs_one_swing_at_a_time"
+ }
  pos=PIVOTS[INDEX["pelvis"]]
  channel("pelvis","translation",np.column_stack([np.full(len(time),pos[0]),pos[1]+.004*(1-np.cos(4*math.pi*time/1.6)),np.full(len(time),pos[2])]))
  channel("tail_base","rotation",[rot(.06*math.sin(2*math.pi*float(t)/1.6)) for t in time])

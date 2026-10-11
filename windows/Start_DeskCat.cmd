@@ -30,7 +30,7 @@ if not exist "assets\3d\deskcat_belly_skinned_trial.glb" (
   exit /b 1
 )
 echo Launching animated calico. Right click: Walk or Idle. Press W: toggle Walk.
-".venv\Scripts\python.exe" -m deskcat --renderer panda --model "assets\3d\deskcat_belly_skinned_trial.glb" --scale 1.5 --model-scale 0.9 --start-walking --initial-direction left --forward-heading 180 --walk-speed 28
+".venv\Scripts\python.exe" -m deskcat --renderer panda --model "assets\3d\deskcat_belly_skinned_trial.glb" --scale 1.5 --model-scale 0.9 --start-walking --initial-direction left --forward-heading 180 --walk-speed 0
 if errorlevel 1 (
   echo DeskCat stopped with an error. You can send a screenshot of this window.
   pause

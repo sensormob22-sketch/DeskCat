@@ -3,11 +3,14 @@ import math
 import os
 import time
 import sys
+import json
+import struct
 from pathlib import Path
 
 from PySide6.QtGui import QImage
 from panda3d.core import (AmbientLight, DirectionalLight, Texture, TextureStage,
-                          GraphicsOutput, GraphicsPipe, WindowProperties, FrameBufferProperties, loadPrcFileData)
+                          GraphicsOutput, GraphicsPipe, WindowProperties, FrameBufferProperties,
+                          OrthographicLens, loadPrcFileData)
 from direct.actor.Actor import Actor
 from direct.showbase.ShowBase import ShowBase
 
@@ -16,6 +19,29 @@ from .playback import ClipClock
 from .gltf_scene import load_scene
 
 DEFAULT_MODEL = Path(__file__).resolve().parents[3] / 'assets/3d/test_cat.glb'
+
+
+def read_contact_gait(path):
+    """Read only our optional walk stride contract from the actual GLB JSON."""
+    try:
+        with Path(path).open('rb') as fh:
+            if fh.read(4) != b'glTF':
+                return None
+            fh.seek(12)
+            length, chunk = struct.unpack('<II', fh.read(8))
+            if chunk != 0x4e4f534a or length > 4_000_000:
+                return None
+            meta = json.loads(fh.read(length)).get('extras', {}).get('deskcat_gait', {})
+        if meta.get('clip') != 'walk' or meta.get('forward_source_axis') != '-X':
+            return None
+        stride = float(meta['toe_stance_travel_source_units'])
+        stance = float(meta['stance_fraction'])
+        period = float(meta['period_seconds'])
+        if not (0 < stride < 1 and 0 < stance < 1 and 0 < period < 60):
+            return None
+        return {'stride': stride, 'stance': stance, 'period': period}
+    except (ValueError, KeyError, OSError, TypeError, struct.error, AttributeError):
+        return None
 
 
 class ModelError(RuntimeError):
@@ -37,6 +63,9 @@ class PandaRenderer:
         self.unavailable_active = []
         self.model_scale = 1.0
         self.offset = (0.0, 0.0)
+        self.ortho_height = 2.35
+        self.source_unit_scale = 1.0
+        self.contact_gait = read_contact_gait(model_path)
         if not Path(model_path).is_file():
             raise ModelError(f'Model not found: {model_path}')
         config = ('window-type offscreen\nframebuffer-alpha true\n'
@@ -68,18 +97,28 @@ class PandaRenderer:
             self.base.makeCamera(buffer)
             self.base.disableMouse()
             self.base.setBackgroundColor(0, 0, 0, 0)
-            self.base.camLens.setFov(35)
-            self.base.camLens.setNearFar(.01, 100)
-            self.base.camera.setPos(2.8, -4.5, 2.4)
-            self.base.camera.lookAt(0, 0, .65)
+            # No elevated/oblique perspective: a side camera normal to the
+            # sagittal X/Z plane after glTF Y-up -> Panda Z-up conversion.
+            # Orthographic projection keeps all four leg lengths unchanged.
+            lens = OrthographicLens()
+            lens.setNearFar(.01, 100)
+            self.base.cam.node().setLens(lens)
+            self.base.camLens = lens
+            self.base.camera.setPos(0, -6.0, .83)
+            self.base.camera.lookAt(0, 0, .83)
             ambient = AmbientLight('ambient')
-            ambient.setColor((.65,.65,.65,1))
+            ambient.setColor((.88,.88,.88,1))
             self.base.render.setLight(self.base.render.attachNewNode(ambient))
             key = DirectionalLight('key')
-            key.setColor((.8,.8,.8,1))
+            key.setColor((.42,.42,.42,1))
             light = self.base.render.attachNewNode(key)
             light.setHpr(-35,-45,0)
             self.base.render.setLight(light)
+            fill = DirectionalLight('fill')
+            fill.setColor((.20,.20,.20,1))
+            fill_node = self.base.render.attachNewNode(fill)
+            fill_node.setHpr(155,-30,0)
+            self.base.render.setLight(fill_node)
             self.load(str(model_path))
             self._resize(width, height)
         except Exception as exc:
@@ -154,7 +193,8 @@ class PandaRenderer:
             if extent <= 0:
                 raise ValueError('Model bounds are empty')
             candidate.reparentTo(self.base.render)
-            candidate.setScale(2.0 / extent)
+            self.source_unit_scale = 2.0 / extent
+            candidate.setScale(self.source_unit_scale)
             # Parent transform controls model offset and user scale separately.
             pivot = self.base.render.attachNewNode('model-pivot')
             candidate.reparentTo(pivot)
@@ -192,12 +232,21 @@ class PandaRenderer:
         if self._size == (width, height):
             return
         self.base.win.setSize(width, height)
-        self.base.camLens.setAspectRatio(width / height)
+        self.base.camLens.setFilmSize(self.ortho_height * width / height, self.ortho_height)
         self.base.win.clearRenderTextures()
         self.texture = Texture('rgba-frame')
         self.base.win.addRenderTexture(self.texture, GraphicsOutput.RTMCopyRam,
                                       GraphicsOutput.RTPColor)
         self._size = (width, height)
+
+    def matched_walk_speed(self, logical_height):
+        """Logical pixels/sec matching the toe's planted linear backstroke."""
+        if not self.contact_gait or self.clip_map.get(State.WALK) != 'walk':
+            return None
+        g = self.contact_gait
+        source_units_per_sec = g['stride'] / (g['stance'] * g['period'])
+        pixels_per_source_unit = logical_height / self.ortho_height * self.source_unit_scale * self.model_scale
+        return source_units_per_sec * pixels_per_source_unit * self.clock.speed
 
     def frame(self, dt, weights, width, height):
         start = time.perf_counter()

@@ -10,11 +10,12 @@ from .window import CatWindow
 class ThreeDWindow(CatWindow):
     """Keep stage-1 interactions, replace only the drawing with live 3D."""
     def __init__(self, scale=1.0, model=DEFAULT_MODEL, model_scale=1.0, offset=(0.0, 0.0), clip_map=None, diagnostics=None,
-                 playback_speed=1.0, forward_heading=0.0, walk_speed=28.0):
+                 playback_speed=1.0, forward_heading=0.0, walk_speed=0.0):
         super().__init__(scale)
         self.setWindowTitle('DeskCat live 3D prototype')
         self.renderer = None
-        self.walk_speed_px = walk_speed
+        self.walk_speed_override = walk_speed
+        self.walk_speed_px = walk_speed or 28.0
         self.diagnostics = diagnostics
         self.show_diagnostic_overlay = bool(diagnostics)
         self.render_error = None
@@ -49,6 +50,12 @@ class ThreeDWindow(CatWindow):
         return image
 
     def tick(self):
+        # Model's toe/stance contract takes precedence unless an explicit speed
+        # override was requested. Recompute after zoom and playback speed edits.
+        if self.renderer is not None and self.walk_speed_override == 0:
+            matched = self.renderer.matched_walk_speed(self.height())
+            if matched is not None:
+                self.walk_speed_px = matched
         previous = self._last
         super().tick()
         self.frame_interval_ms = (self._last - previous)*1000

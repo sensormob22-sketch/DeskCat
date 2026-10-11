@@ -16,7 +16,7 @@ def main(argv=None):
     parser.add_argument("--smoke-frame", type=Path, help="save a diagnostic RGBA frame during --smoke-test")
     parser.add_argument('--renderer', choices=('qt', 'panda'), default='qt')
     parser.add_argument('--start-walking', action='store_true', help='start the animated cat walking immediately')
-    parser.add_argument('--walk-speed', type=float, default=28.0, help='desktop walking speed in logical pixels per second')
+    parser.add_argument('--walk-speed', type=float, default=0.0, help='override desktop walking speed (0 = auto-match toe contact, default)')
     parser.add_argument('--initial-direction', choices=('left','right'), default='right', help='start across the desktop in this direction')
     parser.add_argument('--model', type=Path,
                         default=Path(__file__).resolve().parents[2] / 'assets/3d/test_cat.glb')
@@ -35,8 +35,8 @@ def main(argv=None):
         parser.error("--scale must be between 0.5 and 3")
     if not 0.25 <= args.model_scale <= 3:
         parser.error('--model-scale must be between 0.25 and 3')
-    if not math.isfinite(args.walk_speed) or not 1 <= args.walk_speed <= 150:
-        parser.error('--walk-speed must be between 1 and 150 logical pixels/second')
+    if not math.isfinite(args.walk_speed) or not 0 <= args.walk_speed <= 150:
+        parser.error('--walk-speed must be 0 (automatic) or between 0 and 150 logical pixels/second')
     if args.start_walking and args.renderer != 'panda':
         parser.error('--start-walking requires --renderer panda')
     if args.benchmark is not None and args.benchmark < 10:

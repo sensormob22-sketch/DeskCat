@@ -25,7 +25,10 @@ TROUBLESHOOTING
   message into your ChatGPT conversation.
 
 STATUS
-Real skinned 3D glTF with idle/walk; the four-beat gait is a test candidate.
+Real skinned 3D glTF with idle/walk; this is an experimental four-beat gait.
+Camera is orthographic and strictly side-on, not three-quarter perspective.
+Desktop speed is automatically matched to each paw's planted toe backstroke.
+Use --walk-speed 28 in Start_DeskCat.cmd ONLY to override this matching manually.
 Windows 11 transparent DWM presentation has NOT been tested on a physical
 user desktop. Some contact/sliding and skin deformations still need polish.
 No startup registration, no ads, no paid subscriptions, no external model calls.
