@@ -1,0 +1,58 @@
+name: Experimental DeskCat calico walk (not production)
+on:
+  push:
+    branches: [feature/tripo-cat]
+    paths:
+      - 'tools/build_calico_walk_trial.py'
+      - 'tools/check_calico_walk_trial.py'
+      - '.github/workflows/calico-walk-trial.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rigged-cat-preview:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    env:
+      QT_QPA_PLATFORM: offscreen
+      DESKCAT_PANDA_DISPLAY: p3tinydisplay
+      MESA_SHADER_CACHE_DIR: /tmp/deskcat-mesa
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install 3D runtime
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[three-d]"
+          python -m pip install pillow numpy
+      - name: Build experimental skinned GLB with walk
+        run: |
+          python tools/build_calico_walk_trial.py \
+            --output artifacts/rig_rescue/deskcat_calico_walk_trial.glb \
+            --report artifacts/rig_rescue/rig_trial.json
+      - name: Validate Panda3D Character and visible walk frames
+        run: |
+          python tools/check_calico_walk_trial.py \
+            --model artifacts/rig_rescue/deskcat_calico_walk_trial.glb \
+            --out artifacts/rig_rescue/previews
+      - name: Make result status explicit
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "Experimental: no Bone Heat. This does not certify anatomy, intersections, or smooth belly."
+            echo "Manual visible review of all four legs and belly is mandatory."
+            echo "No change to Tripo credits, original glb or production model."
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload experimental GLB, reports and frame evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deskcat-calico-rig-rescue-candidate
+          path: artifacts/rig_rescue
+          retention-days: 14
+          if-no-files-found: warn
