@@ -34,7 +34,7 @@ def build(source,output,report):
     "position_accessor":attrs["POSITION"],"normal_accessor":attrs["NORMAL"],
     "uv_accessor":attrs["TEXCOORD_0"],"index_accessor":pr["indices"],
     "vertices":len(rig.get(doc,blob,attrs["POSITION"]))})
- if [x["vertices"] for x in old_summary][0]!=19464:raise ValueError("Stage 17 retained source POSITION not matched")
+ if [x["vertices"] for x in old_summary][0]!=20080:raise ValueError("Stage 17 source POSITION + 616 clip vertices not matched")
  if old_summary[1]["position_accessor"]!=old_summary[2]["position_accessor"]:raise ValueError("Left/right patch geometry not shared")
  original_blobs=bytes(blob[:doc["buffers"][0]["byteLength"]])
  all_pos=[rig.get(doc,blob,p["attributes"]["POSITION"]).astype(np.float32) for p in prims]
@@ -93,7 +93,7 @@ def build(source,output,report):
                        "weight_accessor":prims[i]["attributes"]["WEIGHTS_0"]} for i,d in enumerate(old_summary)],
         "source_geometry_binary_prefix_unchanged":True,
         "source_uv_normal_material_texture_accessors_unchanged":True,
-        "source_nonpatched_vertices":19464,"source_patched_vertices":len(all_pos[1]),
+        "source_original_vertices":19464,"source_clipped_vertices":616,"source_nonpatched_vertices":len(all_pos[0]),"source_patched_vertices":len(all_pos[1]),
         "same_patch_vertex_weights_in_both_material_primitives":True,
         "source_unique_vertex_positions_with_aliases":int(len(uniques)),
         "joint_count":len(rig.BODY),"influences_max":4,
