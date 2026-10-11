@@ -10,6 +10,8 @@ on:
       - 'tools/build_calico_walk_trial.py'
       - 'tools/build_stage18_rigged_belly.py'
       - 'tools/finish_calico_stage18.py'
+      - 'tools/check_stage19_motion.py'
+      - 'tools/check_zoom_framing.py'
       - 'tools/check_cat_brightness.py'
       - 'tools/package_windows_portable.py'
       - 'windows/**'
@@ -40,6 +42,9 @@ jobs:
       - name: Preserve tail, refine right ankle and add subtle spine/head motion
         run: |
           python tools/finish_calico_stage18.py --input artifacts/rig_rescue/deskcat_stage18_raw.glb --output assets/3d/deskcat_belly_skinned_trial.glb --report artifacts/rig_rescue/motion_polish.json
+      - name: Verify mirrored right hind skin, original texture and tail
+        run: |
+          python tools/check_stage19_motion.py --raw artifacts/rig_rescue/deskcat_stage18_raw.glb --candidate assets/3d/deskcat_belly_skinned_trial.glb --out artifacts/rig_rescue/stage19_integrity.json
       - name: Windows smoke test real model and automatic walking
         shell: pwsh
         run: |
@@ -81,6 +86,7 @@ jobs:
             artifacts/windows/DeskCat_Windows_Walking_Calico.zip
             artifacts/rig_rescue/windows_model_build.json
             artifacts/rig_rescue/motion_polish.json
+            artifacts/rig_rescue/stage19_integrity.json
             artifacts/windows/cat_visible_rgba.png
             artifacts/windows/brightness_report.json
             artifacts/windows/zoom/**

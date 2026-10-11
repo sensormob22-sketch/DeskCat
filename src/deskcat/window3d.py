@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtCore import Qt, QRectF
+from PySide6.QtCore import Qt
 from PySide6.QtGui import QPainter, QColor, QPen, QAction
 from PySide6.QtWidgets import QMenu, QApplication
 from .states import State
@@ -18,14 +18,18 @@ class ThreeDWindow(CatWindow):
         # mesh inside a permanently fixed 240x220 viewport.
         self._zoom_reference_size = (self.width(), self.height())
         self._zoom_reference_model_scale = model_scale
-        # One immutable Panda framebuffer for the ENTIRE desktop session.
-        # Qt scales the RGBA image when the widget grows/shrinks. Crucially,
-        # Windows OpenGL never receives GraphicsBuffer.setSize during wheel
-        # events, removing the GPU readback vs. resize race seen in recordings.
+        # A fixed large GPU render is created ONCE; zoom changes the actual
+        # animated model scale. Qt receives a native-resolution image crop,
+        # never a stretched low-resolution bitmap.
         self._render_dpr = self.devicePixelRatioF()
+        screen = self.screen() or QApplication.primaryScreen()
+        usable = screen.availableGeometry()
+        base_width, base_height = self._zoom_reference_size
+        max_ratio = min(3.0 / model_scale, (.88 * usable.width()) / base_width,
+                        (.82 * usable.height()) / base_height)
         self._render_size = (
-            round(self.width() * self._render_dpr),
-            round(self.height() * self._render_dpr),
+            min(4096, round(base_width * max_ratio * self._render_dpr) + 16),
+            min(4096, round(base_height * max_ratio * self._render_dpr) + 16),
         )
         self.walk_speed_override = walk_speed
         self.walk_speed_px = walk_speed or 28.0
@@ -34,7 +38,10 @@ class ThreeDWindow(CatWindow):
         self.render_error = None
         self.frame_interval_ms = 0.0
         try:
-            self.renderer = PandaRenderer(model, clip_map=clip_map)
+            self.renderer = PandaRenderer(model, width=self._render_size[0],
+                                          height=self._render_size[1], clip_map=clip_map)
+            self.renderer.viewport_height_scale = (
+                self._render_size[1] / (self._zoom_reference_size[1] * self._render_dpr))
             self.renderer.model_scale = model_scale
             self.renderer.offset = offset
             self.renderer.clock.speed = playback_speed
@@ -56,17 +63,23 @@ class ThreeDWindow(CatWindow):
 
     def render_frame(self, dt):
         self.renderer.direction = self._direction
-        # Fixed framebuffer regardless of wheel zoom or monitor DPI.
-        # Only its presentation size changes, NEVER its GPU allocation.
-        image = self.renderer.frame(dt, self.machine.weights, *self._render_size)
-        image.setDevicePixelRatio(self._render_dpr)
+        full = self.renderer.frame(dt, self.machine.weights, *self._render_size)
+        dpr = self._render_dpr
+        width = round(self.width() * dpr)
+        height = round(self.height() * dpr)
+        if width > full.width() or height > full.height():
+            raise RuntimeError('Viewport exceeds permanent render budget')
+        x = (full.width() - width) // 2
+        y = (full.height() - height) // 2
+        image = full.copy(x, y, width, height)
+        image.setDevicePixelRatio(dpr)
         return image
 
     def tick(self):
         # Model's toe/stance contract takes precedence unless an explicit speed
         # override was requested. Recompute after zoom and playback speed edits.
         if self.renderer is not None and self.walk_speed_override == 0:
-            matched = self.renderer.matched_walk_speed(self.height())
+            matched = self.renderer.matched_walk_speed(self._zoom_reference_size[1])
             if matched is not None:
                 self.walk_speed_px = matched
         previous = self._last
@@ -87,10 +100,9 @@ class ThreeDWindow(CatWindow):
 
     def paintEvent(self, event):
         p = QPainter(self)
-        # Scale the entire live, skinned frame into the larger transparent
-        # widget; never crop a larger cat inside its initial image rectangle.
-        p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform)
-        p.drawImage(QRectF(0, 0, self.width(), self.height()), self._image)
+        # Image width/height match the current widget in physical pixels.
+        # Qt paints the real model pixels 1:1 (no enlargement blur).
+        p.drawImage(0, 0, self._image)
         if self.diagnostics and self.show_diagnostic_overlay:
             p.setPen(QPen(QColor('#ff00ff'), 1))
             p.drawRect(0, 0, self.width()-1, self.height()-1)
@@ -134,11 +146,10 @@ class ThreeDWindow(CatWindow):
                                    position=[self.x(), self.y()])
 
     def zoom_to(self, target_scale):
-        """Resize Qt presentation, not Panda framebuffer; preserve feet anchor.
+        """Enlarge the 3D mesh and window without reallocating GPU textures.
 
-        A stable offscreen size avoids Windows OpenGL readback failures.
-        The orthographic film grows proportionally to the cat, so the same
-        source frame can be smoothly scaled by Qt without clipping.
+        Panda renders once into a fixed large framebuffer, then Qt shows a
+        native-resolution crop. Fur remains crisp when zoomed.
         """
         if self.renderer is None:
             return
@@ -148,8 +159,10 @@ class ThreeDWindow(CatWindow):
         available = screen.availableGeometry()
         # Leave usable desktop space around the overlay. On smaller displays
         # limit actual cat scale rather than crop a larger animal.
-        max_width = max(1, int(available.width() * .88))
-        max_height = max(1, int(available.height() * .82))
+        max_width = max(1, min(int(available.width() * .88),
+                               int((self._render_size[0] - 16) / self._render_dpr)))
+        max_height = max(1, min(int(available.height() * .82),
+                                int((self._render_size[1] - 16) / self._render_dpr)))
         maximum = min(3.0, base_scale * max_width / base_width,
                       base_scale * max_height / base_height)
         minimum = min(.25, maximum)
@@ -163,7 +176,8 @@ class ThreeDWindow(CatWindow):
         center_x = self.x() + self.width() / 2.0
         bottom_y = self.y() + self.height()
         self.renderer.model_scale = scale
-        self.renderer.viewport_height_scale = height / base_height
+        # Constant orthographic pixel density; only model size and vertical
+        # camera tracking change. No texture or framebuffer reallocation.
         self.renderer.camera_height_scale = ratio
         self.setFixedSize(width, height)
         x = round(center_x - width / 2.0)
@@ -172,8 +186,7 @@ class ThreeDWindow(CatWindow):
         y = max(available.top(), min(y, available.top() + available.height() - height))
         self.move(x, y)
         self._x = float(self.x())
-        # Repainting stretches the existing frame immediately. The timer will
-        # render the next pose using the same GPU texture allocation as before.
+        # Paint the new native-resolution crop on the next timer tick.
         self.update()
 
     def wheelEvent(self, event):

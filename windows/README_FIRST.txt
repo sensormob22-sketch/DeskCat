@@ -52,3 +52,14 @@ Windows OpenGL "Unexpected RGBA readback dimensions" resize race.
 Since frames are scaled by Qt, extreme zoom can soften fine fur details.
 Brightness is +50% on the previous calibrated RGB tone curve (values are
 clamped to 255/monitor white); original GLB textures and alpha are unchanged.
+
+STAGE 19: NATIVE SHARP ZOOM + SYMMETRIC RIGHT-HIND LEG
+Each zoom wheel click now enlarges the actual 3D model; Qt crops a preallocated
+native-resolution RGBA render. Onscreen window geometry expands only to keep
+the cat visible. No low-res bitmap upscaling, no Panda buffer resize on wheel.
+The larger offscreen surface may need more GPU bandwidth on older systems.
+
+Right hind skin weights are based on mirrored LEFT hind skin with longitudinal
+alignment to the original asymmetric leg mesh. All source textures/geometry
+and tail motion remain preserved; contact quality still requires video review.
+New four-beat IK gait compensates front paws for gentle spine flexion.

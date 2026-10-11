@@ -283,7 +283,9 @@ class PandaRenderer:
             return None
         g = self.contact_gait
         source_units_per_sec = g['stride'] / (g['stance'] * g['period'])
-        pixels_per_source_unit = (logical_height / (self.ortho_height * self.viewport_height_scale)
+        # Input height is the ORIGINAL logical viewport height. Rendering uses
+        # a higher-resolution permanent buffer but no bitmap upscaling.
+        pixels_per_source_unit = (logical_height / self.ortho_height
                                   * self.source_unit_scale * self.model_scale)
         return source_units_per_sec * pixels_per_source_unit * self.clock.speed
 
