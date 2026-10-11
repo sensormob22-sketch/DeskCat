@@ -14,6 +14,8 @@ def main(argv=None):
     parser.add_argument("--smoke-test", action="store_true",
                         help="show window, run event loop, report and exit after 250 ms")
     parser.add_argument('--renderer', choices=('qt', 'panda'), default='qt')
+    parser.add_argument('--start-walking', action='store_true', help='start the animated cat walking immediately')
+    parser.add_argument('--walk-speed', type=float, default=28.0, help='desktop walking speed in logical pixels per second')
     parser.add_argument('--model', type=Path,
                         default=Path(__file__).resolve().parents[2] / 'assets/3d/test_cat.glb')
     parser.add_argument('--model-scale', type=float, default=1.0)
@@ -31,6 +33,10 @@ def main(argv=None):
         parser.error("--scale must be between 0.5 and 3")
     if not 0.25 <= args.model_scale <= 3:
         parser.error('--model-scale must be between 0.25 and 3')
+    if not math.isfinite(args.walk_speed) or not 1 <= args.walk_speed <= 150:
+        parser.error('--walk-speed must be between 1 and 150 logical pixels/second')
+    if args.start_walking and args.renderer != 'panda':
+        parser.error('--start-walking requires --renderer panda')
     if args.benchmark is not None and args.benchmark < 10:
         parser.error('--benchmark requires at least 10 frames')
     if not math.isfinite(args.playback_speed) or args.playback_speed < 0:
@@ -61,7 +67,8 @@ def main(argv=None):
             window = ThreeDWindow(args.scale, args.model, args.model_scale,
                                   (args.model_x, args.model_z), clip_map=clip_map,
                                   diagnostics=diagnostics, playback_speed=args.playback_speed,
-                                  forward_heading=args.forward_heading)
+                                  forward_heading=args.forward_heading,
+                                  walk_speed=args.walk_speed)
         else:
             window = CatWindow(args.scale)
     except Exception as exc:
@@ -74,6 +81,13 @@ def main(argv=None):
         window.move(*args.position)
         window._x = float(window.x())
     window.show()
+    if args.start_walking:
+        from .states import State
+        if window.renderer.clip_map[State.WALK] is None:
+            print('DeskCat start-walking failed: model lacks a walk animation',file=sys.stderr)
+            window.close()
+            return 1
+        window.machine.transition(State.WALK)
     if args.smoke_test:
         def finish():
             report = {"visible": window.isVisible(),
