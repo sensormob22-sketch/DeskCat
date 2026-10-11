@@ -1,0 +1,19 @@
+{
+  "input_commit": "eea5b44f09c421f54df972e1ed98825ba3fa9a4b",
+  "archive": "docs/artist-handoff/DeskCat_Artist_Handoff.zip",
+  "archive_sha256": "f0c33cd0492c54a73df9b4aa8ee1caace76e7229f6dd6608379c52ad1c4a02db",
+  "archive_bytes": 51900808,
+  "file_count": 46,
+  "diagnostic_pngs": 10,
+  "synthetic_reference_pngs": 2,
+  "manifest_verified": true,
+  "zip_crc_verified": true,
+  "previous_tracked_assets_reports_sha256_verified": 533,
+  "blender_or_render_experiments_run": false,
+  "new_weights": 0,
+  "new_animations": 0,
+  "paid_operations": 0,
+  "missing_reference": "Original seated identity PNG unavailable in repository",
+  "review_url": "https://github.com/sensormob22-sketch/DeskCat/pull/2#issuecomment-6107357666",
+  "verification_environment": "Linux, Python standard-library zipfile/hashlib; package assembly only, no new runtime/Windows tests"
+}

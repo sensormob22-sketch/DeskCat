@@ -1,0 +1,6 @@
+{
+  "attempts": 1,
+  "auto_weight_attempts": 0,
+  "error": "Error: RIGIFY ERROR: Bone 'tail.001': Cannot connect chain - bone position is disjoint.\nIncorrect armature for type 'chain_rigs'\n",
+  "accepted": false
+}

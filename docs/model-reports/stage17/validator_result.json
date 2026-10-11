@@ -1,0 +1,258 @@
+{
+  "uri": "assets/3d/retopo/deskcat_belly_profile_fix_01.glb",
+  "mimeType": "model/gltf-binary",
+  "validatorVersion": "2.0.0-dev.3.10",
+  "validatedAt": "2026-10-11T15:08:38.029Z",
+  "issues": {
+    "numErrors": 0,
+    "numWarnings": 3,
+    "numInfos": 14,
+    "numHints": 0,
+    "messages": [
+      {
+        "code": "UNSUPPORTED_EXTENSION",
+        "message": "Cannot validate an extension as it is not supported by the validator: 'FB_ngon_encoding'.",
+        "severity": 2,
+        "pointer": "/extensionsUsed/1"
+      },
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "severity": 1,
+        "pointer": "/meshes/0/primitives/0/material"
+      },
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "severity": 1,
+        "pointer": "/meshes/0/primitives/1/material"
+      },
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "severity": 1,
+        "pointer": "/meshes/0/primitives/2/material"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/accessors/0"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/accessors/1"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/accessors/2"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/accessors/3"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/accessors/4"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/accessors/5"
+      },
+      {
+        "code": "UNUSED_OBJECT",
+        "message": "This object may be unused.",
+        "severity": 2,
+        "pointer": "/accessors/6"
+      },
+      {
+        "code": "IMAGE_NPOT_DIMENSIONS",
+        "message": "Image has non-power-of-two dimensions: 768x768.",
+        "severity": 2,
+        "pointer": "/images/3"
+      },
+      {
+        "code": "IMAGE_NPOT_DIMENSIONS",
+        "message": "Image has non-power-of-two dimensions: 768x768.",
+        "severity": 2,
+        "pointer": "/images/4"
+      },
+      {
+        "code": "IMAGE_NPOT_DIMENSIONS",
+        "message": "Image has non-power-of-two dimensions: 768x768.",
+        "severity": 2,
+        "pointer": "/images/5"
+      },
+      {
+        "code": "IMAGE_NPOT_DIMENSIONS",
+        "message": "Image has non-power-of-two dimensions: 768x768.",
+        "severity": 2,
+        "pointer": "/images/6"
+      },
+      {
+        "code": "IMAGE_NPOT_DIMENSIONS",
+        "message": "Image has non-power-of-two dimensions: 768x768.",
+        "severity": 2,
+        "pointer": "/images/7"
+      },
+      {
+        "code": "IMAGE_NPOT_DIMENSIONS",
+        "message": "Image has non-power-of-two dimensions: 768x768.",
+        "severity": 2,
+        "pointer": "/images/8"
+      }
+    ],
+    "truncated": false
+  },
+  "info": {
+    "version": "2.0",
+    "generator": "Tripo",
+    "extensionsUsed": [
+      "KHR_materials_volume",
+      "FB_ngon_encoding"
+    ],
+    "resources": [
+      {
+        "pointer": "/buffers/0",
+        "mimeType": "application/gltf-buffer",
+        "storage": "glb",
+        "byteLength": 11603328
+      },
+      {
+        "pointer": "/images/0",
+        "mimeType": "image/jpeg",
+        "storage": "buffer-view",
+        "image": {
+          "width": 4096,
+          "height": 4096,
+          "format": "rgb",
+          "bits": 8
+        }
+      },
+      {
+        "pointer": "/images/1",
+        "mimeType": "image/png",
+        "storage": "buffer-view",
+        "image": {
+          "width": 2048,
+          "height": 2048,
+          "format": "rgb",
+          "primaries": "srgb",
+          "transfer": "srgb",
+          "bits": 8
+        }
+      },
+      {
+        "pointer": "/images/2",
+        "mimeType": "image/jpeg",
+        "storage": "buffer-view",
+        "image": {
+          "width": 2048,
+          "height": 2048,
+          "format": "rgb",
+          "bits": 8
+        }
+      },
+      {
+        "pointer": "/images/3",
+        "mimeType": "image/png",
+        "storage": "buffer-view",
+        "image": {
+          "width": 768,
+          "height": 768,
+          "format": "rgb",
+          "primaries": "srgb",
+          "transfer": "srgb",
+          "bits": 8
+        }
+      },
+      {
+        "pointer": "/images/4",
+        "mimeType": "image/png",
+        "storage": "buffer-view",
+        "image": {
+          "width": 768,
+          "height": 768,
+          "format": "rgb",
+          "primaries": "srgb",
+          "transfer": "srgb",
+          "bits": 8
+        }
+      },
+      {
+        "pointer": "/images/5",
+        "mimeType": "image/png",
+        "storage": "buffer-view",
+        "image": {
+          "width": 768,
+          "height": 768,
+          "format": "rgb",
+          "primaries": "srgb",
+          "transfer": "srgb",
+          "bits": 8
+        }
+      },
+      {
+        "pointer": "/images/6",
+        "mimeType": "image/png",
+        "storage": "buffer-view",
+        "image": {
+          "width": 768,
+          "height": 768,
+          "format": "rgb",
+          "primaries": "srgb",
+          "transfer": "srgb",
+          "bits": 8
+        }
+      },
+      {
+        "pointer": "/images/7",
+        "mimeType": "image/png",
+        "storage": "buffer-view",
+        "image": {
+          "width": 768,
+          "height": 768,
+          "format": "rgb",
+          "primaries": "srgb",
+          "transfer": "srgb",
+          "bits": 8
+        }
+      },
+      {
+        "pointer": "/images/8",
+        "mimeType": "image/png",
+        "storage": "buffer-view",
+        "image": {
+          "width": 768,
+          "height": 768,
+          "format": "rgb",
+          "primaries": "srgb",
+          "transfer": "srgb",
+          "bits": 8
+        }
+      }
+    ],
+    "animationCount": 0,
+    "materialCount": 3,
+    "hasMorphTargets": false,
+    "hasSkins": false,
+    "hasTextures": true,
+    "hasDefaultScene": true,
+    "drawCallCount": 3,
+    "totalVertexCount": 21972,
+    "totalTriangleCount": 17217,
+    "maxUVs": 1,
+    "maxInfluences": 0,
+    "maxAttributes": 3
+  }
+}

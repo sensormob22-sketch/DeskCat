@@ -1,0 +1,244 @@
+{
+  "source_sha256": "ff2a9e1d7280e4784913413fb45b10a2bdeadc125c80791a50f918a3ae646150",
+  "coordinate_system": "original glTF: X-negative head, Y-up, anatomical left Z-positive; scene units, not calibrated meters",
+  "status": "PROVISIONAL_MANUAL_LANDMARKS_NOT_A_RIG",
+  "position_uncertainty_radius": 0.025,
+  "notes": "Centers inferred from external silhouette and cross-sectional surface; no internal skeletal anatomy is available. Manual artist signoff and deformation tests required before bone placement.",
+  "foot_labels": {
+    "front_left": "FL",
+    "front_right": "FR",
+    "hind_left": "HL",
+    "hind_right": "HR"
+  },
+  "regions": {
+    "shoulder_FL": {
+      "center": [
+        -0.22,
+        0.36,
+        0.065
+      ],
+      "radius": 0.045
+    },
+    "shoulder_FR": {
+      "center": [
+        -0.21,
+        0.36,
+        -0.065
+      ],
+      "radius": 0.045
+    },
+    "elbow_FL": {
+      "center": [
+        -0.23,
+        0.205,
+        0.043
+      ],
+      "radius": 0.035
+    },
+    "elbow_FR": {
+      "center": [
+        -0.249,
+        0.205,
+        -0.042
+      ],
+      "radius": 0.035
+    },
+    "wrist_FL": {
+      "center": [
+        -0.283,
+        0.062,
+        0.066
+      ],
+      "radius": 0.025
+    },
+    "wrist_FR": {
+      "center": [
+        -0.272,
+        0.062,
+        -0.046
+      ],
+      "radius": 0.025
+    },
+    "hip_HL": {
+      "center": [
+        0.23,
+        0.32,
+        0.06
+      ],
+      "radius": 0.045
+    },
+    "hip_HR": {
+      "center": [
+        0.21,
+        0.32,
+        -0.06
+      ],
+      "radius": 0.045
+    },
+    "stifle_HL": {
+      "center": [
+        0.16,
+        0.205,
+        0.085
+      ],
+      "radius": 0.035
+    },
+    "stifle_HR": {
+      "center": [
+        0.095,
+        0.2,
+        -0.11
+      ],
+      "radius": 0.035
+    },
+    "hock_HL": {
+      "center": [
+        0.216,
+        0.08,
+        0.088
+      ],
+      "radius": 0.03
+    },
+    "hock_HR": {
+      "center": [
+        0.148,
+        0.08,
+        -0.089
+      ],
+      "radius": 0.03
+    },
+    "spine_pelvis": {
+      "center": [
+        0.19,
+        0.35,
+        0
+      ],
+      "radius": 0.13
+    },
+    "spine_lumbar": {
+      "center": [
+        0.095,
+        0.365,
+        0
+      ],
+      "radius": 0.13
+    },
+    "spine_thoracic": {
+      "center": [
+        -0.05,
+        0.385,
+        0
+      ],
+      "radius": 0.13
+    },
+    "spine_chest": {
+      "center": [
+        -0.2,
+        0.385,
+        0
+      ],
+      "radius": 0.13
+    },
+    "tail_base": {
+      "center": [
+        0.292,
+        0.3,
+        0
+      ],
+      "radius": 0.055
+    },
+    "groin": {
+      "center": [
+        0.15,
+        0.21,
+        0
+      ],
+      "radius": 0.065
+    },
+    "belly": {
+      "center": [
+        -0.015,
+        0.225,
+        0
+      ],
+      "radius": 0.075
+    }
+  },
+  "accepted_geometry_sha256": [
+    "ff2a9e1d7280e4784913413fb45b10a2bdeadc125c80791a50f918a3ae646150",
+    "cab5d4a2205c644bdbb24a340777cf172e80969515290ae441bb78a29ce4df2c",
+    "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6"
+  ],
+  "stage7_adjustments": {
+    "hip_HL": {
+      "before": [
+        0.23,
+        0.32,
+        0.083
+      ],
+      "after": [
+        0.23,
+        0.32,
+        0.06
+      ],
+      "reason": "Stage 6 center outside in all three ray parity checks; medial shift for hips/stifle, proximal shift for tail; remains provisional"
+    },
+    "hip_HR": {
+      "before": [
+        0.21,
+        0.32,
+        -0.085
+      ],
+      "after": [
+        0.21,
+        0.32,
+        -0.06
+      ],
+      "reason": "Stage 6 center outside in all three ray parity checks; medial shift for hips/stifle, proximal shift for tail; remains provisional"
+    },
+    "stifle_HL": {
+      "before": [
+        0.16,
+        0.205,
+        0.11
+      ],
+      "after": [
+        0.16,
+        0.205,
+        0.085
+      ],
+      "reason": "Stage 6 center outside in all three ray parity checks; medial shift for hips/stifle, proximal shift for tail; remains provisional"
+    },
+    "tail_base": {
+      "before": [
+        0.315,
+        0.3,
+        0
+      ],
+      "after": [
+        0.292,
+        0.3,
+        0
+      ],
+      "reason": "Stage 6 center outside in all three ray parity checks; medial shift for hips/stifle, proximal shift for tail; remains provisional"
+    }
+  },
+  "probe_tail_end_gltf": [
+    0.33,
+    0.175,
+    0.015
+  ],
+  "tail_endpoint_adjustment": {
+    "before": [
+      0.44,
+      0.24,
+      0
+    ],
+    "after": [
+      0.33,
+      0.175,
+      0.015
+    ],
+    "reason": "Prior distal guide lies outside actual tail. Shorten root probe to inside the measured x\u22480.33 tail cross-section; not a full tail rig."
+  }
+}

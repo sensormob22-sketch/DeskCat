@@ -1,0 +1,1631 @@
+{
+  "status": "PROPOSAL_ONLY_NOT_APPLIED",
+  "changed_source_vertex_ids": [
+    4000,
+    4002,
+    4003,
+    4004,
+    4006,
+    4007,
+    4008,
+    4010,
+    4141,
+    4142,
+    4143,
+    4144,
+    4145,
+    4146,
+    4147,
+    4149,
+    4150,
+    4151,
+    4153,
+    4154,
+    4156
+  ],
+  "changed_vertex_count": 21,
+  "weight_rows": 21,
+  "max_absolute_weight_delta": 0.004256758696091545,
+  "protected_vertex_overlap": [],
+  "other_five_edit_masks_overlap": [],
+  "protected_vertex_count": 10459,
+  "patch_connected": true,
+  "source_vertex_ids_basis": "Unmodified localprep source order; matches delivered Blender vertex IDs, not exported v6 GLB order.",
+  "C1_C2": {
+    "C1": {
+      "source_face_pair": [
+        6971,
+        7816
+      ],
+      "vertices": [
+        {
+          "source_face_id": 6971,
+          "source_vertex_ids": [
+            3789,
+            3791,
+            3793
+          ],
+          "weights": {
+            "3789": {
+              "pelvis": 0.2278396487236023,
+              "tail_base": 0.7721603512763977
+            },
+            "3791": {
+              "pelvis": 0.24425767362117767,
+              "tail_base": 0.7557423114776611
+            },
+            "3793": {
+              "pelvis": 0.2860378623008728,
+              "tail_base": 0.7139621376991272
+            }
+          },
+          "frozen_other_region_vertices": [
+            3789,
+            3791,
+            3793
+          ]
+        },
+        {
+          "source_face_id": 7816,
+          "source_vertex_ids": [
+            4258,
+            4260,
+            4261
+          ],
+          "weights": {
+            "4258": {
+              "pelvis": 0.28832849860191345,
+              "tail_base": 0.7116714715957642
+            },
+            "4260": {
+              "pelvis": 0.3150140643119812,
+              "tail_base": 0.6849859356880188
+            },
+            "4261": {
+              "pelvis": 0.3311154842376709,
+              "tail_base": 0.6688845157623291
+            }
+          },
+          "frozen_other_region_vertices": [
+            4258,
+            4260,
+            4261
+          ]
+        }
+      ],
+      "one_edge_neighbors": [
+        {
+          "source_vertex_id": 3748,
+          "position_gltf": [
+            0.30511474609375,
+            0.1492157131433487,
+            0.0287074726074934
+          ],
+          "baseline_weights": {
+            "pelvis": 0.22516097128391266,
+            "tail_base": 0.7748390436172485
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 3749,
+          "position_gltf": [
+            0.306854248046875,
+            0.1454010158777237,
+            0.02759357914328575
+          ],
+          "baseline_weights": {
+            "pelvis": 0.1665194183588028,
+            "tail_base": 0.8334805965423584
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 3757,
+          "position_gltf": [
+            0.30731201171875,
+            0.1439209133386612,
+            0.023248638957738876
+          ],
+          "baseline_weights": {
+            "pelvis": 0.1687641739845276,
+            "tail_base": 0.8312358260154724
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 3787,
+          "position_gltf": [
+            0.307220458984375,
+            0.1430664211511612,
+            0.01663776859641075
+          ],
+          "baseline_weights": {
+            "pelvis": 0.1956135630607605,
+            "tail_base": 0.8043864369392395
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 3795,
+          "position_gltf": [
+            0.3031005859375,
+            0.1528930813074112,
+            0.029705015942454338
+          ],
+          "baseline_weights": {
+            "pelvis": 0.28874698281288147,
+            "tail_base": 0.7112529873847961
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 3800,
+          "position_gltf": [
+            0.300994873046875,
+            0.1491546779870987,
+            0.026285139843821526
+          ],
+          "baseline_weights": {
+            "pelvis": 0.34119322896003723,
+            "tail_base": 0.6588067412376404
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 3810,
+          "position_gltf": [
+            0.298614501953125,
+            0.1510772854089737,
+            0.023910490795969963
+          ],
+          "baseline_weights": {
+            "pelvis": 0.4037961959838867,
+            "tail_base": 0.5962038040161133
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 4254,
+          "position_gltf": [
+            0.305328369140625,
+            0.1462097316980362,
+            0.017265288159251213
+          ],
+          "baseline_weights": {
+            "pelvis": 0.23354746401309967,
+            "tail_base": 0.7664525508880615
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 4255,
+          "position_gltf": [
+            0.3031005859375,
+            0.1491241604089737,
+            0.019060103222727776
+          ],
+          "baseline_weights": {
+            "pelvis": 0.25129976868629456,
+            "tail_base": 0.7487002611160278
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 4257,
+          "position_gltf": [
+            0.3031005859375,
+            0.1483307033777237,
+            0.012954679317772388
+          ],
+          "baseline_weights": {
+            "pelvis": 0.23543420433998108,
+            "tail_base": 0.7645657658576965
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 4259,
+          "position_gltf": [
+            0.302093505859375,
+            0.1460876613855362,
+            0.018382994458079338
+          ],
+          "baseline_weights": {
+            "pelvis": 0.30421289801597595,
+            "tail_base": 0.6957871317863464
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 4262,
+          "position_gltf": [
+            0.300994873046875,
+            0.1443939357995987,
+            0.0158290546387434
+          ],
+          "baseline_weights": {
+            "pelvis": 0.3239661455154419,
+            "tail_base": 0.6760338544845581
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 4263,
+          "position_gltf": [
+            0.29901123046875,
+            0.1467590481042862,
+            0.01658436469733715
+          ],
+          "baseline_weights": {
+            "pelvis": 0.3747057318687439,
+            "tail_base": 0.6252942681312561
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 4264,
+          "position_gltf": [
+            0.298797607421875,
+            0.1479339748620987,
+            0.019309965893626213
+          ],
+          "baseline_weights": {
+            "pelvis": 0.38096776604652405,
+            "tail_base": 0.6190322041511536
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        }
+      ]
+    },
+    "C2": {
+      "source_face_pair": [
+        7323,
+        7586
+      ],
+      "vertices": [
+        {
+          "source_face_id": 7323,
+          "source_vertex_ids": [
+            4003,
+            4007,
+            4006
+          ],
+          "weights": {
+            "4003": {
+              "pelvis": 0.9369285106658936,
+              "tail_base": 0.06307151913642883
+            },
+            "4007": {
+              "pelvis": 0.868768036365509,
+              "tail_base": 0.13123194873332977
+            },
+            "4006": {
+              "pelvis": 0.9124914407730103,
+              "tail_base": 0.08750856667757034
+            }
+          },
+          "frozen_other_region_vertices": []
+        },
+        {
+          "source_face_id": 7586,
+          "source_vertex_ids": [
+            4150,
+            4151,
+            4154
+          ],
+          "weights": {
+            "4150": {
+              "pelvis": 0.8619585037231445,
+              "tail_base": 0.13804151117801666
+            },
+            "4151": {
+              "pelvis": 0.8236787915229797,
+              "tail_base": 0.17632120847702026
+            },
+            "4154": {
+              "pelvis": 0.7981656193733215,
+              "tail_base": 0.20183439552783966
+            }
+          },
+          "frozen_other_region_vertices": []
+        }
+      ],
+      "one_edge_neighbors": [
+        {
+          "source_vertex_id": 4000,
+          "position_gltf": [
+            0.27581787109375,
+            0.1856384426355362,
+            -0.0028195686172693968
+          ],
+          "baseline_weights": {
+            "pelvis": 0.9802271723747253,
+            "tail_base": 0.01977284625172615
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4001,
+          "position_gltf": [
+            0.27581787109375,
+            0.1818084865808487,
+            0.0017780952621251345
+          ],
+          "baseline_weights": {
+            "pelvis": 0.9720898270606995,
+            "tail_base": 0.027910156175494194
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 4002,
+          "position_gltf": [
+            0.2777099609375,
+            0.1831207424402237,
+            -0.004071743227541447
+          ],
+          "baseline_weights": {
+            "pelvis": 0.9594908356666565,
+            "tail_base": 0.0405091755092144
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4004,
+          "position_gltf": [
+            0.2772216796875,
+            0.1781921535730362,
+            0.0012339049717411399
+          ],
+          "baseline_weights": {
+            "pelvis": 0.9442377090454102,
+            "tail_base": 0.05576229840517044
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4005,
+          "position_gltf": [
+            0.27593994140625,
+            0.1772918850183487,
+            0.006220310460776091
+          ],
+          "baseline_weights": {
+            "pelvis": 0.9631084203720093,
+            "tail_base": 0.036891594529151917
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 4008,
+          "position_gltf": [
+            0.279876708984375,
+            0.1796417385339737,
+            -0.006339580751955509
+          ],
+          "baseline_weights": {
+            "pelvis": 0.9203548431396484,
+            "tail_base": 0.07964516431093216
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4010,
+          "position_gltf": [
+            0.277862548828125,
+            0.1723327785730362,
+            0.004870384465903044
+          ],
+          "baseline_weights": {
+            "pelvis": 0.9176329374313354,
+            "tail_base": 0.08236706256866455
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4141,
+          "position_gltf": [
+            0.28228759765625,
+            0.1707153469324112,
+            -0.004814178682863712
+          ],
+          "baseline_weights": {
+            "pelvis": 0.8204218149185181,
+            "tail_base": 0.17957818508148193
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4142,
+          "position_gltf": [
+            0.281585693359375,
+            0.1738281399011612,
+            -0.0059976885095238686
+          ],
+          "baseline_weights": {
+            "pelvis": 0.8540982007980347,
+            "tail_base": 0.14590182900428772
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4143,
+          "position_gltf": [
+            0.281890869140625,
+            0.1701507717370987,
+            -0.0016124554676935077
+          ],
+          "baseline_weights": {
+            "pelvis": 0.8391997218132019,
+            "tail_base": 0.16080030798912048
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4144,
+          "position_gltf": [
+            0.279998779296875,
+            0.1709594875574112,
+            0.00022824040206614882
+          ],
+          "baseline_weights": {
+            "pelvis": 0.8726308345794678,
+            "tail_base": 0.12736918032169342
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4145,
+          "position_gltf": [
+            0.282135009765625,
+            0.1712036281824112,
+            0.00026079913368448615
+          ],
+          "baseline_weights": {
+            "pelvis": 0.8468430042266846,
+            "tail_base": 0.15315701067447662
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4146,
+          "position_gltf": [
+            0.279205322265625,
+            0.1713104397058487,
+            0.0042218854650855064
+          ],
+          "baseline_weights": {
+            "pelvis": 0.8993549346923828,
+            "tail_base": 0.10064508020877838
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4147,
+          "position_gltf": [
+            0.280059814453125,
+            0.1704559475183487,
+            0.003076522843912244
+          ],
+          "baseline_weights": {
+            "pelvis": 0.8812201619148254,
+            "tail_base": 0.11877983063459396
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4149,
+          "position_gltf": [
+            0.2841796875,
+            0.1733551174402237,
+            -0.002625973429530859
+          ],
+          "baseline_weights": {
+            "pelvis": 0.7924557328224182,
+            "tail_base": 0.2075442522764206
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4152,
+          "position_gltf": [
+            0.28424072265625,
+            0.1746368557214737,
+            -0.0019386126659810543
+          ],
+          "baseline_weights": {
+            "pelvis": 0.779542863368988,
+            "tail_base": 0.22045710682868958
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 4153,
+          "position_gltf": [
+            0.281646728515625,
+            0.1733245998620987,
+            0.004433601163327694
+          ],
+          "baseline_weights": {
+            "pelvis": 0.851063072681427,
+            "tail_base": 0.1489369124174118
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        },
+        {
+          "source_vertex_id": 4155,
+          "position_gltf": [
+            0.282135009765625,
+            0.1754608303308487,
+            0.001914470223709941
+          ],
+          "baseline_weights": {
+            "pelvis": 0.8103299140930176,
+            "tail_base": 0.18967007100582123
+          },
+          "other_edit_regions": [
+            "left_hip"
+          ],
+          "proposed": false
+        },
+        {
+          "source_vertex_id": 4156,
+          "position_gltf": [
+            0.282440185546875,
+            0.1754150539636612,
+            0.00023688256624154747
+          ],
+          "baseline_weights": {
+            "pelvis": 0.788733959197998,
+            "tail_base": 0.21126604080200195
+          },
+          "other_edit_regions": [],
+          "proposed": true
+        }
+      ]
+    }
+  },
+  "excluded_support_vertices": [
+    4001,
+    4005,
+    4152,
+    4155
+  ],
+  "algorithm": {
+    "scope": "C2 six core vertices + eligible one-edge neighbors; no global mask or iteration",
+    "target": "inverse-edge-length weighted mean of unchanged Blender tail_base neighbor weights",
+    "core_step": 0.25,
+    "core_delta_cap": 0.015,
+    "transition_step": 0.125,
+    "transition_delta_cap": 0.0075,
+    "other_bones": "All except pelvis/tail_base frozen. All 17 bone columns provided; pelvis is normalization residual.",
+    "anatomy_limit": "Small contiguous surface patch, not a complete circumferential ring or anatomically certified boundary. Other-zone overlap clips its boundary."
+  },
+  "measurements": [
+    {
+      "source_vertex_ids": [
+        4000
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.27581787109375,
+        0.1856384426355362,
+        -0.0028195686172693968
+      ],
+      "neighbor_ids": [
+        3981,
+        3985,
+        3994,
+        3999,
+        4001,
+        4002,
+        4003
+      ],
+      "baseline_weights": {
+        "pelvis": 0.9802271723747253,
+        "tail_base": 0.01977284625172615
+      },
+      "local_tail_weight_target": 0.025889759203657808,
+      "tail_weight_delta": 0.0007646141189914571,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9794625396292824,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.020537460370717606,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4002
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.2777099609375,
+        0.1831207424402237,
+        -0.004071743227541447
+      ],
+      "neighbor_ids": [
+        3978,
+        3981,
+        4000,
+        4003,
+        4007,
+        4008
+      ],
+      "baseline_weights": {
+        "pelvis": 0.9594908356666565,
+        "tail_base": 0.0405091755092144
+      },
+      "local_tail_weight_target": 0.05142566858689761,
+      "tail_weight_delta": 0.0013645616347104008,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9581262628560752,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.041873737143924804,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4003
+      ],
+      "support": "C2_core",
+      "position_gltf": [
+        0.27783203125,
+        0.1795349270105362,
+        -0.0019203730626031756
+      ],
+      "neighbor_ids": [
+        4000,
+        4001,
+        4002,
+        4004,
+        4006,
+        4007
+      ],
+      "baseline_weights": {
+        "pelvis": 0.9369285106658936,
+        "tail_base": 0.06307151913642883
+      },
+      "local_tail_weight_target": 0.05649351098734208,
+      "tail_weight_delta": -0.0016445020372716883,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9385729829008429,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.06142701709915714,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4004
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.2772216796875,
+        0.1781921535730362,
+        0.0012339049717411399
+      ],
+      "neighbor_ids": [
+        4001,
+        4003,
+        4005,
+        4006
+      ],
+      "baseline_weights": {
+        "pelvis": 0.9442377090454102,
+        "tail_base": 0.05576229840517044
+      },
+      "local_tail_weight_target": 0.053916167040262156,
+      "tail_weight_delta": -0.00023076642061353562,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9444684680154432,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.0555315319845569,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4006
+      ],
+      "support": "C2_core",
+      "position_gltf": [
+        0.27838134765625,
+        0.1737823635339737,
+        0.00199410249479115
+      ],
+      "neighbor_ids": [
+        4003,
+        4004,
+        4005,
+        4007,
+        4010,
+        4144,
+        4146
+      ],
+      "baseline_weights": {
+        "pelvis": 0.9124914407730103,
+        "tail_base": 0.08750856667757034
+      },
+      "local_tail_weight_target": 0.08896962387036138,
+      "tail_weight_delta": 0.0003652642981977587,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9121261690242319,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.0878738309757681,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4007
+      ],
+      "support": "C2_core",
+      "position_gltf": [
+        0.279937744140625,
+        0.1733398586511612,
+        -0.0031755277886986732
+      ],
+      "neighbor_ids": [
+        4002,
+        4003,
+        4006,
+        4008,
+        4141,
+        4142,
+        4143,
+        4144
+      ],
+      "baseline_weights": {
+        "pelvis": 0.868768036365509,
+        "tail_base": 0.13123194873332977
+      },
+      "local_tail_weight_target": 0.1242231778742593,
+      "tail_weight_delta": -0.0017521927147676197,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8705202439814379,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.12947975601856215,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4008
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.279876708984375,
+        0.1796417385339737,
+        -0.006339580751955509
+      ],
+      "neighbor_ids": [
+        3978,
+        4002,
+        4007,
+        4009,
+        4014,
+        4142
+      ],
+      "baseline_weights": {
+        "pelvis": 0.9203548431396484,
+        "tail_base": 0.07964516431093216
+      },
+      "local_tail_weight_target": 0.09654373165808126,
+      "tail_weight_delta": 0.002112320918393638,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9182425147706742,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.0817574852293258,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4010
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.277862548828125,
+        0.1723327785730362,
+        0.004870384465903044
+      ],
+      "neighbor_ids": [
+        4005,
+        4006,
+        4146,
+        4148,
+        4168,
+        4170
+      ],
+      "baseline_weights": {
+        "pelvis": 0.9176329374313354,
+        "tail_base": 0.08236706256866455
+      },
+      "local_tail_weight_target": 0.09208825760198495,
+      "tail_weight_delta": 0.0012151493791650505,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9164177880521704,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.0835822119478296,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4141
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.28228759765625,
+        0.1707153469324112,
+        -0.004814178682863712
+      ],
+      "neighbor_ids": [
+        4007,
+        4119,
+        4139,
+        4140,
+        4142,
+        4143
+      ],
+      "baseline_weights": {
+        "pelvis": 0.8204218149185181,
+        "tail_base": 0.17957818508148193
+      },
+      "local_tail_weight_target": 0.18060837146263983,
+      "tail_weight_delta": 0.0001287732976447374,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8202930416208734,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.17970695837912667,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4142
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.281585693359375,
+        0.1738281399011612,
+        -0.0059976885095238686
+      ],
+      "neighbor_ids": [
+        4007,
+        4008,
+        4014,
+        4119,
+        4141
+      ],
+      "baseline_weights": {
+        "pelvis": 0.8540982007980347,
+        "tail_base": 0.14590182900428772
+      },
+      "local_tail_weight_target": 0.15217730369631524,
+      "tail_weight_delta": 0.0007844343365034402,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8533137366592088,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.14668626334079116,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4143
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.281890869140625,
+        0.1701507717370987,
+        -0.0016124554676935077
+      ],
+      "neighbor_ids": [
+        4007,
+        4138,
+        4140,
+        4141,
+        4144,
+        4145
+      ],
+      "baseline_weights": {
+        "pelvis": 0.8391997218132019,
+        "tail_base": 0.16080030798912048
+      },
+      "local_tail_weight_target": 0.16515840941295565,
+      "tail_weight_delta": 0.0005447626779793956,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8386549293329001,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.16134507066709988,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4144
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.279998779296875,
+        0.1709594875574112,
+        0.00022824040206614882
+      ],
+      "neighbor_ids": [
+        4006,
+        4007,
+        4143,
+        4145,
+        4146,
+        4147
+      ],
+      "baseline_weights": {
+        "pelvis": 0.8726308345794678,
+        "tail_base": 0.12736918032169342
+      },
+      "local_tail_weight_target": 0.12983493628370563,
+      "tail_weight_delta": 0.00030821949525152575,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8723226001830551,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.12767739981694495,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4145
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.282135009765625,
+        0.1712036281824112,
+        0.00026079913368448615
+      ],
+      "neighbor_ids": [
+        4138,
+        4143,
+        4144,
+        4147,
+        4149,
+        4150,
+        4151
+      ],
+      "baseline_weights": {
+        "pelvis": 0.8468430042266846,
+        "tail_base": 0.15315701067447662
+      },
+      "local_tail_weight_target": 0.15772831078625651,
+      "tail_weight_delta": 0.0005714125139724864,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8462715768115509,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.15372842318844912,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4146
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.279205322265625,
+        0.1713104397058487,
+        0.0042218854650855064
+      ],
+      "neighbor_ids": [
+        4006,
+        4010,
+        4144,
+        4147,
+        4148
+      ],
+      "baseline_weights": {
+        "pelvis": 0.8993549346923828,
+        "tail_base": 0.10064508020877838
+      },
+      "local_tail_weight_target": 0.10447890109399399,
+      "tail_weight_delta": 0.00047922761065195135,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8988756921805696,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.10112430781943033,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4147
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.280059814453125,
+        0.1704559475183487,
+        0.003076522843912244
+      ],
+      "neighbor_ids": [
+        4144,
+        4145,
+        4146,
+        4148,
+        4150,
+        4153
+      ],
+      "baseline_weights": {
+        "pelvis": 0.8812201619148254,
+        "tail_base": 0.11877983063459396
+      },
+      "local_tail_weight_target": 0.12704795685704884,
+      "tail_weight_delta": 0.0010335157778068593,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8801866535875992,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.11981334641240082,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4149
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.2841796875,
+        0.1733551174402237,
+        -0.002625973429530859
+      ],
+      "neighbor_ids": [
+        4136,
+        4138,
+        4145,
+        4151,
+        4152,
+        4160
+      ],
+      "baseline_weights": {
+        "pelvis": 0.7924557328224182,
+        "tail_base": 0.2075442522764206
+      },
+      "local_tail_weight_target": 0.209458756864675,
+      "tail_weight_delta": 0.00023931307353180012,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.7922164346500475,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.2077835653499524,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4150
+      ],
+      "support": "C2_core",
+      "position_gltf": [
+        0.281097412109375,
+        0.1715545803308487,
+        0.0023863010574132204
+      ],
+      "neighbor_ids": [
+        4145,
+        4147,
+        4151,
+        4153,
+        4154,
+        4155
+      ],
+      "baseline_weights": {
+        "pelvis": 0.8619585037231445,
+        "tail_base": 0.13804151117801666
+      },
+      "local_tail_weight_target": 0.1550684863577383,
+      "tail_weight_delta": 0.0042567437949304066,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.857701745027053,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.14229825497294707,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4151
+      ],
+      "support": "C2_core",
+      "position_gltf": [
+        0.282073974609375,
+        0.1733551174402237,
+        0.0001125250564655289
+      ],
+      "neighbor_ids": [
+        4145,
+        4149,
+        4150,
+        4152,
+        4154
+      ],
+      "baseline_weights": {
+        "pelvis": 0.8236787915229797,
+        "tail_base": 0.17632120847702026
+      },
+      "local_tail_weight_target": 0.18207720257293897,
+      "tail_weight_delta": 0.001438998523979676,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8222397929990001,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.17776020700099993,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4153
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.281646728515625,
+        0.1733245998620987,
+        0.004433601163327694
+      ],
+      "neighbor_ids": [
+        4147,
+        4148,
+        4150,
+        4155,
+        4158
+      ],
+      "baseline_weights": {
+        "pelvis": 0.851063072681427,
+        "tail_base": 0.1489369124174118
+      },
+      "local_tail_weight_target": 0.13933315944509453,
+      "tail_weight_delta": -0.0012004691215396594,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8522635567041279,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.14773644329587216,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4154
+      ],
+      "support": "C2_core",
+      "position_gltf": [
+        0.282073974609375,
+        0.1756134182214737,
+        -0.00030538556165993214
+      ],
+      "neighbor_ids": [
+        4150,
+        4151,
+        4152,
+        4155,
+        4156
+      ],
+      "baseline_weights": {
+        "pelvis": 0.7981656193733215,
+        "tail_base": 0.20183439552783966
+      },
+      "local_tail_weight_target": 0.19866900502957321,
+      "tail_weight_delta": -0.0007913476245666115,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.798956952096727,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.20104304790327304,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4156
+      ],
+      "support": "one_edge_transition",
+      "position_gltf": [
+        0.282440185546875,
+        0.1754150539636612,
+        0.00023688256624154747
+      ],
+      "neighbor_ids": [
+        4152,
+        4154,
+        4155,
+        4157
+      ],
+      "baseline_weights": {
+        "pelvis": 0.788733959197998,
+        "tail_base": 0.21126604080200195
+      },
+      "local_tail_weight_target": 0.20591229796482327,
+      "tail_weight_delta": -0.0006692178546473353,
+      "proposal_weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.7894031770526454,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.21059682294735463,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    }
+  ],
+  "validation": {
+    "valid_for_review": true,
+    "changed_source_vertices_proposed": 21,
+    "weights_applied": false,
+    "new_skinprobe_exported": false,
+    "status": "DRAFT_ONLY_REQUIRES_HUMAN_REVIEW",
+    "limits": "Validation checks scope, bone names, normalized values and seam identity. It does not certify visual deformation or authorize applying weights."
+  },
+  "weights_applied": false,
+  "deformation_improvement_tested": false,
+  "new_glb_exported": false,
+  "influence_continuity": {
+    "incident_edge_count": 82,
+    "metrics": {
+      "baseline": {
+        "max_adjacent_tail_weight_jump": 0.09072277322411537,
+        "sum_squared_tail_weight_jumps": 0.08900727839905888,
+        "inverse_edge_length_weighted_squared_jumps": 21.03733705661918
+      },
+      "proposed": {
+        "max_adjacent_tail_weight_jump": 0.08760601887463734,
+        "sum_squared_tail_weight_jumps": 0.08573798243292095,
+        "inverse_edge_length_weighted_squared_jumps": 20.362784104045552
+      }
+    },
+    "limits": "Scalar weight differences only, not deformed geometry, anatomy or intersection improvement."
+  },
+  "scope_summary": {
+    "current_tail_edit_mask_vertices": 1461,
+    "exclusive_tail_edit_mask_vertices": 555,
+    "proposal_vertices": 21,
+    "unlisted_vertices_frozen": 58429,
+    "coincident_position_copy_count_selected": 0,
+    "protected_head_and_four_sole_vertices_frozen": true,
+    "other_five_edit_masks_frozen": true,
+    "C1_frozen_reason": "All six C1 vertices also belong to EDIT_left_hip; current approval scope forbids their modification.",
+    "no_global_weights_modified": true
+  },
+  "proposal_sha256": "5de3474984a5b5466e5d1f1fe182d28b0baebe6585c2f814fe8e720175dd744e"
+}

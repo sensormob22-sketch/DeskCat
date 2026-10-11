@@ -1,0 +1,68 @@
+{
+  "model": "artifacts/stage8_v5/isolated_pelvis.glb",
+  "driver": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "backend": "p3headlessgl",
+  "projection": "orthographic",
+  "resolution": [
+    1400,
+    1100
+  ],
+  "preview": "base color + simple lighting; not full PBR",
+  "anatomical_mapping": "head toward Panda -X, up +Z; sides labelled by camera Y, not inferred anatomical left/right",
+  "views": {
+    "pelvis": [
+      [
+        2,
+        -3,
+        0.85
+      ],
+      [
+        0.36,
+        0,
+        0.64
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1.1,
+        0.86
+      ]
+    ],
+    "paws_hind": [
+      [
+        3,
+        1,
+        0.18
+      ],
+      [
+        0.28,
+        0,
+        0.18
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1.15,
+        0.9
+      ]
+    ]
+  },
+  "annotations": null,
+  "geometry_only": false,
+  "wireframe": false,
+  "forced_base_color_preview": false,
+  "bone_guides": null,
+  "reference_model": "assets/3d/tripo/deskcat_calico_h25_v1_localprep.glb",
+  "fixed_model_scale": 1.9996339082717896,
+  "fixed_model_offset": [
+    -0.0,
+    -0.0,
+    -0.0
+  ]
+}

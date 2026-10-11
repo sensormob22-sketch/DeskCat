@@ -1,0 +1,75 @@
+{
+  "source_sha256": "ff2a9e1d7280e4784913413fb45b10a2bdeadc125c80791a50f918a3ae646150",
+  "candidate_sha256": "cab5d4a2205c644bdbb24a340777cf172e80969515290ae441bb78a29ce4df2c",
+  "original_binary_prefix_identical": true,
+  "texture_maps": [
+    {
+      "name": "deskcat_calico_h25_v1_basecolor.jpg",
+      "sha256_original": "4c6618eaea5f8e3816a9a7c19f83021f3eba8111dfc543633344da249364a949",
+      "sha256_candidate": "4c6618eaea5f8e3816a9a7c19f83021f3eba8111dfc543633344da249364a949"
+    },
+    {
+      "name": "deskcat_calico_h25_v1_rm.jpg",
+      "sha256_original": "e0bb6f6597b47a0934c854c3a0c0ec292db2d26460a91d914b9e639c3263753f",
+      "sha256_candidate": "e0bb6f6597b47a0934c854c3a0c0ec292db2d26460a91d914b9e639c3263753f"
+    },
+    {
+      "name": "deskcat_calico_h25_v1_normal.png",
+      "sha256_original": "7ad6a39000f15d63f99e03f57d757789b136ce1885a231431e905564cf12b7ff",
+      "sha256_candidate": "7ad6a39000f15d63f99e03f57d757789b136ce1885a231431e905564cf12b7ff"
+    }
+  ],
+  "attribute_buffer_views_identical": {
+    "POSITION": true,
+    "NORMAL": true,
+    "TEXCOORD_0": true
+  },
+  "render_comparisons": {
+    "side_y_minus.png": {
+      "identical_pixels": true,
+      "width": 1400,
+      "height": 1100
+    },
+    "paws_hind.png": {
+      "identical_pixels": true,
+      "width": 1400,
+      "height": 1100
+    },
+    "front.png": {
+      "identical_pixels": true,
+      "width": 1400,
+      "height": 1100
+    },
+    "back.png": {
+      "identical_pixels": true,
+      "width": 1400,
+      "height": 1100
+    },
+    "side_y_plus.png": {
+      "identical_pixels": true,
+      "width": 1400,
+      "height": 1100
+    },
+    "paws_underside.png": {
+      "identical_pixels": true,
+      "width": 1400,
+      "height": 1100
+    },
+    "paws_front.png": {
+      "identical_pixels": true,
+      "width": 1400,
+      "height": 1100
+    },
+    "underside.png": {
+      "identical_pixels": true,
+      "width": 1400,
+      "height": 1100
+    },
+    "tail_base.png": {
+      "identical_pixels": true,
+      "width": 1400,
+      "height": 1100
+    }
+  },
+  "scope": "Base-color preview, not a full PBR material/shader comparison; zero-area removal only, no pose or anatomy repair."
+}

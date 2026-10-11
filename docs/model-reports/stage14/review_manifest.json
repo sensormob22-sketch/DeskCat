@@ -1,0 +1,1860 @@
+{
+  "base_commit": "74199b9",
+  "source_scene": "assets/rigging/deskcat_retopo_exact_weld_proxy_01.blend",
+  "source_scene_sha256": "844c4316dd841d4f943f80da7810d32abde64290c5f29b84e7ce4bfb3242667a",
+  "objects": {
+    "EXACT_WELD_PROXY_NO_WEIGHTS": {
+      "vertices": 8253,
+      "faces": 16460,
+      "face_order_sha256": "a890ada01d1417e851cfaa14cc823523cd8377d6a567c0ef981bce8ac61bb18a"
+    },
+    "RETOPO_RIGIFY_TRIAL_ORIGINAL_SURFACE": {
+      "vertices": 19464,
+      "faces": 16460,
+      "face_order_sha256": "f3c1c42ffec9bc3410c6204cd9bc3a12bb1bbb832143dda91c043034f966af4d"
+    }
+  },
+  "rig": "CAT_RIGIFY_TRIAL_02",
+  "deform_bones": 46,
+  "clusters": [
+    {
+      "id": "D04",
+      "region": "pelvis_hind_limb",
+      "counts": {
+        "boundary": 3
+      },
+      "source_face_ids": [
+        2573,
+        2596,
+        2601
+      ],
+      "context_source_face_ids": [
+        2065,
+        2571,
+        2574,
+        2575,
+        2576,
+        2597,
+        2598,
+        2600,
+        2602,
+        2608,
+        2609,
+        2610,
+        2776
+      ],
+      "fan_groups": [],
+      "confidence": "high that automated classification is insufficient",
+      "review_kind": "AMBIGUOUS",
+      "source_vertex_aliases": {
+        "1194": [
+          2390,
+          2969,
+          2992,
+          3009,
+          3159,
+          3160
+        ],
+        "1195": [
+          2391,
+          2996,
+          3003
+        ],
+        "1196": [
+          2392,
+          2984,
+          2985,
+          2988,
+          2995,
+          3010
+        ],
+        "1469": [
+          2948,
+          2968,
+          2987,
+          2989,
+          2991
+        ],
+        "1470": [
+          2949,
+          2983,
+          2986
+        ],
+        "1473": [
+          2952
+        ],
+        "1474": [
+          2953,
+          2982
+        ],
+        "1475": [
+          2954,
+          2976,
+          3175
+        ],
+        "1476": [
+          2955,
+          2997,
+          2999,
+          3012,
+          3014,
+          3142
+        ],
+        "1477": [
+          2956,
+          3024
+        ],
+        "1478": [
+          2957,
+          3016
+        ],
+        "1486": [
+          2990,
+          2993,
+          3008
+        ],
+        "1487": [
+          2994,
+          3000,
+          3002
+        ],
+        "1488": [
+          2998,
+          3143,
+          3155
+        ],
+        "1492": [
+          3011,
+          3015,
+          3187,
+          3195,
+          3199,
+          3201
+        ],
+        "1493": [
+          3013,
+          3141,
+          3148,
+          3154,
+          3185
+        ]
+      },
+      "contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            1196,
+            1476
+          ],
+          "intermediate_proxy_parameters": {
+            "1474": 0.500000152587911
+          },
+          "max_collinear_residual": 2.23517486134395e-09,
+          "long_edge_source_faces": [
+            2601
+          ],
+          "exact_collinear": false,
+          "proposed_only": true
+        },
+        "cluster": "D04",
+        "vertices": [
+          1196,
+          1474,
+          1476
+        ],
+        "adjacent_source_faces": [
+          2573,
+          2596,
+          2601
+        ],
+        "loop_vertex_count": 3,
+        "adjacent_normal_max_deviation_deg": 30.46582668791698,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": 2.1827872842550278e-11,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "id": "D05",
+      "region": "pelvis_hind_limb",
+      "counts": {
+        "boundary": 3
+      },
+      "source_face_ids": [
+        3003,
+        6531,
+        6532
+      ],
+      "context_source_face_ids": [
+        3000,
+        3005,
+        3027,
+        3028,
+        3030,
+        6530,
+        6568,
+        6569,
+        6570
+      ],
+      "fan_groups": [],
+      "confidence": "high for exact collinear T-junction; anatomical ownership still needs confirmation",
+      "review_kind": "T_JUNCTION_PROPOSAL",
+      "source_vertex_aliases": {
+        "1689": [
+          3477,
+          7203,
+          7305,
+          7308,
+          7315
+        ],
+        "1690": [
+          3478,
+          7316
+        ],
+        "1711": [
+          3499
+        ],
+        "1712": [
+          3500,
+          7226,
+          7309,
+          7314
+        ],
+        "1714": [
+          3502,
+          7228,
+          7311
+        ],
+        "1715": [
+          3503,
+          7319
+        ],
+        "1730": [
+          3518
+        ],
+        "1731": [
+          3519
+        ],
+        "1732": [
+          3520,
+          7261,
+          7312
+        ],
+        "1748": [
+          3548,
+          7225,
+          7263,
+          7313
+        ],
+        "3581": [
+          7191,
+          7202,
+          7222,
+          7310
+        ],
+        "3589": [
+          7227
+        ]
+      },
+      "contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            1712,
+            1714
+          ],
+          "intermediate_proxy_parameters": {
+            "3589": 0.5
+          },
+          "max_collinear_residual": 0.0,
+          "long_edge_source_faces": [
+            3003
+          ],
+          "exact_collinear": true,
+          "proposed_only": true
+        },
+        "cluster": "D05",
+        "vertices": [
+          1712,
+          1714,
+          3589
+        ],
+        "adjacent_source_faces": [
+          3003,
+          6531,
+          6532
+        ],
+        "loop_vertex_count": 3,
+        "adjacent_normal_max_deviation_deg": 1.6946922994434602e-05,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": 0.0,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "id": "D06",
+      "region": "belly_ventral_coat",
+      "counts": {
+        "boundary": 7,
+        "nonmanifold": 3
+      },
+      "source_face_ids": [
+        3685,
+        3686,
+        3968,
+        3973,
+        3981,
+        4011,
+        4019,
+        4020,
+        4026,
+        4042,
+        4279,
+        4280,
+        4281,
+        4286
+      ],
+      "context_source_face_ids": [
+        3682,
+        3683,
+        3684,
+        3687,
+        3689,
+        3959,
+        3966,
+        3967,
+        3970,
+        3971,
+        3975,
+        3979,
+        3980,
+        4010,
+        4018,
+        4021,
+        4022,
+        4025,
+        4027,
+        4028,
+        4034,
+        4035,
+        4036,
+        4043,
+        4278,
+        4282,
+        4283,
+        4284,
+        4285,
+        5448,
+        5778
+      ],
+      "fan_groups": [],
+      "confidence": "high that automated classification is insufficient",
+      "review_kind": "AMBIGUOUS",
+      "source_vertex_aliases": {
+        "2102": [
+          4085
+        ],
+        "2104": [
+          4087
+        ],
+        "2105": [
+          4088
+        ],
+        "2106": [
+          4089,
+          4791,
+          4793
+        ],
+        "2108": [
+          4091,
+          4358,
+          4373,
+          4389,
+          4794,
+          4795
+        ],
+        "2109": [
+          4092,
+          4376,
+          4387,
+          4803,
+          4805
+        ],
+        "2110": [
+          4093,
+          4491,
+          4796,
+          4802
+        ],
+        "2111": [
+          4094
+        ],
+        "2112": [
+          4095,
+          4806,
+          4810,
+          4813,
+          6291,
+          6293,
+          6297
+        ],
+        "2248": [
+          4336,
+          4354,
+          4369,
+          4372,
+          4440,
+          4789,
+          4792
+        ],
+        "2256": [
+          4350,
+          4357,
+          4375,
+          4388
+        ],
+        "2257": [
+          4353,
+          4356,
+          4371
+        ],
+        "2260": [
+          4374
+        ],
+        "2261": [
+          4377,
+          4456,
+          4798
+        ],
+        "2262": [
+          4379,
+          4455
+        ],
+        "2263": [
+          4380
+        ],
+        "2264": [
+          4381,
+          4443
+        ],
+        "2265": [
+          4382
+        ],
+        "2266": [
+          4385,
+          4433,
+          4436,
+          4446,
+          4450
+        ],
+        "2267": [
+          4386,
+          4442,
+          4447
+        ],
+        "2276": [
+          4441,
+          4445,
+          4451,
+          4471,
+          4473,
+          4482,
+          4486
+        ],
+        "2277": [
+          4444,
+          4476,
+          4490
+        ],
+        "2280": [
+          4457,
+          4800,
+          4809,
+          4814
+        ],
+        "2281": [
+          4458
+        ],
+        "2282": [
+          4459,
+          4477,
+          4801,
+          5941
+        ],
+        "2283": [
+          4460,
+          4474
+        ],
+        "2284": [
+          4461,
+          4498
+        ],
+        "2287": [
+          4464,
+          4505
+        ],
+        "2288": [
+          4465,
+          4507
+        ],
+        "2289": [
+          4466,
+          4811,
+          6295
+        ],
+        "2292": [
+          4478,
+          4489,
+          4804,
+          4808
+        ],
+        "2293": [
+          4479,
+          4807,
+          5942,
+          6290
+        ],
+        "2296": [
+          4488,
+          4797
+        ],
+        "2423": [
+          4799,
+          4812,
+          5940,
+          6292
+        ]
+      }
+    },
+    {
+      "id": "D07",
+      "region": "pelvis_hind_limb",
+      "counts": {
+        "boundary": 3
+      },
+      "source_face_ids": [
+        6315,
+        6326,
+        6329
+      ],
+      "context_source_face_ids": [
+        1625,
+        1886,
+        1891,
+        1892,
+        6296,
+        6297,
+        6314,
+        6327,
+        6328,
+        6337,
+        6339
+      ],
+      "fan_groups": [],
+      "confidence": "high for exact collinear T-junction; anatomical ownership still needs confirmation",
+      "review_kind": "T_JUNCTION_PROPOSAL",
+      "source_vertex_aliases": {
+        "926": [
+          1812,
+          2217,
+          2221
+        ],
+        "935": [
+          1821,
+          2225,
+          2230
+        ],
+        "941": [
+          1827,
+          6876,
+          6879,
+          6884
+        ],
+        "942": [
+          1828,
+          2222,
+          2231,
+          6881,
+          6911
+        ],
+        "1082": [
+          2218,
+          2220,
+          2224,
+          2232
+        ],
+        "1085": [
+          2233,
+          6913,
+          16290
+        ],
+        "3462": [
+          6837,
+          6902,
+          6932
+        ],
+        "3463": [
+          6838,
+          6916
+        ],
+        "3464": [
+          6839,
+          6882,
+          6915
+        ],
+        "3465": [
+          6840,
+          6878,
+          6895,
+          6899
+        ],
+        "3476": [
+          6912,
+          6918
+        ],
+        "3477": [
+          6914,
+          6927,
+          16291,
+          16293,
+          16299,
+          16300,
+          16305,
+          16308
+        ],
+        "3478": [
+          6917
+        ],
+        "3484": [
+          6926
+        ]
+      },
+      "contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            3464,
+            3476
+          ],
+          "intermediate_proxy_parameters": {
+            "942": 0.4444369381972041
+          },
+          "max_collinear_residual": 0.0,
+          "long_edge_source_faces": [
+            6329
+          ],
+          "exact_collinear": true,
+          "proposed_only": true
+        },
+        "cluster": "D07",
+        "vertices": [
+          942,
+          3464,
+          3476
+        ],
+        "adjacent_source_faces": [
+          6315,
+          6326,
+          6329
+        ],
+        "loop_vertex_count": 3,
+        "adjacent_normal_max_deviation_deg": 86.62249295930323,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": 0.0,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "id": "D09",
+      "region": "back_upper_body",
+      "counts": {
+        "boundary": 4
+      },
+      "source_face_ids": [
+        7631,
+        7639,
+        7691,
+        7694
+      ],
+      "context_source_face_ids": [
+        7617,
+        7627,
+        7628,
+        7629,
+        7630,
+        7636,
+        7645,
+        7680,
+        7686,
+        7688,
+        7693,
+        7902
+      ],
+      "fan_groups": [],
+      "confidence": "high that automated classification is insufficient",
+      "review_kind": "AMBIGUOUS",
+      "source_vertex_aliases": {
+        "4080": [
+          8626,
+          8690
+        ],
+        "4081": [
+          8627,
+          8638
+        ],
+        "4082": [
+          8628,
+          8640
+        ],
+        "4086": [
+          8639,
+          8882
+        ],
+        "4087": [
+          8641,
+          8885
+        ],
+        "4088": [
+          8642,
+          8892
+        ],
+        "4089": [
+          8643,
+          8891
+        ],
+        "4090": [
+          8644,
+          8890
+        ],
+        "4095": [
+          8649
+        ],
+        "4097": [
+          8651
+        ],
+        "4101": [
+          8655
+        ],
+        "4120": [
+          8674
+        ],
+        "4128": [
+          8685
+        ],
+        "4129": [
+          8687
+        ],
+        "4130": [
+          8689
+        ]
+      },
+      "contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            4082,
+            4097
+          ],
+          "intermediate_proxy_parameters": {
+            "4090": 0.5387387387387392,
+            "4130": 0.4618618618618613
+          },
+          "max_collinear_residual": 1.0851446214738811e-10,
+          "long_edge_source_faces": [],
+          "exact_collinear": false,
+          "proposed_only": true
+        },
+        "cluster": "D09",
+        "vertices": [
+          4082,
+          4090,
+          4097,
+          4130
+        ],
+        "adjacent_source_faces": [
+          7631,
+          7639,
+          7691,
+          7694
+        ],
+        "loop_vertex_count": 4,
+        "adjacent_normal_max_deviation_deg": 15.652859801513625,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": null,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "id": "D14",
+      "region": "belly_ventral_coat",
+      "counts": {
+        "boundary": 13,
+        "nonmanifold": 5,
+        "fan": 2
+      },
+      "source_face_ids": [
+        11975,
+        11983,
+        12094,
+        12095,
+        12100,
+        12122,
+        12123,
+        12133,
+        12134,
+        12135,
+        12136,
+        12146,
+        12147,
+        12148,
+        12149,
+        12152,
+        12154,
+        12160,
+        12162,
+        12169,
+        12180,
+        12181,
+        12182,
+        12183,
+        12184,
+        12185,
+        12189,
+        12190,
+        12195,
+        12196,
+        12201,
+        13820,
+        13823,
+        13824,
+        13825
+      ],
+      "context_source_face_ids": [
+        3582,
+        3583,
+        3585,
+        11974,
+        11976,
+        11978,
+        11979,
+        11980,
+        12043,
+        12044,
+        12045,
+        12050,
+        12052,
+        12055,
+        12062,
+        12092,
+        12093,
+        12096,
+        12097,
+        12124,
+        12125,
+        12126,
+        12137,
+        12150,
+        12151,
+        12153,
+        12155,
+        12156,
+        12157,
+        12159,
+        12161,
+        12168,
+        12170,
+        12199,
+        12200,
+        12202,
+        13818,
+        13819,
+        13821,
+        13826,
+        13830,
+        13831
+      ],
+      "fan_groups": [
+        {
+          "kind": "fan",
+          "proxy_vertex": 6337,
+          "source_vertex_aliases": [
+            14033,
+            14048,
+            14059,
+            14067,
+            14069
+          ],
+          "proxy_vertices": [
+            6337
+          ],
+          "source_faces": [
+            12169,
+            12180,
+            12182,
+            12183,
+            12189,
+            12190,
+            12195,
+            12196
+          ],
+          "midpoint": [
+            -0.012697205878794193,
+            0.24026502668857574,
+            0.0752105787396431
+          ],
+          "fan_source_face_groups": [
+            [
+              12180,
+              12182,
+              12183,
+              12189,
+              12190,
+              12195,
+              12196
+            ],
+            [
+              12169
+            ]
+          ]
+        },
+        {
+          "kind": "fan",
+          "proxy_vertex": 6345,
+          "source_vertex_aliases": [
+            14050,
+            15626
+          ],
+          "proxy_vertices": [
+            6345
+          ],
+          "source_faces": [
+            12180,
+            12181,
+            12182,
+            12184,
+            12185,
+            13823,
+            13824,
+            13825
+          ],
+          "midpoint": [
+            -0.0146512845531106,
+            0.23049940168857574,
+            0.0693512037396431
+          ],
+          "fan_source_face_groups": [
+            [
+              12180,
+              12181,
+              12182,
+              12184,
+              12185
+            ],
+            [
+              13823,
+              13824,
+              13825
+            ]
+          ]
+        }
+      ],
+      "confidence": "high that automated classification is insufficient",
+      "review_kind": "AMBIGUOUS",
+      "source_vertex_aliases": {
+        "2044": [
+          4027
+        ],
+        "2045": [
+          4028,
+          13759,
+          13763,
+          13768
+        ],
+        "2046": [
+          4029,
+          13767,
+          13771,
+          13774,
+          13781
+        ],
+        "2047": [
+          4030
+        ],
+        "2048": [
+          4031,
+          13777
+        ],
+        "6229": [
+          13761,
+          13764,
+          13851,
+          13854,
+          13858,
+          13878
+        ],
+        "6231": [
+          13765,
+          13766,
+          13782,
+          13877
+        ],
+        "6232": [
+          13769,
+          14006,
+          14011
+        ],
+        "6233": [
+          13770,
+          13775,
+          15619
+        ],
+        "6234": [
+          13772,
+          14013
+        ],
+        "6235": [
+          13773,
+          14014,
+          14019,
+          15617
+        ],
+        "6236": [
+          13776,
+          14020,
+          15618,
+          15622,
+          15632
+        ],
+        "6237": [
+          13778,
+          14056,
+          14065,
+          15634,
+          15638,
+          15641,
+          15644,
+          15647,
+          15652,
+          15653
+        ],
+        "6238": [
+          13783,
+          13860,
+          13876,
+          13920,
+          13928
+        ],
+        "6274": [
+          13856,
+          13859
+        ],
+        "6276": [
+          13861
+        ],
+        "6277": [
+          13862,
+          13918
+        ],
+        "6279": [
+          13865
+        ],
+        "6280": [
+          13866,
+          13921,
+          13969,
+          13971,
+          13985
+        ],
+        "6282": [
+          13868
+        ],
+        "6284": [
+          13870,
+          13923
+        ],
+        "6303": [
+          13919,
+          13929
+        ],
+        "6304": [
+          13922,
+          13930,
+          13972
+        ],
+        "6305": [
+          13924,
+          13975,
+          14027
+        ],
+        "6306": [
+          13925,
+          13973
+        ],
+        "6311": [
+          13968,
+          13998,
+          14007
+        ],
+        "6312": [
+          13970,
+          13984,
+          13999
+        ],
+        "6313": [
+          13974,
+          13983,
+          14002
+        ],
+        "6314": [
+          13976,
+          13988
+        ],
+        "6321": [
+          13986,
+          14000,
+          14010
+        ],
+        "6322": [
+          13987,
+          14001,
+          14030
+        ],
+        "6323": [
+          13989,
+          14031
+        ],
+        "6331": [
+          14003,
+          14018
+        ],
+        "6332": [
+          14004,
+          14008,
+          14016
+        ],
+        "6333": [
+          14005,
+          14009
+        ],
+        "6334": [
+          14012,
+          14015
+        ],
+        "6335": [
+          14017
+        ],
+        "6336": [
+          14032,
+          14075
+        ],
+        "6337": [
+          14033,
+          14048,
+          14059,
+          14067,
+          14069
+        ],
+        "6338": [
+          14034,
+          14079,
+          14161
+        ],
+        "6344": [
+          14049,
+          14058
+        ],
+        "6345": [
+          14050,
+          15626
+        ],
+        "6346": [
+          14051,
+          14064
+        ],
+        "6347": [
+          14052,
+          15629
+        ],
+        "6348": [
+          14053,
+          14068,
+          14078,
+          15628
+        ],
+        "6349": [
+          14054,
+          15630
+        ],
+        "6352": [
+          14060,
+          15659,
+          15884
+        ],
+        "6353": [
+          14061,
+          14071,
+          14216,
+          15882,
+          15900
+        ],
+        "6356": [
+          14066,
+          14070,
+          14077,
+          14210
+        ],
+        "6359": [
+          14074,
+          14205,
+          14211
+        ],
+        "6360": [
+          14076,
+          14206,
+          14209
+        ],
+        "7215": [
+          15620,
+          15639,
+          15643,
+          15671,
+          15673,
+          15675
+        ],
+        "7216": [
+          15621,
+          15635,
+          15670
+        ],
+        "7217": [
+          15623
+        ],
+        "7218": [
+          15624,
+          15678
+        ],
+        "7220": [
+          15627
+        ],
+        "7221": [
+          15633,
+          15636,
+          15669
+        ]
+      }
+    },
+    {
+      "id": "D15",
+      "region": "back_upper_body",
+      "counts": {
+        "boundary": 3
+      },
+      "source_face_ids": [
+        12448,
+        12449,
+        14146
+      ],
+      "context_source_face_ids": [
+        12447,
+        12450,
+        12451,
+        14042,
+        14043,
+        14147,
+        14148,
+        14149
+      ],
+      "fan_groups": [],
+      "confidence": "high for exact collinear T-junction; anatomical ownership still needs confirmation",
+      "review_kind": "T_JUNCTION_PROPOSAL",
+      "source_vertex_aliases": {
+        "6492": [
+          14331,
+          15976
+        ],
+        "6493": [
+          14332,
+          15977,
+          16038,
+          16097
+        ],
+        "6495": [
+          14334
+        ],
+        "6496": [
+          14335,
+          15978,
+          16102
+        ],
+        "6497": [
+          14336
+        ],
+        "6498": [
+          14337,
+          16101
+        ],
+        "6499": [
+          14338
+        ],
+        "6500": [
+          14339,
+          16093,
+          16105
+        ],
+        "7301": [
+          15979,
+          16103
+        ],
+        "7355": [
+          16100
+        ],
+        "7356": [
+          16104
+        ]
+      },
+      "contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            6496,
+            6498
+          ],
+          "intermediate_proxy_parameters": {
+            "6497": 0.5
+          },
+          "max_collinear_residual": 0.0,
+          "long_edge_source_faces": [
+            14146
+          ],
+          "exact_collinear": true,
+          "proposed_only": true
+        },
+        "cluster": "D15",
+        "vertices": [
+          6496,
+          6497,
+          6498
+        ],
+        "adjacent_source_faces": [
+          12448,
+          12449,
+          14146
+        ],
+        "loop_vertex_count": 3,
+        "adjacent_normal_max_deviation_deg": 11.776070967783,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": 0.0,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "id": "D17",
+      "region": "belly_ventral_coat",
+      "counts": {
+        "boundary": 6,
+        "fan": 1
+      },
+      "source_face_ids": [
+        13801,
+        13803,
+        13804,
+        13805,
+        13878,
+        13879,
+        13880,
+        13881,
+        13883,
+        13887,
+        13889,
+        13893,
+        13899,
+        13905,
+        13906
+      ],
+      "context_source_face_ids": [
+        13800,
+        13858,
+        13872,
+        13873,
+        13877,
+        13888,
+        13890,
+        13891,
+        13892,
+        13894,
+        13901,
+        13903,
+        13904,
+        13908,
+        13928,
+        13929,
+        13959
+      ],
+      "fan_groups": [
+        {
+          "kind": "fan",
+          "proxy_vertex": 7200,
+          "source_vertex_aliases": [
+            15590,
+            15594,
+            15722,
+            15755
+          ],
+          "proxy_vertices": [
+            7200
+          ],
+          "source_faces": [
+            13801,
+            13803,
+            13804,
+            13805,
+            13879,
+            13880,
+            13881,
+            13883,
+            13887,
+            13905,
+            13906
+          ],
+          "midpoint": [
+            -0.049812305718660355,
+            0.22464002668857574,
+            0.05958176776766777
+          ],
+          "fan_source_face_groups": [
+            [
+              13801,
+              13803,
+              13804,
+              13805,
+              13879,
+              13880,
+              13881,
+              13883,
+              13887
+            ],
+            [
+              13905,
+              13906
+            ]
+          ]
+        }
+      ],
+      "confidence": "high that automated classification is insufficient",
+      "review_kind": "AMBIGUOUS",
+      "source_vertex_aliases": {
+        "2067": [
+          4050,
+          13780,
+          15587,
+          15646,
+          15681,
+          15684
+        ],
+        "2070": [
+          4053,
+          15589,
+          15592,
+          15603,
+          15607,
+          15611,
+          15614
+        ],
+        "6428": [
+          14256,
+          15733,
+          15906,
+          15910
+        ],
+        "7199": [
+          15588,
+          15683,
+          15707,
+          15711,
+          15718,
+          15720,
+          15740
+        ],
+        "7200": [
+          15590,
+          15594,
+          15722,
+          15755
+        ],
+        "7202": [
+          15593,
+          15765,
+          15786
+        ],
+        "7203": [
+          15595,
+          15784
+        ],
+        "7204": [
+          15596,
+          15729
+        ],
+        "7205": [
+          15597,
+          15732,
+          15908
+        ],
+        "7224": [
+          15648,
+          15682,
+          15705,
+          15708
+        ],
+        "7238": [
+          15704,
+          15709,
+          15712
+        ],
+        "7239": [
+          15710,
+          15741
+        ],
+        "7240": [
+          15715,
+          15744,
+          15787,
+          15825,
+          15857
+        ],
+        "7241": [
+          15716,
+          15735,
+          15742,
+          15789,
+          15792
+        ],
+        "7242": [
+          15717,
+          15721,
+          15751
+        ],
+        "7243": [
+          15719,
+          15747,
+          15752,
+          15754
+        ],
+        "7244": [
+          15723,
+          15746,
+          15753
+        ],
+        "7245": [
+          15724,
+          15758
+        ],
+        "7246": [
+          15725,
+          15749,
+          15759,
+          15763
+        ],
+        "7247": [
+          15726,
+          15830
+        ],
+        "7249": [
+          15728,
+          15762,
+          15828
+        ],
+        "7250": [
+          15730
+        ],
+        "7251": [
+          15731,
+          15750,
+          15757,
+          15761,
+          15829
+        ],
+        "7252": [
+          15734
+        ],
+        "7253": [
+          15736,
+          15791,
+          15891
+        ],
+        "7256": [
+          15748,
+          15756
+        ],
+        "7266": [
+          15788,
+          15790,
+          15859
+        ]
+      },
+      "contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            7199,
+            7250
+          ],
+          "intermediate_proxy_parameters": {
+            "7200": 0.3213668738371754,
+            "7241": 0.6992832926039453,
+            "7243": 0.17229857406149723,
+            "7251": 0.8021022146810293
+          },
+          "max_collinear_residual": 0.013363232323407935,
+          "long_edge_source_faces": [],
+          "exact_collinear": false,
+          "proposed_only": true
+        },
+        "cluster": "D17",
+        "vertices": [
+          7199,
+          7200,
+          7241,
+          7243,
+          7250,
+          7251
+        ],
+        "adjacent_source_faces": [
+          13878,
+          13889,
+          13893,
+          13899,
+          13905,
+          13906
+        ],
+        "loop_vertex_count": 6,
+        "adjacent_normal_max_deviation_deg": 116.12033511693971,
+        "pca_thickness_ratio": 0.06126233763160671,
+        "triangle_cap_area_if_triangular": null,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "id": "D18",
+      "region": "back_upper_body",
+      "counts": {
+        "boundary": 3
+      },
+      "source_face_ids": [
+        14073,
+        14077,
+        14078
+      ],
+      "context_source_face_ids": [
+        14072,
+        14075,
+        14080,
+        14081,
+        14875,
+        14937,
+        14997,
+        14998
+      ],
+      "fan_groups": [],
+      "confidence": "high for exact collinear T-junction; anatomical ownership still needs confirmation",
+      "review_kind": "T_JUNCTION_PROPOSAL",
+      "source_vertex_aliases": {
+        "7320": [
+          16002,
+          17325
+        ],
+        "7321": [
+          16003
+        ],
+        "7322": [
+          16004,
+          17265,
+          17328,
+          17474,
+          17475
+        ],
+        "7323": [
+          16005
+        ],
+        "7324": [
+          16006
+        ],
+        "7325": [
+          16007
+        ],
+        "7326": [
+          16008,
+          17477
+        ],
+        "7327": [
+          16009
+        ],
+        "7330": [
+          16012,
+          17470,
+          17473,
+          17476
+        ],
+        "7598": [
+          17260,
+          17327
+        ],
+        "7602": [
+          17264,
+          17464,
+          17466,
+          17471,
+          17472
+        ]
+      },
+      "contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            7322,
+            7325
+          ],
+          "intermediate_proxy_parameters": {
+            "7323": 0.25
+          },
+          "max_collinear_residual": 0.0,
+          "long_edge_source_faces": [
+            14078
+          ],
+          "exact_collinear": true,
+          "proposed_only": true
+        },
+        "cluster": "D18",
+        "vertices": [
+          7322,
+          7323,
+          7325
+        ],
+        "adjacent_source_faces": [
+          14073,
+          14077,
+          14078
+        ],
+        "loop_vertex_count": 3,
+        "adjacent_normal_max_deviation_deg": 5.422092592563728,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": 0.0,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "id": "D24",
+      "region": "ear_head_fold",
+      "counts": {
+        "nonmanifold": 1
+      },
+      "source_face_ids": [
+        15534,
+        15677,
+        15689,
+        15708
+      ],
+      "context_source_face_ids": [
+        15499,
+        15533,
+        15535,
+        15653,
+        15654,
+        15662,
+        15664,
+        15666,
+        15678,
+        15687,
+        15688,
+        15707,
+        15709
+      ],
+      "fan_groups": [],
+      "confidence": "high that automated classification is insufficient",
+      "review_kind": "AMBIGUOUS",
+      "source_vertex_aliases": {
+        "7773": [
+          18067,
+          18325,
+          18342,
+          18343,
+          18348
+        ],
+        "7812": [
+          18130,
+          18190,
+          18312,
+          18385
+        ],
+        "7813": [
+          18131,
+          18309
+        ],
+        "7819": [
+          18138,
+          18310
+        ],
+        "7826": [
+          18145,
+          18331
+        ],
+        "7827": [
+          18146,
+          18186,
+          18311,
+          18328,
+          18340,
+          18358,
+          18387,
+          18388
+        ],
+        "7848": [
+          18178,
+          18389,
+          18391
+        ],
+        "7852": [
+          18185
+        ],
+        "7853": [
+          18187,
+          18341,
+          18344,
+          18360,
+          18384
+        ],
+        "7854": [
+          18188,
+          18386
+        ],
+        "7916": [
+          18324
+        ],
+        "7917": [
+          18330
+        ],
+        "7919": [
+          18345,
+          18346,
+          18359
+        ],
+        "7920": [
+          18349,
+          18353
+        ],
+        "7923": [
+          18355,
+          18390,
+          18393
+        ]
+      }
+    }
+  ],
+  "decisions": [
+    "BODY",
+    "COSMETIC",
+    "KEEP SEPARATE",
+    "UNCERTAIN"
+  ],
+  "id_convention": "Zero-based source triangle IDs. Both object face orders must validate before selection. Context is not an approved repair mask.",
+  "operations": "Selection and viewport visibility only; no topology/weights/export or automatic save."
+}

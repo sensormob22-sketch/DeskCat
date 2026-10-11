@@ -1,0 +1,6 @@
+{
+  "simple_bone_matrix_local_times_IBM_hypothesis_error": 0.9474269394768058,
+  "simple_hypothesis_rejected": true,
+  "explanation": "Blender mesh skin_into_bind_pose multiplies weighted bind_arma_mat @ inverseBindMatrix before Armature modifier. Disabling modifier reveals this baked mesh, not raw POSITION. Importer bind_arma_mat includes adjustments which must not be substituted with final bone.matrix_local; the simple substitution was tested and rejected.",
+  "source": "Blender 4.3.2 io_scene_gltf2/blender/imp/mesh.py:633-685"
+}

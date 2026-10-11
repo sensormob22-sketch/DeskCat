@@ -1,0 +1,137 @@
+{
+  "environment": "Linux Panda3D 1.10.15 / panda3d-gltf 1.3.0",
+  "driver": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "cases": {
+    "rest": {
+      "max_position_error": 0.0,
+      "vertices": 58450,
+      "morph_driver": "PartBundle.freezeJoint scalar / GeomVertexData.animateVertices"
+    },
+    "tail_plus10": {
+      "max_position_error": 0.0,
+      "vertices": 58450,
+      "morph_driver": "PartBundle.freezeJoint scalar / GeomVertexData.animateVertices"
+    },
+    "tail_minus10": {
+      "max_position_error": 0.0,
+      "vertices": 58450,
+      "morph_driver": "PartBundle.freezeJoint scalar / GeomVertexData.animateVertices"
+    },
+    "tail_plus15": {
+      "max_position_error": 0.0,
+      "vertices": 58450,
+      "morph_driver": "PartBundle.freezeJoint scalar / GeomVertexData.animateVertices"
+    },
+    "tail_minus15": {
+      "max_position_error": 0.0,
+      "vertices": 58450,
+      "morph_driver": "PartBundle.freezeJoint scalar / GeomVertexData.animateVertices"
+    },
+    "hip_plus10": {
+      "max_position_error": 0.0,
+      "vertices": 58450,
+      "morph_driver": "PartBundle.freezeJoint scalar / GeomVertexData.animateVertices"
+    },
+    "hip_minus10": {
+      "max_position_error": 0.0,
+      "vertices": 58450,
+      "morph_driver": "PartBundle.freezeJoint scalar / GeomVertexData.animateVertices"
+    },
+    "hip_plus15": {
+      "max_position_error": 0.0,
+      "vertices": 58450,
+      "morph_driver": "PartBundle.freezeJoint scalar / GeomVertexData.animateVertices"
+    },
+    "hip_minus15": {
+      "max_position_error": 0.0,
+      "vertices": 58450,
+      "morph_driver": "PartBundle.freezeJoint scalar / GeomVertexData.animateVertices"
+    },
+    "combined_positive": {
+      "max_position_error": 0.0,
+      "vertices": 58450,
+      "morph_driver": "PartBundle.freezeJoint scalar / GeomVertexData.animateVertices"
+    },
+    "combined_negative": {
+      "max_position_error": 0.0,
+      "vertices": 58450,
+      "morph_driver": "PartBundle.freezeJoint scalar / GeomVertexData.animateVertices"
+    }
+  },
+  "cameras": {
+    "tail": {
+      "camera": [
+        2.5982179641723633,
+        -3.021583318710327,
+        1.0367257595062256
+      ],
+      "target": [
+        0.5982180833816528,
+        -0.021583352237939835,
+        0.4367257356643677
+      ],
+      "film": [
+        0.6,
+        0.5
+      ],
+      "scale": 1.9996338561054494,
+      "offset": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "cage_views": "Actual baked morph GLB driven in Panda3D",
+      "red_overlay": "Exact new source triangle IDs, drawn through depth for location only"
+    },
+    "hip": {
+      "camera": [
+        2.4144062995910645,
+        -3.1046407222747803,
+        1.0328223705291748
+      ],
+      "target": [
+        0.4144062101840973,
+        -0.10464082658290863,
+        0.4328223764896393
+      ],
+      "film": [
+        0.6,
+        0.5
+      ],
+      "scale": 1.9996338561054494,
+      "offset": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "cage_views": "Actual baked morph GLB driven in Panda3D",
+      "red_overlay": "Exact new source triangle IDs, drawn through depth for location only"
+    },
+    "combined": {
+      "camera": [
+        2.5982179641723633,
+        -3.021583318710327,
+        1.0367257595062256
+      ],
+      "target": [
+        0.5982180833816528,
+        -0.021583352237939835,
+        0.4367257356643677
+      ],
+      "film": [
+        0.85,
+        0.71
+      ],
+      "scale": 1.9996338561054494,
+      "offset": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "cage_views": "Actual baked morph GLB driven in Panda3D",
+      "red_overlay": "Exact new source triangle IDs, drawn through depth for location only"
+    }
+  },
+  "glb_sha256": "d04d0b4445b39d58b27a6a840531cebbc655bc51c4bec347a9f2bfda404c9910",
+  "limitation": "10 discrete measured morph poses, no animation clips. Interpolation between poses and arbitrary combined motion are unverified; rest normals retained, not final lighting."
+}

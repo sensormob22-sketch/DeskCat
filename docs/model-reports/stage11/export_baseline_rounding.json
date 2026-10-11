@@ -1,0 +1,5 @@
+{
+  "max_export_weight_delta_outside_approved_ids": 0.0,
+  "outside_vertices_differing_above_1e7": 0,
+  "explanation": "Exported weights outside the approved 21 IDs match v6 exactly. Panda position noise <=8.43e-8 is float bind/blend evaluation, not a weight edit; no pair changes."
+}

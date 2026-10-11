@@ -1,0 +1,286 @@
+[
+  {
+    "t_junction_evidence": {
+      "endpoint_proxy_ids": [
+        1196,
+        1476
+      ],
+      "intermediate_proxy_parameters": {
+        "1474": 0.500000152587911
+      },
+      "max_collinear_residual": 2.23517486134395e-09,
+      "long_edge_source_faces": [
+        2601
+      ],
+      "exact_collinear": false,
+      "proposed_only": true
+    },
+    "cluster": "D04",
+    "vertices": [
+      1196,
+      1474,
+      1476
+    ],
+    "adjacent_source_faces": [
+      2573,
+      2596,
+      2601
+    ],
+    "loop_vertex_count": 3,
+    "adjacent_normal_max_deviation_deg": 30.46582668791698,
+    "pca_thickness_ratio": 0.0,
+    "triangle_cap_area_if_triangular": 2.1827872842550278e-11,
+    "proved_anatomical_body_hole": false,
+    "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+  },
+  {
+    "t_junction_evidence": {
+      "endpoint_proxy_ids": [
+        1712,
+        1714
+      ],
+      "intermediate_proxy_parameters": {
+        "3589": 0.5
+      },
+      "max_collinear_residual": 0.0,
+      "long_edge_source_faces": [
+        3003
+      ],
+      "exact_collinear": true,
+      "proposed_only": true
+    },
+    "cluster": "D05",
+    "vertices": [
+      1712,
+      1714,
+      3589
+    ],
+    "adjacent_source_faces": [
+      3003,
+      6531,
+      6532
+    ],
+    "loop_vertex_count": 3,
+    "adjacent_normal_max_deviation_deg": 1.6946922994434602e-05,
+    "pca_thickness_ratio": 0.0,
+    "triangle_cap_area_if_triangular": 0.0,
+    "proved_anatomical_body_hole": false,
+    "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+  },
+  {
+    "t_junction_evidence": {
+      "endpoint_proxy_ids": [
+        3464,
+        3476
+      ],
+      "intermediate_proxy_parameters": {
+        "942": 0.4444369381972041
+      },
+      "max_collinear_residual": 0.0,
+      "long_edge_source_faces": [
+        6329
+      ],
+      "exact_collinear": true,
+      "proposed_only": true
+    },
+    "cluster": "D07",
+    "vertices": [
+      942,
+      3464,
+      3476
+    ],
+    "adjacent_source_faces": [
+      6315,
+      6326,
+      6329
+    ],
+    "loop_vertex_count": 3,
+    "adjacent_normal_max_deviation_deg": 86.62249295930323,
+    "pca_thickness_ratio": 0.0,
+    "triangle_cap_area_if_triangular": 0.0,
+    "proved_anatomical_body_hole": false,
+    "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+  },
+  {
+    "t_junction_evidence": {
+      "endpoint_proxy_ids": [
+        4082,
+        4097
+      ],
+      "intermediate_proxy_parameters": {
+        "4090": 0.5387387387387392,
+        "4130": 0.4618618618618613
+      },
+      "max_collinear_residual": 1.0851446214738811e-10,
+      "long_edge_source_faces": [],
+      "exact_collinear": false,
+      "proposed_only": true
+    },
+    "cluster": "D09",
+    "vertices": [
+      4082,
+      4090,
+      4097,
+      4130
+    ],
+    "adjacent_source_faces": [
+      7631,
+      7639,
+      7691,
+      7694
+    ],
+    "loop_vertex_count": 4,
+    "adjacent_normal_max_deviation_deg": 15.652859801513625,
+    "pca_thickness_ratio": 0.0,
+    "triangle_cap_area_if_triangular": null,
+    "proved_anatomical_body_hole": false,
+    "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+  },
+  {
+    "t_junction_evidence": {
+      "endpoint_proxy_ids": [
+        6496,
+        6498
+      ],
+      "intermediate_proxy_parameters": {
+        "6497": 0.5
+      },
+      "max_collinear_residual": 0.0,
+      "long_edge_source_faces": [
+        14146
+      ],
+      "exact_collinear": true,
+      "proposed_only": true
+    },
+    "cluster": "D15",
+    "vertices": [
+      6496,
+      6497,
+      6498
+    ],
+    "adjacent_source_faces": [
+      12448,
+      12449,
+      14146
+    ],
+    "loop_vertex_count": 3,
+    "adjacent_normal_max_deviation_deg": 11.776070967783,
+    "pca_thickness_ratio": 0.0,
+    "triangle_cap_area_if_triangular": 0.0,
+    "proved_anatomical_body_hole": false,
+    "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+  },
+  {
+    "t_junction_evidence": {
+      "endpoint_proxy_ids": [
+        7199,
+        7250
+      ],
+      "intermediate_proxy_parameters": {
+        "7200": 0.3213668738371754,
+        "7241": 0.6992832926039453,
+        "7243": 0.17229857406149723,
+        "7251": 0.8021022146810293
+      },
+      "max_collinear_residual": 0.013363232323407935,
+      "long_edge_source_faces": [],
+      "exact_collinear": false,
+      "proposed_only": true
+    },
+    "cluster": "D17",
+    "vertices": [
+      7199,
+      7200,
+      7241,
+      7243,
+      7250,
+      7251
+    ],
+    "adjacent_source_faces": [
+      13878,
+      13889,
+      13893,
+      13899,
+      13905,
+      13906
+    ],
+    "loop_vertex_count": 6,
+    "adjacent_normal_max_deviation_deg": 116.12033511693971,
+    "pca_thickness_ratio": 0.06126233763160671,
+    "triangle_cap_area_if_triangular": null,
+    "proved_anatomical_body_hole": false,
+    "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+  },
+  {
+    "t_junction_evidence": {
+      "endpoint_proxy_ids": [
+        7322,
+        7325
+      ],
+      "intermediate_proxy_parameters": {
+        "7323": 0.25
+      },
+      "max_collinear_residual": 0.0,
+      "long_edge_source_faces": [
+        14078
+      ],
+      "exact_collinear": true,
+      "proposed_only": true
+    },
+    "cluster": "D18",
+    "vertices": [
+      7322,
+      7323,
+      7325
+    ],
+    "adjacent_source_faces": [
+      14073,
+      14077,
+      14078
+    ],
+    "loop_vertex_count": 3,
+    "adjacent_normal_max_deviation_deg": 5.422092592563728,
+    "pca_thickness_ratio": 0.0,
+    "triangle_cap_area_if_triangular": 0.0,
+    "proved_anatomical_body_hole": false,
+    "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+  },
+  {
+    "t_junction_evidence": {
+      "endpoint_proxy_ids": [
+        8092,
+        8172
+      ],
+      "intermediate_proxy_parameters": {
+        "8158": 0.4,
+        "8162": 0.2,
+        "8176": 0.8
+      },
+      "max_collinear_residual": 0.002620392161132566,
+      "long_edge_source_faces": [],
+      "exact_collinear": false,
+      "proposed_only": true
+    },
+    "cluster": "D21",
+    "vertices": [
+      8092,
+      8158,
+      8162,
+      8172,
+      8176
+    ],
+    "adjacent_source_faces": [
+      16221,
+      16224,
+      16241,
+      16250,
+      16255
+    ],
+    "loop_vertex_count": 5,
+    "adjacent_normal_max_deviation_deg": 165.68792698155318,
+    "pca_thickness_ratio": 0.0,
+    "triangle_cap_area_if_triangular": null,
+    "proved_anatomical_body_hole": false,
+    "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+  }
+]

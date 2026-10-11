@@ -1,0 +1,96 @@
+{
+  "source_sha256": "ff2a9e1d7280e4784913413fb45b10a2bdeadc125c80791a50f918a3ae646150",
+  "candidate_sha256": "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6",
+  "changed_vertex_ids": [
+    5276
+  ],
+  "vertex_count": 58450,
+  "maximum_displacement": 9.5367431640625e-07,
+  "normal_arrays_identical": true,
+  "uv_arrays_identical": true,
+  "materials_identical": true,
+  "texture_descriptors_identical": true,
+  "texture_maps": [
+    {
+      "name": "deskcat_calico_h25_v1_basecolor.jpg",
+      "source_sha256": "4c6618eaea5f8e3816a9a7c19f83021f3eba8111dfc543633344da249364a949",
+      "candidate_sha256": "4c6618eaea5f8e3816a9a7c19f83021f3eba8111dfc543633344da249364a949",
+      "identical": true
+    },
+    {
+      "name": "deskcat_calico_h25_v1_rm.jpg",
+      "source_sha256": "e0bb6f6597b47a0934c854c3a0c0ec292db2d26460a91d914b9e639c3263753f",
+      "candidate_sha256": "e0bb6f6597b47a0934c854c3a0c0ec292db2d26460a91d914b9e639c3263753f",
+      "identical": true
+    },
+    {
+      "name": "deskcat_calico_h25_v1_normal.png",
+      "source_sha256": "7ad6a39000f15d63f99e03f57d757789b136ce1885a231431e905564cf12b7ff",
+      "candidate_sha256": "7ad6a39000f15d63f99e03f57d757789b136ce1885a231431e905564cf12b7ff",
+      "identical": true
+    }
+  ],
+  "aabb_identical": true,
+  "protected_face_vertices": 5622,
+  "changed_protected_face_vertex_ids": [],
+  "frame_comparison": {
+    "back.png": {
+      "identical_rgba": true,
+      "source_rgba_sha256": "b4e93985296434a2fc34fdcaef9a3fbd14f7dbb144ea23d6fb33301b3b816a92",
+      "candidate_rgba_sha256": "b4e93985296434a2fc34fdcaef9a3fbd14f7dbb144ea23d6fb33301b3b816a92",
+      "changed_pixels": 0
+    },
+    "front.png": {
+      "identical_rgba": true,
+      "source_rgba_sha256": "bf64d95ee4bc9e2878a492389472c1020c24ac50dbe30d3b816fe3b035d2209a",
+      "candidate_rgba_sha256": "bf64d95ee4bc9e2878a492389472c1020c24ac50dbe30d3b816fe3b035d2209a",
+      "changed_pixels": 0
+    },
+    "paws_front.png": {
+      "identical_rgba": true,
+      "source_rgba_sha256": "4cc953295bde4d19420e3bfba464818d2056e79b34d588148a322e89798df4c8",
+      "candidate_rgba_sha256": "4cc953295bde4d19420e3bfba464818d2056e79b34d588148a322e89798df4c8",
+      "changed_pixels": 0
+    },
+    "paws_hind.png": {
+      "identical_rgba": true,
+      "source_rgba_sha256": "451c8574f332d6533244c211153f3cd8af1e150fa739d1dbc1f16ffbfe04325d",
+      "candidate_rgba_sha256": "451c8574f332d6533244c211153f3cd8af1e150fa739d1dbc1f16ffbfe04325d",
+      "changed_pixels": 0
+    },
+    "paws_underside.png": {
+      "identical_rgba": true,
+      "source_rgba_sha256": "4ad14bdbe0266f7b7f271f9068df9f8b76a3befea78750a8ee8a95002d83a161",
+      "candidate_rgba_sha256": "4ad14bdbe0266f7b7f271f9068df9f8b76a3befea78750a8ee8a95002d83a161",
+      "changed_pixels": 0
+    },
+    "side_y_minus.png": {
+      "identical_rgba": true,
+      "source_rgba_sha256": "43e93f58e34f03c11c81ae625ed04a30d49d6ec13cc484cbb0b119ab223742f4",
+      "candidate_rgba_sha256": "43e93f58e34f03c11c81ae625ed04a30d49d6ec13cc484cbb0b119ab223742f4",
+      "changed_pixels": 0
+    },
+    "side_y_plus.png": {
+      "identical_rgba": true,
+      "source_rgba_sha256": "dbc11ff81fec3a5263d96874ec4a4b49a89fc908805d406565652f9695694d27",
+      "candidate_rgba_sha256": "dbc11ff81fec3a5263d96874ec4a4b49a89fc908805d406565652f9695694d27",
+      "changed_pixels": 0
+    },
+    "tail_base.png": {
+      "identical_rgba": true,
+      "source_rgba_sha256": "a4608a422257cc1358a14aec4146cd99d1160fe879564a39c7d93bc330a7793e",
+      "candidate_rgba_sha256": "a4608a422257cc1358a14aec4146cd99d1160fe879564a39c7d93bc330a7793e",
+      "changed_pixels": 0
+    },
+    "underside.png": {
+      "identical_rgba": true,
+      "source_rgba_sha256": "574c2619dd025f894de8cb7cf3e71bccc6f627f7f8f8313d90582293eeb2e3a1",
+      "candidate_rgba_sha256": "574c2619dd025f894de8cb7cf3e71bccc6f627f7f8f8313d90582293eeb2e3a1",
+      "changed_pixels": 0
+    }
+  },
+  "scope": "base-color inspection preview, not full PBR, weights or animated deformation",
+  "paw_vertex_masks_and_measurements_identical": true,
+  "paw_triangle_ids_renumbered_after_face_removal": true,
+  "strict_intersection_centroids_identical": true
+}

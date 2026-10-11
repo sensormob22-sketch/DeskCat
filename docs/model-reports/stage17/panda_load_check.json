@@ -1,0 +1,12 @@
+{
+  "file": "assets/3d/retopo/deskcat_belly_profile_fix_01.glb",
+  "sha256": "90403331a772d54b7ed25f9bb6852985a0f2e81daad174a53c074fbae1d806c4",
+  "loader": "project load_scene / panda3d-gltf 1.3.0",
+  "driver": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "geometry_nodes": 1,
+  "nonbackground_pixels": 194704,
+  "last_frame_ms": 770.9908819961129,
+  "has_skeleton": false,
+  "clips": [],
+  "preview": "base color lighting; full PBR/Windows GUI not tested"
+}

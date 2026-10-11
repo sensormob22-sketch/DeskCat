@@ -1,0 +1,120 @@
+{
+  "uri": "deskcat_calico_retopo_16460_metadata_diag.glb",
+  "mimeType": "model/gltf-binary",
+  "validatorVersion": "2.0.0-dev.3.10",
+  "validatedAt": "2026-10-11T10:28:22.628Z",
+  "issues": {
+    "numErrors": 0,
+    "numWarnings": 2,
+    "numInfos": 3,
+    "numHints": 2,
+    "messages": [
+      {
+        "code": "UNSUPPORTED_EXTENSION",
+        "message": "Cannot validate an extension as it is not supported by the validator: 'FB_ngon_encoding'.",
+        "severity": 2,
+        "pointer": "/extensionsUsed/1"
+      },
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/0/primitives/0/attributes/JOINTS_0"
+      },
+      {
+        "code": "BUFFER_VIEW_TARGET_MISSING",
+        "message": "bufferView.target should be set for vertex or index data.",
+        "severity": 3,
+        "pointer": "/meshes/0/primitives/0/attributes/WEIGHTS_0"
+      },
+      {
+        "code": "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+        "message": "Material requires a tangent space but the mesh primitive does not provide it. Runtime-generated tangent space may be non-portable across implementations.",
+        "severity": 1,
+        "pointer": "/meshes/0/primitives/0/material"
+      },
+      {
+        "code": "NODE_SKINNED_MESH_NON_ROOT",
+        "message": "Node with a skinned mesh is not root. Parent transforms will not affect a skinned mesh.",
+        "severity": 1,
+        "pointer": "/nodes/1"
+      },
+      {
+        "code": "NODE_EMPTY",
+        "message": "Empty node encountered.",
+        "severity": 2,
+        "pointer": "/nodes/6"
+      },
+      {
+        "code": "NODE_EMPTY",
+        "message": "Empty node encountered.",
+        "severity": 2,
+        "pointer": "/nodes/13"
+      }
+    ],
+    "truncated": false
+  },
+  "info": {
+    "version": "2.0",
+    "generator": "Tripo",
+    "extensionsUsed": [
+      "KHR_materials_volume",
+      "FB_ngon_encoding"
+    ],
+    "resources": [
+      {
+        "pointer": "/buffers/0",
+        "mimeType": "application/gltf-buffer",
+        "storage": "glb",
+        "byteLength": 9879252
+      },
+      {
+        "pointer": "/images/0",
+        "mimeType": "image/jpeg",
+        "storage": "buffer-view",
+        "image": {
+          "width": 4096,
+          "height": 4096,
+          "format": "rgb",
+          "bits": 8
+        }
+      },
+      {
+        "pointer": "/images/1",
+        "mimeType": "image/png",
+        "storage": "buffer-view",
+        "image": {
+          "width": 2048,
+          "height": 2048,
+          "format": "rgb",
+          "primaries": "srgb",
+          "transfer": "srgb",
+          "bits": 8
+        }
+      },
+      {
+        "pointer": "/images/2",
+        "mimeType": "image/jpeg",
+        "storage": "buffer-view",
+        "image": {
+          "width": 2048,
+          "height": 2048,
+          "format": "rgb",
+          "bits": 8
+        }
+      }
+    ],
+    "animationCount": 0,
+    "materialCount": 1,
+    "hasMorphTargets": false,
+    "hasSkins": true,
+    "hasTextures": true,
+    "hasDefaultScene": true,
+    "drawCallCount": 1,
+    "totalVertexCount": 19464,
+    "totalTriangleCount": 16460,
+    "maxUVs": 1,
+    "maxInfluences": 4,
+    "maxAttributes": 5
+  }
+}

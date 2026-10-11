@@ -1,0 +1,323 @@
+{
+  "measurements": {
+    "rest": {
+      "paw_rigidity_and_floor": {
+        "hind_left": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 2.026950922384696e-08,
+          "min_y": -1.4524177416319617e-08,
+          "height_change": -1.4524177416319617e-08,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "hind_right": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 3.193719289029673e-09,
+          "min_y": 0.0006408657063730061,
+          "height_change": -3.434251993894577e-09,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "front_right": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 7.32899378685925e-09,
+          "min_y": 0.0010070946300402284,
+          "height_change": 1.4551915228366852e-08,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "front_left": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 4.617182074173609e-09,
+          "min_y": 0.00012206427345518023,
+          "height_change": -6.0390448197722435e-09,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        }
+      },
+      "protected_head_source_vertices": 6026,
+      "protected_head_max_displacement": 0.0
+    },
+    "front_bend": {
+      "paw_rigidity_and_floor": {
+        "hind_left": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 2.026950922384696e-08,
+          "min_y": -1.4524177416319617e-08,
+          "height_change": -1.4524177416319617e-08,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "hind_right": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 3.193719289029673e-09,
+          "min_y": 0.0006408657063730061,
+          "height_change": -3.434251993894577e-09,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "front_right": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 3.601550587623015e-08,
+          "min_y": 0.013971976935863495,
+          "height_change": 0.012964896857738495,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "front_left": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 3.3835139204296816e-08,
+          "min_y": 0.020713433623313904,
+          "height_change": 0.020591363310813904,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        }
+      },
+      "protected_head_source_vertices": 6026,
+      "protected_head_max_displacement": 0.0
+    },
+    "hind_bend": {
+      "paw_rigidity_and_floor": {
+        "hind_left": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 2.691004358235105e-08,
+          "min_y": 0.01875312440097332,
+          "height_change": 0.01875312440097332,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "hind_right": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 1.1680375527900466e-08,
+          "min_y": 0.018447190523147583,
+          "height_change": 0.017806321382522583,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "front_right": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 7.32899378685925e-09,
+          "min_y": 0.0010070946300402284,
+          "height_change": 1.4551915228366852e-08,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "front_left": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 4.617182074173609e-09,
+          "min_y": 0.00012206427345518023,
+          "height_change": -6.0390448197722435e-09,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        }
+      },
+      "protected_head_source_vertices": 6026,
+      "protected_head_max_displacement": 0.0
+    },
+    "pelvis_spine": {
+      "paw_rigidity_and_floor": {
+        "hind_left": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 2.4915916212175926e-08,
+          "min_y": 0.00285464059561491,
+          "height_change": 0.00285464059561491,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "hind_right": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 1.826568916951654e-08,
+          "min_y": 0.008770441636443138,
+          "height_change": 0.008129572495818138,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "front_right": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 7.32899378685925e-09,
+          "min_y": 0.0010070946300402284,
+          "height_change": 1.4551915228366852e-08,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "front_left": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 4.617182074173609e-09,
+          "min_y": 0.00012206427345518023,
+          "height_change": -6.0390448197722435e-09,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        }
+      },
+      "protected_head_source_vertices": 6026,
+      "protected_head_max_displacement": 0.0
+    },
+    "tail_bend": {
+      "paw_rigidity_and_floor": {
+        "hind_left": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 2.026950922384696e-08,
+          "min_y": -1.4524177416319617e-08,
+          "height_change": -1.4524177416319617e-08,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "hind_right": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 3.193719289029673e-09,
+          "min_y": 0.0006408657063730061,
+          "height_change": -3.434251993894577e-09,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "front_right": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 7.32899378685925e-09,
+          "min_y": 0.0010070946300402284,
+          "height_change": 1.4551915228366852e-08,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        },
+        "front_left": {
+          "sampled_internal_distance_pairs": 276,
+          "rigid_shape_max_pair_distance_error": 4.617182074173609e-09,
+          "min_y": 0.00012206427345518023,
+          "height_change": -6.0390448197722435e-09,
+          "floor_contact_status": "not enforced; this is an unconstrained pose, not a gait"
+        }
+      },
+      "protected_head_source_vertices": 6026,
+      "protected_head_max_displacement": 0.0
+    }
+  },
+  "joint_scores": {
+    "pelvis": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 493,
+      "edge_ratio_min": 0.023665515468448788,
+      "edge_ratio_max": 9.649186799053387,
+      "faces_area_below_half": 961,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "lumbar": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 0,
+      "edge_ratio_min": 0.27602932317098366,
+      "edge_ratio_max": 1.8704060936751925,
+      "faces_area_below_half": 5,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "thoracic": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 12,
+      "edge_ratio_min": 0.24359209044637792,
+      "edge_ratio_max": 4.546779979538216,
+      "faces_area_below_half": 34,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "shoulder_FL": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 0,
+      "edge_ratio_min": 0.3456127776661273,
+      "edge_ratio_max": 2.408816256946778,
+      "faces_area_below_half": 6,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "elbow_FL": {
+      "grade": "REVIEW_NOT_ACCEPTED",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 0,
+      "edge_ratio_min": 0.7199997995581799,
+      "edge_ratio_max": 1.1214321344121485,
+      "faces_area_below_half": 1,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "wrist_FL": {
+      "grade": "REVIEW_NOT_ACCEPTED",
+      "relative_bend_degrees": 10,
+      "new_crossing_pairs": 0,
+      "edge_ratio_min": 0.6267968548723065,
+      "edge_ratio_max": 1.3682114700043764,
+      "faces_area_below_half": 1,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "shoulder_FR": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 16,
+      "edge_ratio_min": 0.36814959227424937,
+      "edge_ratio_max": 17.661581315423774,
+      "faces_area_below_half": 61,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "elbow_FR": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 9,
+      "edge_ratio_min": 0.5997276982117831,
+      "edge_ratio_max": 9.46636173984309,
+      "faces_area_below_half": 2,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "wrist_FR": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 10,
+      "new_crossing_pairs": 0,
+      "edge_ratio_min": 0.3428432640828041,
+      "edge_ratio_max": 2.0805825190164895,
+      "faces_area_below_half": 4,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "hip_HL": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 9,
+      "edge_ratio_min": 0.1408410310022248,
+      "edge_ratio_max": 2.9381497304585227,
+      "faces_area_below_half": 262,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "stifle_HL": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 0,
+      "edge_ratio_min": 0.27803182042973285,
+      "edge_ratio_max": 1.8319251132006784,
+      "faces_area_below_half": 6,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "hock_HL": {
+      "grade": "REVIEW_NOT_ACCEPTED",
+      "relative_bend_degrees": 10,
+      "new_crossing_pairs": 0,
+      "edge_ratio_min": 0.743254225232321,
+      "edge_ratio_max": 1.4550958526474655,
+      "faces_area_below_half": 0,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "hip_HR": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 32,
+      "edge_ratio_min": 0.12331082320847227,
+      "edge_ratio_max": 9.079748801793974,
+      "faces_area_below_half": 205,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "stifle_HR": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 0,
+      "edge_ratio_min": 0.41055822879421666,
+      "edge_ratio_max": 5.008262582854513,
+      "faces_area_below_half": 65,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "hock_HR": {
+      "grade": "REVIEW_NOT_ACCEPTED",
+      "relative_bend_degrees": 10,
+      "new_crossing_pairs": 0,
+      "edge_ratio_min": 0.6664423330343661,
+      "edge_ratio_max": 1.8103482468501577,
+      "faces_area_below_half": 1,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    },
+    "tail_base": {
+      "grade": "FAIL_EXPERIMENTAL_WEIGHTS",
+      "relative_bend_degrees": 15,
+      "new_crossing_pairs": 395,
+      "edge_ratio_min": 0.1028035289391538,
+      "edge_ratio_max": 1.164165319061374,
+      "faces_area_below_half": 738,
+      "warning": "Whole-mesh extrema can be dominated by tiny fur triangles; grade is a conservative diagnostic, not anatomy certification."
+    }
+  },
+  "score_criteria": "FAIL: any new strict crossing pair or edge ratio outside [0.5,2]. REVIEW: any face area below half or edge ratio outside [0.8,1.25]. Other: limited small-angle probe only. Visual/anatomical signoff still required.",
+  "decision": "REJECT_CURRENT_SKIN; REFINE_BONE_AND_WEIGHT_MASKS_BEFORE_GEOMETRY_SURGERY",
+  "reason": "Crossings respond strongly to weights. No proof yet that deleting/smoothing original fur is necessary. Tail root, right shoulder, hip/groin and spine envelopes need manual masks and narrower pose retest."
+}

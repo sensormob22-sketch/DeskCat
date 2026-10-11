@@ -1,0 +1,66 @@
+{
+  "status": "REOPENED_FILE_AND_REVIEW_UI_VERIFIED",
+  "scene_sha256": "35a93aa6ae3b7127487f6d9840907ae0a6908c23cd72bcb922d1b01719ec4c8e",
+  "blender": "4.3.2",
+  "geometry_component_error_max": 0.0,
+  "uv_component_error_max_after_gltf_v_conversion": 0.0,
+  "source_vertex_ids_exact": true,
+  "source_face_ids_exact": true,
+  "bone_weight_digest_unchanged": "d3d6405976c05532c9ab27fa54e7f34a0a1c10cdb15edeccb677893343d68949",
+  "editable_region_counts": {
+    "tail_to_pelvis": 1461,
+    "thoracic_abdomen": 1898,
+    "left_hip": 1654,
+    "right_shoulder_paw": 1188,
+    "wrist_to_sole": 417,
+    "hock_to_sole": 510
+  },
+  "packed_original_texture_hashes": [
+    "4c6618eaea5f8e3816a9a7c19f83021f3eba8111dfc543633344da249364a949",
+    "7ad6a39000f15d63f99e03f57d757789b136ce1885a231431e905564cf12b7ff",
+    "e0bb6f6597b47a0934c854c3a0c0ec292db2d26460a91d914b9e639c3263753f"
+  ],
+  "external_image_dependencies": 0,
+  "protected_reference_hidden": true,
+  "animation_actions": 0,
+  "axis_guide_head_error_max": 0.0,
+  "review_ui": {
+    "tail_to_pelvis": {
+      "axis_guide_head_error_max": 0.0,
+      "selection_matches_mask": true,
+      "plus15_new_pairs": 44,
+      "expected_new_pairs": 44
+    },
+    "thoracic_abdomen": {
+      "axis_guide_head_error_max": 0.0,
+      "selection_matches_mask": true,
+      "plus15_new_pairs": 130,
+      "expected_new_pairs": 130
+    },
+    "left_hip": {
+      "axis_guide_head_error_max": 0.0,
+      "selection_matches_mask": true,
+      "plus15_new_pairs": 51,
+      "expected_new_pairs": 51
+    },
+    "right_shoulder_paw": {
+      "axis_guide_head_error_max": 0.0,
+      "selection_matches_mask": true,
+      "plus15_new_pairs": 20,
+      "expected_new_pairs": 20
+    },
+    "wrist_to_sole": {
+      "axis_guide_head_error_max": 0.0,
+      "selection_matches_mask": true,
+      "plus15_new_pairs": 1,
+      "expected_new_pairs": 1
+    },
+    "hock_to_sole": {
+      "axis_guide_head_error_max": 0.0,
+      "selection_matches_mask": true,
+      "plus15_new_pairs": 0,
+      "expected_new_pairs": 0
+    }
+  },
+  "limits": "Sidebar registration and operators tested headless; actual interactive viewport/mouse painting and remote browser access were not tested. UV values compared using glTF->Blender V flip tolerance 1e-7."
+}

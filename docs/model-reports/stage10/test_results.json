@@ -1,0 +1,23 @@
+{
+  "environment": "Linux cloud worker, Python 3.12, Blender 4.3.2 headless, Qt offscreen",
+  "pytest": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 91,
+    "new_stage10_tests": 5,
+    "seconds": 23.86,
+    "exit_code": 0,
+    "stderr_note": "Fontconfig no writable cache directories; all tests passed"
+  },
+  "read_only_validator": {
+    "valid_for_review": true,
+    "changed_source_vertices_proposed": 21,
+    "weights_applied": false,
+    "new_skinprobe_exported": false,
+    "status": "DRAFT_ONLY_REQUIRES_HUMAN_REVIEW",
+    "limits": "Validation checks scope, bone names, normalized values and seam identity. It does not certify visual deformation or authorize applying weights."
+  },
+  "proposal_sha256": "5de3474984a5b5466e5d1f1fe182d28b0baebe6585c2f814fe8e720175dd744e",
+  "new_weight_deformation_tested": false,
+  "windows_gui_tested": false,
+  "paid_operations": 0
+}

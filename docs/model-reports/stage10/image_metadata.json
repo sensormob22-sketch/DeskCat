@@ -1,0 +1,50 @@
+{
+  "status": "PROPOSED_INFLUENCE_DIAGRAMS_NOT_APPLIED_DEFORMATION",
+  "source_geometry": "localprep unchanged",
+  "context_source": "stage9 fixed-camera baseline sheet; +15 reproduced from the delivered .blend",
+  "projection": {
+    "axes": [
+      "X+0.2Z",
+      "Y+0.2Z"
+    ],
+    "bounds": [
+      [
+        0.2733396945986897,
+        0.1672389118000865
+      ],
+      [
+        0.28565949760377407,
+        0.18998094485141337
+      ]
+    ],
+    "same_geometry_all_columns": true
+  },
+  "proposal_sha256": "5de3474984a5b5466e5d1f1fe182d28b0baebe6585c2f814fe8e720175dd744e",
+  "deformation_improvement_tested": false,
+  "C1_C2_cross_points": [
+    {
+      "label": "C1",
+      "point": [
+        0.2745911777019501,
+        0.15038487315177917,
+        0.023530688136816025
+      ],
+      "source_face_pair": [
+        6971,
+        7816
+      ]
+    },
+    {
+      "label": "C2",
+      "point": [
+        0.27571627497673035,
+        0.17674259841442108,
+        -0.0002630840172059834
+      ],
+      "source_face_pair": [
+        7323,
+        7586
+      ]
+    }
+  ]
+}

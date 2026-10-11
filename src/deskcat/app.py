@@ -13,7 +13,11 @@ def main(argv=None):
     parser.add_argument("--scale", type=float, default=1.0)
     parser.add_argument("--smoke-test", action="store_true",
                         help="show window, run event loop, report and exit after 250 ms")
+    parser.add_argument("--smoke-frame", type=Path, help="save a diagnostic RGBA frame during --smoke-test")
     parser.add_argument('--renderer', choices=('qt', 'panda'), default='qt')
+    parser.add_argument('--start-walking', action='store_true', help='start the animated cat walking immediately')
+    parser.add_argument('--walk-speed', type=float, default=0.0, help='override desktop walking speed (0 = auto-match toe contact, default)')
+    parser.add_argument('--initial-direction', choices=('left','right'), default='right', help='start across the desktop in this direction')
     parser.add_argument('--model', type=Path,
                         default=Path(__file__).resolve().parents[2] / 'assets/3d/test_cat.glb')
     parser.add_argument('--model-scale', type=float, default=1.0)
@@ -31,12 +35,18 @@ def main(argv=None):
         parser.error("--scale must be between 0.5 and 3")
     if not 0.25 <= args.model_scale <= 3:
         parser.error('--model-scale must be between 0.25 and 3')
+    if not math.isfinite(args.walk_speed) or not 0 <= args.walk_speed <= 150:
+        parser.error('--walk-speed must be 0 (automatic) or between 0 and 150 logical pixels/second')
+    if args.start_walking and args.renderer != 'panda':
+        parser.error('--start-walking requires --renderer panda')
     if args.benchmark is not None and args.benchmark < 10:
         parser.error('--benchmark requires at least 10 frames')
     if not math.isfinite(args.playback_speed) or args.playback_speed < 0:
         parser.error('--playback-speed must be finite and nonnegative')
     if not all(math.isfinite(v) for v in (args.model_x, args.model_z, args.forward_heading)):
         parser.error('Model position and heading must be finite')
+    if args.smoke_frame and (not args.smoke_test or args.renderer != 'panda'):
+        parser.error('--smoke-frame requires --smoke-test --renderer panda')
     if args.diagnostics and (args.renderer != 'panda' or args.benchmark is not None):
         parser.error('--diagnostics requires --renderer panda and no --benchmark')
     diagnostics = None
@@ -61,7 +71,8 @@ def main(argv=None):
             window = ThreeDWindow(args.scale, args.model, args.model_scale,
                                   (args.model_x, args.model_z), clip_map=clip_map,
                                   diagnostics=diagnostics, playback_speed=args.playback_speed,
-                                  forward_heading=args.forward_heading)
+                                  forward_heading=args.forward_heading,
+                                  walk_speed=args.walk_speed)
         else:
             window = CatWindow(args.scale)
     except Exception as exc:
@@ -73,7 +84,18 @@ def main(argv=None):
     if args.position:
         window.move(*args.position)
         window._x = float(window.x())
+    if args.renderer == 'panda' and args.initial_direction == 'left':
+        window._direction = -1
+        window.renderer.direction = -1
+        window.renderer.heading = (window.renderer.forward_heading + 180) % 360
     window.show()
+    if args.start_walking:
+        from .states import State
+        if window.renderer.clip_map[State.WALK] is None:
+            print('DeskCat start-walking failed: model lacks a walk animation',file=sys.stderr)
+            window.close()
+            return 1
+        window.machine.transition(State.WALK)
     if args.smoke_test:
         def finish():
             report = {"visible": window.isVisible(),
@@ -85,9 +107,17 @@ def main(argv=None):
                               render_width=window._image.width(),
                               render_height=window._image.height(),
                               corner_alpha=window._image.pixelColor(0,0).alpha(),
+                              opaque_pixels=sum(a > 12 for a in window._image.constBits().tobytes()[3::4]),
                               clip_map={s.value:c for s,c in window.renderer.clip_map.items()},
                               missing_states=window.renderer.missing_states)
+            if args.smoke_frame:
+                args.smoke_frame.parent.mkdir(parents=True, exist_ok=True)
+                if not window._image.save(str(args.smoke_frame)):
+                    raise OSError('Failed to save smoke frame')
             print(json.dumps(report))
+            if args.renderer == 'panda' and report.get('opaque_pixels', 0) < 200:
+                window.render_error = 'GLB animation loaded, but RGBA renderer drew no visible cat; check PBR/alpha'
+                print('DeskCat invisible cat: ' + window.render_error, file=sys.stderr)
             window.close()
             app.quit()
         QTimer.singleShot(250, finish)

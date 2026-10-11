@@ -1,0 +1,19 @@
+{
+  "README.md": "6decb749e22c0a6744d8ec2e9577042a48016d947676f099752f41a0494097fa",
+  "__pycache__/blender_review_selector.cpython-313.pyc": "37ee69b18810e6469f1ac31b7db6511e6b5e581b54870a70a5eea3c25b9c67a1",
+  "blender_review_selector.py": "0c8c1aec9a04b13b05dee2a1d2f786feec885c5d8b96e539121605844d7bcb7d",
+  "face_decisions.csv": "4ba7b14f50c6d2d5ebf24fa59519e704d80a1d9d2796cd5501b34f1fd1408633",
+  "fan_decisions.csv": "34825ee45420eac766d95d3a7453320552fe02e9ca0ffeb43f00e4de5ea10456",
+  "images/D04.png": "03ee0fc112c36b910a09529e9732dad213d1208711dea701a1e35b959c7aa6a0",
+  "images/D05.png": "4d5e9300183819a6a51d0f12d246282af1bfb8acbcc46e511aa1d550eabd40a7",
+  "images/D06.png": "a99cbe28aa3086a8656adaa81b046e561136cd5149efe41ce66c445e508ac73b",
+  "images/D07.png": "82bbb36a24f90e317deeaba7dc07cc2cab077ab0a3c272cdd7d0a4e56c6df9be",
+  "images/D09.png": "0c63f95ad1f0da86403576df6b269003495fdf71695e60ff680ff46262c4759a",
+  "images/D14.png": "ec42033ec92d2d2b04e9dccc375422c8db2940a843254201b0ec99b48294b32c",
+  "images/D15.png": "4e8a4baef07b0a107341356a235cf216b51707c6b0c2138bba207b43b7009421",
+  "images/D17.png": "b82a847dc2534cbb1af52c0ff9bfb75050110c3be26c1eb6139eb622772c0826",
+  "images/D18.png": "67e493e3ce6f91b9cca1c61ffd4ac411ed57a2dc36001a4b5f84a64169f76349",
+  "images/D24.png": "6db2f15751ad508f466e4320ae6e4d368b9a24bc452dbc18089d4957c055c4fd",
+  "review_manifest.json": "0aca803898d8b7c160645cea4019e146132c78070761959ae9b74710f423f0a4",
+  "source_links.json": "e080b7d1923ff5b763bce8e0e9bc9b0746582d5ed0d7a85771cad0384df2b6c1"
+}

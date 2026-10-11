@@ -1,0 +1,16 @@
+{
+  "assets/3d/retopo/deskcat_calico_retopo_16460.glb": "834cf794f24fff93e549ab80dbd21218565862ed9209852e3d2a72869c4b303b",
+  "assets/rigging/deskcat_retopo_rigify_trial_01.blend": "338d254ad7dc7d9f8333da677640c61af4c66114806c03dbb264d194c45b476d",
+  "docs/model-reports/rigify-retopo/README.md": "adfeeb1aef2ee5ba83d31fe16c1fc97d70d3d83b0b24fc31c1d9db0a6211a941",
+  "docs/model-reports/rigify-retopo/copy_preservation.json": "4a989915d79c0934f5f0a87d81b39d8c8b20b7430f71b8b46ed2d4045a9013a1",
+  "docs/model-reports/rigify-retopo/decision.json": "52a09fd0e006978a3492f05b8df033ce8d28369c05b95a324a5e80946dcd42a4",
+  "docs/model-reports/rigify-retopo/generation.json": "b419f00aa5ca143c1f25db7537ff572ae97b0e54a024bb99257b372506d4e0d2",
+  "docs/model-reports/rigify-retopo/image_metadata.json": "4c65818679341dba096e89704a2ecf47534672004ba2421178e6fb7e4a6d9e18",
+  "docs/model-reports/rigify-retopo/images/solid_rest_and_metarig.png": "990dbf1b8f116a4085b70eb7d0b84a3659b2c96524e398b23124a1ada074c496",
+  "docs/model-reports/rigify-retopo/images/texture_rest_and_metarig.png": "e71fa15c41b02663d6d8ac135232d00bd1b3dfc0a21aa6472ae172d4036f8bc1",
+  "docs/model-reports/rigify-retopo/input_audit.json": "dcdc3aefaa1c2dfcf94705c555160b7ad654a0206b9d1a560490375bb38b9dc5",
+  "docs/model-reports/rigify-retopo/input_validator.json": "fa87f66c2425348147e2878b8b4b51bc0f0a969559d10425a45bf9eaedf4fafe",
+  "docs/model-reports/rigify-retopo/metarig_layout.json": "171c6723705becf6af9c72d042dd3ea1864cb13264fa74812d411c70d03813cf",
+  "docs/model-reports/rigify-retopo/preserved_manifest.json": "86666d2ecddb613258a5a49feb9dae48ca25de2496c3962152378e6374097658",
+  "docs/model-reports/rigify-retopo/test_results.json": "6c343a934dff576ea480a1f94bfd618f45620b07f6ed531a974ddae6bb98c362"
+}

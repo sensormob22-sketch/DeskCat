@@ -1,0 +1,29 @@
+10:42:01 | INFO: Data are loaded, start creating Blender stuff
+10:42:01 | INFO: Blender create Mesh node meshes[0]
+10:42:01 | INFO: glTF import finished in 0.06s
+Reloading external rigs...
+Reloading external metarigs...
+Fetch rig.
+Clear rig animation data.
+Create widgets collection: 0.000
+Duplicate rig: 0.003
+Instantiate rigs: 0.001
+Initialize rigs: 0.000
+Prepare bones: 0.000
+Generate bones: 0.009
+Parent bones: 0.006
+RIGIFY: empty tweak layer list on bone ORG-spine.004
+Configure bones: 0.009
+Preapply bones: 0.002
+Apply bones: 0.002
+Rig bones: 0.017
+Generate widgets: 0.013
+Assign layers: 0.014
+Finalize: 0.020
+The rest: 0.013
+Info: Successfully generated: "CAT_RIGRIG_TRIAL_02"
+Warning: Bone Heat Weighting: failed to find solution for one or more bones
+Info: Saved "deskcat_retopo_rigify_trial_02.blend"
+Blender 4.3.2
+
+Blender quit

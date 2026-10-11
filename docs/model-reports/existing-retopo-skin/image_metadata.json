@@ -1,0 +1,47 @@
+{
+  "cameras": {
+    "side": [
+      [
+        0,
+        -4,
+        0.3
+      ],
+      [
+        0,
+        0,
+        0.15
+      ]
+    ],
+    "rear": [
+      [
+        4,
+        0,
+        0.3
+      ],
+      [
+        0,
+        0,
+        0.15
+      ]
+    ],
+    "underside": [
+      [
+        0,
+        -0.5,
+        -4
+      ],
+      [
+        0,
+        0,
+        0.15
+      ]
+    ]
+  },
+  "scale": 1,
+  "offset": [
+    0,
+    0,
+    0
+  ],
+  "note": "Static snapshots from measured positions. Rest normals retained; base color only, not a PBR validation. No rotations."
+}

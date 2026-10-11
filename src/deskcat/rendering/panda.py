@@ -3,19 +3,45 @@ import math
 import os
 import time
 import sys
+import json
+import struct
 from pathlib import Path
 
 from PySide6.QtGui import QImage
-from panda3d.core import (AmbientLight, DirectionalLight, Texture,
-                          GraphicsOutput, GraphicsPipe, WindowProperties, FrameBufferProperties, loadPrcFileData)
+from panda3d.core import (AmbientLight, DirectionalLight, Texture, TextureStage,
+                          GraphicsOutput, GraphicsPipe, WindowProperties, FrameBufferProperties,
+                          OrthographicLens, loadPrcFileData)
 from direct.actor.Actor import Actor
 from direct.showbase.ShowBase import ShowBase
 
 from deskcat.states import State
 from .playback import ClipClock
-from .gltf_scene import load_skinned_scene
+from .gltf_scene import load_scene
 
 DEFAULT_MODEL = Path(__file__).resolve().parents[3] / 'assets/3d/test_cat.glb'
+
+
+def read_contact_gait(path):
+    """Read only our optional walk stride contract from the actual GLB JSON."""
+    try:
+        with Path(path).open('rb') as fh:
+            if fh.read(4) != b'glTF':
+                return None
+            fh.seek(12)
+            length, chunk = struct.unpack('<II', fh.read(8))
+            if chunk != 0x4e4f534a or length > 4_000_000:
+                return None
+            meta = json.loads(fh.read(length)).get('extras', {}).get('deskcat_gait', {})
+        if meta.get('clip') != 'walk' or meta.get('forward_source_axis') != '-X':
+            return None
+        stride = float(meta['toe_stance_travel_source_units'])
+        stance = float(meta['stance_fraction'])
+        period = float(meta['period_seconds'])
+        if not (0 < stride < 1 and 0 < stance < 1 and 0 < period < 60):
+            return None
+        return {'stride': stride, 'stance': stance, 'period': period}
+    except (ValueError, KeyError, OSError, TypeError, struct.error, AttributeError):
+        return None
 
 
 class ModelError(RuntimeError):
@@ -36,7 +62,31 @@ class PandaRenderer:
         self.last_frame_ms = 0.0
         self.unavailable_active = []
         self.model_scale = 1.0
+        self.brightness = 1.07
+        # Raise fur RGB midtones toward the studio photographs without
+        # editing GLB textures or alpha, which remains byte-identical.
+        # Protect near-black calico markings while lifting white/orange fur.
+        # The curve approximates the owner's bright side-projection photos.
+        tone_points = ((0, 0), (32, 32), (64, 68), (96, 115),
+                       (128, 162), (160, 201), (192, 226),
+                       (224, 244), (255, 255))
+        values = []
+        for channel in range(256):
+            for (x0, y0), (x1, y1) in zip(tone_points, tone_points[1:]):
+                if channel <= x1:
+                    values.append(round(y0 + (channel - x0) *
+                                        (y1 - y0) / (x1 - x0)))
+                    break
+        # User-requested +50% relative to the last published display curve.
+        # Clamp highlights to monitor white (255) and keep alpha untouched.
+        self._display_gamma_lut = bytes(min(255, round(v * 1.5)) for v in values)
         self.offset = (0.0, 0.0)
+        self.ortho_height = 2.35
+        self.viewport_height_scale = 1.0
+        self.camera_height_scale = 1.0
+        self._lens_resize_scale = None
+        self.source_unit_scale = 1.0
+        self.contact_gait = read_contact_gait(model_path)
         if not Path(model_path).is_file():
             raise ModelError(f'Model not found: {model_path}')
         config = ('window-type offscreen\nframebuffer-alpha true\n'
@@ -68,18 +118,28 @@ class PandaRenderer:
             self.base.makeCamera(buffer)
             self.base.disableMouse()
             self.base.setBackgroundColor(0, 0, 0, 0)
-            self.base.camLens.setFov(35)
-            self.base.camLens.setNearFar(.01, 100)
-            self.base.camera.setPos(2.8, -4.5, 2.4)
-            self.base.camera.lookAt(0, 0, .65)
+            # No elevated/oblique perspective: a side camera normal to the
+            # sagittal X/Z plane after glTF Y-up -> Panda Z-up conversion.
+            # Orthographic projection keeps all four leg lengths unchanged.
+            lens = OrthographicLens()
+            lens.setNearFar(.01, 100)
+            self.base.cam.node().setLens(lens)
+            self.base.camLens = lens
+            self.base.camera.setPos(0, -6.0, .83)
+            self.base.camera.lookAt(0, 0, .83)
             ambient = AmbientLight('ambient')
-            ambient.setColor((.65,.65,.65,1))
+            ambient.setColor((.88,.88,.88,1))
             self.base.render.setLight(self.base.render.attachNewNode(ambient))
             key = DirectionalLight('key')
-            key.setColor((.8,.8,.8,1))
+            key.setColor((.42,.42,.42,1))
             light = self.base.render.attachNewNode(key)
             light.setHpr(-35,-45,0)
             self.base.render.setLight(light)
+            fill = DirectionalLight('fill')
+            fill.setColor((.20,.20,.20,1))
+            fill_node = self.base.render.attachNewNode(fill)
+            fill_node.setHpr(155,-30,0)
+            self.base.render.setLight(fill_node)
             self.load(str(model_path))
             self._resize(width, height)
         except Exception as exc:
@@ -91,18 +151,49 @@ class PandaRenderer:
             raise ModelError(f'Model not found: {model_path}')
         candidate = None
         try:
-            model = load_skinned_scene(Path(model_path).resolve())
+            model = load_scene(Path(model_path).resolve())
             characters = list(model.findAllMatches('**/+Character'))
-            if len(characters) != 1:
+            if len(characters) > 1:
                 raise ValueError('Prototype supports exactly one animated skeleton')
-            character = characters[0]
+            character = characters[0] if characters else None
             # glTF mesh and skeleton can be sibling roots. Actor extracts only
             # Character; retain the skinned geometry and its joint bindings.
             for geom in model.findAllMatches('**/+GeomNode'):
-                if not character.isAncestorOf(geom):
+                if character is not None and not character.isAncestorOf(geom):
                     geom.wrtReparentTo(character)
-            candidate = Actor(model, copy=False)
-            clips = sorted(candidate.getAnimNames())
+            candidate = Actor(model, copy=False) if character is not None else model
+            # Panda's Qt-offscreen framebuffer does not use a glTF PBR shader.
+            # Imported metallic/roughness materials may produce alpha=0 on
+            # fixed-function drivers, *including when geometry is skinned*.
+            # Keep the actual base-color texture but disable unsupported PBR
+            # stages/material for BOTH static NodePaths and animated Actors.
+            # This changes preview shading only; the embedded GLB remains intact.
+            candidate.setMaterialOff(10)
+            # Use the original photographic base-color texture at near-white
+            # studio brightness. The fixed-function PBR fallback was too dark;
+            # source GLB image bytes, fur pattern and materials stay untouched.
+            candidate.setLightOff(10)
+            candidate.setColorScale(self.brightness, self.brightness, self.brightness, 1)
+            for stage in candidate.findAllTextureStages():
+                if stage.getMode() != TextureStage.MModulate:
+                    candidate.setTextureOff(stage, 10)
+            # TinyDisplay's software rasterizer cannot upload sRGB textures.
+            # Re-label ONLY the in-memory preview textures as 8-bit RGB(A).
+            # Preserve pixel payload, UVs and GLB bytes. Real Windows OpenGL
+            # retains sRGB so it can perform native gamma-correct sampling.
+            if self.backend == 'p3tinydisplay':
+                converted = 0
+                for tex in candidate.findAllTextures():
+                    if tex.getFormat() == Texture.F_srgb:
+                        tex.setFormat(Texture.F_rgb8)
+                        converted += 1
+                    elif tex.getFormat() == Texture.F_srgb_alpha:
+                        tex.setFormat(Texture.F_rgba8)
+                        converted += 1
+                print(f'DeskCat TinyDisplay: {converted} sRGB preview textures converted '
+                      'to software-compatible RGB(A)', file=sys.stderr)
+            print('DeskCat bright photographic base-color mode: GLB textures unchanged', file=sys.stderr)
+            clips = sorted(candidate.getAnimNames()) if character is not None else []
             unknown = set(self.clip_overrides) - {s.value for s in State}
             if unknown:
                 raise ValueError('Unknown state mappings: ' + ', '.join(sorted(unknown)))
@@ -116,8 +207,9 @@ class PandaRenderer:
                 control = candidate.getAnimControl(clip)
                 durations[clip] = control.getNumFrames() / control.getFrameRate()
             clock = ClipClock(durations)
-            candidate.enableBlend()
-            candidate.setBlend(frameBlend=True)
+            if character is not None:
+                candidate.enableBlend()
+                candidate.setBlend(frameBlend=True)
             bounds = candidate.getTightBounds()
             if not bounds:
                 raise ValueError('Model has no renderable geometry')
@@ -126,16 +218,22 @@ class PandaRenderer:
             if extent <= 0:
                 raise ValueError('Model bounds are empty')
             candidate.reparentTo(self.base.render)
-            candidate.setScale(2.0 / extent)
+            self.source_unit_scale = 2.0 / extent
+            candidate.setScale(self.source_unit_scale)
             # Parent transform controls model offset and user scale separately.
             pivot = self.base.render.attachNewNode('model-pivot')
             candidate.reparentTo(pivot)
             candidate.setPos(-(low.x+high.x)/2 * 2/extent,
                              -(low.y+high.y)/2 * 2/extent, -low.z * 2/extent)
             if self.actor is not None:
-                self.actor.cleanup()
+                if isinstance(self.actor, Actor):
+                    self.actor.cleanup()
                 self.pivot.removeNode()
             self.actor, self.pivot = candidate, pivot
+            self.has_skeleton = character is not None
+            if not self.has_skeleton:
+                print('DeskCat static model: no skeleton; animations unavailable (NOT played)',
+                      file=sys.stderr)
             self.clips = clips
             self.clip_map = mapping
             self.clock = clock
@@ -148,22 +246,48 @@ class PandaRenderer:
                       file=sys.stderr)
         except Exception as exc:
             if candidate is not None:
-                candidate.cleanup()
+                if isinstance(candidate, Actor):
+                    candidate.cleanup()
                 candidate.removeNode()
             raise ModelError(f'Cannot load {model_path}: {exc}') from exc
 
     def _resize(self, width, height):
         if width <= 0 or height <= 0 or width > 4096 or height > 4096:
             raise ValueError('Render dimensions must be within 1..4096')
+        if not math.isfinite(self.viewport_height_scale) or self.viewport_height_scale <= 0:
+            raise ValueError('Invalid orthographic zoom viewport')
+        zoom_lens = (self.viewport_height_scale, self.camera_height_scale)
+        if self._size == (width, height) and self._lens_resize_scale == zoom_lens:
+            return
+        # Widen both the alpha buffer and the orthographic film when the cat
+        # grows. A constant world-units-per-screen-pixel ratio lets it actually
+        # appear bigger while retaining its complete silhouette.
+        visible_height = self.ortho_height * self.viewport_height_scale
+        self.base.camLens.setFilmSize(visible_height * width / height, visible_height)
+        center_z = .83 * self.camera_height_scale
+        self.base.camera.setPos(0, -6.0, center_z)
+        self.base.camera.lookAt(0, 0, center_z)
+        self._lens_resize_scale = zoom_lens
         if self._size == (width, height):
             return
         self.base.win.setSize(width, height)
-        self.base.camLens.setAspectRatio(width / height)
         self.base.win.clearRenderTextures()
         self.texture = Texture('rgba-frame')
         self.base.win.addRenderTexture(self.texture, GraphicsOutput.RTMCopyRam,
                                       GraphicsOutput.RTPColor)
         self._size = (width, height)
+
+    def matched_walk_speed(self, logical_height):
+        """Logical pixels/sec matching the toe's planted linear backstroke."""
+        if not self.contact_gait or self.clip_map.get(State.WALK) != 'walk':
+            return None
+        g = self.contact_gait
+        source_units_per_sec = g['stride'] / (g['stance'] * g['period'])
+        # Input height is the ORIGINAL logical viewport height. Rendering uses
+        # a higher-resolution permanent buffer but no bitmap upscaling.
+        pixels_per_source_unit = (logical_height / self.ortho_height
+                                  * self.source_unit_scale * self.model_scale)
+        return source_units_per_sec * pixels_per_source_unit * self.clock.speed
 
     def frame(self, dt, weights, width, height):
         start = time.perf_counter()
@@ -197,13 +321,20 @@ class PandaRenderer:
             index = times[clip] * control.getFrameRate()
             self.actor.pose(clip, index)
             self.actor.setControlEffect(clip, clip_weights[clip])
-        self.actor.update()
+        if self.has_skeleton:
+            self.actor.update()
         self.base.graphicsEngine.renderFrame()
         data = bytes(self.texture.getRamImageAs('RGBA'))
         if len(data) != width * height * 4:
             raise RuntimeError('Unexpected RGBA readback dimensions')
         # Panda readback is bottom-up, straight alpha. Copy before the buffer dies.
-        image = QImage(data, width, height, width*4, QImage.Format.Format_RGBA8888).mirrored().copy()
+        # RGB-only gamma correction after Panda readback. The expensive work
+        # happens via bytearray.translate in C; translucent alpha is untouched.
+        bright = bytearray(data)
+        for channel in (0, 1, 2):
+            bright[channel::4] = bright[channel::4].translate(self._display_gamma_lut)
+        image = QImage(bytes(bright), width, height, width*4,
+                       QImage.Format.Format_RGBA8888).mirrored().copy()
         self.last_frame_ms = (time.perf_counter() - start)*1000
         return image
 
@@ -214,7 +345,9 @@ class PandaRenderer:
 
     def close(self):
         if self.actor is not None:
-            self.actor.cleanup()
+            if isinstance(self.actor, Actor):
+                self.actor.cleanup()
+            self.actor.removeNode()
             self.actor = None
         if self.base is not None:
             self.base.destroy()

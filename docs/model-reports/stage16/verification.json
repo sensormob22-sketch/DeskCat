@@ -1,0 +1,16 @@
+{
+  "environment": "Linux Blender 4.3.2 headless",
+  "selection_cases": 12,
+  "both_mesh_face_orders_validated": true,
+  "unchanged_mesh_uv_material_weights_bone_texture_signature": true,
+  "source_scene_sha256_preserved": true,
+  "source_links_hashes_valid": true,
+  "zip_checksums_valid": true,
+  "archive_bytes": 1349029,
+  "new_geometry": 0,
+  "new_weight_binds": 0,
+  "new_scene_saves": 0,
+  "new_glb_exports": 0,
+  "gui_tested": false,
+  "acceptance_of_new_cosmetic_repair": false
+}

@@ -1,0 +1,964 @@
+{
+  "status": "UNCHANGED_V6_DIAGNOSTIC_TABLES",
+  "projection": "orthographic",
+  "tile_resolution": [
+    400,
+    320
+  ],
+  "fixed_scale": 1.9996338561054494,
+  "fixed_offset": [
+    -0.0,
+    0.0,
+    -0.0
+  ],
+  "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "backend": "p3headlessgl",
+  "rows": [
+    "texture",
+    "solid + new crossing triangles",
+    "wire + new crossing triangles",
+    "primary bone weight"
+  ],
+  "columns": [
+    "rest",
+    "plus10",
+    "plus15",
+    "minus10",
+    "minus15",
+    "hold_positive",
+    "hold_negative"
+  ],
+  "sheets": {
+    "tail_to_pelvis": {
+      "camera": [
+        2,
+        -3,
+        0.6
+      ],
+      "target": [
+        0.62,
+        -0.02,
+        0.34
+      ],
+      "film_size": [
+        0.9,
+        0.72
+      ],
+      "primary_bone": "tail_base",
+      "columns": {
+        "rest": {
+          "pose": "pose_00",
+          "rotations": {},
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "plus10": {
+          "pose": "pose_01",
+          "rotations": {
+            "tail_base": 10
+          },
+          "global_new_pairs": 4,
+          "zone_new_pairs": 4,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                0.27783381938934326,
+                0.17506572604179382,
+                0.0005019687814638019
+              ],
+              "source_face_pair": [
+                7586,
+                7592
+              ]
+            }
+          ]
+        },
+        "plus15": {
+          "pose": "pose_02",
+          "rotations": {
+            "tail_base": 15
+          },
+          "global_new_pairs": 44,
+          "zone_new_pairs": 44,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                0.2745911777019501,
+                0.15038487315177917,
+                0.023530688136816025
+              ],
+              "source_face_pair": [
+                6971,
+                7816
+              ]
+            },
+            {
+              "label": "C2",
+              "point": [
+                0.27571627497673035,
+                0.17674259841442108,
+                -0.0002630840172059834
+              ],
+              "source_face_pair": [
+                7323,
+                7586
+              ]
+            }
+          ]
+        },
+        "minus10": {
+          "pose": "pose_03",
+          "rotations": {
+            "tail_base": -10
+          },
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "minus15": {
+          "pose": "pose_04",
+          "rotations": {
+            "tail_base": -15
+          },
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "hold_positive": {
+          "pose": "pose_05",
+          "rotations": {
+            "pelvis": 5,
+            "lumbar": -5,
+            "tail_base": -15,
+            "elbow_FR": -15,
+            "stifle_HL": 15
+          },
+          "global_new_pairs": 6,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "hold_negative": {
+          "pose": "pose_06",
+          "rotations": {
+            "pelvis": -5,
+            "lumbar": 5,
+            "tail_base": 15,
+            "elbow_FR": 15,
+            "stifle_HL": -15
+          },
+          "global_new_pairs": 53,
+          "zone_new_pairs": 44,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                0.2729223072528839,
+                0.14216217398643494,
+                0.02353069745004177
+              ],
+              "source_face_pair": [
+                6971,
+                7816
+              ]
+            },
+            {
+              "label": "C2",
+              "point": [
+                0.2740474343299866,
+                0.16851986944675446,
+                -0.00026308372616767883
+              ],
+              "source_face_pair": [
+                7323,
+                7586
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "thoracic_abdomen": {
+      "camera": [
+        -1,
+        3,
+        -0.3
+      ],
+      "target": [
+        -0.27,
+        0,
+        0.49
+      ],
+      "film_size": [
+        1.4,
+        1.12
+      ],
+      "primary_bone": "thoracic",
+      "columns": {
+        "rest": {
+          "pose": "pose_00",
+          "rotations": {},
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "plus10": {
+          "pose": "pose_07",
+          "rotations": {
+            "thoracic": 10
+          },
+          "global_new_pairs": 18,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "plus15": {
+          "pose": "pose_08",
+          "rotations": {
+            "thoracic": 15
+          },
+          "global_new_pairs": 130,
+          "zone_new_pairs": 97,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                -0.3368883728981018,
+                0.2810899615287781,
+                0.048194341361522675
+              ],
+              "source_face_pair": [
+                70726,
+                74537
+              ]
+            },
+            {
+              "label": "C2",
+              "point": [
+                -0.3284602165222168,
+                0.3193926215171814,
+                -0.05760945752263069
+              ],
+              "source_face_pair": [
+                78176,
+                78289
+              ]
+            },
+            {
+              "label": "C3",
+              "point": [
+                -0.3366781175136566,
+                0.3051479160785675,
+                -0.04612430930137634
+              ],
+              "source_face_pair": [
+                78318,
+                78619
+              ]
+            }
+          ]
+        },
+        "minus10": {
+          "pose": "pose_09",
+          "rotations": {
+            "thoracic": -10
+          },
+          "global_new_pairs": 5,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "minus15": {
+          "pose": "pose_10",
+          "rotations": {
+            "thoracic": -15
+          },
+          "global_new_pairs": 5,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "hold_positive": {
+          "pose": "pose_11",
+          "rotations": {
+            "pelvis": 5,
+            "lumbar": -5,
+            "thoracic": 5
+          },
+          "global_new_pairs": 10,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "hold_negative": {
+          "pose": "pose_12",
+          "rotations": {
+            "pelvis": -5,
+            "lumbar": 5,
+            "thoracic": -5
+          },
+          "global_new_pairs": 5,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        }
+      }
+    },
+    "left_hip": {
+      "camera": [
+        2,
+        -3,
+        0.6
+      ],
+      "target": [
+        0.47,
+        -0.09,
+        0.5
+      ],
+      "film_size": [
+        0.9,
+        0.72
+      ],
+      "primary_bone": "hip_HL",
+      "columns": {
+        "rest": {
+          "pose": "pose_00",
+          "rotations": {},
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "plus10": {
+          "pose": "pose_13",
+          "rotations": {
+            "hip_HL": 10
+          },
+          "global_new_pairs": 27,
+          "zone_new_pairs": 27,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                0.29622939229011536,
+                0.28293129801750183,
+                0.03429146111011505
+              ],
+              "source_face_pair": [
+                22007,
+                27550
+              ]
+            },
+            {
+              "label": "C2",
+              "point": [
+                0.27454039454460144,
+                0.28121182322502136,
+                0.041265279054641724
+              ],
+              "source_face_pair": [
+                27581,
+                27610
+              ]
+            }
+          ]
+        },
+        "plus15": {
+          "pose": "pose_14",
+          "rotations": {
+            "hip_HL": 15
+          },
+          "global_new_pairs": 51,
+          "zone_new_pairs": 51,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                0.29490143060684204,
+                0.28031277656555176,
+                0.035159580409526825
+              ],
+              "source_face_pair": [
+                22000,
+                27545
+              ]
+            },
+            {
+              "label": "C2",
+              "point": [
+                0.27504292130470276,
+                0.27937036752700806,
+                0.04129786789417267
+              ],
+              "source_face_pair": [
+                27579,
+                27605
+              ]
+            }
+          ]
+        },
+        "minus10": {
+          "pose": "pose_15",
+          "rotations": {
+            "hip_HL": -10
+          },
+          "global_new_pairs": 126,
+          "zone_new_pairs": 126,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                0.27395832538604736,
+                0.2413594126701355,
+                0.03813539445400238
+              ],
+              "source_face_pair": [
+                9836,
+                10023
+              ]
+            },
+            {
+              "label": "C2",
+              "point": [
+                0.2737186849117279,
+                0.2212245613336563,
+                0.038841284811496735
+              ],
+              "source_face_pair": [
+                10040,
+                10045
+              ]
+            },
+            {
+              "label": "C3",
+              "point": [
+                0.2716502845287323,
+                0.19597995281219482,
+                0.025271300226449966
+              ],
+              "source_face_pair": [
+                10214,
+                10248
+              ]
+            }
+          ]
+        },
+        "minus15": {
+          "pose": "pose_16",
+          "rotations": {
+            "hip_HL": -15
+          },
+          "global_new_pairs": 162,
+          "zone_new_pairs": 162,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                0.27898672223091125,
+                0.24358424544334412,
+                0.038080405443906784
+              ],
+              "source_face_pair": [
+                9836,
+                10023
+              ]
+            },
+            {
+              "label": "C2",
+              "point": [
+                0.2787582278251648,
+                0.2653464674949646,
+                0.04111095517873764
+              ],
+              "source_face_pair": [
+                9880,
+                27659
+              ]
+            },
+            {
+              "label": "C3",
+              "point": [
+                0.27389493584632874,
+                0.22132554650306702,
+                0.03902928903698921
+              ],
+              "source_face_pair": [
+                10034,
+                10045
+              ]
+            }
+          ]
+        },
+        "hold_positive": {
+          "pose": "pose_05",
+          "rotations": {
+            "pelvis": 5,
+            "lumbar": -5,
+            "tail_base": -15,
+            "elbow_FR": -15,
+            "stifle_HL": 15
+          },
+          "global_new_pairs": 6,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "hold_negative": {
+          "pose": "pose_06",
+          "rotations": {
+            "pelvis": -5,
+            "lumbar": 5,
+            "tail_base": 15,
+            "elbow_FR": 15,
+            "stifle_HL": -15
+          },
+          "global_new_pairs": 53,
+          "zone_new_pairs": 25,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                0.2729223072528839,
+                0.14216217398643494,
+                0.02353069745004177
+              ],
+              "source_face_pair": [
+                6971,
+                7816
+              ]
+            },
+            {
+              "label": "C2",
+              "point": [
+                0.27312004566192627,
+                0.15540023148059845,
+                0.006032498087733984
+              ],
+              "source_face_pair": [
+                7667,
+                7749
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "right_shoulder_paw": {
+      "camera": [
+        -2,
+        3,
+        0.75
+      ],
+      "target": [
+        -0.53,
+        0.1,
+        0.42
+      ],
+      "film_size": [
+        1.1,
+        0.88
+      ],
+      "primary_bone": "shoulder_FR",
+      "columns": {
+        "rest": {
+          "pose": "pose_00",
+          "rotations": {},
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "plus10": {
+          "pose": "pose_17",
+          "rotations": {
+            "shoulder_FR": 10
+          },
+          "global_new_pairs": 12,
+          "zone_new_pairs": 12,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                -0.34570810198783875,
+                0.05667045712471008,
+                -0.015938619151711464
+              ],
+              "source_face_pair": [
+                71771,
+                71996
+              ]
+            }
+          ]
+        },
+        "plus15": {
+          "pose": "pose_18",
+          "rotations": {
+            "shoulder_FR": 15
+          },
+          "global_new_pairs": 20,
+          "zone_new_pairs": 20,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                -0.37222856283187866,
+                0.06903154402971268,
+                -0.01578882709145546
+              ],
+              "source_face_pair": [
+                71771,
+                71996
+              ]
+            },
+            {
+              "label": "C2",
+              "point": [
+                -0.34745073318481445,
+                0.06270977854728699,
+                -0.015523290261626244
+              ],
+              "source_face_pair": [
+                71777,
+                72002
+              ]
+            },
+            {
+              "label": "C3",
+              "point": [
+                -0.2979632616043091,
+                0.16155025362968445,
+                -0.015839895233511925
+              ],
+              "source_face_pair": [
+                72695,
+                76321
+              ]
+            }
+          ]
+        },
+        "minus10": {
+          "pose": "pose_19",
+          "rotations": {
+            "shoulder_FR": -10
+          },
+          "global_new_pairs": 5,
+          "zone_new_pairs": 5,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                -0.25643426179885864,
+                0.03471684455871582,
+                -0.015256134793162346
+              ],
+              "source_face_pair": [
+                71991,
+                71998
+              ]
+            }
+          ]
+        },
+        "minus15": {
+          "pose": "pose_20",
+          "rotations": {
+            "shoulder_FR": -15
+          },
+          "global_new_pairs": 5,
+          "zone_new_pairs": 5,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                -0.2374022901058197,
+                0.03396390378475189,
+                -0.015269593335688114
+              ],
+              "source_face_pair": [
+                71991,
+                71998
+              ]
+            }
+          ]
+        },
+        "hold_positive": {
+          "pose": "pose_21",
+          "rotations": {
+            "elbow_FL": 15,
+            "elbow_FR": 15,
+            "wrist_FL": -10,
+            "wrist_FR": -10
+          },
+          "global_new_pairs": 9,
+          "zone_new_pairs": 9,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                -0.33049798011779785,
+                0.04979672282934189,
+                -0.01536902692168951
+              ],
+              "source_face_pair": [
+                71777,
+                71996
+              ]
+            }
+          ]
+        },
+        "hold_negative": {
+          "pose": "pose_22",
+          "rotations": {
+            "elbow_FL": -15,
+            "elbow_FR": -15,
+            "wrist_FL": 10,
+            "wrist_FR": 10
+          },
+          "global_new_pairs": 5,
+          "zone_new_pairs": 5,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                -0.2673429846763611,
+                0.03845379501581192,
+                -0.015191704034805298
+              ],
+              "source_face_pair": [
+                71991,
+                71998
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "wrist_to_sole": {
+      "camera": [
+        -3,
+        0,
+        0.1
+      ],
+      "target": [
+        -0.53,
+        0,
+        0.11
+      ],
+      "film_size": [
+        0.75,
+        0.6
+      ],
+      "primary_bone": "wrist_FR",
+      "columns": {
+        "rest": {
+          "pose": "pose_00",
+          "rotations": {},
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "plus10": {
+          "pose": "pose_23",
+          "rotations": {
+            "wrist_FR": 10,
+            "wrist_FL": 10
+          },
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "plus15": {
+          "pose": "pose_24",
+          "rotations": {
+            "wrist_FR": 15,
+            "wrist_FL": 15
+          },
+          "global_new_pairs": 1,
+          "zone_new_pairs": 1,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                -0.2993544042110443,
+                0.04214821383357048,
+                -0.01503613032400608
+              ],
+              "source_face_pair": [
+                71790,
+                71992
+              ]
+            }
+          ]
+        },
+        "minus10": {
+          "pose": "pose_25",
+          "rotations": {
+            "wrist_FR": -10,
+            "wrist_FL": -10
+          },
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "minus15": {
+          "pose": "pose_26",
+          "rotations": {
+            "wrist_FR": -15,
+            "wrist_FL": -15
+          },
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "hold_positive": {
+          "pose": "pose_21",
+          "rotations": {
+            "elbow_FL": 15,
+            "elbow_FR": 15,
+            "wrist_FL": -10,
+            "wrist_FR": -10
+          },
+          "global_new_pairs": 9,
+          "zone_new_pairs": 9,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                -0.33049798011779785,
+                0.04979672282934189,
+                -0.01536902692168951
+              ],
+              "source_face_pair": [
+                71777,
+                71996
+              ]
+            }
+          ]
+        },
+        "hold_negative": {
+          "pose": "pose_22",
+          "rotations": {
+            "elbow_FL": -15,
+            "elbow_FR": -15,
+            "wrist_FL": 10,
+            "wrist_FR": 10
+          },
+          "global_new_pairs": 5,
+          "zone_new_pairs": 5,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                -0.2673429846763611,
+                0.03845379501581192,
+                -0.015191704034805298
+              ],
+              "source_face_pair": [
+                71991,
+                71998
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "hock_to_sole": {
+      "camera": [
+        3,
+        0,
+        0.16
+      ],
+      "target": [
+        0.3,
+        0,
+        0.12
+      ],
+      "film_size": [
+        0.95,
+        0.76
+      ],
+      "primary_bone": "hock_HR",
+      "columns": {
+        "rest": {
+          "pose": "pose_00",
+          "rotations": {},
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "plus10": {
+          "pose": "pose_27",
+          "rotations": {
+            "hock_HR": 10,
+            "hock_HL": 10
+          },
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "plus15": {
+          "pose": "pose_28",
+          "rotations": {
+            "hock_HR": 15,
+            "hock_HL": 15
+          },
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "minus10": {
+          "pose": "pose_29",
+          "rotations": {
+            "hock_HR": -10,
+            "hock_HL": -10
+          },
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "minus15": {
+          "pose": "pose_30",
+          "rotations": {
+            "hock_HR": -15,
+            "hock_HL": -15
+          },
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        },
+        "hold_positive": {
+          "pose": "pose_31",
+          "rotations": {
+            "stifle_HL": -15,
+            "stifle_HR": -15,
+            "hock_HL": 15,
+            "hock_HR": 15
+          },
+          "global_new_pairs": 25,
+          "zone_new_pairs": 23,
+          "cross_point_markers": [
+            {
+              "label": "C1",
+              "point": [
+                0.0858321413397789,
+                0.05141226947307587,
+                -0.13405898213386536
+              ],
+              "source_face_pair": [
+                13711,
+                13730
+              ]
+            }
+          ]
+        },
+        "hold_negative": {
+          "pose": "pose_32",
+          "rotations": {
+            "stifle_HL": 15,
+            "stifle_HR": 15,
+            "hock_HL": -15,
+            "hock_HR": -15
+          },
+          "global_new_pairs": 0,
+          "zone_new_pairs": 0,
+          "cross_point_markers": []
+        }
+      }
+    }
+  },
+  "legend": "Red outlines = new strict crossing triangles in selected zone; black C labels mark computed crossing points; full source face pairs in pose_review.json. Heatmap blue0, green.5, red1; original character textures untouched. All rows use same posed geometry and camera.",
+  "caption_codes": "PE pelvis; LU lumbar; TH thoracic; TA tail_base; SH shoulder; EL elbow; WR wrist; HI hip; ST stifle; HO hock; FL/FR/HL/HR as anatomical labels. Complete rotations stored per column."
+}

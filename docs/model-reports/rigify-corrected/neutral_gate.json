@@ -1,0 +1,44 @@
+{
+  "blender_max_rest_error": 0.0,
+  "limbs": {
+    "FL": {
+      "deform_groups": [
+        "DEF-upper_arm.L",
+        "DEF-forearm.L",
+        "DEF-hand.L"
+      ],
+      "positive_vertices": 0,
+      "contact_patch_mean_limb_weight": 0.0
+    },
+    "HL": {
+      "deform_groups": [
+        "DEF-thigh.L",
+        "DEF-foot.L",
+        "DEF-shin.L"
+      ],
+      "positive_vertices": 0,
+      "contact_patch_mean_limb_weight": 0.0
+    },
+    "FR": {
+      "deform_groups": [
+        "DEF-hand.R",
+        "DEF-upper_arm.R",
+        "DEF-forearm.R"
+      ],
+      "positive_vertices": 0,
+      "contact_patch_mean_limb_weight": 0.0
+    },
+    "HR": {
+      "deform_groups": [
+        "DEF-foot.R",
+        "DEF-shin.R",
+        "DEF-thigh.R"
+      ],
+      "positive_vertices": 0,
+      "contact_patch_mean_limb_weight": 0.0
+    }
+  },
+  "blender_and_local_weight_gate_pass": false,
+  "panda_neutral_gate_tested": false,
+  "panda_note": "Final deform-only export is conditional on acceptable deformation; runtime neutral checked separately if an export is produced."
+}

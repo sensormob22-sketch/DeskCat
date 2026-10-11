@@ -4,6 +4,7 @@ from PySide6.QtCore import QPoint, QPointF, Qt, QTimer
 from PySide6.QtGui import QAction, QColor, QPainter, QPolygonF
 from PySide6.QtWidgets import QApplication, QMenu, QWidget
 from .states import State, StateMachine
+from .locomotion import wrap_desktop_x
 
 
 class CatWindow(QWidget):
@@ -20,10 +21,13 @@ class CatWindow(QWidget):
         self._resume = State.IDLE
         self._x = 0.0
         self._direction = 1
+        self.wrap_at_edges = False
+        self._travel_area = None
         self._phase = 0.0
         self._last = time.monotonic()
         screen = QApplication.primaryScreen()
         area = screen.availableGeometry()
+        self._travel_area = area
         self.move(area.right() - self.width(), area.bottom() - self.height())
         self._x = float(self.x())
         self.timer = QTimer(self)
@@ -40,12 +44,17 @@ class CatWindow(QWidget):
         self.machine.update(dt)
         self._phase += dt
         if self.machine.state == State.WALK and self.can_move():
-            area = self.screen().availableGeometry()
-            self._x += self._direction * 75 * dt
-            left, right = area.left(), area.right() + 1 - self.width()
-            if self._x < left or self._x > right:
-                self._direction *= -1
-                self._x = max(left, min(right, self._x))
+            area = self._travel_area if self.wrap_at_edges else self.screen().availableGeometry()
+            self._x += self._direction * getattr(self, 'walk_speed_px', 75) * dt
+            if self.wrap_at_edges:
+                # Walk completely outside the monitor before re-entering from
+                # the opposite side, with the SAME heading and animation phase.
+                self._x = wrap_desktop_x(self._x, area.left(), area.width(), self.width())
+            else:
+                left, right = area.left(), area.right() + 1 - self.width()
+                if self._x < left or self._x > right:
+                    self._direction *= -1
+                    self._x = max(left, min(right, self._x))
             self.move(round(self._x), self.y())
         self.update()
 
@@ -90,6 +99,7 @@ class CatWindow(QWidget):
             point = event.globalPosition().toPoint() - self._drag_offset
             screen = QApplication.screenAt(event.globalPosition().toPoint()) or self.screen()
             area = screen.availableGeometry()
+            self._travel_area = area
             point.setX(max(area.left(), min(point.x(), area.right() + 1 - self.width())))
             point.setY(max(area.top(), min(point.y(), area.bottom() + 1 - self.height())))
             self.move(point)

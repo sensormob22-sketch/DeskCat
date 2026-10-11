@@ -1,0 +1,2338 @@
+{
+  "decision": "C",
+  "authorized_operations_performed": 0,
+  "source_scene_sha256": "844c4316dd841d4f943f80da7810d32abde64290c5f29b84e7ce4bfb3242667a",
+  "proposals": [
+    {
+      "cluster": "D01",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        791,
+        792,
+        793,
+        794,
+        795,
+        796,
+        855,
+        857,
+        858,
+        859,
+        862,
+        863,
+        864,
+        865,
+        866,
+        867,
+        868,
+        869,
+        870,
+        872,
+        909,
+        945
+      ],
+      "context_source_face_ids": [
+        788,
+        789,
+        790,
+        797,
+        798,
+        800,
+        854,
+        856,
+        861,
+        871,
+        873,
+        874,
+        940,
+        941,
+        944,
+        946,
+        948,
+        977,
+        978
+      ],
+      "candidate_decorative_partitions": [
+        5,
+        13
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "454": [
+          785,
+          895
+        ],
+        "456": [
+          787,
+          849,
+          894
+        ],
+        "457": [
+          788,
+          851
+        ],
+        "459": [
+          790,
+          994,
+          996
+        ],
+        "501": [
+          846,
+          893
+        ],
+        "503": [
+          853
+        ],
+        "505": [
+          856
+        ],
+        "506": [
+          857
+        ],
+        "507": [
+          858
+        ],
+        "508": [
+          859,
+          942
+        ],
+        "509": [
+          860,
+          937
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D02",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        803,
+        804,
+        891,
+        892,
+        893,
+        894,
+        895,
+        897,
+        898,
+        899,
+        900,
+        902,
+        969
+      ],
+      "context_source_face_ids": [
+        800,
+        802,
+        805,
+        806,
+        885,
+        888,
+        889,
+        890,
+        896,
+        901,
+        903,
+        968,
+        970,
+        971,
+        976,
+        978
+      ],
+      "candidate_decorative_partitions": [
+        7
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "462": [
+          793,
+          876,
+          995
+        ],
+        "465": [
+          796,
+          871
+        ],
+        "519": [
+          873,
+          977,
+          978,
+          982,
+          989
+        ],
+        "520": [
+          874,
+          980
+        ],
+        "521": [
+          875
+        ],
+        "522": [
+          877
+        ],
+        "524": [
+          880,
+          979
+        ],
+        "525": [
+          881
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D03",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        1850,
+        1862,
+        1863,
+        1872,
+        1873,
+        1878,
+        1880,
+        1881,
+        1882
+      ],
+      "context_source_face_ids": [
+        1856,
+        1857,
+        1861,
+        1877,
+        1879
+      ],
+      "candidate_decorative_partitions": [
+        14
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "1072": [
+          2144,
+          2169,
+          2185,
+          2199,
+          2205,
+          2210
+        ],
+        "1073": [
+          2156,
+          2168,
+          2201,
+          2206
+        ],
+        "1074": [
+          2167,
+          2197,
+          2204,
+          2207
+        ]
+      },
+      "fan_source_face_groups": [
+        {
+          "kind": "fan",
+          "proxy_vertex": 1072,
+          "source_vertex_aliases": [
+            2144,
+            2169,
+            2185,
+            2199,
+            2205,
+            2210
+          ],
+          "proxy_vertices": [
+            1072
+          ],
+          "source_faces": [
+            1850,
+            1863,
+            1872,
+            1873,
+            1878,
+            1881,
+            1882
+          ],
+          "midpoint": [
+            0.27252197265625,
+            0.30081188678741455,
+            -0.030279193073511124
+          ],
+          "fan_source_face_groups": [
+            [
+              1850,
+              1863,
+              1872,
+              1873,
+              1878,
+              1882
+            ],
+            [
+              1881
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cluster": "D04",
+      "category": "ambiguous_visual_decision",
+      "confidence": "high that automated classification is insufficient",
+      "source_face_ids": [
+        2573,
+        2596,
+        2601
+      ],
+      "context_source_face_ids": [
+        2065,
+        2571,
+        2574,
+        2575,
+        2576,
+        2597,
+        2598,
+        2600,
+        2602,
+        2608,
+        2609,
+        2610,
+        2776
+      ],
+      "candidate_decorative_partitions": [],
+      "operation": "Refuse automatic repair. Artist must identify body skin versus fur sheet from adjacent faces and decide fan ownership; do not cap, delete, move or reconnect by proximity.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "1196": [
+          2392,
+          2984,
+          2985,
+          2988,
+          2995,
+          3010
+        ],
+        "1474": [
+          2953,
+          2982
+        ],
+        "1476": [
+          2955,
+          2997,
+          2999,
+          3012,
+          3014,
+          3142
+        ]
+      },
+      "fan_source_face_groups": [],
+      "closed_contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            1196,
+            1476
+          ],
+          "intermediate_proxy_parameters": {
+            "1474": 0.500000152587911
+          },
+          "max_collinear_residual": 2.23517486134395e-09,
+          "long_edge_source_faces": [
+            2601
+          ],
+          "exact_collinear": false,
+          "proposed_only": true
+        },
+        "cluster": "D04",
+        "vertices": [
+          1196,
+          1474,
+          1476
+        ],
+        "adjacent_source_faces": [
+          2573,
+          2596,
+          2601
+        ],
+        "loop_vertex_count": 3,
+        "adjacent_normal_max_deviation_deg": 30.46582668791698,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": 2.1827872842550278e-11,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "cluster": "D05",
+      "category": "nonmanifold_or_overlay",
+      "confidence": "high for exact collinear T-junction; anatomical ownership still needs confirmation",
+      "source_face_ids": [
+        3003,
+        6531,
+        6532
+      ],
+      "context_source_face_ids": [
+        3000,
+        3005,
+        3027,
+        3028,
+        3030,
+        6530,
+        6568,
+        6569,
+        6570
+      ],
+      "candidate_decorative_partitions": [],
+      "operation": "Propose splitting the one long boundary edge at the existing collinear vertex on the temporary solver face only. Preserve winding, endpoint positions and parent-source-face provenance. Do not cap the zero-area contour.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "1712": [
+          3500,
+          7226,
+          7309,
+          7314
+        ],
+        "1714": [
+          3502,
+          7228,
+          7311
+        ],
+        "3589": [
+          7227
+        ]
+      },
+      "fan_source_face_groups": [],
+      "closed_contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            1712,
+            1714
+          ],
+          "intermediate_proxy_parameters": {
+            "3589": 0.5
+          },
+          "max_collinear_residual": 0.0,
+          "long_edge_source_faces": [
+            3003
+          ],
+          "exact_collinear": true,
+          "proposed_only": true
+        },
+        "cluster": "D05",
+        "vertices": [
+          1712,
+          1714,
+          3589
+        ],
+        "adjacent_source_faces": [
+          3003,
+          6531,
+          6532
+        ],
+        "loop_vertex_count": 3,
+        "adjacent_normal_max_deviation_deg": 1.6946922994434602e-05,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": 0.0,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "cluster": "D06",
+      "category": "ambiguous_visual_decision",
+      "confidence": "high that automated classification is insufficient",
+      "source_face_ids": [
+        3685,
+        3686,
+        3968,
+        3973,
+        3981,
+        4011,
+        4019,
+        4020,
+        4026,
+        4042,
+        4279,
+        4280,
+        4281,
+        4286
+      ],
+      "context_source_face_ids": [
+        3682,
+        3683,
+        3684,
+        3687,
+        3689,
+        3959,
+        3966,
+        3967,
+        3970,
+        3971,
+        3975,
+        3979,
+        3980,
+        4010,
+        4018,
+        4021,
+        4022,
+        4025,
+        4027,
+        4028,
+        4034,
+        4035,
+        4036,
+        4043,
+        4278,
+        4282,
+        4283,
+        4284,
+        4285,
+        5448,
+        5778
+      ],
+      "candidate_decorative_partitions": [],
+      "operation": "Refuse automatic repair. Artist must identify body skin versus fur sheet from adjacent faces and decide fan ownership; do not cap, delete, move or reconnect by proximity.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "2108": [
+          4091,
+          4358,
+          4373,
+          4389,
+          4794,
+          4795
+        ],
+        "2109": [
+          4092,
+          4376,
+          4387,
+          4803,
+          4805
+        ],
+        "2261": [
+          4377,
+          4456,
+          4798
+        ],
+        "2262": [
+          4379,
+          4455
+        ],
+        "2264": [
+          4381,
+          4443
+        ],
+        "2277": [
+          4444,
+          4476,
+          4490
+        ],
+        "2280": [
+          4457,
+          4800,
+          4809,
+          4814
+        ],
+        "2281": [
+          4458
+        ],
+        "2296": [
+          4488,
+          4797
+        ],
+        "2423": [
+          4799,
+          4812,
+          5940,
+          6292
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D07",
+      "category": "nonmanifold_or_overlay",
+      "confidence": "high for exact collinear T-junction; anatomical ownership still needs confirmation",
+      "source_face_ids": [
+        6315,
+        6326,
+        6329
+      ],
+      "context_source_face_ids": [
+        1625,
+        1886,
+        1891,
+        1892,
+        6296,
+        6297,
+        6314,
+        6327,
+        6328,
+        6337,
+        6339
+      ],
+      "candidate_decorative_partitions": [],
+      "operation": "Propose splitting the one long boundary edge at the existing collinear vertex on the temporary solver face only. Preserve winding, endpoint positions and parent-source-face provenance. Do not cap the zero-area contour.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "942": [
+          1828,
+          2222,
+          2231,
+          6881,
+          6911
+        ],
+        "3464": [
+          6839,
+          6882,
+          6915
+        ],
+        "3476": [
+          6912,
+          6918
+        ]
+      },
+      "fan_source_face_groups": [],
+      "closed_contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            3464,
+            3476
+          ],
+          "intermediate_proxy_parameters": {
+            "942": 0.4444369381972041
+          },
+          "max_collinear_residual": 0.0,
+          "long_edge_source_faces": [
+            6329
+          ],
+          "exact_collinear": true,
+          "proposed_only": true
+        },
+        "cluster": "D07",
+        "vertices": [
+          942,
+          3464,
+          3476
+        ],
+        "adjacent_source_faces": [
+          6315,
+          6326,
+          6329
+        ],
+        "loop_vertex_count": 3,
+        "adjacent_normal_max_deviation_deg": 86.62249295930323,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": 0.0,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "cluster": "D08",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        6522,
+        6523,
+        6525,
+        6526,
+        6548
+      ],
+      "context_source_face_ids": [
+        3892,
+        3893,
+        3895,
+        6519,
+        6520,
+        6521,
+        6524,
+        6527,
+        6545,
+        6550,
+        6552
+      ],
+      "candidate_decorative_partitions": [
+        15
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "2234": [
+          4247,
+          7219,
+          7257,
+          7265,
+          7277
+        ],
+        "3585": [
+          7214,
+          7264
+        ],
+        "3586": [
+          7217,
+          7266,
+          7272
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D09",
+      "category": "ambiguous_visual_decision",
+      "confidence": "high that automated classification is insufficient",
+      "source_face_ids": [
+        7631,
+        7639,
+        7691,
+        7694
+      ],
+      "context_source_face_ids": [
+        7617,
+        7627,
+        7628,
+        7629,
+        7630,
+        7636,
+        7645,
+        7680,
+        7686,
+        7688,
+        7693,
+        7902
+      ],
+      "candidate_decorative_partitions": [],
+      "operation": "Refuse automatic repair. Artist must identify body skin versus fur sheet from adjacent faces and decide fan ownership; do not cap, delete, move or reconnect by proximity.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "4082": [
+          8628,
+          8640
+        ],
+        "4090": [
+          8644,
+          8890
+        ],
+        "4097": [
+          8651
+        ],
+        "4130": [
+          8689
+        ]
+      },
+      "fan_source_face_groups": [],
+      "closed_contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            4082,
+            4097
+          ],
+          "intermediate_proxy_parameters": {
+            "4090": 0.5387387387387392,
+            "4130": 0.4618618618618613
+          },
+          "max_collinear_residual": 1.0851446214738811e-10,
+          "long_edge_source_faces": [],
+          "exact_collinear": false,
+          "proposed_only": true
+        },
+        "cluster": "D09",
+        "vertices": [
+          4082,
+          4090,
+          4097,
+          4130
+        ],
+        "adjacent_source_faces": [
+          7631,
+          7639,
+          7691,
+          7694
+        ],
+        "loop_vertex_count": 4,
+        "adjacent_normal_max_deviation_deg": 15.652859801513625,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": null,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "cluster": "D10",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        8690,
+        8691,
+        8745,
+        8750,
+        8806,
+        8807
+      ],
+      "context_source_face_ids": [
+        8685,
+        8687,
+        8744,
+        8749,
+        8754,
+        8758,
+        8760,
+        8810,
+        8811,
+        8812,
+        8813,
+        8814
+      ],
+      "candidate_decorative_partitions": [
+        4
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "4692": [
+          9642,
+          9704,
+          9716,
+          9793,
+          9805
+        ],
+        "4696": [
+          9646,
+          9710,
+          9790,
+          9792,
+          9802,
+          9809
+        ],
+        "4728": [
+          9696,
+          9703
+        ],
+        "4729": [
+          9697,
+          9720,
+          9789
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D11",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        10034,
+        10035,
+        10036,
+        10037,
+        10038,
+        10039,
+        10040,
+        10042,
+        10048,
+        10210,
+        10212
+      ],
+      "context_source_face_ids": [
+        10031,
+        10032,
+        10033,
+        10041,
+        10043,
+        10047,
+        10050,
+        10206,
+        10208,
+        10211,
+        10213,
+        10214,
+        10215,
+        10282
+      ],
+      "candidate_decorative_partitions": [
+        9
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "5388": [
+          11086,
+          11379
+        ],
+        "5389": [
+          11088
+        ],
+        "5390": [
+          11089
+        ],
+        "5391": [
+          11090
+        ],
+        "5392": [
+          11091
+        ],
+        "5393": [
+          11092,
+          11305
+        ],
+        "5394": [
+          11093,
+          11303
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D12",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        10218,
+        10220,
+        10221,
+        10226,
+        10227,
+        10229,
+        10230,
+        10231,
+        10232,
+        10233,
+        10276,
+        10277,
+        10278,
+        10294,
+        10295,
+        10296,
+        10299,
+        10300,
+        10301,
+        10303
+      ],
+      "context_source_face_ids": [
+        974,
+        975,
+        10059,
+        10060,
+        10214,
+        10215,
+        10216,
+        10219,
+        10223,
+        10225,
+        10228,
+        10234,
+        10235,
+        10274,
+        10275,
+        10284,
+        10297,
+        10298,
+        10302
+      ],
+      "candidate_decorative_partitions": [
+        6
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "566": [
+          987,
+          11368
+        ],
+        "5405": [
+          11108,
+          11315,
+          11411,
+          11413,
+          11416
+        ],
+        "5406": [
+          11109,
+          11370,
+          11384,
+          11406,
+          11414,
+          11418
+        ],
+        "5469": [
+          11308
+        ],
+        "5470": [
+          11310
+        ],
+        "5471": [
+          11311
+        ],
+        "5473": [
+          11314
+        ],
+        "5475": [
+          11317
+        ],
+        "5476": [
+          11318,
+          11412
+        ],
+        "5500": [
+          11371,
+          11404
+        ],
+        "5503": [
+          11405
+        ],
+        "5504": [
+          11407,
+          11417
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D13",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        10411,
+        10414,
+        10418,
+        10419,
+        10421
+      ],
+      "context_source_face_ids": [
+        10366,
+        10367,
+        10373,
+        10375,
+        10403,
+        10404,
+        10410,
+        10412,
+        10413,
+        10417,
+        10420
+      ],
+      "candidate_decorative_partitions": [
+        16
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "5526": [
+          11536,
+          11604,
+          11615,
+          11617
+        ],
+        "5540": [
+          11589,
+          11598,
+          11611,
+          11613,
+          11619
+        ],
+        "5546": [
+          11601,
+          11612,
+          11618
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D14",
+      "category": "ambiguous_visual_decision",
+      "confidence": "high that automated classification is insufficient",
+      "source_face_ids": [
+        11975,
+        11983,
+        12094,
+        12095,
+        12100,
+        12122,
+        12123,
+        12133,
+        12134,
+        12135,
+        12136,
+        12146,
+        12147,
+        12148,
+        12149,
+        12152,
+        12154,
+        12160,
+        12162,
+        12169,
+        12180,
+        12181,
+        12182,
+        12183,
+        12184,
+        12185,
+        12189,
+        12190,
+        12195,
+        12196,
+        12201,
+        13820,
+        13823,
+        13824,
+        13825
+      ],
+      "context_source_face_ids": [
+        3582,
+        3583,
+        3585,
+        11974,
+        11976,
+        11978,
+        11979,
+        11980,
+        12043,
+        12044,
+        12045,
+        12050,
+        12052,
+        12055,
+        12062,
+        12092,
+        12093,
+        12096,
+        12097,
+        12124,
+        12125,
+        12126,
+        12137,
+        12150,
+        12151,
+        12153,
+        12155,
+        12156,
+        12157,
+        12159,
+        12161,
+        12168,
+        12170,
+        12199,
+        12200,
+        12202,
+        13818,
+        13819,
+        13821,
+        13826,
+        13830,
+        13831
+      ],
+      "candidate_decorative_partitions": [],
+      "operation": "Refuse automatic repair. Artist must identify body skin versus fur sheet from adjacent faces and decide fan ownership; do not cap, delete, move or reconnect by proximity.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "2046": [
+          4029,
+          13767,
+          13771,
+          13774,
+          13781
+        ],
+        "6232": [
+          13769,
+          14006,
+          14011
+        ],
+        "6236": [
+          13776,
+          14020,
+          15618,
+          15622,
+          15632
+        ],
+        "6238": [
+          13783,
+          13860,
+          13876,
+          13920,
+          13928
+        ],
+        "6280": [
+          13866,
+          13921,
+          13969,
+          13971,
+          13985
+        ],
+        "6304": [
+          13922,
+          13930,
+          13972
+        ],
+        "6311": [
+          13968,
+          13998,
+          14007
+        ],
+        "6312": [
+          13970,
+          13984,
+          13999
+        ],
+        "6313": [
+          13974,
+          13983,
+          14002
+        ],
+        "6321": [
+          13986,
+          14000,
+          14010
+        ],
+        "6322": [
+          13987,
+          14001,
+          14030
+        ],
+        "6331": [
+          14003,
+          14018
+        ],
+        "6335": [
+          14017
+        ],
+        "6336": [
+          14032,
+          14075
+        ],
+        "6337": [
+          14033,
+          14048,
+          14059,
+          14067,
+          14069
+        ],
+        "6345": [
+          14050,
+          15626
+        ],
+        "6348": [
+          14053,
+          14068,
+          14078,
+          15628
+        ],
+        "7217": [
+          15623
+        ]
+      },
+      "fan_source_face_groups": [
+        {
+          "kind": "fan",
+          "proxy_vertex": 6337,
+          "source_vertex_aliases": [
+            14033,
+            14048,
+            14059,
+            14067,
+            14069
+          ],
+          "proxy_vertices": [
+            6337
+          ],
+          "source_faces": [
+            12169,
+            12180,
+            12182,
+            12183,
+            12189,
+            12190,
+            12195,
+            12196
+          ],
+          "midpoint": [
+            -0.012697205878794193,
+            0.24026502668857574,
+            0.0752105787396431
+          ],
+          "fan_source_face_groups": [
+            [
+              12180,
+              12182,
+              12183,
+              12189,
+              12190,
+              12195,
+              12196
+            ],
+            [
+              12169
+            ]
+          ]
+        },
+        {
+          "kind": "fan",
+          "proxy_vertex": 6345,
+          "source_vertex_aliases": [
+            14050,
+            15626
+          ],
+          "proxy_vertices": [
+            6345
+          ],
+          "source_faces": [
+            12180,
+            12181,
+            12182,
+            12184,
+            12185,
+            13823,
+            13824,
+            13825
+          ],
+          "midpoint": [
+            -0.0146512845531106,
+            0.23049940168857574,
+            0.0693512037396431
+          ],
+          "fan_source_face_groups": [
+            [
+              12180,
+              12181,
+              12182,
+              12184,
+              12185
+            ],
+            [
+              13823,
+              13824,
+              13825
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cluster": "D15",
+      "category": "nonmanifold_or_overlay",
+      "confidence": "high for exact collinear T-junction; anatomical ownership still needs confirmation",
+      "source_face_ids": [
+        12448,
+        12449,
+        14146
+      ],
+      "context_source_face_ids": [
+        12447,
+        12450,
+        12451,
+        14042,
+        14043,
+        14147,
+        14148,
+        14149
+      ],
+      "candidate_decorative_partitions": [],
+      "operation": "Propose splitting the one long boundary edge at the existing collinear vertex on the temporary solver face only. Preserve winding, endpoint positions and parent-source-face provenance. Do not cap the zero-area contour.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "6496": [
+          14335,
+          15978,
+          16102
+        ],
+        "6497": [
+          14336
+        ],
+        "6498": [
+          14337,
+          16101
+        ]
+      },
+      "fan_source_face_groups": [],
+      "closed_contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            6496,
+            6498
+          ],
+          "intermediate_proxy_parameters": {
+            "6497": 0.5
+          },
+          "max_collinear_residual": 0.0,
+          "long_edge_source_faces": [
+            14146
+          ],
+          "exact_collinear": true,
+          "proposed_only": true
+        },
+        "cluster": "D15",
+        "vertices": [
+          6496,
+          6497,
+          6498
+        ],
+        "adjacent_source_faces": [
+          12448,
+          12449,
+          14146
+        ],
+        "loop_vertex_count": 3,
+        "adjacent_normal_max_deviation_deg": 11.776070967783,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": 0.0,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "cluster": "D16",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        13835,
+        13836,
+        13859,
+        13860,
+        13864
+      ],
+      "context_source_face_ids": [
+        3615,
+        3618,
+        3620,
+        11982,
+        13800,
+        13837,
+        13838,
+        13858,
+        13861,
+        13865,
+        13866,
+        13869,
+        13870
+      ],
+      "candidate_decorative_partitions": [
+        17
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "2067": [
+          4050,
+          13780,
+          15587,
+          15646,
+          15681,
+          15684
+        ],
+        "7223": [
+          15645,
+          15651,
+          15685,
+          15690,
+          15693
+        ],
+        "7233": [
+          15686,
+          15694,
+          15700
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D17",
+      "category": "ambiguous_visual_decision",
+      "confidence": "high that automated classification is insufficient",
+      "source_face_ids": [
+        13801,
+        13803,
+        13804,
+        13805,
+        13878,
+        13879,
+        13880,
+        13881,
+        13883,
+        13887,
+        13889,
+        13893,
+        13899,
+        13905,
+        13906
+      ],
+      "context_source_face_ids": [
+        13800,
+        13858,
+        13872,
+        13873,
+        13877,
+        13888,
+        13890,
+        13891,
+        13892,
+        13894,
+        13901,
+        13903,
+        13904,
+        13908,
+        13928,
+        13929,
+        13959
+      ],
+      "candidate_decorative_partitions": [],
+      "operation": "Refuse automatic repair. Artist must identify body skin versus fur sheet from adjacent faces and decide fan ownership; do not cap, delete, move or reconnect by proximity.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "7199": [
+          15588,
+          15683,
+          15707,
+          15711,
+          15718,
+          15720,
+          15740
+        ],
+        "7200": [
+          15590,
+          15594,
+          15722,
+          15755
+        ],
+        "7241": [
+          15716,
+          15735,
+          15742,
+          15789,
+          15792
+        ],
+        "7243": [
+          15719,
+          15747,
+          15752,
+          15754
+        ],
+        "7250": [
+          15730
+        ],
+        "7251": [
+          15731,
+          15750,
+          15757,
+          15761,
+          15829
+        ]
+      },
+      "fan_source_face_groups": [
+        {
+          "kind": "fan",
+          "proxy_vertex": 7200,
+          "source_vertex_aliases": [
+            15590,
+            15594,
+            15722,
+            15755
+          ],
+          "proxy_vertices": [
+            7200
+          ],
+          "source_faces": [
+            13801,
+            13803,
+            13804,
+            13805,
+            13879,
+            13880,
+            13881,
+            13883,
+            13887,
+            13905,
+            13906
+          ],
+          "midpoint": [
+            -0.049812305718660355,
+            0.22464002668857574,
+            0.05958176776766777
+          ],
+          "fan_source_face_groups": [
+            [
+              13801,
+              13803,
+              13804,
+              13805,
+              13879,
+              13880,
+              13881,
+              13883,
+              13887
+            ],
+            [
+              13905,
+              13906
+            ]
+          ]
+        }
+      ],
+      "closed_contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            7199,
+            7250
+          ],
+          "intermediate_proxy_parameters": {
+            "7200": 0.3213668738371754,
+            "7241": 0.6992832926039453,
+            "7243": 0.17229857406149723,
+            "7251": 0.8021022146810293
+          },
+          "max_collinear_residual": 0.013363232323407935,
+          "long_edge_source_faces": [],
+          "exact_collinear": false,
+          "proposed_only": true
+        },
+        "cluster": "D17",
+        "vertices": [
+          7199,
+          7200,
+          7241,
+          7243,
+          7250,
+          7251
+        ],
+        "adjacent_source_faces": [
+          13878,
+          13889,
+          13893,
+          13899,
+          13905,
+          13906
+        ],
+        "loop_vertex_count": 6,
+        "adjacent_normal_max_deviation_deg": 116.12033511693971,
+        "pca_thickness_ratio": 0.06126233763160671,
+        "triangle_cap_area_if_triangular": null,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "cluster": "D18",
+      "category": "nonmanifold_or_overlay",
+      "confidence": "high for exact collinear T-junction; anatomical ownership still needs confirmation",
+      "source_face_ids": [
+        14073,
+        14077,
+        14078
+      ],
+      "context_source_face_ids": [
+        14072,
+        14075,
+        14080,
+        14081,
+        14875,
+        14937,
+        14997,
+        14998
+      ],
+      "candidate_decorative_partitions": [],
+      "operation": "Propose splitting the one long boundary edge at the existing collinear vertex on the temporary solver face only. Preserve winding, endpoint positions and parent-source-face provenance. Do not cap the zero-area contour.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "7322": [
+          16004,
+          17265,
+          17328,
+          17474,
+          17475
+        ],
+        "7323": [
+          16005
+        ],
+        "7325": [
+          16007
+        ]
+      },
+      "fan_source_face_groups": [],
+      "closed_contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            7322,
+            7325
+          ],
+          "intermediate_proxy_parameters": {
+            "7323": 0.25
+          },
+          "max_collinear_residual": 0.0,
+          "long_edge_source_faces": [
+            14078
+          ],
+          "exact_collinear": true,
+          "proposed_only": true
+        },
+        "cluster": "D18",
+        "vertices": [
+          7322,
+          7323,
+          7325
+        ],
+        "adjacent_source_faces": [
+          14073,
+          14077,
+          14078
+        ],
+        "loop_vertex_count": 3,
+        "adjacent_normal_max_deviation_deg": 5.422092592563728,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": 0.0,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "cluster": "D19",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        10887,
+        11802,
+        11804,
+        11805,
+        14530,
+        14539,
+        14552,
+        14553,
+        14554,
+        14557,
+        14558
+      ],
+      "context_source_face_ids": [
+        10885,
+        10886,
+        10888,
+        14529,
+        14538,
+        14555,
+        14556
+      ],
+      "candidate_decorative_partitions": [
+        12
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "5741": [
+          12395,
+          16673,
+          16687,
+          16695
+        ],
+        "5743": [
+          12397,
+          16658,
+          16674,
+          16689,
+          16692,
+          16698
+        ],
+        "6177": [
+          13461,
+          13466,
+          16662,
+          16691,
+          16693,
+          16701,
+          16703
+        ]
+      },
+      "fan_source_face_groups": [
+        {
+          "kind": "fan",
+          "proxy_vertex": 6177,
+          "source_vertex_aliases": [
+            13461,
+            13466,
+            16662,
+            16691,
+            16693,
+            16701,
+            16703
+          ],
+          "proxy_vertices": [
+            6177
+          ],
+          "source_faces": [
+            11802,
+            11804,
+            11805,
+            14530,
+            14553,
+            14554,
+            14557,
+            14558
+          ],
+          "midpoint": [
+            0.2178192287683487,
+            0.31842052936553955,
+            0.09864804148674011
+          ],
+          "fan_source_face_groups": [
+            [
+              11802,
+              11804,
+              11805,
+              14530,
+              14557,
+              14558
+            ],
+            [
+              14553,
+              14554
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "cluster": "D20",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        15384,
+        15385,
+        15386
+      ],
+      "context_source_face_ids": [
+        7779,
+        15210,
+        15211,
+        15263,
+        15264,
+        15382,
+        15383,
+        15387
+      ],
+      "candidate_decorative_partitions": [
+        18
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "4169": [
+          8807,
+          17903,
+          18020,
+          18026,
+          18032,
+          18033
+        ],
+        "7679": [
+          17865,
+          18023,
+          18027,
+          18031
+        ],
+        "7766": [
+          18030
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D21",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        16055,
+        16056,
+        16057,
+        16058,
+        16059,
+        16060,
+        16062,
+        16063,
+        16155,
+        16221,
+        16222,
+        16224,
+        16241,
+        16250,
+        16255,
+        16272,
+        16279,
+        16280,
+        16286,
+        16287,
+        16288,
+        16289,
+        16296,
+        16300,
+        16302,
+        16456,
+        16457
+      ],
+      "context_source_face_ids": [
+        16225,
+        16240,
+        16249,
+        16254
+      ],
+      "candidate_decorative_partitions": [
+        1,
+        3
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "8091": [
+          18852,
+          19134,
+          19144,
+          19145,
+          19155,
+          19156,
+          19455
+        ],
+        "8092": [
+          18853,
+          19037,
+          19041
+        ],
+        "8137": [
+          18964,
+          19158,
+          19161,
+          19179,
+          19185,
+          19457
+        ],
+        "8158": [
+          19036,
+          19069
+        ],
+        "8162": [
+          19042,
+          19084
+        ],
+        "8172": [
+          19070,
+          19091
+        ],
+        "8176": [
+          19085,
+          19092
+        ]
+      },
+      "fan_source_face_groups": [
+        {
+          "kind": "fan",
+          "proxy_vertex": 8091,
+          "source_vertex_aliases": [
+            18852,
+            19134,
+            19144,
+            19145,
+            19155,
+            19156,
+            19455
+          ],
+          "proxy_vertices": [
+            8091
+          ],
+          "source_faces": [
+            16055,
+            16056,
+            16058,
+            16272,
+            16279,
+            16280,
+            16286,
+            16287,
+            16288,
+            16456
+          ],
+          "midpoint": [
+            -0.462005615234375,
+            0.46688851714134216,
+            0.07521062344312668
+          ],
+          "fan_source_face_groups": [
+            [
+              16055,
+              16056,
+              16058,
+              16286,
+              16287,
+              16288
+            ],
+            [
+              16272,
+              16279,
+              16280,
+              16456
+            ]
+          ]
+        },
+        {
+          "kind": "fan",
+          "proxy_vertex": 8092,
+          "source_vertex_aliases": [
+            18853,
+            19037,
+            19041
+          ],
+          "proxy_vertices": [
+            8092
+          ],
+          "source_faces": [
+            16056,
+            16057,
+            16058,
+            16059,
+            16060,
+            16062,
+            16063,
+            16221,
+            16222,
+            16224
+          ],
+          "midpoint": [
+            -0.448333740234375,
+            0.46493539214134216,
+            0.07521062344312668
+          ],
+          "fan_source_face_groups": [
+            [
+              16056,
+              16057,
+              16058,
+              16059,
+              16060,
+              16062,
+              16063
+            ],
+            [
+              16221,
+              16222,
+              16224
+            ]
+          ]
+        },
+        {
+          "kind": "fan",
+          "proxy_vertex": 8137,
+          "source_vertex_aliases": [
+            18964,
+            19158,
+            19161,
+            19179,
+            19185,
+            19457
+          ],
+          "proxy_vertices": [
+            8137
+          ],
+          "source_faces": [
+            16155,
+            16287,
+            16288,
+            16289,
+            16296,
+            16300,
+            16302,
+            16457
+          ],
+          "midpoint": [
+            -0.462005615234375,
+            0.47079476714134216,
+            0.07521062344312668
+          ],
+          "fan_source_face_groups": [
+            [
+              16155,
+              16287,
+              16288,
+              16289
+            ],
+            [
+              16296,
+              16300,
+              16302,
+              16457
+            ]
+          ]
+        }
+      ],
+      "closed_contour_evidence": {
+        "t_junction_evidence": {
+          "endpoint_proxy_ids": [
+            8092,
+            8172
+          ],
+          "intermediate_proxy_parameters": {
+            "8158": 0.4,
+            "8162": 0.2,
+            "8176": 0.8
+          },
+          "max_collinear_residual": 0.002620392161132566,
+          "long_edge_source_faces": [],
+          "exact_collinear": false,
+          "proposed_only": true
+        },
+        "cluster": "D21",
+        "vertices": [
+          8092,
+          8158,
+          8162,
+          8172,
+          8176
+        ],
+        "adjacent_source_faces": [
+          16221,
+          16224,
+          16241,
+          16250,
+          16255
+        ],
+        "loop_vertex_count": 5,
+        "adjacent_normal_max_deviation_deg": 165.68792698155318,
+        "pca_thickness_ratio": 0.0,
+        "triangle_cap_area_if_triangular": null,
+        "proved_anatomical_body_hole": false,
+        "note": "Closed graph does not prove skin/body identity. A cap is not created or automatically endorsed."
+      }
+    },
+    {
+      "cluster": "D22",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        16151,
+        16294,
+        16317,
+        16318,
+        16323,
+        16333
+      ],
+      "context_source_face_ids": [
+        16073,
+        16106,
+        16152,
+        16292,
+        16293,
+        16313,
+        16319,
+        16324,
+        16332,
+        16336
+      ],
+      "candidate_decorative_partitions": [
+        2
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "8101": [
+          18871,
+          18956,
+          18959,
+          19172,
+          19173,
+          19213,
+          19221
+        ],
+        "8114": [
+          18911,
+          18955,
+          19167,
+          19174,
+          19206,
+          19211,
+          19214
+        ],
+        "8210": [
+          19212,
+          19233
+        ],
+        "8214": [
+          19220,
+          19234,
+          19238
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D23",
+      "category": "decorative_thin_fur_candidate",
+      "confidence": "medium: appearance and branching face graph; skin/decoration ownership not proved",
+      "source_face_ids": [
+        7744,
+        7747,
+        7760,
+        7899,
+        7900,
+        7903,
+        7904,
+        7905,
+        7906,
+        7988,
+        7990,
+        7991
+      ],
+      "context_source_face_ids": [
+        7624,
+        7743,
+        7745,
+        7746,
+        7748,
+        7751,
+        7759,
+        7894,
+        7895,
+        7898,
+        7901,
+        7989,
+        7992,
+        7994,
+        7995
+      ],
+      "candidate_decorative_partitions": [
+        8,
+        10
+      ],
+      "operation": "Propose isolating named small face partitions from the body solver only after their body attachment is reviewed. Duplicate solver junction vertices by face fan; retain every original render face. No deletion or filling.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "4085": [
+          8637,
+          8775,
+          8881,
+          8895,
+          8896,
+          8900
+        ],
+        "4138": [
+          8776,
+          8893,
+          8898,
+          8968
+        ],
+        "4141": [
+          8779,
+          8899,
+          8969,
+          8971
+        ],
+        "4152": [
+          8790,
+          8887,
+          8901,
+          8973,
+          8977,
+          8981,
+          8984
+        ]
+      },
+      "fan_source_face_groups": []
+    },
+    {
+      "cluster": "D24",
+      "category": "ambiguous_visual_decision",
+      "confidence": "high that automated classification is insufficient",
+      "source_face_ids": [
+        15534,
+        15677,
+        15689,
+        15708
+      ],
+      "context_source_face_ids": [
+        15499,
+        15533,
+        15535,
+        15653,
+        15654,
+        15662,
+        15664,
+        15666,
+        15678,
+        15687,
+        15688,
+        15707,
+        15709
+      ],
+      "candidate_decorative_partitions": [],
+      "operation": "Refuse automatic repair. Artist must identify body skin versus fur sheet from adjacent faces and decide fan ownership; do not cap, delete, move or reconnect by proximity.",
+      "status": "PROPOSAL_ONLY_NOT_APPLIED",
+      "proved_body_hole": false,
+      "solver_vertex_provenance": {
+        "7827": [
+          18146,
+          18186,
+          18311,
+          18328,
+          18340,
+          18358,
+          18387,
+          18388
+        ],
+        "7853": [
+          18187,
+          18341,
+          18344,
+          18360,
+          18384
+        ]
+      },
+      "fan_source_face_groups": []
+    }
+  ],
+  "body_solver_result": "Not produced. Largest virtual partition retains 55 boundaries and six >2-face edges. Automatic reliable skin/fur segmentation not established.",
+  "mapping_requirements": [
+    "Keep immutable original 19464-source-ID -> 8253-proxy-ID map and source face ordering.",
+    "For a solver split, store proxy ID plus incident source face fan -> solver ID. Coordinate coincidence alone does not distinguish skin, fur or whiskers.",
+    "All original render vertices must receive a reviewed owner: body solver vertex, named body triangle barycentric attachment, or rigid head attachment. Do not discard disconnected decorations.",
+    "True UV seam aliases of the same surface require identical transferred rows; coincident but independent surfaces require face-fan ownership first. Never transfer by unrestricted nearest point across limbs/tail/hip.",
+    "Solver-only subdivisions retain parent source face and barycentric provenance; maintain separate correspondence table, do not rewrite original UV or geometry."
+  ],
+  "whiskers": {
+    "components": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "source_vertices": 63,
+    "source_faces": 96,
+    "operation": "Keep four strips separate; propose rigid 1.0 attachment to the verified Rigify head DEF bone after head frame and neutral pose validation. No weights assigned.",
+    "candidate_head_bone": "DEF-spine.006",
+    "warning": "Attached muzzle branches D10,D21,D22 are additional to these four detached strips; protect all facial geometry."
+  },
+  "forbidden": [
+    "No mesh edits",
+    "No Automatic Weights",
+    "No new rig",
+    "No scene save",
+    "No GLB export",
+    "No paid services",
+    "No animations",
+    "No merge"
+  ]
+}

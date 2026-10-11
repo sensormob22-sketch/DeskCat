@@ -1,0 +1,519 @@
+{
+  "format": "deskcat.local-weight-proposal.v1",
+  "status": "DRAFT_NOT_AUTHORIZED",
+  "baseline_source_sha256": "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6",
+  "baseline_skin_sha256": "e6ea0f3cdbf0230233cddf259d720fac61aab481cb134eb06ac3a6d2108cd51d",
+  "baseline_scene_sha256": "35a93aa6ae3b7127487f6d9840907ae0a6908c23cd72bcb922d1b01719ec4c8e",
+  "baseline_bone_weights_sha256_float32": "d3d6405976c05532c9ab27fa54e7f34a0a1c10cdb15edeccb677893343d68949",
+  "region": "tail_to_pelvis",
+  "human_annotation": "Stage10 review-only C2 proximal surface patch; C1 frozen because all six vertices overlap other region masks.",
+  "changes": [
+    {
+      "source_vertex_ids": [
+        4000
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9794625396292824,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.020537460370717606,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4002
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9581262628560752,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.041873737143924804,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4003
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9385729829008429,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.06142701709915714,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4004
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9444684680154432,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.0555315319845569,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4006
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9121261690242319,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.0878738309757681,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4007
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8705202439814379,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.12947975601856215,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4008
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9182425147706742,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.0817574852293258,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4010
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.9164177880521704,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.0835822119478296,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4141
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8202930416208734,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.17970695837912667,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4142
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8533137366592088,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.14668626334079116,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4143
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8386549293329001,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.16134507066709988,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4144
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8723226001830551,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.12767739981694495,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4145
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8462715768115509,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.15372842318844912,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4146
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8988756921805696,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.10112430781943033,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4147
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8801866535875992,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.11981334641240082,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4149
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.7922164346500475,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.2077835653499524,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4150
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.857701745027053,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.14229825497294707,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4151
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8222397929990001,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.17776020700099993,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4153
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.8522635567041279,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.14773644329587216,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4154
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.798956952096727,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.20104304790327304,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    },
+    {
+      "source_vertex_ids": [
+        4156
+      ],
+      "weights": {
+        "root": 0.0,
+        "thoracic": 0.0,
+        "lumbar": 0.0,
+        "pelvis": 0.7894031770526454,
+        "hip_HL": 0.0,
+        "stifle_HL": 0.0,
+        "hock_HL": 0.0,
+        "hip_HR": 0.0,
+        "stifle_HR": 0.0,
+        "hock_HR": 0.0,
+        "tail_base": 0.21059682294735463,
+        "shoulder_FL": 0.0,
+        "elbow_FL": 0.0,
+        "wrist_FL": 0.0,
+        "shoulder_FR": 0.0,
+        "elbow_FR": 0.0,
+        "wrist_FR": 0.0
+      }
+    }
+  ],
+  "approval_reference": null,
+  "geometry_uv_texture_changes_allowed": false,
+  "limits": "Not applied. Proposed influence diagrams are not deformed output. Requires approval of this exact JSON before any application/export."
+}

@@ -1,0 +1,23 @@
+{
+  "environment": "Linux cloud; Blender 4.3.2 headless; Python 3.12 venv; Panda3D 1.10.15; panda3d-gltf 1.3.0; PySide6 offscreen; llvmpipe",
+  "pytest": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 101,
+    "seconds": 25.0,
+    "exit_code": 0,
+    "new_tests": 5,
+    "stderr_note": "Fontconfig cache warning after passing tests"
+  },
+  "validator": {
+    "errors": 0,
+    "warnings": 1
+  },
+  "actual_panda_morph_poses": 11,
+  "max_runtime_position_error": 0.0,
+  "actual_runtime_crossing_pair_sets_match": true,
+  "windows_ci_run": false,
+  "windows_11_gui_run": false,
+  "deformation_cycles": 1,
+  "paid_operations": 0,
+  "decision": "B / fixed local cage trial rejected, stop"
+}

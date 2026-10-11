@@ -1,0 +1,608 @@
+{
+  "applied": false,
+  "generation_calls": 0,
+  "chain_checks_before": [
+    {
+      "bone": "tail.001",
+      "parent_rig": "spine",
+      "parent_chain_last": "spine.003",
+      "reverse_gap": 0.13462911353738083,
+      "direct_gap": 0.5737813138415865,
+      "pass": false
+    },
+    {
+      "bone": "spine.004",
+      "parent_rig": "spine",
+      "parent_chain_last": "spine.003",
+      "reverse_gap": 0.44283179548673957,
+      "direct_gap": 0.0,
+      "pass": true
+    }
+  ],
+  "chain_checks_proposed": [
+    {
+      "bone": "tail.001",
+      "parent_rig": "spine",
+      "parent_chain_last": "spine.003",
+      "reverse_gap": 0.0,
+      "direct_gap": 0.5737813138415865,
+      "pass": true
+    },
+    {
+      "bone": "spine.004",
+      "parent_rig": "spine",
+      "parent_chain_last": "spine.003",
+      "reverse_gap": 0.5737813138415865,
+      "direct_gap": 0.0,
+      "pass": true
+    }
+  ],
+  "bone_count": 34,
+  "all_bones": {
+    "spine": {
+      "parent": null,
+      "head": [
+        0.1899999976158142,
+        0.0,
+        0.3499999940395355
+      ],
+      "tail": [
+        0.10000000149011612,
+        0.0,
+        0.375
+      ],
+      "use_connect": false,
+      "rigify_type": "spines.basic_spine",
+      "connect_chain": false
+    },
+    "tail.001": {
+      "parent": "spine",
+      "head": [
+        0.3149999976158142,
+        0.0,
+        0.30000001192092896
+      ],
+      "tail": [
+        0.36000001430511475,
+        -0.004000000189989805,
+        0.23499999940395355
+      ],
+      "use_connect": false,
+      "rigify_type": "spines.basic_tail",
+      "connect_chain": true
+    },
+    "tail.002": {
+      "parent": "tail.001",
+      "head": [
+        0.36000001430511475,
+        -0.004000000189989805,
+        0.23499999940395355
+      ],
+      "tail": [
+        0.39500001072883606,
+        -0.012000000104308128,
+        0.15000000596046448
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "tail.003": {
+      "parent": "tail.002",
+      "head": [
+        0.39500001072883606,
+        -0.012000000104308128,
+        0.15000000596046448
+      ],
+      "tail": [
+        0.4399999976158142,
+        -0.02199999988079071,
+        0.08500000089406967
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "tail.004": {
+      "parent": "tail.003",
+      "head": [
+        0.4399999976158142,
+        -0.02199999988079071,
+        0.08500000089406967
+      ],
+      "tail": [
+        0.48500001430511475,
+        -0.029999999329447746,
+        0.07500000298023224
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "spine.001": {
+      "parent": "spine",
+      "head": [
+        0.10000000149011612,
+        0.0,
+        0.375
+      ],
+      "tail": [
+        -0.05000000074505806,
+        0.0,
+        0.38499999046325684
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "spine.002": {
+      "parent": "spine.001",
+      "head": [
+        -0.05000000074505806,
+        0.0,
+        0.38499999046325684
+      ],
+      "tail": [
+        -0.20000000298023224,
+        0.0,
+        0.38499999046325684
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "spine.003": {
+      "parent": "spine.002",
+      "head": [
+        -0.20000000298023224,
+        0.0,
+        0.38499999046325684
+      ],
+      "tail": [
+        -0.25,
+        0.0,
+        0.4000000059604645
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "spine.004": {
+      "parent": "spine.003",
+      "head": [
+        -0.25,
+        0.0,
+        0.4000000059604645
+      ],
+      "tail": [
+        -0.28999999165534973,
+        0.0,
+        0.4350000023841858
+      ],
+      "use_connect": false,
+      "rigify_type": "spines.super_head",
+      "connect_chain": true
+    },
+    "spine.005": {
+      "parent": "spine.004",
+      "head": [
+        -0.28999999165534973,
+        0.0,
+        0.4350000023841858
+      ],
+      "tail": [
+        -0.33000001311302185,
+        0.0,
+        0.4699999988079071
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "spine.006": {
+      "parent": "spine.005",
+      "head": [
+        -0.33000001311302185,
+        0.0,
+        0.4699999988079071
+      ],
+      "tail": [
+        -0.4050000011920929,
+        0.0,
+        0.49000000953674316
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "Breast.C": {
+      "parent": "spine.003",
+      "head": [
+        -0.1636599898338318,
+        0.0,
+        0.30788999795913696
+      ],
+      "tail": [
+        -0.17905999720096588,
+        0.0,
+        0.24403499066829681
+      ],
+      "use_connect": false,
+      "rigify_type": "basic.super_copy",
+      "connect_chain": false
+    },
+    "shoulder.L": {
+      "parent": "spine.003",
+      "head": [
+        -0.1899999976158142,
+        -0.032499998807907104,
+        0.4050000011920929
+      ],
+      "tail": [
+        -0.2199999988079071,
+        -0.06499999761581421,
+        0.36000001430511475
+      ],
+      "use_connect": false,
+      "rigify_type": "basic.super_copy",
+      "connect_chain": false
+    },
+    "upper_arm.L": {
+      "parent": "shoulder.L",
+      "head": [
+        -0.2199999988079071,
+        -0.06499999761581421,
+        0.36000001430511475
+      ],
+      "tail": [
+        -0.23000000417232513,
+        -0.0430000014603138,
+        0.20499999821186066
+      ],
+      "use_connect": false,
+      "rigify_type": "limbs.front_paw",
+      "connect_chain": false
+    },
+    "forearm.L": {
+      "parent": "upper_arm.L",
+      "head": [
+        -0.23000000417232513,
+        -0.0430000014603138,
+        0.20499999821186066
+      ],
+      "tail": [
+        -0.28299999237060547,
+        -0.06599999964237213,
+        0.06199999898672104
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "hand.L": {
+      "parent": "forearm.L",
+      "head": [
+        -0.28299999237060547,
+        -0.06599999964237213,
+        0.06199999898672104
+      ],
+      "tail": [
+        -0.32525634765625,
+        -0.07521063089370728,
+        0.012000000104308128
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "f_toe.L": {
+      "parent": "hand.L",
+      "head": [
+        -0.32525634765625,
+        -0.07521063089370728,
+        0.012000000104308128
+      ],
+      "tail": [
+        -0.3602563440799713,
+        -0.07521063089370728,
+        0.006000000052154064
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "shoulder.R": {
+      "parent": "spine.003",
+      "head": [
+        -0.1899999976158142,
+        0.032499998807907104,
+        0.4050000011920929
+      ],
+      "tail": [
+        -0.20999999344348907,
+        0.06499999761581421,
+        0.36000001430511475
+      ],
+      "use_connect": false,
+      "rigify_type": "basic.super_copy",
+      "connect_chain": false
+    },
+    "upper_arm.R": {
+      "parent": "shoulder.R",
+      "head": [
+        -0.20999999344348907,
+        0.06499999761581421,
+        0.36000001430511475
+      ],
+      "tail": [
+        -0.24899999797344208,
+        0.041999999433755875,
+        0.20499999821186066
+      ],
+      "use_connect": false,
+      "rigify_type": "limbs.front_paw",
+      "connect_chain": false
+    },
+    "forearm.R": {
+      "parent": "upper_arm.R",
+      "head": [
+        -0.24899999797344208,
+        0.041999999433755875,
+        0.20499999821186066
+      ],
+      "tail": [
+        -0.2720000147819519,
+        0.04600000008940697,
+        0.06199999898672104
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "hand.R": {
+      "parent": "forearm.R",
+      "head": [
+        -0.2720000147819519,
+        0.04600000008940697,
+        0.06199999898672104
+      ],
+      "tail": [
+        -0.31353759765625,
+        0.04981226101517677,
+        0.012000084854662418
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "f_toe.R": {
+      "parent": "hand.R",
+      "head": [
+        -0.31353759765625,
+        0.04981226101517677,
+        0.012000084854662418
+      ],
+      "tail": [
+        -0.3485375940799713,
+        0.04981226101517677,
+        0.006000084336847067
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "belly.C": {
+      "parent": "spine.002",
+      "head": [
+        -0.011339999735355377,
+        0.0,
+        0.3017849922180176
+      ],
+      "tail": [
+        -0.011339999735355377,
+        0.0,
+        0.22819499671459198
+      ],
+      "use_connect": false,
+      "rigify_type": "basic.super_copy",
+      "connect_chain": false
+    },
+    "pelvis.L": {
+      "parent": "spine",
+      "head": [
+        0.1899999976158142,
+        0.0,
+        0.3499999940395355
+      ],
+      "tail": [
+        0.23000000417232513,
+        -0.08299999684095383,
+        0.3199999928474426
+      ],
+      "use_connect": false,
+      "rigify_type": "basic.super_copy",
+      "connect_chain": false
+    },
+    "thigh.L": {
+      "parent": "pelvis.L",
+      "head": [
+        0.23000000417232513,
+        -0.08299999684095383,
+        0.3199999928474426
+      ],
+      "tail": [
+        0.1599999964237213,
+        -0.10999999940395355,
+        0.20499999821186066
+      ],
+      "use_connect": false,
+      "rigify_type": "limbs.rear_paw",
+      "connect_chain": false
+    },
+    "shin.L": {
+      "parent": "thigh.L",
+      "head": [
+        0.1599999964237213,
+        -0.10999999940395355,
+        0.20499999821186066
+      ],
+      "tail": [
+        0.2160000056028366,
+        -0.08799999952316284,
+        0.07999999821186066
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "foot.L": {
+      "parent": "shin.L",
+      "head": [
+        0.2160000056028366,
+        -0.08799999952316284,
+        0.07999999821186066
+      ],
+      "tail": [
+        0.1767883598804474,
+        -0.0996246263384819,
+        0.012000380083918571
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "r_toe.L": {
+      "parent": "foot.L",
+      "head": [
+        0.1767883598804474,
+        -0.0996246263384819,
+        0.012000380083918571
+      ],
+      "tail": [
+        0.14178836345672607,
+        -0.0996246263384819,
+        0.006000380031764507
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "pelvis.R": {
+      "parent": "spine",
+      "head": [
+        0.1899999976158142,
+        0.0,
+        0.3499999940395355
+      ],
+      "tail": [
+        0.20999999344348907,
+        0.08500000089406967,
+        0.3199999928474426
+      ],
+      "use_connect": false,
+      "rigify_type": "basic.super_copy",
+      "connect_chain": false
+    },
+    "thigh.R": {
+      "parent": "pelvis.R",
+      "head": [
+        0.20999999344348907,
+        0.08500000089406967,
+        0.3199999928474426
+      ],
+      "tail": [
+        0.0949999988079071,
+        0.10999999940395355,
+        0.20000000298023224
+      ],
+      "use_connect": false,
+      "rigify_type": "limbs.rear_paw",
+      "connect_chain": false
+    },
+    "shin.R": {
+      "parent": "thigh.R",
+      "head": [
+        0.0949999988079071,
+        0.10999999940395355,
+        0.20000000298023224
+      ],
+      "tail": [
+        0.14800000190734863,
+        0.08900000154972076,
+        0.07999999821186066
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "foot.R": {
+      "parent": "shin.R",
+      "head": [
+        0.14800000190734863,
+        0.08900000154972076,
+        0.07999999821186066
+      ],
+      "tail": [
+        0.10842132568359375,
+        0.1025543212890625,
+        0.012000189162790775
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "r_toe.R": {
+      "parent": "foot.R",
+      "head": [
+        0.10842132568359375,
+        0.1025543212890625,
+        0.012000189162790775
+      ],
+      "tail": [
+        0.07342132925987244,
+        0.1025543212890625,
+        0.006000188644975424
+      ],
+      "use_connect": true,
+      "rigify_type": "",
+      "connect_chain": false
+    },
+    "pelvis.C": {
+      "parent": "spine",
+      "head": [
+        0.20985999703407288,
+        0.0,
+        0.4124999940395355
+      ],
+      "tail": [
+        0.1881599873304367,
+        0.0,
+        0.2849549949169159
+      ],
+      "use_connect": false,
+      "rigify_type": "basic.super_copy",
+      "connect_chain": false
+    }
+  },
+  "baseline_structural_errors": [],
+  "proposal_structural_errors": [],
+  "proposal": {
+    "bone": "spine",
+    "field": "head",
+    "before": [
+      0.1899999976158142,
+      0.0,
+      0.3499999940395355
+    ],
+    "after": [
+      0.3149999976158142,
+      0.0,
+      0.30000001192092896
+    ],
+    "coordinate_system": "Blender Z-up",
+    "tail_head_preserved": true,
+    "reverse_connection_gap_before": 0.13462911353738083,
+    "reverse_connection_gap_after": 0.0
+  },
+  "limitations": "Structural endpoint/acyclicity check only. Moving pelvis/spine root needs anatomical review. All Rigify component configuration and generation remain untested. No scene saved or changed."
+}

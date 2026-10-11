@@ -1,0 +1,13 @@
+{
+  "environment": "Linux Python 3.12 / PySide6 / Panda3D; Blender 4.3.2 headless",
+  "command": "QT_QPA_PLATFORM=offscreen .venv/bin/python -m pytest -q",
+  "result": "134 passed in 26.92s",
+  "Windows_tested": false,
+  "source_and_result_sha256": {
+    "assets/3d/retopo/deskcat_calico_retopo_16460.glb": "834cf794f24fff93e549ab80dbd21218565862ed9209852e3d2a72869c4b303b",
+    "assets/rigging/deskcat_retopo_exact_weld_proxy_01.blend": "844c4316dd841d4f943f80da7810d32abde64290c5f29b84e7ce4bfb3242667a",
+    "assets/3d/retopo/deskcat_belly_profile_fix_01.glb": "90403331a772d54b7ed25f9bb6852985a0f2e81daad174a53c074fbae1d806c4",
+    "assets/rigging/deskcat_belly_profile_fix_01.blend": "d5cbc1a5786fca76bcd0bd024c1a9c3738cd76f6dd7d7ad936563537c961b511"
+  },
+  "visual_review_scope": "Cycles profile, two sides and oblique; Panda underside and opposite oblique. No deformation/animation tests."
+}

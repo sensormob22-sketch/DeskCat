@@ -10,16 +10,39 @@ from .window import CatWindow
 class ThreeDWindow(CatWindow):
     """Keep stage-1 interactions, replace only the drawing with live 3D."""
     def __init__(self, scale=1.0, model=DEFAULT_MODEL, model_scale=1.0, offset=(0.0, 0.0), clip_map=None, diagnostics=None,
-                 playback_speed=1.0, forward_heading=0.0):
+                 playback_speed=1.0, forward_heading=0.0, walk_speed=0.0):
         super().__init__(scale)
         self.setWindowTitle('DeskCat live 3D prototype')
+        self.wrap_at_edges = True
         self.renderer = None
+        # Wheel zoom must expand the transparent Qt surface, not only the 3D
+        # mesh inside a permanently fixed 240x220 viewport.
+        self._zoom_reference_size = (self.width(), self.height())
+        self._zoom_reference_model_scale = model_scale
+        # A fixed large GPU render is created ONCE; zoom changes the actual
+        # animated model scale. Qt receives a native-resolution image crop,
+        # never a stretched low-resolution bitmap.
+        self._render_dpr = self.devicePixelRatioF()
+        screen = self.screen() or QApplication.primaryScreen()
+        usable = screen.availableGeometry()
+        base_width, base_height = self._zoom_reference_size
+        max_ratio = min(3.0 / model_scale, (.88 * usable.width()) / base_width,
+                        (.82 * usable.height()) / base_height)
+        self._render_size = (
+            min(4096, round(base_width * max_ratio * self._render_dpr) + 16),
+            min(4096, round(base_height * max_ratio * self._render_dpr) + 16),
+        )
+        self.walk_speed_override = walk_speed
+        self.walk_speed_px = walk_speed or 28.0
         self.diagnostics = diagnostics
         self.show_diagnostic_overlay = bool(diagnostics)
         self.render_error = None
         self.frame_interval_ms = 0.0
         try:
-            self.renderer = PandaRenderer(model, clip_map=clip_map)
+            self.renderer = PandaRenderer(model, width=self._render_size[0],
+                                          height=self._render_size[1], clip_map=clip_map)
+            self.renderer.viewport_height_scale = (
+                self._render_size[1] / (self._zoom_reference_size[1] * self._render_dpr))
             self.renderer.model_scale = model_scale
             self.renderer.offset = offset
             self.renderer.clock.speed = playback_speed
@@ -40,14 +63,26 @@ class ThreeDWindow(CatWindow):
         return abs(delta) < 5
 
     def render_frame(self, dt):
-        dpr = self.devicePixelRatioF()
         self.renderer.direction = self._direction
-        image = self.renderer.frame(dt, self.machine.weights,
-                                    round(self.width()*dpr), round(self.height()*dpr))
+        full = self.renderer.frame(dt, self.machine.weights, *self._render_size)
+        dpr = self._render_dpr
+        width = round(self.width() * dpr)
+        height = round(self.height() * dpr)
+        if width > full.width() or height > full.height():
+            raise RuntimeError('Viewport exceeds permanent render budget')
+        x = (full.width() - width) // 2
+        y = (full.height() - height) // 2
+        image = full.copy(x, y, width, height)
         image.setDevicePixelRatio(dpr)
         return image
 
     def tick(self):
+        # Model's toe/stance contract takes precedence unless an explicit speed
+        # override was requested. Recompute after zoom and playback speed edits.
+        if self.renderer is not None and self.walk_speed_override == 0:
+            matched = self.renderer.matched_walk_speed(self._zoom_reference_size[1])
+            if matched is not None:
+                self.walk_speed_px = matched
         previous = self._last
         super().tick()
         self.frame_interval_ms = (self._last - previous)*1000
@@ -66,6 +101,8 @@ class ThreeDWindow(CatWindow):
 
     def paintEvent(self, event):
         p = QPainter(self)
+        # Image width/height match the current widget in physical pixels.
+        # Qt paints the real model pixels 1:1 (no enlargement blur).
         p.drawImage(0, 0, self._image)
         if self.diagnostics and self.show_diagnostic_overlay:
             p.setPen(QPen(QColor('#ff00ff'), 1))
@@ -109,9 +146,54 @@ class ThreeDWindow(CatWindow):
             self.diagnostics.write('mouse_release', state=self.machine.state.value,
                                    position=[self.x(), self.y()])
 
+    def zoom_to(self, target_scale):
+        """Enlarge the 3D mesh and window without reallocating GPU textures.
+
+        Panda renders once into a fixed large framebuffer, then Qt shows a
+        native-resolution crop. Fur remains crisp when zoomed.
+        """
+        if self.renderer is None:
+            return
+        base_width, base_height = self._zoom_reference_size
+        base_scale = self._zoom_reference_model_scale
+        screen = self.screen() or QApplication.primaryScreen()
+        available = screen.availableGeometry()
+        # Leave usable desktop space around the overlay. On smaller displays
+        # limit actual cat scale rather than crop a larger animal.
+        max_width = max(1, min(int(available.width() * .88),
+                               int((self._render_size[0] - 16) / self._render_dpr)))
+        max_height = max(1, min(int(available.height() * .82),
+                                int((self._render_size[1] - 16) / self._render_dpr)))
+        maximum = min(3.0, base_scale * max_width / base_width,
+                      base_scale * max_height / base_height)
+        minimum = min(.25, maximum)
+        scale = max(minimum, min(float(target_scale), maximum))
+        ratio = scale / base_scale
+        width = max(1, min(max_width, round(base_width * ratio)))
+        height = max(1, min(max_height, round(base_height * ratio)))
+
+        # Hold the original bottom/centre anchor in desktop coordinates, so
+        # zooming does not teleport the paws to a different floor or monitor.
+        center_x = self.x() + self.width() / 2.0
+        bottom_y = self.y() + self.height()
+        self.renderer.model_scale = scale
+        # Constant orthographic pixel density; only model size and vertical
+        # camera tracking change. No texture or framebuffer reallocation.
+        self.renderer.camera_height_scale = ratio
+        self.setFixedSize(width, height)
+        x = round(center_x - width / 2.0)
+        y = round(bottom_y - height)
+        x = max(available.left(), min(x, available.left() + available.width() - width))
+        y = max(available.top(), min(y, available.top() + available.height() - height))
+        self.move(x, y)
+        self._x = float(self.x())
+        # Paint the new native-resolution crop on the next timer tick.
+        self.update()
+
     def wheelEvent(self, event):
-        self.renderer.model_scale = max(.25, min(3, self.renderer.model_scale *
-                                                 1.1 ** (event.angleDelta().y()/120)))
+        delta = event.angleDelta().y()
+        if delta:
+            self.zoom_to(self.renderer.model_scale * 1.1 ** (delta / 120))
         event.accept()
 
     def keyPressEvent(self, event):
@@ -120,13 +202,23 @@ class ThreeDWindow(CatWindow):
                   Qt.Key.Key_Up: (0,.1), Qt.Key.Key_Down: (0,-.1)}
         if self.diagnostics:
             self.diagnostics.write('key', key=event.key())
-        if event.key() == Qt.Key.Key_F7 and self.diagnostics:
+        if event.key() == Qt.Key.Key_W:
+            self.machine.transition(State.IDLE if self.machine.state == State.WALK else State.WALK)
+        elif event.key() == Qt.Key.Key_F7 and self.diagnostics:
             self.show_diagnostic_overlay = not self.show_diagnostic_overlay
         elif event.key() == Qt.Key.Key_F8 and self.diagnostics:
             try:
                 self.diagnostics.capture(self)
             except OSError as exc:
                 self.diagnostics.write('capture_error', message=str(exc))
+        elif event.key() in (Qt.Key.Key_Plus, Qt.Key.Key_Equal):
+            self.renderer.brightness = min(1.4, round(self.renderer.brightness + .05, 2))
+            self.renderer.actor.setColorScale(self.renderer.brightness, self.renderer.brightness,
+                                              self.renderer.brightness, 1)
+        elif event.key() == Qt.Key.Key_Minus:
+            self.renderer.brightness = max(.8, round(self.renderer.brightness - .05, 2))
+            self.renderer.actor.setColorScale(self.renderer.brightness, self.renderer.brightness,
+                                              self.renderer.brightness, 1)
         elif event.key() == Qt.Key.Key_Space:
             self.renderer.clock.paused = not self.renderer.clock.paused
         elif event.key() in shifts:
@@ -134,7 +226,7 @@ class ThreeDWindow(CatWindow):
             self.renderer.offset = (x+dx,z+dz)
         elif event.key() == Qt.Key.Key_R:
             self.renderer.offset = (0,0)
-            self.renderer.model_scale = 1.0
+            self.zoom_to(self._zoom_reference_model_scale)
         else:
             super().keyPressEvent(event)
 

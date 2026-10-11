@@ -1,0 +1,13 @@
+{
+  "reloaded_scene_sha256": "844c4316dd841d4f943f80da7810d32abde64290c5f29b84e7ce4bfb3242667a",
+  "proxy_vertices": 8253,
+  "source_vertices": 19464,
+  "face_count": 16460,
+  "position_reconstruction_max_error": 0.0,
+  "proxy_source_loop_uv_error": 0.0,
+  "existing_deform_bones": 46,
+  "proxy_has_weights": false,
+  "proxy_has_armature_modifier": false,
+  "render_weights_remain_empty": true,
+  "generated_or_bound": false
+}

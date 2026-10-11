@@ -1,0 +1,54 @@
+{
+  "source": "assets/3d/tripo/deskcat_calico_h25_v1_rigprep.glb",
+  "sha256": "cab5d4a2205c644bdbb24a340777cf172e80969515290ae441bb78a29ce4df2c",
+  "bytes": 11107672,
+  "coordinate_system": "glTF Y-up (scene-space)",
+  "scene_primitives": 1,
+  "vertices_with_instances": 58450,
+  "triangles": 100791,
+  "degenerate_triangles_exact": 0,
+  "degenerate_triangle_examples": [],
+  "skins": 0,
+  "animations": 0,
+  "materials": 1,
+  "normal_mapped_primitives_without_tangents": 1,
+  "bounding_box": {
+    "min": [
+      -0.500092,
+      0.0,
+      -0.159973
+    ],
+    "max": [
+      0.500092,
+      0.62619,
+      0.159973
+    ]
+  },
+  "ground_candidate_y": 0.015655,
+  "ground_quadrants": {
+    "X- Z-": {
+      "points_below_lower_2_5pct": 340,
+      "min_y": 0.001007
+    },
+    "X- Z+": {
+      "points_below_lower_2_5pct": 337,
+      "min_y": 0.000122
+    },
+    "X+ Z-": {
+      "points_below_lower_2_5pct": 415,
+      "min_y": 0.000641
+    },
+    "X+ Z+": {
+      "points_below_lower_2_5pct": 392,
+      "min_y": 0.0
+    }
+  },
+  "decision": "MANUAL_REVIEW_REQUIRED",
+  "notes": [
+    "LOWER 2.5% vertex counts are only rough contact candidates, not identified paws.",
+    "Coordinate sectors X±/Z± do not establish anatomical front/back or left/right.",
+    "This tool cannot establish joint placement, manifold topology, weight painting, or animation quality.",
+    "No skeleton: rigging must be planned and validated separately.",
+    "Normal-mapped primitives without TANGENT: shader tangent-space appearance may differ."
+  ]
+}

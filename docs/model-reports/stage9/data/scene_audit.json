@@ -1,0 +1,93 @@
+{
+  "blender": "4.3.2",
+  "scene": "assets/rigging/deskcat_v6_weight_handoff.blend",
+  "scene_sha256": "35a93aa6ae3b7127487f6d9840907ae0a6908c23cd72bcb922d1b01719ec4c8e",
+  "source_sha256": "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6",
+  "protected_glb_hashes": {
+    "deskcat_calico_h25_v1.glb": "ff2a9e1d7280e4784913413fb45b10a2bdeadc125c80791a50f918a3ae646150",
+    "deskcat_calico_h25_v1_localprep.glb": "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6",
+    "deskcat_calico_h25_v1_rigprep.glb": "cab5d4a2205c644bdbb24a340777cf172e80969515290ae441bb78a29ce4df2c",
+    "deskcat_calico_h25_v1_skinprobe_v5.glb": "24569064ddab8c80b32e1a51a4bd1f68dba95031347d5fa7e296d6b33d5ebb90",
+    "deskcat_calico_h25_v1_skinprobe_v6.glb": "e6ea0f3cdbf0230233cddf259d720fac61aab481cb134eb06ac3a6d2108cd51d"
+  },
+  "vertices": 58450,
+  "faces": 100790,
+  "deforming_bones": [
+    "root",
+    "thoracic",
+    "lumbar",
+    "pelvis",
+    "hip_HL",
+    "stifle_HL",
+    "hock_HL",
+    "hip_HR",
+    "stifle_HR",
+    "hock_HR",
+    "tail_base",
+    "shoulder_FL",
+    "elbow_FL",
+    "wrist_FL",
+    "shoulder_FR",
+    "elbow_FR",
+    "wrist_FR"
+  ],
+  "weights_max_difference_from_v6_computed": 2.98006717081023e-08,
+  "weights_float32_sha256": "d3d6405976c05532c9ab27fa54e7f34a0a1c10cdb15edeccb677893343d68949",
+  "changed_geometry_vertices": 0,
+  "packed_images": [
+    {
+      "name": "deskcat_calico_h25_v1_basecolor.jpg",
+      "sha256": "4c6618eaea5f8e3816a9a7c19f83021f3eba8111dfc543633344da249364a949",
+      "bytes": 2749281
+    },
+    {
+      "name": "deskcat_calico_h25_v1_basecolor.jpg.001",
+      "sha256": "4c6618eaea5f8e3816a9a7c19f83021f3eba8111dfc543633344da249364a949",
+      "bytes": 2749281
+    },
+    {
+      "name": "deskcat_calico_h25_v1_normal.png",
+      "sha256": "7ad6a39000f15d63f99e03f57d757789b136ce1885a231431e905564cf12b7ff",
+      "bytes": 2438616
+    },
+    {
+      "name": "deskcat_calico_h25_v1_normal.png.001",
+      "sha256": "7ad6a39000f15d63f99e03f57d757789b136ce1885a231431e905564cf12b7ff",
+      "bytes": 2438616
+    },
+    {
+      "name": "deskcat_calico_h25_v1_rm.jpg",
+      "sha256": "e0bb6f6597b47a0934c854c3a0c0ec292db2d26460a91d914b9e639c3263753f",
+      "bytes": 1628170
+    },
+    {
+      "name": "deskcat_calico_h25_v1_rm.jpg.001",
+      "sha256": "e0bb6f6597b47a0934c854c3a0c0ec292db2d26460a91d914b9e639c3263753f",
+      "bytes": 1628170
+    }
+  ],
+  "v6_glb_weight_difference": {
+    "maximum_component_difference": 0.00017911195755004883,
+    "source_vertices_differing_above_1e7": 7530,
+    "positive_influences_dropped_in_export": 12343,
+    "basis": "Scene restores original pre-export Blender v6 weights; GLB exporter drops small influences and renormalizes. No weights adjusted to hide this difference."
+  },
+  "input_scene_sha256": "b9bde5b2d21b6473485c55d00578968d73dedaf2aa897e759fc9a4c1a63bdd7f",
+  "new_animation_actions": 0,
+  "new_skinprobe_exported": false,
+  "distinct_diagnostic_poses": 33,
+  "limits": "UV and bone-weight persistence must also be checked after reopening the delivered file. Protection is selection/locks plus audit, not an unbreakable Blender permission system.",
+  "foot_submasks": {
+    "wrist_to_sole": {
+      "FL": 175,
+      "FR": 242
+    },
+    "hock_to_sole": {
+      "HL": 254,
+      "HR": 256
+    }
+  },
+  "finalization": "Four foot graph-distance review submasks added. Actual v6 deforming groups unchanged.",
+  "axis_guide_head_error_max": 0.0,
+  "guide_method": "Copy world transforms from actual pose bone, avoiding bone-parent tail offsets. Annotations only; no deforming bone or weight changes."
+}

@@ -1,0 +1,28 @@
+{
+  "source": "assets/3d/tripo/deskcat_calico_h25_v1_rigprep.glb",
+  "source_sha256": "cab5d4a2205c644bdbb24a340777cf172e80969515290ae441bb78a29ce4df2c",
+  "output": "assets/3d/tripo/deskcat_calico_h25_v1_localprep.glb",
+  "candidate_sha256": "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6",
+  "changed_source_vertex_ids": [
+    5276
+  ],
+  "anchor_source_vertex_id": 5278,
+  "position_before": [
+    0.269500732421875,
+    0.20059968531131744,
+    -0.012358696199953556
+  ],
+  "position_after": [
+    0.269500732421875,
+    0.20059968531131744,
+    -0.012359649874269962
+  ],
+  "maximum_displacement": 9.5367431640625e-07,
+  "removed_source_triangle_ids": [
+    9652
+  ],
+  "retained_incident_normal_angle_max_degrees": 0.9072334140439119,
+  "boundary_edges_before": 3,
+  "boundary_edges_after": 0,
+  "scope": "microscopic local boundary cleanup only; no anatomical repositioning or rig-ready claim"
+}

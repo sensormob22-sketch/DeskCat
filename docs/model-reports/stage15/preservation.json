@@ -1,0 +1,8 @@
+{
+  "all_stage13_frozen_files_unchanged": true,
+  "files_checked": 594,
+  "source_scene_sha256": "844c4316dd841d4f943f80da7810d32abde64290c5f29b84e7ce4bfb3242667a",
+  "source_glb_sha256": "834cf794f24fff93e549ab80dbd21218565862ed9209852e3d2a72869c4b303b",
+  "video_sha256": "bbe51330931e2ddb39197a40fb44430d0a188035017ffbc29a3b3caaf7c349ea",
+  "scope": "Existing source models/scenes/reports byte hashes; new trial exists in JSON/images only, no blend/glb saved"
+}

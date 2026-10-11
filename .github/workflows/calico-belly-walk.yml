@@ -1,0 +1,71 @@
+name: Stage 18 Curved Belly Rig Walk (experimental)
+on:
+  push:
+    branches: [feature/tripo-cat]
+    paths:
+      - 'tools/build_stage18_rigged_belly.py'
+      - 'tools/build_calico_walk_trial.py'
+      - 'tools/check_calico_walk_trial.py'
+      - '.github/workflows/calico-belly-walk.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-belly-gait:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    env:
+      QT_QPA_PLATFORM: offscreen
+      DESKCAT_PANDA_DISPLAY: p3headlessgl
+      MESA_SHADER_CACHE_DIR: /tmp/deskcat-mesa
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Headless GL dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libegl1 libgl1 libopengl0 libgles2 libxrender1 libxext6
+      - name: Python 3D runtime
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev,three-d]"
+          python -m pip install numpy pillow
+      - name: Verify all four toe contact paths and independent swing phases
+        run: python -m pytest -q tests/test_gait_contact.py
+      - name: Build skinned Stage 17 mesh without modifying static source
+        run: |
+          python tools/build_stage18_rigged_belly.py \
+            --output artifacts/rig_rescue/deskcat_belly_skinned_trial.glb \
+            --report artifacts/rig_rescue/stage18_build.json
+      - name: Check real Panda3D idle and walk render
+        run: |
+          python tools/check_calico_walk_trial.py \
+            --model artifacts/rig_rescue/deskcat_belly_skinned_trial.glb \
+            --out artifacts/rig_rescue/stage18_preview
+      - name: Khronos Validator
+        run: |
+          npm install --no-audit --no-fund --prefix /tmp/deskcat-validator gltf-validator@2.0.0-dev.3.10
+          node - <<'NODE'
+          const fs = require('fs');
+          const v = require('/tmp/deskcat-validator/node_modules/gltf-validator');
+          const file='artifacts/rig_rescue/deskcat_belly_skinned_trial.glb';
+          v.validateBytes(new Uint8Array(fs.readFileSync(file)),{uri:file}).then(result=>{
+            fs.writeFileSync('artifacts/rig_rescue/stage18_validator.json',JSON.stringify(result,null,2));
+            console.log('Validator errors:',result.issues.numErrors,'warnings:',result.issues.numWarnings);
+            if(result.issues.numErrors)process.exitCode=1;
+          }).catch(e=>{console.error(e);process.exitCode=1});
+          NODE
+      - name: Confirm scientific limitations
+        if: always()
+        run: |
+          echo 'EXPERIMENTAL: successful import and moving frames do not establish anatomy or collision-free belly.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Accept only after multi-angle deformation video, joint and paw-ground checks, and preserving Stage 17 continuous coat.' >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage18-rigged-curved-belly-candidate
+          path: artifacts/rig_rescue
+          retention-days: 14
+          if-no-files-found: warn
