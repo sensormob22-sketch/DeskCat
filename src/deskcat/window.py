@@ -41,7 +41,7 @@ class CatWindow(QWidget):
         self._phase += dt
         if self.machine.state == State.WALK and self.can_move():
             area = self.screen().availableGeometry()
-            self._x += self._direction * 75 * dt
+            self._x += self._direction * getattr(self, 'walk_speed_px', 75) * dt
             left, right = area.left(), area.right() + 1 - self.width()
             if self._x < left or self._x > right:
                 self._direction *= -1
