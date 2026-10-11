@@ -13,6 +13,7 @@ def main(argv=None):
     parser.add_argument("--scale", type=float, default=1.0)
     parser.add_argument("--smoke-test", action="store_true",
                         help="show window, run event loop, report and exit after 250 ms")
+    parser.add_argument("--smoke-frame", type=Path, help="save a diagnostic RGBA frame during --smoke-test")
     parser.add_argument('--renderer', choices=('qt', 'panda'), default='qt')
     parser.add_argument('--start-walking', action='store_true', help='start the animated cat walking immediately')
     parser.add_argument('--walk-speed', type=float, default=28.0, help='desktop walking speed in logical pixels per second')
@@ -44,6 +45,8 @@ def main(argv=None):
         parser.error('--playback-speed must be finite and nonnegative')
     if not all(math.isfinite(v) for v in (args.model_x, args.model_z, args.forward_heading)):
         parser.error('Model position and heading must be finite')
+    if args.smoke_frame and (not args.smoke_test or args.renderer != 'panda'):
+        parser.error('--smoke-frame requires --smoke-test --renderer panda')
     if args.diagnostics and (args.renderer != 'panda' or args.benchmark is not None):
         parser.error('--diagnostics requires --renderer panda and no --benchmark')
     diagnostics = None
@@ -107,6 +110,10 @@ def main(argv=None):
                               opaque_pixels=sum(a > 12 for a in window._image.constBits().tobytes()[3::4]),
                               clip_map={s.value:c for s,c in window.renderer.clip_map.items()},
                               missing_states=window.renderer.missing_states)
+            if args.smoke_frame:
+                args.smoke_frame.parent.mkdir(parents=True, exist_ok=True)
+                if not window._image.save(str(args.smoke_frame)):
+                    raise OSError('Failed to save smoke frame')
             print(json.dumps(report))
             if args.renderer == 'panda' and report.get('opaque_pixels', 0) < 200:
                 window.render_error = 'GLB animation loaded, but RGBA renderer drew no visible cat; check PBR/alpha'
