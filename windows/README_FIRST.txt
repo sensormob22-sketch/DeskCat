@@ -1,0 +1,32 @@
+DeskCat - walking calico cat for Windows 11 (experimental)
+====================================================================
+
+FIRST START (Windows 11, Python 3.11)
+1. Extract ALL files from this ZIP into a normal folder, e.g. Desktop\DeskCat.
+2. Double-click Start_DeskCat.cmd.
+3. The first launch creates a local .venv and installs PySide6 and Panda3D from
+   PyPI. Internet connection is required once. No Blender, Tripo, or Ollama needed.
+4. A transparent frameless cat appears and starts walking from right to left.
+
+CONTROLS
+Right-click the cat: switch between walk / idle, or Exit.
+W: switch walk / idle (after focusing the cat window).
+Left mouse button + drag: move the window. Wheel: resize the model.
+Space: pause; Esc: close.
+
+TROUBLESHOOTING
+- If Windows warns about an unrecognised .cmd, inspect the readable batch
+  file before running. This is SOURCE distribution, not a signed executable.
+- Requires working OpenGL and Windows display driver. Rendering may be slow
+  on integrated GPUs; try smaller --scale in Start_DeskCat.cmd.
+- If the cat faces backwards, edit --forward-heading 180 in Start_DeskCat.cmd.
+- Right-click control is only available when you click an opaque part of the cat.
+- If it does not launch, do not close the command window. Copy its final error
+  message into your ChatGPT conversation.
+
+STATUS
+Real skinned 3D glTF with idle/walk; the four-beat gait is a test candidate.
+Windows 11 transparent DWM presentation has NOT been tested on a physical
+user desktop. Some contact/sliding and skin deformations still need polish.
+No startup registration, no ads, no paid subscriptions, no external model calls.
+Source: https://github.com/sensormob22-sketch/DeskCat (PR #2)
