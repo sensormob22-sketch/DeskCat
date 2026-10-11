@@ -96,13 +96,24 @@ def animate(doc,buf):
   j=len(anim["samplers"]);anim["samplers"].append({"input":t,"output":idx,"interpolation":"LINEAR"})
   anim["channels"].append({"sampler":j,"target":{"node":INDEX[bone],"path":path}})
  def rot(a):return [0,0,math.sin(float(a)/2),math.cos(float(a)/2)]
- for side,sidephase in (("L",0),("R",math.pi)):
-  for prefix,offset in (("front",0),("hind",math.pi)):
-   phase=time*(2*math.pi/1.6)+sidephase+offset;lift=np.maximum(0,np.sin(phase))
-   for i,a in enumerate((.23*np.sin(phase),-.15*lift,.12*lift-.06*np.sin(phase),-.08*lift)):
+ # Walking, rather than diagonally synchronous trotting: successive foot lifts
+ # are distributed over four quarter-cycle beats.  No claim of analytical IK.
+ # Swing is deliberately small; contact/foot sliding must be reviewed on Windows.
+ offsets={("hind","L"):0,("front","L"):math.pi/2,
+          ("hind","R"):math.pi,("front","R"):3*math.pi/2}
+ for (prefix,side),offset in offsets.items():
+   phase=time*(2*math.pi/1.6)+offset
+   lift=np.maximum(0,np.sin(phase))
+   swing=.16*np.sin(phase)
+   if prefix=="front":
+    angles=(swing,-.19*lift,.12*lift-.035*np.sin(phase),-.075*lift)
+   else:
+    # The feline stifle/hock chain has a different bend from the forearm.
+    angles=(swing,.16*lift,-.14*lift+.025*np.sin(phase),.055*lift)
+   for i,a in enumerate(angles):
     channel(f"{prefix}_{side}_{i}","rotation",[rot(v) for v in a])
  pos=PIVOTS[INDEX["pelvis"]]
- channel("pelvis","translation",np.column_stack([np.full(len(time),pos[0]),pos[1]+.007*(1-np.cos(4*math.pi*time/1.6)),np.full(len(time),pos[2])]))
+ channel("pelvis","translation",np.column_stack([np.full(len(time),pos[0]),pos[1]+.004*(1-np.cos(4*math.pi*time/1.6)),np.full(len(time),pos[2])]))
  channel("tail_base","rotation",[rot(.06*math.sin(2*math.pi*float(t)/1.6)) for t in time])
  idle={"name":"idle","samplers":[],"channels":[]}
  idle_rot=np.array([[0,0,math.sin(.015*math.sin(2*math.pi*float(x)/1.6)),math.cos(.015*math.sin(2*math.pi*float(x)/1.6))] for x in time],dtype=np.float32)
