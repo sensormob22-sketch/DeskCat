@@ -81,13 +81,13 @@ def build():
                       'download':f'https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/{REF}/{name}'})
     (OUT / 'source_links.json').write_text(json.dumps(links,indent=2)+'\n')
     with (OUT / 'face_decisions.csv').open('w',newline='') as stream:
-        w=csv.writer(stream)
+        w=csv.writer(stream,lineterminator="\n")
         w.writerow(['cluster','source_face_id','decision','reason','reviewer','scope'])
         for c in selected:
             for fi in c['source_face_ids']:
                 w.writerow([c['id'],fi,'','','',c['review_kind']])
     with (OUT / 'fan_decisions.csv').open('w',newline='') as stream:
-        w=csv.writer(stream)
+        w=csv.writer(stream,lineterminator="\n")
         w.writerow(['cluster','proxy_vertex_id','fan_index','source_face_ids','decision','reason','reviewer'])
         for c in selected:
             for fan in c['fan_groups']:
