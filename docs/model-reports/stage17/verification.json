@@ -1,0 +1,320 @@
+{
+  "environment": "Linux Blender 4.3.2 headless",
+  "original_positions_unchanged": 19464,
+  "original_uv_rows_unchanged": 19464,
+  "cut_vertices_barycentric_position_uv_verified": 616,
+  "whole_original_faces_unchanged": 14999,
+  "original_images_byte_identical": 3,
+  "source_material_json_identical": true,
+  "source_scene_mesh_uv_weights_bones_packed_images_signature_unchanged": true,
+  "rig_def_bones_preserved": 46,
+  "editable_blend_vertices": 18704,
+  "editable_blend_orphan_vertices": 0,
+  "editable_blend_boundary_shared_vertices": 202,
+  "output_blend_loop_uv_error_vs_glb_max": 2.9802322387695312e-08,
+  "output_blend_position_error_vs_glb_max": 0.0,
+  "known_D14_ray": {
+    "source_face": 5552,
+    "new_global_triangle": 16113,
+    "new_hit_position_gltf": [
+      -0.004598855972290039,
+      0.22934174537658691,
+      0.06108260154724121
+    ],
+    "new_hit_is_replacement_surface": true
+  },
+  "two_sided_ray_grid": [
+    {
+      "side": "left",
+      "rays": 744,
+      "old_opposite_side_first_hits": 0,
+      "new_opposite_side_first_hits": 0,
+      "new_misses": 0,
+      "new_surface_first_hits": 744
+    },
+    {
+      "side": "right",
+      "rays": 744,
+      "old_opposite_side_first_hits": 3,
+      "new_opposite_side_first_hits": 0,
+      "new_misses": 0,
+      "new_surface_first_hits": 744
+    }
+  ],
+  "rendered_global_bounds_unchanged": true,
+  "patch_edges_all_incidence_two_including_join": true,
+  "patch_curvature_plane_fit_gltf_units": {
+    "left": {
+      "plane_rms": 0.012395888105908597,
+      "plane_max_error": 0.03398024243048177
+    },
+    "right": {
+      "plane_rms": 0.011228684351879377,
+      "plane_max_error": 0.03792662668031478
+    }
+  },
+  "source_triangle_crossings": 81,
+  "topology_before": {
+    "boundary_edges": 109,
+    "nonmanifold_edges": 42
+  },
+  "topology_after": {
+    "boundary_edges": 94,
+    "nonmanifold_edges": 32
+  },
+  "actual_export_triangle_crossings": 56,
+  "remaining_source_crossing_pairs_unique": [
+    [
+      890,
+      899
+    ],
+    [
+      1159,
+      10346
+    ],
+    [
+      1653,
+      10660
+    ],
+    [
+      2938,
+      2941
+    ],
+    [
+      3378,
+      6563
+    ],
+    [
+      6265,
+      6272
+    ],
+    [
+      6266,
+      6271
+    ],
+    [
+      6266,
+      6272
+    ],
+    [
+      6272,
+      6299
+    ],
+    [
+      6399,
+      6614
+    ],
+    [
+      6400,
+      6614
+    ],
+    [
+      6401,
+      6614
+    ],
+    [
+      6401,
+      6617
+    ],
+    [
+      8625,
+      8814
+    ],
+    [
+      8635,
+      8690
+    ],
+    [
+      8636,
+      8690
+    ],
+    [
+      8636,
+      8814
+    ],
+    [
+      8637,
+      8814
+    ],
+    [
+      8639,
+      8814
+    ],
+    [
+      8643,
+      8690
+    ],
+    [
+      8644,
+      8690
+    ],
+    [
+      8644,
+      8814
+    ],
+    [
+      8685,
+      8783
+    ],
+    [
+      8685,
+      8801
+    ],
+    [
+      8685,
+      8803
+    ],
+    [
+      8685,
+      8821
+    ],
+    [
+      8685,
+      8822
+    ],
+    [
+      8690,
+      8737
+    ],
+    [
+      8690,
+      8738
+    ],
+    [
+      8691,
+      8744
+    ],
+    [
+      8691,
+      8745
+    ],
+    [
+      8691,
+      8760
+    ],
+    [
+      8801,
+      8813
+    ],
+    [
+      8813,
+      8822
+    ],
+    [
+      8814,
+      8817
+    ],
+    [
+      9132,
+      9136
+    ],
+    [
+      9132,
+      9137
+    ],
+    [
+      9133,
+      9137
+    ],
+    [
+      10599,
+      10660
+    ],
+    [
+      10601,
+      10660
+    ],
+    [
+      10604,
+      10660
+    ],
+    [
+      10888,
+      11804
+    ],
+    [
+      10888,
+      14554
+    ],
+    [
+      11410,
+      11956
+    ],
+    [
+      11517,
+      11524
+    ],
+    [
+      11804,
+      14529
+    ],
+    [
+      14529,
+      14554
+    ],
+    [
+      14554,
+      14555
+    ],
+    [
+      15592,
+      16388
+    ],
+    [
+      16273,
+      16287
+    ],
+    [
+      16287,
+      16295
+    ],
+    [
+      16293,
+      16317
+    ],
+    [
+      16293,
+      16324
+    ],
+    [
+      16293,
+      16333
+    ],
+    [
+      16293,
+      16336
+    ],
+    [
+      16364,
+      16388
+    ]
+  ],
+  "new_crossings": 0,
+  "new_patch_internal_edge_incidence": {
+    "2": 2413
+  },
+  "preserved_asset_sha256": {
+    "assets/3d/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "assets/3d/README.md": "d316cae7c49b6823fda213cb746a97f75dc8eee741be6b4ddd01b9a139af52bf",
+    "assets/3d/retopo/deskcat_calico_retopo_16460.glb": "834cf794f24fff93e549ab80dbd21218565862ed9209852e3d2a72869c4b303b",
+    "assets/3d/retopo/deskcat_calico_retopo_16460_metadata_diag.glb": "6e49bddf16fc5344f3a9e23f56a1c80e1bfd7464f8e839846a75a09f7b5575ff",
+    "assets/3d/test_cat.glb": "489a12e81a2586ad0c8aa3c0f23bc5caae4a90dd0cb04a3863c4a94c26fcd643",
+    "assets/3d/tripo/deskcat_cage_trial_01_baked_poses.glb": "d04d0b4445b39d58b27a6a840531cebbc655bc51c4bec347a9f2bfda404c9910",
+    "assets/3d/tripo/deskcat_calico_c2_trial_01.glb": "d36a7f88fb118ca93878ce70cdd8bd0d34c5f4ffb0db5720891bb6427fb501ed",
+    "assets/3d/tripo/deskcat_calico_h25_v1.glb": "ff2a9e1d7280e4784913413fb45b10a2bdeadc125c80791a50f918a3ae646150",
+    "assets/3d/tripo/deskcat_calico_h25_v1_localprep.glb": "0e98d05ce6184779a1cac655474f7e3738c2dedb46824f72fc93a46163082bc6",
+    "assets/3d/tripo/deskcat_calico_h25_v1_rigprep.glb": "cab5d4a2205c644bdbb24a340777cf172e80969515290ae441bb78a29ce4df2c",
+    "assets/3d/tripo/deskcat_calico_h25_v1_skinprobe_v5.glb": "24569064ddab8c80b32e1a51a4bd1f68dba95031347d5fa7e296d6b33d5ebb90",
+    "assets/3d/tripo/deskcat_calico_h25_v1_skinprobe_v6.glb": "e6ea0f3cdbf0230233cddf259d720fac61aab481cb134eb06ac3a6d2108cd51d",
+    "assets/3d/tripo/preview.png": "767bf09da99305b3751030df70295e7aed972e84abf3fbd1e9f352dd394c2cc7",
+    "assets/rigging/deskcat_c2_trial_01.blend": "cd1f22168c533331def6b763a9358fa4ffa434488236961e3a52a7632de69129",
+    "assets/rigging/deskcat_cage_trial_01.blend": "e1bbb008d92e5a8dc431dc2c87bb872a17752c700f834ca220255ac5ad6ae1e9",
+    "assets/rigging/deskcat_retopo_exact_weld_proxy_01.blend": "844c4316dd841d4f943f80da7810d32abde64290c5f29b84e7ce4bfb3242667a",
+    "assets/rigging/deskcat_retopo_rigify_trial_01.blend": "338d254ad7dc7d9f8333da677640c61af4c66114806c03dbb264d194c45b476d",
+    "assets/rigging/deskcat_retopo_rigify_trial_02.blend": "64556e8468b2ae702fcb737ca352e94fce736c4ebc2a043e0e6371ceae4b7bbe",
+    "assets/rigging/deskcat_retopo_rigify_trial_02_preflight.blend": "2a3f348a54fb6751187d2fae8fb2345e57517ad1783015a85e8b256726018f6f",
+    "assets/rigging/deskcat_v6_weight_handoff.blend": "35a93aa6ae3b7127487f6d9840907ae0a6908c23cd72bcb922d1b01719ec4c8e"
+  },
+  "animation_or_bone_heat_tested": false,
+  "Windows_GUI_tested": false
+}
