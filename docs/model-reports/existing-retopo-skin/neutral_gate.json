@@ -1,0 +1,12 @@
+{
+  "actual_panda_vs_gltf_formula": 0.8319602565502763,
+  "actual_panda_vs_blender_enabled": 0.8319602528278309,
+  "metadata_vs_original_actual_panda": 0.0,
+  "gltf_default_vs_raw_primitive": 0.8319602565502763,
+  "actual_panda_vs_raw_primitive": 4.53201124839352e-08,
+  "blender_enabled_vs_formula": 1.4280584006882306e-07,
+  "gate": "FAIL_NEUTRAL_IDENTITY_BIND_NOT_REPRODUCED",
+  "bend_tests_run": false,
+  "reason": "Blender follows stored identity node transforms; Panda loader reconstructs rest transforms from inverse bind matrices. Defaults disagree, so neutral interoperability fails.",
+  "rejected_first_joint_ibm_hypothesis_error": 0.5932734993894512
+}
