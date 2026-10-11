@@ -33,7 +33,7 @@ def main(model,out):
    views.append(arr)
   frames=np.asarray(views)
   unique_frames=len({hash(x.tobytes()) for x in frames})
-  alpha_px=np.count_nonzero(frames[0,:,:,3]>12)
+  alpha_px=int(np.count_nonzero(frames[0,:,:,3]>12))
   diffs=[int(np.abs(frames[i].astype("int16")-frames[0].astype("int16")).sum()) for i in range(1,9)]
   status={"panda_has_skeleton":True,"walk_animation_imported":True,
    "actual_distinct_frames":unique_frames,"visible_alpha_pixel_count":alpha_px,
