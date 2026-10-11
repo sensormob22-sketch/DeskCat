@@ -42,6 +42,9 @@ def build(source,output,report):
  uniques,reverse=np.unique(coords,axis=0,return_inverse=True)
  joint_idx,weight_vals=rig.weights(uniques.astype(np.float64))
  joints=joint_idx[reverse];weights=weight_vals[reverse]
+ # Khronos: a joint slot whose weight is zero must reference joint 0.
+ # Pure metadata cleanup: cannot affect skinning because its influence is zero.
+ joints[weights<=0.0]=0
  if not np.allclose(weights.sum(1),1,atol=1e-6):raise AssertionError("Weights do not sum to 1")
  seen={};start=0
  for pi,p in enumerate(prims):
