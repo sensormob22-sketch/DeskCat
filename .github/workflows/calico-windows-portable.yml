@@ -1,0 +1,66 @@
+name: DeskCat Windows walking-cat ZIP
+on:
+  push:
+    branches: [feature/tripo-cat]
+    paths:
+      - 'src/deskcat/app.py'
+      - 'src/deskcat/window.py'
+      - 'src/deskcat/window3d.py'
+      - 'src/deskcat/rendering/**'
+      - 'tools/build_calico_walk_trial.py'
+      - 'tools/build_stage18_rigged_belly.py'
+      - 'tools/package_windows_portable.py'
+      - 'windows/**'
+      - '.github/workflows/calico-windows-portable.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows-calico:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    env:
+      QT_QPA_PLATFORM: offscreen
+      DESKCAT_PANDA_DISPLAY: p3tinydisplay
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install app and model-build requirements
+        run: |
+          python -m pip install --disable-pip-version-check -e ".[three-d]" numpy pillow
+      - name: Generate latest animated curved-belly model locally
+        run: |
+          python tools/build_stage18_rigged_belly.py --output assets/3d/deskcat_belly_skinned_trial.glb --report artifacts/rig_rescue/windows_model_build.json
+      - name: Windows smoke test real model and automatic walking
+        shell: pwsh
+        run: |
+          python -m deskcat --renderer panda --model assets/3d/deskcat_belly_skinned_trial.glb --start-walking --initial-direction left --forward-heading 180 --walk-speed 28 --smoke-test
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Build portable Windows first-run package
+        run: |
+          python tools/package_windows_portable.py --out artifacts/windows/DeskCat_Windows_Walking_Calico.zip
+      - name: ZIP content smoke test
+        shell: pwsh
+        run: |
+          Expand-Archive artifacts/windows/DeskCat_Windows_Walking_Calico.zip artifacts/windows/unpacked
+          if (-not (Test-Path artifacts/windows/unpacked/Start_DeskCat.cmd)) { exit 1 }
+          if (-not (Test-Path artifacts/windows/unpacked/assets/3d/deskcat_belly_skinned_trial.glb)) { exit 1 }
+          if (-not (Test-Path artifacts/windows/unpacked/src/deskcat/app.py)) { exit 1 }
+          Write-Output "ZIP verified: one-click cmd, source, and real animated GLB present"
+      - name: Scope reminder
+        if: always()
+        shell: pwsh
+        run: |
+          "Windows CI is offscreen software rendering, not a physical DWM/interactive GPU test." | Out-File -Append $env:GITHUB_STEP_SUMMARY
+          "First-run ZIP needs Python 3.11 + internet for pip; no Blender/Tripo required." | Out-File -Append $env:GITHUB_STEP_SUMMARY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: DeskCat_Windows_Walking_Calico
+          path: |
+            artifacts/windows/DeskCat_Windows_Walking_Calico.zip
+            artifacts/rig_rescue/windows_model_build.json
+          retention-days: 14
+          if-no-files-found: warn
