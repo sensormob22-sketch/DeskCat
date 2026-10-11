@@ -13,6 +13,7 @@ class ThreeDWindow(CatWindow):
                  playback_speed=1.0, forward_heading=0.0, walk_speed=0.0):
         super().__init__(scale)
         self.setWindowTitle('DeskCat live 3D prototype')
+        self.wrap_at_edges = True
         self.renderer = None
         # Wheel zoom must expand the transparent Qt surface, not only the 3D
         # mesh inside a permanently fixed 240x220 viewport.
