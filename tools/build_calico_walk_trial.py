@@ -104,7 +104,12 @@ def animate(doc,buf):
  pos=PIVOTS[INDEX["pelvis"]]
  channel("pelvis","translation",np.column_stack([np.full(len(time),pos[0]),pos[1]+.007*(1-np.cos(4*math.pi*time/1.6)),np.full(len(time),pos[2])]))
  channel("tail_base","rotation",[rot(.06*math.sin(2*math.pi*float(t)/1.6)) for t in time])
- doc["animations"]=[anim]
+ idle={"name":"idle","samplers":[],"channels":[]}
+ idle_rot=np.array([[0,0,math.sin(.015*math.sin(2*math.pi*float(x)/1.6)),math.cos(.015*math.sin(2*math.pi*float(x)/1.6))] for x in time],dtype=np.float32)
+ out=add(doc,buf,idle_rot,"VEC4")
+ idle["samplers"].append({"input":t,"output":out,"interpolation":"LINEAR"})
+ idle["channels"].append({"sampler":0,"target":{"node":INDEX["tail_base"],"path":"rotation"}})
+ doc["animations"]=[idle,anim]
 
 def build(source,out,report):
  if out.exists() or report.exists():raise FileExistsError("Refusing overwrite; use unique paths")
