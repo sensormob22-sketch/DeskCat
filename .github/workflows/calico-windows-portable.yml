@@ -50,7 +50,8 @@ jobs:
         run: |
           python tools/check_cat_brightness.py --image artifacts/windows/cat_visible_rgba.png --out artifacts/windows/brightness_report.json
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-      - name: Windows zoom framing regression (no cropped cat)
+      - name: Windows zoom framing regression (immutable framebuffer, many zoom cycles)
+
         shell: pwsh
         run: |
           python tools/check_zoom_framing.py --model assets/3d/deskcat_belly_skinned_trial.glb --out artifacts/windows/zoom

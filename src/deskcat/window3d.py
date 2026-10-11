@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QRectF
 from PySide6.QtGui import QPainter, QColor, QPen, QAction
 from PySide6.QtWidgets import QMenu, QApplication
 from .states import State
@@ -18,6 +18,15 @@ class ThreeDWindow(CatWindow):
         # mesh inside a permanently fixed 240x220 viewport.
         self._zoom_reference_size = (self.width(), self.height())
         self._zoom_reference_model_scale = model_scale
+        # One immutable Panda framebuffer for the ENTIRE desktop session.
+        # Qt scales the RGBA image when the widget grows/shrinks. Crucially,
+        # Windows OpenGL never receives GraphicsBuffer.setSize during wheel
+        # events, removing the GPU readback vs. resize race seen in recordings.
+        self._render_dpr = self.devicePixelRatioF()
+        self._render_size = (
+            round(self.width() * self._render_dpr),
+            round(self.height() * self._render_dpr),
+        )
         self.walk_speed_override = walk_speed
         self.walk_speed_px = walk_speed or 28.0
         self.diagnostics = diagnostics
@@ -46,11 +55,11 @@ class ThreeDWindow(CatWindow):
         return abs(delta) < 5
 
     def render_frame(self, dt):
-        dpr = self.devicePixelRatioF()
         self.renderer.direction = self._direction
-        image = self.renderer.frame(dt, self.machine.weights,
-                                    round(self.width()*dpr), round(self.height()*dpr))
-        image.setDevicePixelRatio(dpr)
+        # Fixed framebuffer regardless of wheel zoom or monitor DPI.
+        # Only its presentation size changes, NEVER its GPU allocation.
+        image = self.renderer.frame(dt, self.machine.weights, *self._render_size)
+        image.setDevicePixelRatio(self._render_dpr)
         return image
 
     def tick(self):
@@ -78,7 +87,10 @@ class ThreeDWindow(CatWindow):
 
     def paintEvent(self, event):
         p = QPainter(self)
-        p.drawImage(0, 0, self._image)
+        # Scale the entire live, skinned frame into the larger transparent
+        # widget; never crop a larger cat inside its initial image rectangle.
+        p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform)
+        p.drawImage(QRectF(0, 0, self.width(), self.height()), self._image)
         if self.diagnostics and self.show_diagnostic_overlay:
             p.setPen(QPen(QColor('#ff00ff'), 1))
             p.drawRect(0, 0, self.width()-1, self.height()-1)
@@ -122,11 +134,11 @@ class ThreeDWindow(CatWindow):
                                    position=[self.x(), self.y()])
 
     def zoom_to(self, target_scale):
-        """Enlarge the Qt alpha viewport with the cat; retain screen containment.
+        """Resize Qt presentation, not Panda framebuffer; preserve feet anchor.
 
-        Keep pixels-per-world-unit constant by enlarging the orthographic film
-        with the window. This avoids the old cropped-cat zoom behaviour and
-        does not fake a zoom by shrinking the model back to its former size.
+        A stable offscreen size avoids Windows OpenGL readback failures.
+        The orthographic film grows proportionally to the cat, so the same
+        source frame can be smoothly scaled by Qt without clipping.
         """
         if self.renderer is None:
             return
@@ -160,9 +172,8 @@ class ThreeDWindow(CatWindow):
         y = max(available.top(), min(y, available.top() + available.height() - height))
         self.move(x, y)
         self._x = float(self.x())
-        # Render at the new physical DPR resolution straight away: otherwise
-        # Qt may briefly scale the old, cropped frame during a wheel event.
-        self._image = self.render_frame(0)
+        # Repainting stretches the existing frame immediately. The timer will
+        # render the next pose using the same GPU texture allocation as before.
         self.update()
 
     def wheelEvent(self, event):

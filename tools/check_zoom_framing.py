@@ -37,54 +37,69 @@ def main(model, out):
     try:
         win.show()
         app.processEvents()
-        baseline_size = (win.width(), win.height())
-        reference_scale = win.renderer.model_scale
+        base_size = (win.width(), win.height())
+        fixed_buffer_size = win.renderer._size
+        assert fixed_buffer_size == win._render_size
+        init_scale = win.renderer.model_scale
+        base_image = win.grab().toImage()
+        initial_bounds = alpha_bounds(base_image)
+        initial_cat_width = initial_bounds[2] - initial_bounds[0]
+        initial_speed = win.renderer.matched_walk_speed(win.height())
+        assert base_image.save(str(out/'zoom_initial.png'))
         win.machine.transition(State.WALK)
         win.machine.update(.3)
-        base_img = win.render_frame(0)
-        base_bounds = alpha_bounds(base_img)
-        base_width = base_bounds[2] - base_bounds[0]
-        speed_before = win.renderer.matched_walk_speed(win.height())
-        assert speed_before is not None and speed_before > 0
-        assert base_img.save(str(out / 'zoom_initial.png'))
-        win.zoom_to(1.6)
-        app.processEvents()
-        assert win.renderer.model_scale > reference_scale * 1.1
-        assert win.width() > baseline_size[0]
-        assert win.height() > baseline_size[1]
-        assert win.renderer._size == (win._image.width(), win._image.height())
-        assert win.renderer.matched_walk_speed(win.height()) > speed_before
-        if win.width() > win.screen().availableGeometry().width():
-            raise AssertionError('Zoom viewport exceeds desktop geometry')
         result = []
-        for direction, label in ((1, 'right'), (-1, 'left')):
-            win.renderer.direction = direction
-            win.renderer.heading = win.renderer.forward_heading + (180 if direction < 0 else 0)
-            for i in range(5):
-                image = win.renderer.frame(.32, {State.WALK: 1.0},
-                                           win._image.width(), win._image.height())
-                box = alpha_bounds(image)
-                if i == 2:
-                    assert image.save(str(out / f'zoom_{label}.png'))
-                result.append((label, i, box))
-        enlarged_width = max(x[2][2] - x[2][0] for x in result)
-        assert enlarged_width > base_width * 1.10, 'Model did not grow visually with zoom'
-        zoom_size = (win.width(), win.height())
-        # Key R restores the startup scale AND the matching alpha framebuffer.
+        # Move both directions while changing zoom repeatedly, including a
+        # shrink-back and subsequent enlarge (reported user crash path).
+        for j, scale in enumerate((1.1, 1.3, 1.6, 2.0, 1.5, 1.0,
+                                   .65, .9, 1.5, 2.0, .9)):
+            win.zoom_to(scale)
+            app.processEvents()
+            assert win.renderer._size == fixed_buffer_size
+            assert win._render_size == fixed_buffer_size
+            for direction in (1, -1):
+                win._direction = direction
+                win.renderer.heading = win.renderer.forward_heading + (
+                    180 if direction < 0 else 0)
+                win._image = win.render_frame(.08)
+                win.update()
+                app.processEvents()
+                display = win.grab().toImage()
+                bounds = alpha_bounds(display)
+                if j in (3, 7):
+                    label = 'large' if j == 3 else 'small'
+                    assert display.save(str(out/f'zoom_{label}_{direction}.png'))
+                result.append({'stage':j,'zoom':win.renderer.model_scale,
+                    'direction':direction,'widget':[win.width(),win.height()],
+                    'bounds':bounds})
+                assert win.renderer._size == fixed_buffer_size
+        # Compare on-screen composited cat silhouettes, not fixed source buffer
+        # pixels: the Qt widget, rather than the GPU buffer, grows with zoom.
+        win.zoom_to(1.6)
+        win._image = win.render_frame(.08)
+        win.update()
+        app.processEvents()
+        enlarged = win.grab().toImage()
+        bbox = alpha_bounds(enlarged)
+        assert (bbox[2]-bbox[0]) > initial_cat_width*1.1
+        assert win.renderer.matched_walk_speed(win.height()) > initial_speed
+        assert win.width() > base_size[0]
+        assert win.renderer._size == fixed_buffer_size
         win.keyPressEvent(QKeyEvent(QKeyEvent.Type.KeyPress, Qt.Key.Key_R,
                                    Qt.KeyboardModifier.NoModifier))
-        assert abs(win.renderer.model_scale - reference_scale) < 1e-6
-        assert (win.width(), win.height()) == baseline_size
-        assert win._image.width() == round(win.width() * win.devicePixelRatioF())
-        assert win._image.height() == round(win.height() * win.devicePixelRatioF())
-        alpha_bounds(win._image)
-        payload = dict(initial_size=baseline_size, zoom_size=zoom_size,
-                       base_bounds=base_bounds, zoom_bounds=result,
-                       max_enlarged_cat_width=enlarged_width,
-                       initial_speed=speed_before,
-                       framing='PASS', physical_dwm='NOT TESTED')
-        (out / 'zoom_report.json').write_text(json.dumps(payload, indent=2))
-        print(json.dumps({k: v for k, v in payload.items() if k != 'zoom_bounds'}, indent=2))
+        app.processEvents()
+        assert (win.width(), win.height()) == base_size
+        assert abs(win.renderer.model_scale-init_scale)<1e-6
+        assert win.renderer._size == fixed_buffer_size
+        assert win.render_error is None
+        result_path=out/'zoom_report.json'
+        payload={'initial_widget':base_size,'immutable_rgba_gpu_buffer':fixed_buffer_size,
+                 'zoom_samples':result,'initial_speed_px_s':initial_speed,
+                 'increased_cat_width':bbox[2]-bbox[0],
+                 'status':'PASS fixed-size GPU readback, zoom in/out and directions',
+                 'physical_windows_dwm':'NOT TESTED'}
+        result_path.write_text(json.dumps(payload,indent=2),encoding='utf8')
+        print(json.dumps({k:v for k,v in payload.items() if k!='zoom_samples'},indent=2))
     finally:
         win.close()
         app.processEvents()

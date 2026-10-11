@@ -43,3 +43,12 @@ and head have new tiny motions. Original fur, geometry, UV and tail clip remain.
 
 The monitor-bright preview now uses RGB-only gamma correction. Alpha is
 unchanged and the GLB original diffuse images are still preserved.
+
+ZOOM READBACK REPAIR / EXTRA BRIGHTNESS
+The renderer now maintains one fixed-resolution Panda RGBA buffer for its
+entire lifetime. Zoom changes the transparent Qt window and display scale,
+without resizing any Panda3D graphics buffer. This prevents the observed
+Windows OpenGL "Unexpected RGBA readback dimensions" resize race.
+Since frames are scaled by Qt, extreme zoom can soften fine fur details.
+Brightness is +50% on the previous calibrated RGB tone curve (values are
+clamped to 255/monitor white); original GLB textures and alpha are unchanged.

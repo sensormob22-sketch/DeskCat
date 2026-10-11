@@ -77,7 +77,9 @@ class PandaRenderer:
                     values.append(round(y0 + (channel - x0) *
                                         (y1 - y0) / (x1 - x0)))
                     break
-        self._display_gamma_lut = bytes(values)
+        # User-requested +50% relative to the last published display curve.
+        # Clamp highlights to monitor white (255) and keep alpha untouched.
+        self._display_gamma_lut = bytes(min(255, round(v * 1.5)) for v in values)
         self.offset = (0.0, 0.0)
         self.ortho_height = 2.35
         self.viewport_height_scale = 1.0
