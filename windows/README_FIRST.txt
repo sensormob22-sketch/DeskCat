@@ -40,3 +40,6 @@ The photographic original base-color texture is shown without dark fixed-functio
 PBR shading; press '=' or '+' to brighten slightly, '-' to dim when focused.
 Right rear lower leg has a local trial skin correction. Lumbar, chest, neck,
 and head have new tiny motions. Original fur, geometry, UV and tail clip remain.
+
+The monitor-bright preview now uses RGB-only gamma correction. Alpha is
+unchanged and the GLB original diffuse images are still preserved.

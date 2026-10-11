@@ -10,6 +10,7 @@ on:
       - 'tools/build_calico_walk_trial.py'
       - 'tools/build_stage18_rigged_belly.py'
       - 'tools/finish_calico_stage18.py'
+      - 'tools/check_cat_brightness.py'
       - 'tools/package_windows_portable.py'
       - 'windows/**'
       - '.github/workflows/calico-windows-portable.yml'
@@ -44,6 +45,11 @@ jobs:
         run: |
           python -m deskcat --renderer panda --model assets/3d/deskcat_belly_skinned_trial.glb --start-walking --initial-direction left --forward-heading 180 --walk-speed 28 --smoke-test --smoke-frame artifacts/windows/cat_visible_rgba.png
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Check monitor-white fur brightness and RGBA transparency
+        shell: pwsh
+        run: |
+          python tools/check_cat_brightness.py --image artifacts/windows/cat_visible_rgba.png --out artifacts/windows/brightness_report.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Windows zoom framing regression (no cropped cat)
         shell: pwsh
         run: |
@@ -75,6 +81,7 @@ jobs:
             artifacts/rig_rescue/windows_model_build.json
             artifacts/rig_rescue/motion_polish.json
             artifacts/windows/cat_visible_rgba.png
+            artifacts/windows/brightness_report.json
             artifacts/windows/zoom/**
           retention-days: 14
           if-no-files-found: warn

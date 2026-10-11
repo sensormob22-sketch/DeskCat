@@ -62,7 +62,10 @@ class PandaRenderer:
         self.last_frame_ms = 0.0
         self.unavailable_active = []
         self.model_scale = 1.0
-        self.brightness = 1.12
+        self.brightness = 1.07
+        # Raise fur RGB midtones toward the studio photographs without
+        # editing GLB textures or alpha, which remains byte-identical.
+        self._display_gamma_lut = bytes(round(255 * (v / 255) ** .53) for v in range(256))
         self.offset = (0.0, 0.0)
         self.ortho_height = 2.35
         self.viewport_height_scale = 1.0
@@ -309,7 +312,13 @@ class PandaRenderer:
         if len(data) != width * height * 4:
             raise RuntimeError('Unexpected RGBA readback dimensions')
         # Panda readback is bottom-up, straight alpha. Copy before the buffer dies.
-        image = QImage(data, width, height, width*4, QImage.Format.Format_RGBA8888).mirrored().copy()
+        # RGB-only gamma correction after Panda readback. The expensive work
+        # happens via bytearray.translate in C; translucent alpha is untouched.
+        bright = bytearray(data)
+        for channel in (0, 1, 2):
+            bright[channel::4] = bright[channel::4].translate(self._display_gamma_lut)
+        image = QImage(bytes(bright), width, height, width*4,
+                       QImage.Format.Format_RGBA8888).mirrored().copy()
         self.last_frame_ms = (time.perf_counter() - start)*1000
         return image
 
