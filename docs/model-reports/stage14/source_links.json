@@ -1,0 +1,38 @@
+[
+  {
+    "path": "assets/rigging/deskcat_retopo_exact_weld_proxy_01.blend",
+    "sha256": "844c4316dd841d4f943f80da7810d32abde64290c5f29b84e7ce4bfb3242667a",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/74199b9/assets/rigging/deskcat_retopo_exact_weld_proxy_01.blend",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/74199b9/assets/rigging/deskcat_retopo_exact_weld_proxy_01.blend"
+  },
+  {
+    "path": "assets/3d/retopo/deskcat_calico_retopo_16460.glb",
+    "sha256": "834cf794f24fff93e549ab80dbd21218565862ed9209852e3d2a72869c4b303b",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/74199b9/assets/3d/retopo/deskcat_calico_retopo_16460.glb",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/74199b9/assets/3d/retopo/deskcat_calico_retopo_16460.glb"
+  },
+  {
+    "path": "docs/model-reports/exact-weld-proxy/vertex_map.json",
+    "sha256": "c662fb14ec41e554d0c2658dacf902095b72a16166a9461a4be1d53d05a8acc3",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/74199b9/docs/model-reports/exact-weld-proxy/vertex_map.json",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/74199b9/docs/model-reports/exact-weld-proxy/vertex_map.json"
+  },
+  {
+    "path": "docs/model-reports/exact-weld-proxy/preflight.json",
+    "sha256": "e80d077a6df9333cb4b5263e9af280ce85639fef34358b3c7c4f09d4117c9316",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/74199b9/docs/model-reports/exact-weld-proxy/preflight.json",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/74199b9/docs/model-reports/exact-weld-proxy/preflight.json"
+  },
+  {
+    "path": "docs/model-reports/stage13/solver_edit_proposal.json",
+    "sha256": "40643e6897b072c76fed236d737f4fca61aabb2e46e419d18b77064702695c0a",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/74199b9/docs/model-reports/stage13/solver_edit_proposal.json",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/74199b9/docs/model-reports/stage13/solver_edit_proposal.json"
+  },
+  {
+    "path": "docs/model-reports/stage13/preserved_manifest.json",
+    "sha256": "046da8e124162bcfcf8197681072951e8f13cf3b048265b96911605c1954b00a",
+    "view": "https://github.com/sensormob22-sketch/DeskCat/blob/74199b9/docs/model-reports/stage13/preserved_manifest.json",
+    "download": "https://raw.githubusercontent.com/sensormob22-sketch/DeskCat/74199b9/docs/model-reports/stage13/preserved_manifest.json"
+  }
+]

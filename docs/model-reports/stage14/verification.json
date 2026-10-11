@@ -1,0 +1,13 @@
+{
+  "environment": "Linux Blender 4.3.2 headless",
+  "selection_cases": 52,
+  "face_order_validated_both_objects": true,
+  "mesh_uv_material_weights_bones_packed_texture_signature_preserved": true,
+  "source_scene_hash_preserved": true,
+  "source_scene_saved": false,
+  "new_blend_files": 0,
+  "weight_binds": 0,
+  "mesh_edits": 0,
+  "gui_panel_interaction_tested": false,
+  "panel_registered": true
+}
