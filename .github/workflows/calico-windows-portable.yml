@@ -40,6 +40,11 @@ jobs:
         run: |
           python -m deskcat --renderer panda --model assets/3d/deskcat_belly_skinned_trial.glb --start-walking --initial-direction left --forward-heading 180 --walk-speed 28 --smoke-test --smoke-frame artifacts/windows/cat_visible_rgba.png
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Windows zoom framing regression (no cropped cat)
+        shell: pwsh
+        run: |
+          python tools/check_zoom_framing.py --model assets/3d/deskcat_belly_skinned_trial.glb --out artifacts/windows/zoom
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Build portable Windows first-run package
         run: |
           python tools/package_windows_portable.py --out artifacts/windows/DeskCat_Windows_Walking_Calico.zip
@@ -65,5 +70,6 @@ jobs:
             artifacts/windows/DeskCat_Windows_Walking_Calico.zip
             artifacts/rig_rescue/windows_model_build.json
             artifacts/windows/cat_visible_rgba.png
+            artifacts/windows/zoom/**
           retention-days: 14
           if-no-files-found: warn

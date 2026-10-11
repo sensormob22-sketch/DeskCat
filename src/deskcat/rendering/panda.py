@@ -64,6 +64,9 @@ class PandaRenderer:
         self.model_scale = 1.0
         self.offset = (0.0, 0.0)
         self.ortho_height = 2.35
+        self.viewport_height_scale = 1.0
+        self.camera_height_scale = 1.0
+        self._lens_resize_scale = None
         self.source_unit_scale = 1.0
         self.contact_gait = read_contact_gait(model_path)
         if not Path(model_path).is_file():
@@ -229,10 +232,23 @@ class PandaRenderer:
     def _resize(self, width, height):
         if width <= 0 or height <= 0 or width > 4096 or height > 4096:
             raise ValueError('Render dimensions must be within 1..4096')
+        if not math.isfinite(self.viewport_height_scale) or self.viewport_height_scale <= 0:
+            raise ValueError('Invalid orthographic zoom viewport')
+        zoom_lens = (self.viewport_height_scale, self.camera_height_scale)
+        if self._size == (width, height) and self._lens_resize_scale == zoom_lens:
+            return
+        # Widen both the alpha buffer and the orthographic film when the cat
+        # grows. A constant world-units-per-screen-pixel ratio lets it actually
+        # appear bigger while retaining its complete silhouette.
+        visible_height = self.ortho_height * self.viewport_height_scale
+        self.base.camLens.setFilmSize(visible_height * width / height, visible_height)
+        center_z = .83 * self.camera_height_scale
+        self.base.camera.setPos(0, -6.0, center_z)
+        self.base.camera.lookAt(0, 0, center_z)
+        self._lens_resize_scale = zoom_lens
         if self._size == (width, height):
             return
         self.base.win.setSize(width, height)
-        self.base.camLens.setFilmSize(self.ortho_height * width / height, self.ortho_height)
         self.base.win.clearRenderTextures()
         self.texture = Texture('rgba-frame')
         self.base.win.addRenderTexture(self.texture, GraphicsOutput.RTMCopyRam,
@@ -245,7 +261,8 @@ class PandaRenderer:
             return None
         g = self.contact_gait
         source_units_per_sec = g['stride'] / (g['stance'] * g['period'])
-        pixels_per_source_unit = logical_height / self.ortho_height * self.source_unit_scale * self.model_scale
+        pixels_per_source_unit = (logical_height / (self.ortho_height * self.viewport_height_scale)
+                                  * self.source_unit_scale * self.model_scale)
         return source_units_per_sec * pixels_per_source_unit * self.clock.speed
 
     def frame(self, dt, weights, width, height):

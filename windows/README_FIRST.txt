@@ -11,7 +11,8 @@ FIRST START (Windows 11, Python 3.11)
 CONTROLS
 Right-click the cat: switch between walk / idle, or Exit.
 W: switch walk / idle (after focusing the cat window).
-Left mouse button + drag: move the window. Wheel: resize the model.
+Left mouse button + drag: move the window. Wheel: resize the cat AND its transparent rendering window (no cropping).
+The maximum zoom is bounded by usable screen size; R restores the original size.
 Space: pause; Esc: close.
 
 TROUBLESHOOTING
