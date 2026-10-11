@@ -33,7 +33,6 @@ jobs:
       - name: Generate latest animated curved-belly model locally
         run: |
           python tools/build_stage18_rigged_belly.py --output assets/3d/deskcat_belly_skinned_trial.glb --report artifacts/rig_rescue/windows_model_build.json
-            artifacts/windows/cat_visible_rgba.png
       - name: Windows smoke test real model and automatic walking
         shell: pwsh
         run: |
@@ -63,5 +62,6 @@ jobs:
           path: |
             artifacts/windows/DeskCat_Windows_Walking_Calico.zip
             artifacts/rig_rescue/windows_model_build.json
+            artifacts/windows/cat_visible_rgba.png
           retention-days: 14
           if-no-files-found: warn
