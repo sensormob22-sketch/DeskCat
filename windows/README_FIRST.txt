@@ -34,3 +34,9 @@ Windows 11 transparent DWM presentation has NOT been tested on a physical
 user desktop. Some contact/sliding and skin deformations still need polish.
 No startup registration, no ads, no paid subscriptions, no external model calls.
 Source: https://github.com/sensormob22-sketch/DeskCat (PR #2)
+
+REFERENCE-BRIGHT CALICO AND SOFT MOTION
+The photographic original base-color texture is shown without dark fixed-function
+PBR shading; press '=' or '+' to brighten slightly, '-' to dim when focused.
+Right rear lower leg has a local trial skin correction. Lumbar, chest, neck,
+and head have new tiny motions. Original fur, geometry, UV and tail clip remain.

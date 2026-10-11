@@ -62,6 +62,7 @@ class PandaRenderer:
         self.last_frame_ms = 0.0
         self.unavailable_active = []
         self.model_scale = 1.0
+        self.brightness = 1.12
         self.offset = (0.0, 0.0)
         self.ortho_height = 2.35
         self.viewport_height_scale = 1.0
@@ -151,6 +152,11 @@ class PandaRenderer:
             # stages/material for BOTH static NodePaths and animated Actors.
             # This changes preview shading only; the embedded GLB remains intact.
             candidate.setMaterialOff(10)
+            # Use the original photographic base-color texture at near-white
+            # studio brightness. The fixed-function PBR fallback was too dark;
+            # source GLB image bytes, fur pattern and materials stay untouched.
+            candidate.setLightOff(10)
+            candidate.setColorScale(self.brightness, self.brightness, self.brightness, 1)
             for stage in candidate.findAllTextureStages():
                 if stage.getMode() != TextureStage.MModulate:
                     candidate.setTextureOff(stage, 10)
@@ -169,8 +175,7 @@ class PandaRenderer:
                         converted += 1
                 print(f'DeskCat TinyDisplay: {converted} sRGB preview textures converted '
                       'to software-compatible RGB(A)', file=sys.stderr)
-            print('DeskCat 3D base-color preview: PBR lighting disabled in offscreen renderer; '
-                  'GLB PBR textures unchanged', file=sys.stderr)
+            print('DeskCat bright photographic base-color mode: GLB textures unchanged', file=sys.stderr)
             clips = sorted(candidate.getAnimNames()) if character is not None else []
             unknown = set(self.clip_overrides) - {s.value for s in State}
             if unknown:

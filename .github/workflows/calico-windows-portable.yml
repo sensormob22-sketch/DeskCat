@@ -9,6 +9,7 @@ on:
       - 'src/deskcat/rendering/**'
       - 'tools/build_calico_walk_trial.py'
       - 'tools/build_stage18_rigged_belly.py'
+      - 'tools/finish_calico_stage18.py'
       - 'tools/package_windows_portable.py'
       - 'windows/**'
       - '.github/workflows/calico-windows-portable.yml'
@@ -34,7 +35,10 @@ jobs:
         run: python -m pytest -q tests/test_gait_contact.py
       - name: Generate latest animated curved-belly model locally
         run: |
-          python tools/build_stage18_rigged_belly.py --output assets/3d/deskcat_belly_skinned_trial.glb --report artifacts/rig_rescue/windows_model_build.json
+          python tools/build_stage18_rigged_belly.py --output artifacts/rig_rescue/deskcat_stage18_raw.glb --report artifacts/rig_rescue/windows_model_build.json
+      - name: Preserve tail, refine right ankle and add subtle spine/head motion
+        run: |
+          python tools/finish_calico_stage18.py --input artifacts/rig_rescue/deskcat_stage18_raw.glb --output assets/3d/deskcat_belly_skinned_trial.glb --report artifacts/rig_rescue/motion_polish.json
       - name: Windows smoke test real model and automatic walking
         shell: pwsh
         run: |
@@ -69,6 +73,7 @@ jobs:
           path: |
             artifacts/windows/DeskCat_Windows_Walking_Calico.zip
             artifacts/rig_rescue/windows_model_build.json
+            artifacts/rig_rescue/motion_polish.json
             artifacts/windows/cat_visible_rgba.png
             artifacts/windows/zoom/**
           retention-days: 14

@@ -186,6 +186,14 @@ class ThreeDWindow(CatWindow):
                 self.diagnostics.capture(self)
             except OSError as exc:
                 self.diagnostics.write('capture_error', message=str(exc))
+        elif event.key() in (Qt.Key.Key_Plus, Qt.Key.Key_Equal):
+            self.renderer.brightness = min(1.4, round(self.renderer.brightness + .05, 2))
+            self.renderer.actor.setColorScale(self.renderer.brightness, self.renderer.brightness,
+                                              self.renderer.brightness, 1)
+        elif event.key() == Qt.Key.Key_Minus:
+            self.renderer.brightness = max(.8, round(self.renderer.brightness - .05, 2))
+            self.renderer.actor.setColorScale(self.renderer.brightness, self.renderer.brightness,
+                                              self.renderer.brightness, 1)
         elif event.key() == Qt.Key.Key_Space:
             self.renderer.clock.paused = not self.renderer.clock.paused
         elif event.key() in shifts:
