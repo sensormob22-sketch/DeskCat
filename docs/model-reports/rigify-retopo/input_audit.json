@@ -1,0 +1,45 @@
+{
+  "sha256": "834cf794f24fff93e549ab80dbd21218565862ed9209852e3d2a72869c4b303b",
+  "triangles": 16460,
+  "source_vertices": 19464,
+  "input_skin_joints": 21,
+  "animations": 0,
+  "uv_finite": true,
+  "uv_bounds": [
+    [
+      0.00244140625,
+      0.00244140625
+    ],
+    [
+      0.996337890625,
+      0.99755859375
+    ]
+  ],
+  "texture_sha256": [
+    "94f4ceb59ebf0acf6d0a8dbb11d3ca736701200dab2696c72e69117c1bfaa90f",
+    "a4ec8ab165bac70a62e3299dc0adc486da94659acdc2835b267be17c70140ad1",
+    "6f57bd9ce201250f9f793514b7e81901ff687114c7b341b7db8a4f0b0dd1fc18"
+  ],
+  "textures_match_highres_original": false,
+  "material_count": 1,
+  "materials": [
+    {
+      "name": "tripo_node_9c2f352c-c3b7-4428-8368-29a06beccb2a_material",
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      },
+      "normalTexture": {
+        "index": 2
+      },
+      "doubleSided": true
+    }
+  ],
+  "uv_limit": "Topology differs from original; equality of UV arrays cannot establish retopology appearance. Check mapped appearance in images.",
+  "input_imported_skin_difference_after_detach": 0.6242784857749939,
+  "rigging_geometry_basis": "Original POSITION primitive, upright glTF frame. Supplied 21-joint skin discarded only in new copy; not copied as neutral skeleton."
+}

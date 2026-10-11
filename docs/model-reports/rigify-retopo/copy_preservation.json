@@ -1,0 +1,16 @@
+{
+  "scene": "assets/rigging/deskcat_retopo_rigify_trial_01.blend",
+  "geometry_basis": "Uploaded raw primitive, existing non-neutral skin discarded only in copy",
+  "vertex_count": 19464,
+  "triangle_count": 16460,
+  "max_geometry_error_against_input_primitive": 0.0,
+  "max_uv_error": 0.0,
+  "source_face_indices_identical": true,
+  "all_three_input_texture_payloads_packed_identically": true,
+  "mesh_bone_weight_groups": 0,
+  "generation_failed": true,
+  "auto_weighting_run": false,
+  "bend_tests_run": false,
+  "skinned_glb_exported": false,
+  "blender_version": "4.3.2"
+}

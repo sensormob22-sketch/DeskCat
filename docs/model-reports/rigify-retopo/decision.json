@@ -1,0 +1,11 @@
+{
+  "status": "STOP_AFTER_ONE_FAILED_GENERATION",
+  "reason": "My initial anatomical mapping separated tail.001 head from the spine chain start required by Cat connect_chain. No claim Rigify or retopology is intrinsically unsuitable.",
+  "connection_gap_source_units": 0.13462911353738083,
+  "auto_weighting_run": false,
+  "bend_tests_run": false,
+  "deformation_quality_evaluated": false,
+  "skinned_export_run": false,
+  "paid_operations": 0,
+  "next_plan_only": "Separately authorize a corrected metarig template invariant: choose a shared pelvis/tail chain origin or a Rigify-supported separate connection, validate chain invariants before a new generation; then one heat-weight attempt and both-sign probes. No weights/animation/GLB edits now."
+}

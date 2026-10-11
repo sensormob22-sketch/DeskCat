@@ -1,0 +1,21 @@
+{
+  "environment": "Linux cloud; Blender 4.3.2 Rigify Cat; Python 3.12; Panda3D static offscreen previews",
+  "pytest": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 104,
+    "seconds": 24.52,
+    "new_record_contract_tests": 3,
+    "exit_code": 0,
+    "note": "Tests verify preservation and failure status, not successful rig/deformation; Fontconfig cache warning after completion"
+  },
+  "rigify_generation_calls": 1,
+  "generation_succeeded": false,
+  "automatic_weight_calls": 0,
+  "controlled_bends": 0,
+  "skin_exported": false,
+  "input_validator_errors": 5,
+  "input_validator_warnings": 2,
+  "blender_readonly_copy_audit_passed": true,
+  "windows_checked": false,
+  "paid_operations": 0
+}
