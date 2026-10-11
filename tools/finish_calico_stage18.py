@@ -270,6 +270,10 @@ def recalculate_gait(doc,buf):
     original={(c['target']['node'],c['target']['path']):c['sampler']
               for c in walk['channels']}
     per_bone={f'{limb}_{i}':[] for limb in PHASES for i in range(3)}
+    # Shoulder-blade protraction makes contact reachable as the back flexes,
+    # instead of stretching foreleg bone lengths when the spine bends.
+    shoulder_translation={limb:[] for limb in PHASES if limb.startswith('front')}
+    max_shoulder_shift=0.0
     spine={n:[] for n in ('lumbar','chest','neck','head')}
     pose_error=0.0
     center_lumbar=pivots['lumbar'][:2];center_chest=pivots['chest'][:2]
@@ -293,15 +297,34 @@ def recalculate_gait(doc,buf):
             else:
                 desired_local_toe=final_toe
             target_roll=roll-parent_angle
-            a=solve_toe_ik(path,desired_local_toe,target_roll)
+            # Two-link IK has an immutable physical reach. Instead of allowing
+            # the right (or left) leg to elastically elongate, gently slide
+            # the scapula root toward the foot by the missing reach only.
+            ankle_goal=desired_local_toe-rot(target_roll)@(path[3]-path[2])
+            reach=(np.linalg.norm(path[1]-path[0])+
+                   np.linalg.norm(path[2]-path[1])-.00008)
+            reach_vector=ankle_goal-path[0]
+            distance=np.linalg.norm(reach_vector)
+            shift=np.zeros(2)
+            if distance>reach:
+                shift=(distance-reach)*reach_vector/distance
+                if np.linalg.norm(shift)>.025:
+                    raise ValueError('Scapular slide exceeded natural reach budget')
+            if limb in shoulder_translation:
+                rest=np.array(doc['nodes'][names[limb+'_0']]['translation'],dtype=float)
+                shoulder_translation[limb].append(
+                    [rest[0]+shift[0],rest[1]+shift[1],rest[2]])
+            max_shoulder_shift=max(max_shoulder_shift,float(np.linalg.norm(shift)))
+            moved_path=path+shift
+            a=solve_toe_ik(moved_path,desired_local_toe,target_roll)
             for i in range(3):
                 per_bone[f'{limb}_{i}'].append(a[i])
-            current=(parent_origin + rot(parent_angle)@(path[0]-center_chest)
-                     if parent_origin is not None else path[0].copy())
+            current=(parent_origin + rot(parent_angle)@(moved_path[0]-center_chest)
+                     if parent_origin is not None else moved_path[0].copy())
             total=parent_angle
             for k,part in enumerate(a):
                 total+=part
-                current += rot(total) @ (path[k+1]-path[k])
+                current += rot(total) @ (moved_path[k+1]-moved_path[k])
             pose_error=max(pose_error,float(np.linalg.norm(current-final_toe)))
     if pose_error>1.2e-4:raise ValueError('Toe contact reconstruction error')
     # Replace leg channels, keep the existing natural tail animation byte-identical.
@@ -309,6 +332,26 @@ def recalculate_gait(doc,buf):
         node=names[bone];j=original.get((node,'rotation'))
         if j is None:raise ValueError(f'Missing joint rotation channel {bone}')
         walk['samplers'][j]['output']=add_vec4(doc,buf,to_quaternions(angles))
+    for limb,poses in shoulder_translation.items():
+        node=names[limb+'_0']
+        if (node,'translation') in original:
+            raise ValueError('Original shoulder translation must remain unmodified')
+        i=len(walk['samplers'])
+        translations=np.ascontiguousarray(poses,dtype='<f4')
+        if translations.shape!=(len(timeline),3):
+            raise ValueError('Bad shoulder translation track length')
+        buf.extend(b'\x00'*(-len(buf)%4))
+        off=len(buf);buf.extend(translations.tobytes())
+        doc['bufferViews'].append({'buffer':0,'byteOffset':off,
+                                   'byteLength':translations.nbytes})
+        doc['accessors'].append({'bufferView':len(doc['bufferViews'])-1,
+                                 'componentType':5126,'count':len(poses),
+                                 'type':'VEC3'})
+        walk['samplers'].append({'input':walk['samplers'][0]['input'],
+                                'output':len(doc['accessors'])-1,
+                                'interpolation':'LINEAR'})
+        walk['channels'].append({'sampler':i,
+                                 'target':{'node':node,'path':'translation'}})
     for bone,angles in spine.items():
         node=names[bone]
         if (node,'rotation') in original:raise ValueError('Existing spine channel conflict')
@@ -337,7 +380,8 @@ def recalculate_gait(doc,buf):
             'four_independent_legs':True,
             'head_yaw_amplitude_radians':.063,
             'neck_yaw_amplitude_radians':.024,
-            'lumbar_pitch_amplitude_radians':.042}
+            'lumbar_pitch_amplitude_radians':.042,
+            'maximum_scapula_protraction_source_units':max_shoulder_shift}
 
 def add_idle_spine_head(doc,buf):
     idle=next(a for a in doc['animations'] if a['name']=='idle')
