@@ -1,0 +1,28 @@
+{
+  "duration_seconds": 37.717313,
+  "files": {
+    "Запись экрана 2026-10-11 153249.part1.rar": {
+      "bytes": 20971520,
+      "sha256": "2d2e5843f58e757ab12b4408554da2cbde9d2e6022fda3184074c72706d081d7"
+    },
+    "Запись экрана 2026-10-11 153249.part2.rar": {
+      "bytes": 14695178,
+      "sha256": "c8738601709e1f434368f9112e08b4cbe4669b93923aa54eac40637d45c82d2a"
+    },
+    "Запись экрана 2026-10-11 153249.mp4": {
+      "bytes": 35666210,
+      "sha256": "64cdeeae2b527538d429be762cb51e94c502002833029e686ed60d69b2848243"
+    }
+  },
+  "extraction": "libarchive.so.13 multi-volume reader: filenames part1 then part2, no read/CRC errors reported",
+  "review": "Sampled full-duration camera sweep, plus exact extracted frames at 6,12,20,31 seconds",
+  "frame_crop_xywh": [
+    315,
+    150,
+    1340,
+    850
+  ],
+  "mesh_edits": 0,
+  "new_patch_trials": 0,
+  "source_face_ids_proven_by_this_video": false
+}
