@@ -55,6 +55,9 @@ jobs:
         run: |
           python tools/check_cat_brightness.py --image artifacts/windows/cat_visible_rgba.png --out artifacts/windows/brightness_report.json
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Capture a full live skinned walk cycle (9 poses)
+        run: |
+          python tools/check_calico_walk_trial.py --model assets/3d/deskcat_belly_skinned_trial.glb --out artifacts/windows/gait_cycle
       - name: Windows zoom framing regression (immutable framebuffer, many zoom cycles)
 
         shell: pwsh
@@ -90,5 +93,6 @@ jobs:
             artifacts/windows/cat_visible_rgba.png
             artifacts/windows/brightness_report.json
             artifacts/windows/zoom/**
+            artifacts/windows/gait_cycle/**
           retention-days: 14
           if-no-files-found: warn
