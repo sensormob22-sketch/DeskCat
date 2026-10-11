@@ -102,16 +102,18 @@ class PandaRenderer:
                 if character is not None and not character.isAncestorOf(geom):
                     geom.wrtReparentTo(character)
             candidate = Actor(model, copy=False) if character is not None else model
-            if character is None:
-                # Fixed-function preview cannot evaluate glTF metallic PBR.
-                # Keep base color; imported metallic material produced alpha=0
-                # with this backend. Do not alter the GLB or claim full PBR.
-                candidate.setMaterialOff(10)
-                for stage in candidate.findAllTextureStages():
-                    if stage.getMode() != TextureStage.MModulate:
-                        candidate.setTextureOff(stage, 10)
-                print('DeskCat static preview: base-color lighting; PBR maps retained in GLB',
-                      file=sys.stderr)
+            # Panda's Qt-offscreen framebuffer does not use a glTF PBR shader.
+            # Imported metallic/roughness materials may produce alpha=0 on
+            # fixed-function drivers, *including when geometry is skinned*.
+            # Keep the actual base-color texture but disable unsupported PBR
+            # stages/material for BOTH static NodePaths and animated Actors.
+            # This changes preview shading only; the embedded GLB remains intact.
+            candidate.setMaterialOff(10)
+            for stage in candidate.findAllTextureStages():
+                if stage.getMode() != TextureStage.MModulate:
+                    candidate.setTextureOff(stage, 10)
+            print('DeskCat 3D base-color preview: PBR lighting disabled in offscreen renderer; '
+                  'GLB PBR textures unchanged', file=sys.stderr)
             clips = sorted(candidate.getAnimNames()) if character is not None else []
             unknown = set(self.clip_overrides) - {s.value for s in State}
             if unknown:
