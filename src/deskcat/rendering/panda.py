@@ -65,7 +65,19 @@ class PandaRenderer:
         self.brightness = 1.07
         # Raise fur RGB midtones toward the studio photographs without
         # editing GLB textures or alpha, which remains byte-identical.
-        self._display_gamma_lut = bytes(round(255 * (v / 255) ** .53) for v in range(256))
+        # Protect near-black calico markings while lifting white/orange fur.
+        # The curve approximates the owner's bright side-projection photos.
+        tone_points = ((0, 0), (32, 32), (64, 68), (96, 115),
+                       (128, 162), (160, 201), (192, 226),
+                       (224, 244), (255, 255))
+        values = []
+        for channel in range(256):
+            for (x0, y0), (x1, y1) in zip(tone_points, tone_points[1:]):
+                if channel <= x1:
+                    values.append(round(y0 + (channel - x0) *
+                                        (y1 - y0) / (x1 - x0)))
+                    break
+        self._display_gamma_lut = bytes(values)
         self.offset = (0.0, 0.0)
         self.ortho_height = 2.35
         self.viewport_height_scale = 1.0
