@@ -16,6 +16,7 @@ def main(argv=None):
     parser.add_argument('--renderer', choices=('qt', 'panda'), default='qt')
     parser.add_argument('--start-walking', action='store_true', help='start the animated cat walking immediately')
     parser.add_argument('--walk-speed', type=float, default=28.0, help='desktop walking speed in logical pixels per second')
+    parser.add_argument('--initial-direction', choices=('left','right'), default='right', help='start across the desktop in this direction')
     parser.add_argument('--model', type=Path,
                         default=Path(__file__).resolve().parents[2] / 'assets/3d/test_cat.glb')
     parser.add_argument('--model-scale', type=float, default=1.0)
@@ -80,6 +81,10 @@ def main(argv=None):
     if args.position:
         window.move(*args.position)
         window._x = float(window.x())
+    if args.renderer == 'panda' and args.initial_direction == 'left':
+        window._direction = -1
+        window.renderer.direction = -1
+        window.renderer.heading = (window.renderer.forward_heading + 180) % 360
     window.show()
     if args.start_walking:
         from .states import State
