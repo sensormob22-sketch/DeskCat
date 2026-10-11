@@ -1,0 +1,48 @@
+{
+  "driver": "llvmpipe (LLVM 19.1.7, 256 bits)",
+  "images": "STATIC rest comparison only; pre-generation visual check, zero generation calls; bones drawn through depth; base color, not certified PBR",
+  "scale": 2.0035463161112808,
+  "offset": [
+    -0.0,
+    0.0,
+    -0.0
+  ],
+  "cameras": {
+    "side": [
+      [
+        0,
+        -4,
+        1.1
+      ],
+      [
+        0,
+        0,
+        0.65
+      ]
+    ],
+    "rear": [
+      [
+        4,
+        -0.6,
+        1.1
+      ],
+      [
+        0,
+        0,
+        0.65
+      ]
+    ],
+    "underside": [
+      [
+        0.5,
+        -2,
+        -3
+      ],
+      [
+        0,
+        0,
+        0.5
+      ]
+    ]
+  }
+}

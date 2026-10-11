@@ -1,0 +1,18 @@
+{
+  "attempts": 1,
+  "auto_weight_attempts": 1,
+  "generated": true,
+  "bones": 280,
+  "deform_bones": 46,
+  "auto_weighted_vertices": 0,
+  "unweighted_vertices": 19464,
+  "max_influences": 0,
+  "vertex_groups": 46,
+  "error": "Neutral or limb weight gate failed; no bends, no retry",
+  "accepted": false,
+  "failure_stage": "automatic_heat_binding",
+  "actual_blender_warning": "Bone Heat Weighting: failed to find solution for one or more bones",
+  "bend_tests_run": false,
+  "skinned_glb_exported": false,
+  "scene_sha256": "64556e8468b2ae702fcb737ca352e94fce736c4ebc2a043e0e6371ceae4b7bbe"
+}
