@@ -63,3 +63,14 @@ Right hind skin weights are based on mirrored LEFT hind skin with longitudinal
 alignment to the original asymmetric leg mesh. All source textures/geometry
 and tail motion remain preserved; contact quality still requires video review.
 New four-beat IK gait compensates front paws for gentle spine flexion.
+
+STAGE 20 — CONTINUOUS DESKTOP LOOP AND MIRRORED LEG REST
+The cat never reverses automatically at the screen edges: it walks all the way
+outside the chosen monitor, then enters from the opposite side with the same
+walking direction and uninterrupted animation phase.
+The RIGHT fore and hind rest joint chains are exact Z-plane mirrors of the
+LEFT chains, including glTF inverse-bind translations. The source mesh, UV,
+photo coat and original tail motion are not changed. The right lower hind-leg
+skinning uses a mirrored left-side donor. These remain experimental weights.
+The lumbar/chest back bend is more apparent, with a small left/right yaw in
+the head and neck. Visual confirmation on real Windows is still necessary.

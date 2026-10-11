@@ -128,6 +128,56 @@ def mirror_hind_right_skin(doc, buf):
             'approach':'left_hind_skin_reflected_with_anatomical_surface_registration'}
 
 
+
+def enforce_symmetric_rest_skeleton(doc, buf):
+    """Mirror both R chains from L in WORLD rest coordinates, preserving GLB mesh.
+
+    Every right rest segment has exactly the same length and sagittal angle
+    as its corresponding left segment. Its inverse bind matrix is rebuilt
+    from the new joint position, so the original geometry stays in bind pose.
+    """
+    names={n.get('name'):i for i,n in enumerate(doc['nodes'])}
+    parent={child:i for i,node in enumerate(doc['nodes'])
+            for child in node.get('children',[])}
+    pivots=bone_pivots(doc)
+    changed=[]
+    for prefix in ('front','hind'):
+        for j in range(4):
+            left=f'{prefix}_L_{j}'; right=f'{prefix}_R_{j}'
+            mirror=pivots[left].copy()
+            mirror[2]=-mirror[2]
+            ri=names[right]
+            p=parent[ri]
+            parent_global=pivots[doc['nodes'][p]['name']]
+            doc['nodes'][ri]['translation']=(mirror-parent_global).astype(float).tolist()
+            pivots[right]=mirror
+            changed.append(right)
+    skin=doc['skins'][0]
+    accessor=doc['accessors'][skin['inverseBindMatrices']]
+    view=doc['bufferViews'][accessor['bufferView']]
+    assert accessor['componentType']==5126 and accessor['type']=='MAT4'
+    offset=view.get('byteOffset',0)+accessor.get('byteOffset',0)
+    stride=view.get('byteStride',64)
+    for slot,node_idx in enumerate(skin['joints']):
+        name=doc['nodes'][node_idx].get('name')
+        if name in changed:
+            # glTF MAT4 is column-major; indices 12:15 are the translation.
+            struct.pack_into('<3f',buf,offset+slot*stride+12*4,
+                             *(-pivots[name]).astype(float))
+    verification=bone_pivots(doc)
+    max_error=0.0
+    for prefix in ('front','hind'):
+        for j in range(4):
+            a=verification[f'{prefix}_L_{j}']
+            b=verification[f'{prefix}_R_{j}']
+            max_error=max(max_error,float(np.max(np.abs(a-np.array([b[0],b[1],-b[2]])))))
+    if max_error>1e-6:raise ValueError('Right leg rest joints not exactly mirrored')
+    return {'right_leg_joints_mirrored':len(changed),
+            'maximum_rest_mirror_error':max_error,
+            'inverse_bind_matrices_updated':len(changed),
+            'rest_geometry_unchanged':True}
+
+
 # Walking reference: independent 4-beat feline walk; stance toes are planted.
 CYCLE_SECONDS = 1.6
 STRIDE = .09
@@ -152,10 +202,12 @@ def rot(angle):
 
 def torso_angles(t):
     phase = float(t) / CYCLE_SECONDS
-    lumbar = .010*math.sin(4*math.pi*phase+.15)+.003*math.sin(2*math.pi*phase)
-    chest = -.008*math.sin(4*math.pi*phase+.55)-.003*math.sin(2*math.pi*phase+.7)
-    neck = .006*math.sin(2*math.pi*phase+.8)+.004*math.sin(4*math.pi*phase+.4)
-    head = -.70*(lumbar+chest+neck)+.003*math.sin(4*math.pi*phase+1)
+    # Clearly visible yet restrained feline back flexion, roughly 2 degrees
+    # per spinal section. The forepaw IK below compensates torso movement.
+    lumbar = .034*math.sin(4*math.pi*phase+.15)+.008*math.sin(2*math.pi*phase)
+    chest = -.026*math.sin(4*math.pi*phase+.62)-.007*math.sin(2*math.pi*phase+.7)
+    neck = .011*math.sin(2*math.pi*phase+.8)+.007*math.sin(4*math.pi*phase+.4)
+    head = -.78*(lumbar+chest+neck)+.006*math.sin(4*math.pi*phase+1)
     return {'lumbar':lumbar,'chest':chest,'neck':neck,'head':head}
 
 def bone_pivots(doc):
@@ -197,6 +249,17 @@ def to_quaternions(angles):
     angles=np.array(angles,dtype=float)
     return np.column_stack((np.zeros(len(angles)),np.zeros(len(angles)),
                             np.sin(angles/2),np.cos(angles/2)))
+
+
+def yaw_pitch_quaternions(pitch, yaw):
+    """Local Y yaw and Z pitch; glTF source is Y-up, so Y turns the muzzle."""
+    pitch=np.asarray(pitch,dtype=float)
+    yaw=np.asarray(yaw,dtype=float)
+    sy=np.sin(yaw/2);cy=np.cos(yaw/2)
+    sz=np.sin(pitch/2);cz=np.cos(pitch/2)
+    result=np.column_stack((sy*sz, sy*cz, cy*sz, cy*cz))
+    assert np.allclose((result*result).sum(axis=1),1,atol=1e-6)
+    return result
 
 def recalculate_gait(doc,buf):
     names={n['name']:i for i,n in enumerate(doc['nodes']) if 'name' in n}
@@ -250,8 +313,15 @@ def recalculate_gait(doc,buf):
         node=names[bone]
         if (node,'rotation') in original:raise ValueError('Existing spine channel conflict')
         i=len(walk['samplers'])
+        if bone in ('neck','head'):
+            phase=timeline/CYCLE_SECONDS
+            yaw=(.024 if bone=='neck' else .063)*np.sin(
+                2*math.pi*phase+(.35 if bone=='neck' else .10))
+            rotation=yaw_pitch_quaternions(angles,yaw)
+        else:
+            rotation=to_quaternions(angles)
         walk['samplers'].append({'input':walk['samplers'][0]['input'],
-                                'output':add_vec4(doc,buf,to_quaternions(angles)),
+                                'output':add_vec4(doc,buf,rotation),
                                 'interpolation':'LINEAR'})
         walk['channels'].append({'sampler':i,
                                  'target':{'node':node,'path':'rotation'}})
@@ -264,7 +334,10 @@ def recalculate_gait(doc,buf):
     return {'max_toe_contact_error_source_units':pose_error,
             'stance_fraction':STANCE,'stride':STRIDE,
             'walking_spine_head_channels':len(spine),
-            'four_independent_legs':True}
+            'four_independent_legs':True,
+            'head_yaw_amplitude_radians':.063,
+            'neck_yaw_amplitude_radians':.024,
+            'lumbar_pitch_amplitude_radians':.042}
 
 def add_idle_spine_head(doc,buf):
     idle=next(a for a in doc['animations'] if a['name']=='idle')
@@ -289,6 +362,7 @@ def polish(source,output,report=None):
     assert len(doc['meshes'][0]['primitives'])==3
     before_bytes=bytes(buf)
     original_animations={a['name']:len(a['channels']) for a in doc['animations']}
+    symmetric=enforce_symmetric_rest_skeleton(doc,buf)
     repaired=mirror_hind_right_skin(doc,buf)
     gait=recalculate_gait(doc,buf)
     idle_channels=add_idle_spine_head(doc,buf)
@@ -297,7 +371,7 @@ def polish(source,output,report=None):
         b=v.get('byteOffset',0);n=v['byteLength']
         assert before_bytes[b:b+n]==buf[b:b+n]
     doc['buffers'][0]['byteLength']=len(buf)
-    doc.setdefault('extras',{})['deskcat_polish']={'right_hind_lower_leg':'symmetry_transferred_left_hind_skin',
+    doc.setdefault('extras',{})['deskcat_polish']={'right_hind_lower_leg':'mirror_left_hind_skin_and_rest_joints',
          'spine_head':'spine_compensated_gait_and_idle','tail':'original_channels_unchanged',
          'source_mesh_uv_images':'preserved'}
     js=json.dumps(doc,separators=(',',':'),ensure_ascii=False).encode('utf8')
@@ -308,7 +382,7 @@ def polish(source,output,report=None):
     output.parent.mkdir(parents=True,exist_ok=True);output.write_bytes(packed)
     result={'input_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
       'output_sha256':hashlib.sha256(packed).hexdigest(),
-      'weight_fix':repaired,'gait':gait,'idle_spine_channels_added':idle_channels,'initial_channel_counts':original_animations,
+      'symmetric_bind_pose':symmetric,'weight_fix':repaired,'gait':gait,'idle_spine_channels_added':idle_channels,'initial_channel_counts':original_animations,
       'geometry_and_images_unchanged':True,'tail_animation_unchanged':True,
       'production_accepted':False}
     if report:

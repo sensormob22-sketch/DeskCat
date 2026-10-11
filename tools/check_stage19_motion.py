@@ -2,7 +2,7 @@
 import argparse,json,hashlib
 from pathlib import Path
 import numpy as np
-from finish_calico_stage18 import read,acc
+from finish_calico_stage18 import read,acc,bone_pivots
 
 def check(raw_file,candidate_file,out):
     original,b0=read(raw_file);new,b1=read(candidate_file)
@@ -44,6 +44,29 @@ def check(raw_file,candidate_file,out):
     assert 300<count<2000
     assert not np.any(changed & (P[:,2]>.01)), 'Left leg modified by right skin transfer'
     assert np.allclose(new_w.sum(axis=1),1,atol=1e-5)
+    # Strict anatomical rest-pose symmetry, measured in SOURCE glTF space.
+    new_pivots=bone_pivots(new)
+    for prefix in ('front','hind'):
+        for i in range(4):
+            l=new_pivots[f'{prefix}_L_{i}']
+            r=new_pivots[f'{prefix}_R_{i}']
+            assert np.allclose(l,[r[0],r[1],-r[2]],atol=1e-6), (prefix,i,l,r)
+        for i in range(3):
+            ll=np.linalg.norm(new_pivots[f'{prefix}_L_{i+1}']-
+                              new_pivots[f'{prefix}_L_{i}'])
+            rr=np.linalg.norm(new_pivots[f'{prefix}_R_{i+1}']-
+                              new_pivots[f'{prefix}_R_{i}'])
+            assert abs(ll-rr)<1e-7
+    walk=next(a for a in new['animations'] if a['name']=='walk')
+    walk_channels={new['nodes'][c['target']['node']]['name']:c for c in walk['channels']
+                   if c['target']['path']=='rotation'}
+    for name in ('head','neck'):
+        channel=walk_channels[name]
+        quat=acc(new,b1,walk['samplers'][channel['sampler']]['output'])
+        assert np.max(np.abs(quat[:,1])) > (.02 if name=='head' else .006), name
+    lumbar=walk_channels['lumbar']
+    q=acc(new,b1,walk['samplers'][lumbar['sampler']]['output'])
+    assert np.max(np.abs(q[:,2])) > .012, 'Spine still almost rigid'
     gait=new.get('extras',{}).get('deskcat_gait',{})
     assert gait.get('toe_contact_method')=='four_beat_planar_IK_spine_compensated'
     assert abs(gait.get('stance_fraction',0)-.75)<1e-7
@@ -51,6 +74,8 @@ def check(raw_file,candidate_file,out):
              'original_tail_sha256':tail_hashes,
              'right_hind_mirrored_vertices':count,
              'untouched_left_leg':True,'untouched_texture_images':True,
+             'all_four_paws_symmetric_at_bind':True,
+             'head_yaw_channel_present':True,'lumbar_flex_channel_present':True,
              'gait_contract':gait,'live_windows_anatomy':'NOT VERIFIED'}
     out.parent.mkdir(parents=True,exist_ok=True)
     out.write_text(json.dumps(outcome,indent=2),encoding='utf8')

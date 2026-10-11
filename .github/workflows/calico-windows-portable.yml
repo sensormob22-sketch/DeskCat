@@ -6,6 +6,7 @@ on:
       - 'src/deskcat/app.py'
       - 'src/deskcat/window.py'
       - 'src/deskcat/window3d.py'
+      - 'src/deskcat/locomotion.py'
       - 'src/deskcat/rendering/**'
       - 'tools/build_calico_walk_trial.py'
       - 'tools/build_stage18_rigged_belly.py'
@@ -34,12 +35,12 @@ jobs:
       - name: Install app and model-build requirements
         run: |
           python -m pip install --disable-pip-version-check -e ".[dev,three-d]" numpy pillow
-      - name: Verify planted-toe locomotion equations
-        run: python -m pytest -q tests/test_gait_contact.py
+      - name: Verify planted toes and seamless offscreen wrap
+        run: python -m pytest -q tests/test_gait_contact.py tests/test_wraparound.py
       - name: Generate latest animated curved-belly model locally
         run: |
           python tools/build_stage18_rigged_belly.py --output artifacts/rig_rescue/deskcat_stage18_raw.glb --report artifacts/rig_rescue/windows_model_build.json
-      - name: Preserve tail, refine right ankle and add subtle spine/head motion
+      - name: Symmetric hind-leg bind, mirrored weights, spine flex and head yaw
         run: |
           python tools/finish_calico_stage18.py --input artifacts/rig_rescue/deskcat_stage18_raw.glb --output assets/3d/deskcat_belly_skinned_trial.glb --report artifacts/rig_rescue/motion_polish.json
       - name: Verify mirrored right hind skin, original texture and tail
