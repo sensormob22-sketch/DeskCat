@@ -17,7 +17,7 @@ jobs:
     timeout-minutes: 25
     env:
       QT_QPA_PLATFORM: offscreen
-      DESKCAT_PANDA_DISPLAY: p3tinydisplay
+      DESKCAT_PANDA_DISPLAY: p3headlessgl
       MESA_SHADER_CACHE_DIR: /tmp/deskcat-mesa
     steps:
       - uses: actions/checkout@v4
